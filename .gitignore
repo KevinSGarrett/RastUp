@@ -1,0 +1,17 @@
+﻿# OS junk
+Thumbs.db
+.DS_Store
+
+# Office temp files
+~$*.docx
+~$*.xlsx
+~$*.pptx
+
+# IDEs/editors
+.vscode/
+.idea/
+
+# Node/other common
+node_modules/
+dist/
+build/
