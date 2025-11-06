@@ -1,0 +1,73 @@
+name: Blueprints Build
+
+on:
+  pull_request:
+    paths:
+      - 'docs/blueprints/raw/**'
+      - 'docs/blueprints/**/*.md'
+      - 'scripts/concordance/**.py'
+      - 'ci/**.yml'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install deps (pandoc + PyYAML)
+        run: |
+          sudo apt-get update && sudo apt-get install -y pandoc
+          python -m pip install --upgrade pip
+          pip install pyyaml
+
+      - name: Ensure folders
+        run: |
+          mkdir -p docs/blueprints/non-tech docs/blueprints/tech
+          mkdir -p docs/blueprints/media/nt docs/blueprints/media/td
+          mkdir -p docs/blueprints/html/NT docs/blueprints/html/TD
+          mkdir -p docs/reports
+
+      - name: Convert NT DOCX -> Markdown
+        # Set the input once; keep placeholder for portability
+        run: |
+          pandoc -s "**[PATH_TO_NT_DOCX]**" --to gfm --wrap=none --extract-media=docs/blueprints/media/nt -o docs/blueprints/non-tech/NT-all.md
+
+      # - name: Convert TD DOCX -> Markdown
+      #   run: |
+      #     pandoc -s "**[PATH_TO_TD_DOCX]**" --to gfm --wrap=none --extract-media=docs/blueprints/media/td -o docs/blueprints/tech/TD-all.md
+
+      - name: Assign IDs
+        run: |
+          python scripts/concordance/assign_ids.py --nt docs/blueprints/non-tech/NT-all.md
+
+      - name: Split & Annotate
+        run: |
+          python scripts/concordance/split_and_annotate.py --nt docs/blueprints/non-tech/NT-all.md --source-docx docs/blueprints/raw/NonTechBlueprint.docx
+
+      - name: Build Indexes
+        run: python scripts/concordance/build_indexes.py
+
+      - name: Extract Acceptance (optional)
+        run: python scripts/concordance/extract_acceptance.py
+
+      - name: Check Blueprints
+        run: python scripts/concordance/check_blueprints.py
+
+      - name: Upload reports & artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: blueprint-reports
+          path: |
+            docs/blueprints/nt-index.json
+            docs/blueprints/td-index.json
+            docs/blueprints/toc-cache.json
+            docs/reports/**
+            id_map.json
+            docs/blueprints/non-tech/**
+            docs/blueprints/acceptance/**
