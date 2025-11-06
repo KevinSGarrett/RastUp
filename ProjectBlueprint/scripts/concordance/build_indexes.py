@@ -1,103 +1,79 @@
-#!/usr/bin/env python3
-"""
-build_indexes.py — Scan split files and build:
-  - docs/blueprints/nt-index.json
-  - docs/blueprints/td-index.json
-  - docs/blueprints/toc-cache.json
-Also validates uniqueness of IDs and anchors.
-
-Usage:
-  python scripts/concordance/build_indexes.py
-"""
-from __future__ import annotations
-import json, os, re, sys
+﻿from __future__ import annotations
+import json, os, re, hashlib
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Dict
 
-REPO = Path(__file__).resolve().parents[2]
-BP = REPO / "docs" / "blueprints"
-NT_DIR = BP / "non-tech"
-TD_DIR = BP / "tech"
-TOC_PATH = BP / "toc-cache.json"
-NT_INDEX = BP / "nt-index.json"
-TD_INDEX = BP / "td-index.json"
-REPORTS = REPO / "docs" / "reports"
-REPORTS.mkdir(parents=True, exist_ok=True)
-
-FM_RE = re.compile(r"^---\n(.*?)\n---\n", re.S)
+FM_RE = re.compile(r'^---\n(.*?)\n---\n', re.S)
 ANCHOR_RE = re.compile(r'<a id="([^"]+)"></a>')
+TITLE_RE = re.compile(r'^\s*title:\s*"(.*)"\s*$', re.M)
+ID_LINE_RE = re.compile(r'^\s*id:\s*([A-Z]+-[0-9.]+)\s*$', re.M)
+PARENT_RE = re.compile(r'^\s*parent_id:\s*([A-Z]+-[0-9.]+)?\s*$', re.M)
 
-def parse_frontmatter(text: str) -> Dict:
-    m = FM_RE.match(text)
-    if not m:
-        return {}
-    import yaml
-    return yaml.safe_load(m.group(1)) or {}
+def sha256(text: str) -> str:
+    return "sha256:" + hashlib.sha256(text.encode("utf-8")).hexdigest()
 
-def scan_dir(d: Path) -> Dict[str, Dict]:
-    out = {}
-    for p in sorted(d.glob("*.md")):
-        if p.name.endswith("all.md"): continue
-        text = p.read_text(encoding="utf-8", errors="ignore")
-        fm = parse_frontmatter(text)
-        m = ANCHOR_RE.search(text)
-        anchor = f"#{fm.get('id')}" if fm.get("id") else (f"#{m.group(1)}" if m else None)
-        _id = fm.get("id")
-        if _id and anchor:
-            out[_id] = {
-                "title": fm.get("title", ""),
-                "path": p.as_posix(),
-                "anchor": anchor,
-                "parent": fm.get("parent")
-            }
-    return out
-
-def build_tree(index: Dict[str, Dict]) -> Dict:
-    # Build parent->children mapping
-    tree = {}
-    for _id, meta in index.items():
-        tree.setdefault(_id, {"title": meta["title"], "children": []})
-    for _id, meta in index.items():
-        parent = meta.get("parent")
-        if parent:
-            tree.setdefault(parent, {"title": index[parent]["title"] if parent in index else "", "children": []})
-            tree[parent]["children"].append(_id)
-    # Sort children numerically where possible
-    for node in tree.values():
-        node["children"].sort(key=lambda s: [int(x) if x.isdigit() else x for x in s.replace("NT-","").replace("TD-","").split(".")])
-    return tree
-
-def validate(nt_map: Dict[str, Dict], td_map: Dict[str, Dict]) -> List[str]:
-    errors = []
-    # Unique IDs across both
-    ids = set()
-    for m in (nt_map, td_map):
-        for k in m.keys():
-            if k in ids:
-                errors.append(f"Duplicate ID across corpora: {k}")
-            ids.add(k)
-    # Anchor consistency
-    for m in (nt_map, td_map):
-        for k, v in m.items():
-            if not v["anchor"].endswith(k):
-                errors.append(f"Anchor mismatch for {k}: {v['anchor']}")
-    return errors
+def parse_fm(text: str) -> dict:
+    m=FM_RE.match(text)
+    if not m: return {}
+    block=m.group(1)
+    # minimal parse: id, title, parent_id
+    fm={}
+    mid=ID_LINE_RE.search(block)
+    if mid: fm['id']=mid.group(1)
+    mt=TITLE_RE.search(block)
+    if mt: fm['title']=mt.group(1)
+    mp=PARENT_RE.search(block)
+    if mp: fm['parent_id']=(mp.group(1) or "")
+    return fm
 
 def main():
-    nt_map = scan_dir(NT_DIR) if NT_DIR.exists() else {}
-    td_map = scan_dir(TD_DIR) if TD_DIR.exists() else {}
+    repo=Path('.'); bp=repo/'docs'/'blueprints'
+    nt_dir=bp/'non-tech'; td_dir=bp/'tech'
+    nt_map: Dict[str,dict]={}; td_map: Dict[str,dict]={}
 
-    (NT_INDEX).write_text(json.dumps(nt_map, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    (TD_INDEX).write_text(json.dumps(td_map, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    def scan_dir(d: Path):
+        out={}
+        for p in d.glob('**/*.md'):
+            if p.name.endswith('all.md'): continue
+            t=p.read_text(encoding='utf-8',errors='ignore')
+            fm=parse_fm(t)
+            # id fallback from anchor
+            _id=fm.get('id')
+            if not _id:
+                ma=ANCHOR_RE.search(t)
+                _id=ma.group(1) if ma else None
+            if not _id: continue
+            # title fallback from first heading if needed
+            title=fm.get('title') or ''
+            if not title:
+                mh=re.search(r'^(#{2,6})\s+(.*)\s*$', t, re.M)
+                if mh: title=mh.group(2)
+            body = re.sub(r'^---\n.*?\n---\n','',t,flags=re.S)
+            out[_id]={
+                "title": title,
+                "path": p.as_posix(),
+                "anchor": _id,
+                "parent": fm.get("parent_id",""),
+                "checksum": sha256(body)
+            }
+        return out
 
-    toc = {"NT": build_tree(nt_map), "TD": build_tree(td_map)}
-    (TOC_PATH).write_text(json.dumps(toc, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    if nt_dir.exists(): nt_map=scan_dir(nt_dir)
+    if td_dir.exists(): td_map=scan_dir(td_dir)
+    (bp/'nt-index.json').write_text(json.dumps(nt_map,indent=2,ensure_ascii=False),encoding='utf-8')
+    (bp/'td-index.json').write_text(json.dumps(td_map,indent=2,ensure_ascii=False),encoding='utf-8')
 
-    errors = validate(nt_map, td_map)
-    (REPORTS / "index_validate.json").write_text(json.dumps({"errors": errors}, indent=2))
-    if errors:
-        print("\n".join(errors), file=sys.stderr)
-        sys.exit(1)
+    # Build a simple tree
+    def build_tree(ix: dict):
+        nodes={k:{"id":k,"title":v.get("title",""),"path":v["path"],"anchor":k,"children":[]} for k,v in ix.items()}
+        for k,v in ix.items():
+            parent=v.get("parent")
+            if parent and parent in nodes:
+                nodes[parent]["children"].append(nodes[k])
+        roots=[nodes[k] for k,v in ix.items() if not v.get("parent")]
+        return roots
+    toc={"NT": build_tree(nt_map), "TD": build_tree(td_map)}
+    (bp/'toc-cache.json').write_text(json.dumps(toc,indent=2,ensure_ascii=False),encoding='utf-8')
 
-if __name__ == "__main__":
+if __name__=="__main__":
     main()

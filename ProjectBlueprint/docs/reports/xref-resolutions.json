@@ -1,0 +1,2730 @@
+{
+  "unresolved_ids": [],
+  "unresolved_numbers": [
+    {
+      "file": "docs\\blueprints\\tech\\TD-103--16p-acceptance-criteria-mark-16-final-only-when-all-true.md",
+      "number": "1.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-103--16p-acceptance-criteria-mark-16-final-only-when-all-true.md",
+      "number": "1.7"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-103--16p-acceptance-criteria-mark-16-final-only-when-all-true.md",
+      "number": "1.8"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-103--16p-acceptance-criteria-mark-16-final-only-when-all-true.md",
+      "number": "1.7"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-108--17e-targeting-matching.md",
+      "number": "1.7"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-118--17o-test-plan-ci-sandbox.md",
+      "number": "1.2"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-120--17q-acceptance-criteria-mark-17-final-only-when-all-true.md",
+      "number": "1.7"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-120--17q-acceptance-criteria-mark-17-final-only-when-all-true.md",
+      "number": "1.8"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-120--17q-acceptance-criteria-mark-17-final-only-when-all-true.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-120--17q-acceptance-criteria-mark-17-final-only-when-all-true.md",
+      "number": "1.8"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-125--18e-weighting-decay-aggregation.md",
+      "number": "1.8"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-127--18g-surfacing-ux.md",
+      "number": "1.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-135--18o-acceptance-criteria-mark-18-final-only-when-all-true.md",
+      "number": "1.8"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-135--18o-acceptance-criteria-mark-18-final-only-when-all-true.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-135--18o-acceptance-criteria-mark-18-final-only-when-all-true.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-135--18o-acceptance-criteria-mark-18-final-only-when-all-true.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-135--18o-acceptance-criteria-mark-18-final-only-when-all-true.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-136--19a-canon-invariants.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-136--19a-canon-invariants.md",
+      "number": "1.7"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-136--19a-canon-invariants.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-138--19c-data-model-sql-additions-for-fees-wallet-gl.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-138--19c-data-model-sql-additions-for-fees-wallet-gl.md",
+      "number": "1.7"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-141--19f-taxes-on-platform-fees.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-144--19i-admin-consoles-finance.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-149--19n-work-packages-cursor-agents.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-150--19o-acceptance-criteria-mark-19-final-only-when-all-true.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-150--19o-acceptance-criteria-mark-19-final-only-when-all-true.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-150--19o-acceptance-criteria-mark-19-final-only-when-all-true.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-150--19o-acceptance-criteria-mark-19-final-only-when-all-true.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-150--19o-acceptance-criteria-mark-19-final-only-when-all-true.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-151--19a-canon-invariants.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-151--19a-canon-invariants.md",
+      "number": "1.7"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-151--19a-canon-invariants.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-153--19o-acceptance-criteria-mark-19-final-only-when-all-true.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-153--19o-acceptance-criteria-mark-19-final-only-when-all-true.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-153--19o-acceptance-criteria-mark-19-final-only-when-all-true.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-153--19o-acceptance-criteria-mark-19-final-only-when-all-true.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-153--19o-acceptance-criteria-mark-19-final-only-when-all-true.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-153--19o-acceptance-criteria-mark-19-final-only-when-all-true.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-153--19o-acceptance-criteria-mark-19-final-only-when-all-true.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-163--110j-acceptance-criteria-for-part-1-we-wont-move-to-part-2-until-all-hold.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-163--110j-acceptance-criteria-for-part-1-we-wont-move-to-part-2-until-all-hold.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-163--110j-acceptance-criteria-for-part-1-we-wont-move-to-part-2-until-all-hold.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-172--110z-acceptance-criteria-mark-110-final-only-when-all-true.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-172--110z-acceptance-criteria-mark-110-final-only-when-all-true.md",
+      "number": "1.11"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-173--111a-canon-invariants.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-173--111a-canon-invariants.md",
+      "number": "1.7"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-174--111b-data-model-aurora-postgres-source-of-record.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-175--111c-amenity-taxonomy-canonical-keys.md",
+      "number": "1.2"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-176--111d-onboarding-verification-flow.md",
+      "number": "1.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-177--111e-pricing-quote-engine-deterministic.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-177--111e-pricing-quote-engine-deterministic.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-179--111g-house-rules-compliance-docs.md",
+      "number": "1.5"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-181--111i-search-facets-tiein-to-12.md",
+      "number": "1.2"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-182--111j-checkout-deposits-tiein-to-13.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-182--111j-checkout-deposits-tiein-to-13.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-182--111j-checkout-deposits-tiein-to-13.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-183--111k-graphql-api-appsync-studio-management-browse.md",
+      "number": "1.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-189--111q-work-packages-cursor-4agent-lanes.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-19--12s-acceptance-criteria-mark-12-final-only-when-all-are-true.md",
+      "number": "1.2"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-19--12s-acceptance-criteria-mark-12-final-only-when-all-are-true.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-19--12s-acceptance-criteria-mark-12-final-only-when-all-are-true.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-190--111r-acceptance-criteria-mark-111-final-only-when-all-true.md",
+      "number": "1.11"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-190--111r-acceptance-criteria-mark-111-final-only-when-all-true.md",
+      "number": "1.12"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-190--111r-acceptance-criteria-mark-111-final-only-when-all-true.md",
+      "number": "1.12"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-191--112a-canon-invariants.md",
+      "number": "1.12"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-192--112b-tech-stack-version-pins-initial.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-193--112c-environments-accounts-and-regions.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-197--112g-identity-access-cognito.md",
+      "number": "1.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-208--112r-acceptance-criteria-mark-112-final-only-when-all-true.md",
+      "number": "1.12"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-209--112s-test-matrix-ci-stage-drills.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-209--112s-test-matrix-ci-stage-drills.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-210--113a-canon-invariants.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-211--113b-highlevel-architecture.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-212--113c-event-envelope-contracts.md",
+      "number": "1.2"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-212--113c-event-envelope-contracts.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-212--113c-event-envelope-contracts.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-212--113c-event-envelope-contracts.md",
+      "number": "1.5"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-212--113c-event-envelope-contracts.md",
+      "number": "1.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-212--113c-event-envelope-contracts.md",
+      "number": "1.7"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-212--113c-event-envelope-contracts.md",
+      "number": "1.8"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-212--113c-event-envelope-contracts.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-212--113c-event-envelope-contracts.md",
+      "number": "1.11"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-212--113c-event-envelope-contracts.md",
+      "number": "1.12"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-225--113p-acceptance-criteria-mark-113-final-only-when-all-true.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-225--113p-acceptance-criteria-mark-113-final-only-when-all-true.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-230.2--h2-dsar-right-to-erasure-workflow.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-236--113p-restated-final-acceptance-checklist-for-113.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-236--113p-restated-final-acceptance-checklist-for-113.md",
+      "number": "1.14"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-236--113p-restated-final-acceptance-checklist-for-113.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-236--113p-restated-final-acceptance-checklist-for-113.md",
+      "number": "1.5"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-236--113p-restated-final-acceptance-checklist-for-113.md",
+      "number": "1.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-236--113p-restated-final-acceptance-checklist-for-113.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-236--113p-restated-final-acceptance-checklist-for-113.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-236--113p-restated-final-acceptance-checklist-for-113.md",
+      "number": "1.11"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-236--113p-restated-final-acceptance-checklist-for-113.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-236--113p-restated-final-acceptance-checklist-for-113.md",
+      "number": "1.14"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-237--114a-canon-invariants.md",
+      "number": "1.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-237--114a-canon-invariants.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-237--114a-canon-invariants.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-237--114a-canon-invariants.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-239.1--c1-aurora-source-of-truth.md",
+      "number": "1.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-239.1--c1-aurora-source-of-truth.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-239.1--c1-aurora-source-of-truth.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-239.3--c3-s3-buckets-previews-only.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-240--114d-payment-flows-stripe-taxes.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-240--114d-payment-flows-stripe-taxes.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-240--114d-payment-flows-stripe-taxes.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-240--114d-payment-flows-stripe-taxes.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-242--114f-messaging-integrations-action-cards.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-242--114f-messaging-integrations-action-cards.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-245--114i-graphql-api-appsync-selected.md",
+      "number": "1.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-246--114j-notifications-comms-from-110.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-247--114k-analytics-experiments-from-113.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-252--114p-work-packages-cursor-4agent-lanes.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-253--114q-acceptance-criteria-mark-114-final-only-when-all-true.md",
+      "number": "1.14"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-253--114q-acceptance-criteria-mark-114-final-only-when-all-true.md",
+      "number": "1.14"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-253--114q-acceptance-criteria-mark-114-final-only-when-all-true.md",
+      "number": "1.14"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-254--1141-roles-gates-and-global-invariants-recap-expansions.md",
+      "number": "1.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-254--1141-roles-gates-and-global-invariants-recap-expansions.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-258.3--11453-refunds-disputes.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-259--1146-tax-fee-math-digital-goods.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-260--1147-accounting-gl-platform-side.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-262.2--11492-dmca-flow-admin-console.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-263--11410-pricing-policy-limits-abuse-protections.md",
+      "number": "1.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-271--11418-acceptance-criteria-final-gate-for-114.md",
+      "number": "1.14"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-271--11418-acceptance-criteria-final-gate-for-114.md",
+      "number": "1.15"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-271--11418-acceptance-criteria-final-gate-for-114.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-271--11418-acceptance-criteria-final-gate-for-114.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-271--11418-acceptance-criteria-final-gate-for-114.md",
+      "number": "1.5"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-271--11418-acceptance-criteria-final-gate-for-114.md",
+      "number": "1.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-271--11418-acceptance-criteria-final-gate-for-114.md",
+      "number": "1.7"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-271--11418-acceptance-criteria-final-gate-for-114.md",
+      "number": "1.8"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-271--11418-acceptance-criteria-final-gate-for-114.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-271--11418-acceptance-criteria-final-gate-for-114.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-271--11418-acceptance-criteria-final-gate-for-114.md",
+      "number": "1.11"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-271--11418-acceptance-criteria-final-gate-for-114.md",
+      "number": "1.12"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-271--11418-acceptance-criteria-final-gate-for-114.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-271--11418-acceptance-criteria-final-gate-for-114.md",
+      "number": "1.14"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-271--11418-acceptance-criteria-final-gate-for-114.md",
+      "number": "1.16"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-271--11418-acceptance-criteria-final-gate-for-114.md",
+      "number": "1.15"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-274--115c-refund-dispute-policy-deterministic-kernels.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-274--115c-refund-dispute-policy-deterministic-kernels.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-274--115c-refund-dispute-policy-deterministic-kernels.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-276--115e-data-model-aurora-s3.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-277--115f-evidence-timeline-stitching.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-277--115f-evidence-timeline-stitching.md",
+      "number": "1.5"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-277--115f-evidence-timeline-stitching.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-277--115f-evidence-timeline-stitching.md",
+      "number": "1.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-278--115g-api-graphql-support-center-userfacing.md",
+      "number": "1.14.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-282--115k-chargebacks-representment.md",
+      "number": "1.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-282--115k-chargebacks-representment.md",
+      "number": "1.7"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-287--115p-test-plan-ci-sandbox.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-288--115q-work-packages-cursor-4agent-lanes.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-288--115q-work-packages-cursor-4agent-lanes.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-288--115q-work-packages-cursor-4agent-lanes.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-289--115r-acceptance-criteria-mark-115-final-only-when-all-true.md",
+      "number": "1.15"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-289--115r-acceptance-criteria-mark-115-final-only-when-all-true.md",
+      "number": "1.16"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-289--115r-acceptance-criteria-mark-115-final-only-when-all-true.md",
+      "number": "1.16"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-290--116a-canon-invariants.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-294.3--e3-authoring.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-294.3--e3-authoring.md",
+      "number": "1.14"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-297.3--h3-mechanics.md",
+      "number": "1.15"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-297.3--h3-mechanics.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-300--116k-telemetry-experiments-hooked-into-113.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-303--116n-test-plan-ci-sandbox.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-305--116p-acceptance-criteria-mark-116-final-only-when-all-true.md",
+      "number": "1.16"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-305--116p-acceptance-criteria-mark-116-final-only-when-all-true.md",
+      "number": "1.16"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-313--116h-cost-guardrails-observability-notes.md",
+      "number": "1.16"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-318--116-m-utm-attribution-rules.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-321--116-p-cost-slo-guardrails-growth-jobs.md",
+      "number": "1.17"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-333--117l-telemetry-dashboards.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-336--117o-inline-artifacts-block.md",
+      "number": "1.17"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-336--117o-inline-artifacts-block.md",
+      "number": "1.17"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-336--117o-inline-artifacts-block.md",
+      "number": "1.17"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-336--117o-inline-artifacts-block.md",
+      "number": "1.17"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-336--117o-inline-artifacts-block.md",
+      "number": "1.17"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-337--117p-acceptance-criteria-mark-117-final-only-when-all-true.md",
+      "number": "1.17"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-337--117p-acceptance-criteria-mark-117-final-only-when-all-true.md",
+      "number": "1.17"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-349--11712-logfile-analysis-search-console-ingestion.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-354--11717-acceptance-criteria-mark-117-final-only-when-all-true.md",
+      "number": "1.17"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-354--11717-acceptance-criteria-mark-117-final-only-when-all-true.md",
+      "number": "1.18"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-36--13q-work-packages-cursor-agents.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-361--118g-data-classification-handling.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-361--118g-data-classification-handling.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-37--13r-acceptance-criteria-mark-13-final-only-when-all-true.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-37--13r-acceptance-criteria-mark-13-final-only-when-all-true.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-37--13r-acceptance-criteria-mark-13-final-only-when-all-true.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-370--118p-acceptance-criteria-mark-118-final-only-when-all-true.md",
+      "number": "1.18"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-370--118p-acceptance-criteria-mark-118-final-only-when-all-true.md",
+      "number": "1.18"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-382--118l-owasp-asvs-mapping-excerpt.md",
+      "number": "1.18"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-382--118l-owasp-asvs-mapping-excerpt.md",
+      "number": "1.18"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-382--118l-owasp-asvs-mapping-excerpt.md",
+      "number": "1.18"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-382--118l-owasp-asvs-mapping-excerpt.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-385.1--118-determination-postaddendum.md",
+      "number": "1.18"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-385.1--118-determination-postaddendum.md",
+      "number": "1.18"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-385.1--118-determination-postaddendum.md",
+      "number": "1.19"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-388--119c-hreflang-negotiation.md",
+      "number": "1.17"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-388--119c-hreflang-negotiation.md",
+      "number": "1.19"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-389--1191-canon-invariants.md",
+      "number": "1.17"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-397--1199-public-seo-pages-localized-metadata-jsonld.md",
+      "number": "1.17"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-4--12d-analyzers-normalization.md",
+      "number": "1.2"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-404--11916-acceptance-criteria-mark-119-final-only-when-all-true.md",
+      "number": "1.19"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-404--11916-acceptance-criteria-mark-119-final-only-when-all-true.md",
+      "number": "1.20"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-409--120e-auth-session-on-device.md",
+      "number": "1.18"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-411--120g-push-notifications-apnsfcm-via-pinpointsns.md",
+      "number": "1.16"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-412--120h-file-uploads-from-cameragallery.md",
+      "number": "1.18"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-412--120h-file-uploads-from-cameragallery.md",
+      "number": "1.14"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-412--120h-file-uploads-from-cameragallery.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-413--120i-safemode-age-gating-ux.md",
+      "number": "1.18"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-415--120k-accessibility-mobile-a11y.md",
+      "number": "1.19"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-417--120m-cicd-releases-pwa-rn-shells.md",
+      "number": "1.18"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-418--120n-telemetry-crash-reporting.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-422--120r-acceptance-criteria-mark-120-final-only-when-all-true.md",
+      "number": "1.20"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-422--120r-acceptance-criteria-mark-120-final-only-when-all-true.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-422--120r-acceptance-criteria-mark-120-final-only-when-all-true.md",
+      "number": "1.21"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-422--120r-acceptance-criteria-mark-120-final-only-when-all-true.md",
+      "number": "1.21"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-425--121c-query-model-anyall-safemode-geoprice.md",
+      "number": "1.16"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-435--121m-acceptance-criteria-mark-121-final-only-when-all-true.md",
+      "number": "1.21"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-435--121m-acceptance-criteria-mark-121-final-only-when-all-true.md",
+      "number": "1.22"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-438--1223-data-model-aurora-orders-intents-transfers-refunds.md",
+      "number": "1.16"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-440--1225-stripe-connect-onboarding-providers.md",
+      "number": "1.22.11"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-442--1227-webhooks-idempotency-order-state-machine.md",
+      "number": "1.18"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-444--1229-credits-vouchers-taxes.md",
+      "number": "1.16"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-445--12210-payout-scheduling-reserves.md",
+      "number": "1.22.12"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-446--12211-fraud-controls-risk-flags-tied-to-118-115.md",
+      "number": "1.18"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-446--12211-fraud-controls-risk-flags-tied-to-118-115.md",
+      "number": "1.15"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-446--12211-fraud-controls-risk-flags-tied-to-118-115.md",
+      "number": "1.18"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-448--12213-admin-finance-console.md",
+      "number": "1.18"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-452--12217-acceptance-criteria-mark-122-final-only-when-all-true.md",
+      "number": "1.22"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-452--12217-acceptance-criteria-mark-122-final-only-when-all-true.md",
+      "number": "1.23"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-454.1--12321-dynamodb-primary-realtime-path.md",
+      "number": "1.23.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-456--1234-realtime-delivery-receipts-typing.md",
+      "number": "1.20"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-458--1236-action-cards-structured-forms-in-chat.md",
+      "number": "1.22"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-458--1236-action-cards-structured-forms-in-chat.md",
+      "number": "1.22"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-459--1237-attachments-previews-s3-safemode.md",
+      "number": "1.18"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-46--13s-acceptance-criteria-part-2.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-46--13s-acceptance-criteria-part-2.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-46--13s-acceptance-criteria-part-2.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-46--13s-acceptance-criteria-part-2.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-468--12316-test-plan.md",
+      "number": "1.19"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-470--12318-acceptance-criteria-mark-123-final-only-when-all-true.md",
+      "number": "1.23"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-470--12318-acceptance-criteria-mark-123-final-only-when-all-true.md",
+      "number": "1.24"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-471--1241-objectives-scope.md",
+      "number": "1.21"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-472--1242-architecture-costsavvy-elastic.md",
+      "number": "1.12"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-472--1242-architecture-costsavvy-elastic.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-472--1242-architecture-costsavvy-elastic.md",
+      "number": "1.22"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-473--1243-data-model-aurora-postgresql-s3.md",
+      "number": "3.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-476--1246-reviews-reputation-spacescoped.md",
+      "number": "1.21"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-476--1246-reviews-reputation-spacescoped.md",
+      "number": "1.19"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-484--12414-cost-scale.md",
+      "number": "1.21"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-486--12416-acceptance-criteria-mark-124-final-only-when-all-true.md",
+      "number": "1.24"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-486--12416-acceptance-criteria-mark-124-final-only-when-all-true.md",
+      "number": "1.24"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-486.12--l-expanded-tests-add-to-12413.md",
+      "number": "1.24.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-486.13--m-workpackages-delta-cursor-4agent-lanes.md",
+      "number": "1.26"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-487--1261-canon-invariants.md",
+      "number": "1.18"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-488--1262-roles-permissions-rbac.md",
+      "number": "1.21"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-488--1262-roles-permissions-rbac.md",
+      "number": "1.25"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-491.4--d-finance-ops.md",
+      "number": "1.22"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-491.5--e-search-curation-121.md",
+      "number": "1.21"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-491.6--f-smart-docs-admin-125.md",
+      "number": "1.25"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-495--1269-content-seo-operations-light-cms.md",
+      "number": "1.19"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-501--12615-acceptance-criteria-mark-126-final-only-when-all-true.md",
+      "number": "1.26"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-501--12615-acceptance-criteria-mark-126-final-only-when-all-true.md",
+      "number": "1.27"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-501--12615-acceptance-criteria-mark-126-final-only-when-all-true.md",
+      "number": "1.21"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-501--12615-acceptance-criteria-mark-126-final-only-when-all-true.md",
+      "number": "1.24"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-501--12615-acceptance-criteria-mark-126-final-only-when-all-true.md",
+      "number": "1.23"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-501--12615-acceptance-criteria-mark-126-final-only-when-all-true.md",
+      "number": "1.22"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-501--12615-acceptance-criteria-mark-126-final-only-when-all-true.md",
+      "number": "1.26"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-507.2--b-place-studio-listing-approximate-coordinates-only.md",
+      "number": "1.24"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-510--1279-internal-linking-content-hubs.md",
+      "number": "1.24"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-512--12711-core-web-vitals-budgets-enforcements.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-519--12718-acceptance-criteria-mark-127-final-only-when-all-true.md",
+      "number": "1.27"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-519--12718-acceptance-criteria-mark-127-final-only-when-all-true.md",
+      "number": "1.28"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-523--1284-data-model-cases-actions-audit.md",
+      "number": "1.18"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-524.2--b-listing-management-people-studios.md",
+      "number": "1.24"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-524.4--d-finance-operations.md",
+      "number": "1.22"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-524.5--e-search-curation-ties-121.md",
+      "number": "1.21"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-524.6--f-smart-docs-admin-ties-126.md",
+      "number": "1.26"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-53--13z-acceptance-criteria-mark-13-final-only-when-all-true.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-53--13z-acceptance-criteria-mark-13-final-only-when-all-true.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-53--13z-acceptance-criteria-mark-13-final-only-when-all-true.md",
+      "number": "1.5"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-53--13z-acceptance-criteria-mark-13-final-only-when-all-true.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-534--12815-acceptance-criteria-mark-128-final-only-when-all-true.md",
+      "number": "1.28"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-534--12815-acceptance-criteria-mark-128-final-only-when-all-true.md",
+      "number": "1.29"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-536--1292-architecture-costconscious-elastic.md",
+      "number": "1.28"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-540--1296-safemode-policy.md",
+      "number": "1.28"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-542--1298-discovery-seo.md",
+      "number": "1.27"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-542--1298-discovery-seo.md",
+      "number": "1.24"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-546--12912-test-plan.md",
+      "number": "1.27"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-548--12914-acceptance-criteria-mark-129-final-only-when-all-true.md",
+      "number": "1.29"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-548--12914-acceptance-criteria-mark-129-final-only-when-all-true.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-55--14b-data-model-storage.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-551--133-data-model-aurora-schema-booking.md",
+      "number": "1.24"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-557--139-cancellations-reschedules-noshows-policy-engine.md",
+      "number": "1.24"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-558--1310-disputes-chargebacks.md",
+      "number": "1.26"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-558--1310-disputes-chargebacks.md",
+      "number": "1.24"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-56.3--c3-mutations-selected.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-565--1317-acceptance-criteria-mark-13-final-only-when-all-true.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-565--1317-acceptance-criteria-mark-13-final-only-when-all-true.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-567--1317-acceptance-criteria-mark-13-final-only-when-all-true.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-567--1317-acceptance-criteria-mark-13-final-only-when-all-true.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-567--1317-acceptance-criteria-mark-13-final-only-when-all-true.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-57.6--d6-expenses.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-571--144-graphql-schema-selected.md",
+      "number": "1.4.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-573--146-action-cards-structured-flows-inside-chat.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-573--146-action-cards-structured-flows-inside-chat.md",
+      "number": "1.24"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-575--148-notifications-digests.md",
+      "number": "1.24"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-579--1412-test-plan-part-1.md",
+      "number": "1.24"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-58--14e-action-cards-contract-state-machines-examples.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-58--14e-action-cards-contract-state-machines-examples.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-580--1413-acceptance-criteria-part-1.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-581--14a-action-card-payload-schemas-authoritative.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-581.2--2-extras-overtime-typeextras.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-581.5--5-mark-complete-deliver-typecomplete.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-595--14o-acceptance-criteria-mark-14-final-only-when-all-true.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-596--15-trust-safety-verification-technical-development-plan.md",
+      "number": "1.5"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-596--15-trust-safety-verification-technical-development-plan.md",
+      "number": "8.2"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-596--15-trust-safety-verification-technical-development-plan.md",
+      "number": "1.2"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-596.1--15a-objectives-nongoals.md",
+      "number": "8.2"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-596.15--15o-cursor-4agents-build-plan-so-we-can-ship-on-autopilot.md",
+      "number": "1.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-596.7--15g-safemode-public-surfaces.md",
+      "number": "1.2"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-596.9--15i-admin-console-ts-support-finance.md",
+      "number": "4.14"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-612--1616-acceptance-criteria-mark-16-final-only-when-all-true.md",
+      "number": "1.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-63--14j-admin-consoles-support-ts-finance.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-64--14k-observability-telemetry-and-lineage.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-66--14m-error-taxonomy-clientsafe.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-67--14n-test-plan-ci-sandbox.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-68--14o-work-packages-cursor-agents.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-69--14p-acceptance-criteria-mark-14-final-only-when-all-true.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-69--14p-acceptance-criteria-mark-14-final-only-when-all-true.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-69--14p-acceptance-criteria-mark-14-final-only-when-all-true.md",
+      "number": "1.5"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-69--14p-acceptance-criteria-mark-14-final-only-when-all-true.md",
+      "number": "1.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-69--14p-acceptance-criteria-mark-14-final-only-when-all-true.md",
+      "number": "1.5"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-74--15e-pack-assembly-docsbeforepay.md",
+      "number": "1.5"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-79--15j-integrations-with-1314.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-79--15j-integrations-with-1314.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-79--15j-integrations-with-1314.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-87--15r-acceptance-criteria-mark-15-final-only-when-all-true.md",
+      "number": "1.5"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-87--15r-acceptance-criteria-mark-15-final-only-when-all-true.md",
+      "number": "1.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-87--15r-acceptance-criteria-mark-15-final-only-when-all-true.md",
+      "number": "1.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-93--16f-integration-points.md",
+      "number": "1.2"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-93--16f-integration-points.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-93--16f-integration-points.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-04-12d-analyzers-normalization\\TD-4-overview.md",
+      "number": "1.2"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-103-16p-acceptance-criteria-mark-16-final-only-when-all-true\\TD-103-overview.md",
+      "number": "1.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-103-16p-acceptance-criteria-mark-16-final-only-when-all-true\\TD-103-overview.md",
+      "number": "1.7"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-103-16p-acceptance-criteria-mark-16-final-only-when-all-true\\TD-103-overview.md",
+      "number": "1.8"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-103-16p-acceptance-criteria-mark-16-final-only-when-all-true\\TD-103-overview.md",
+      "number": "1.7"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-108-17e-targeting-matching\\TD-108-overview.md",
+      "number": "1.7"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-118-17o-test-plan-ci-sandbox\\TD-118-overview.md",
+      "number": "1.2"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-120-17q-acceptance-criteria-mark-17-final-only-when-all-true\\TD-120-overview.md",
+      "number": "1.7"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-120-17q-acceptance-criteria-mark-17-final-only-when-all-true\\TD-120-overview.md",
+      "number": "1.8"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-120-17q-acceptance-criteria-mark-17-final-only-when-all-true\\TD-120-overview.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-120-17q-acceptance-criteria-mark-17-final-only-when-all-true\\TD-120-overview.md",
+      "number": "1.8"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-125-18e-weighting-decay-aggregation\\TD-125-overview.md",
+      "number": "1.8"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-127-18g-surfacing-ux\\TD-127-overview.md",
+      "number": "1.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-135-18o-acceptance-criteria-mark-18-final-only-when-all-true\\TD-135-overview.md",
+      "number": "1.8"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-135-18o-acceptance-criteria-mark-18-final-only-when-all-true\\TD-135-overview.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-135-18o-acceptance-criteria-mark-18-final-only-when-all-true\\TD-135-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-135-18o-acceptance-criteria-mark-18-final-only-when-all-true\\TD-135-overview.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-135-18o-acceptance-criteria-mark-18-final-only-when-all-true\\TD-135-overview.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-136-19a-canon-invariants\\TD-136-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-136-19a-canon-invariants\\TD-136-overview.md",
+      "number": "1.7"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-136-19a-canon-invariants\\TD-136-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-138-19c-data-model-sql-additions-for-fees-wallet-gl\\TD-138-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-138-19c-data-model-sql-additions-for-fees-wallet-gl\\TD-138-overview.md",
+      "number": "1.7"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-141-19f-taxes-on-platform-fees\\TD-141-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-144-19i-admin-consoles-finance\\TD-144-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-149-19n-work-packages-cursor-agents\\TD-149-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-150-19o-acceptance-criteria-mark-19-final-only-when-all-true\\TD-150-overview.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-150-19o-acceptance-criteria-mark-19-final-only-when-all-true\\TD-150-overview.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-150-19o-acceptance-criteria-mark-19-final-only-when-all-true\\TD-150-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-150-19o-acceptance-criteria-mark-19-final-only-when-all-true\\TD-150-overview.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-150-19o-acceptance-criteria-mark-19-final-only-when-all-true\\TD-150-overview.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-151-19a-canon-invariants\\TD-151-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-151-19a-canon-invariants\\TD-151-overview.md",
+      "number": "1.7"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-151-19a-canon-invariants\\TD-151-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-153-19o-acceptance-criteria-mark-19-final-only-when-all-true\\TD-153-overview.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-153-19o-acceptance-criteria-mark-19-final-only-when-all-true\\TD-153-overview.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-153-19o-acceptance-criteria-mark-19-final-only-when-all-true\\TD-153-overview.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-153-19o-acceptance-criteria-mark-19-final-only-when-all-true\\TD-153-overview.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-153-19o-acceptance-criteria-mark-19-final-only-when-all-true\\TD-153-overview.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-153-19o-acceptance-criteria-mark-19-final-only-when-all-true\\TD-153-overview.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-153-19o-acceptance-criteria-mark-19-final-only-when-all-true\\TD-153-overview.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-163-110j-acceptance-criteria-for-part-1-we-wont-move-to-part-2-until-all-hold\\TD-163-overview.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-163-110j-acceptance-criteria-for-part-1-we-wont-move-to-part-2-until-all-hold\\TD-163-overview.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-163-110j-acceptance-criteria-for-part-1-we-wont-move-to-part-2-until-all-hold\\TD-163-overview.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-172-110z-acceptance-criteria-mark-110-final-only-when-all-true\\TD-172-overview.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-172-110z-acceptance-criteria-mark-110-final-only-when-all-true\\TD-172-overview.md",
+      "number": "1.11"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-173-111a-canon-invariants\\TD-173-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-173-111a-canon-invariants\\TD-173-overview.md",
+      "number": "1.7"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-174-111b-data-model-aurora-postgres-source-of-record\\TD-174-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-175-111c-amenity-taxonomy-canonical-keys\\TD-175-overview.md",
+      "number": "1.2"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-176-111d-onboarding-verification-flow\\TD-176-overview.md",
+      "number": "1.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-177-111e-pricing-quote-engine-deterministic\\TD-177-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-177-111e-pricing-quote-engine-deterministic\\TD-177-overview.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-179-111g-house-rules-compliance-docs\\TD-179-overview.md",
+      "number": "1.5"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-181-111i-search-facets-tiein-to-12\\TD-181-overview.md",
+      "number": "1.2"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-182-111j-checkout-deposits-tiein-to-13\\TD-182-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-182-111j-checkout-deposits-tiein-to-13\\TD-182-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-182-111j-checkout-deposits-tiein-to-13\\TD-182-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-183-111k-graphql-api-appsync-studio-management-browse\\TD-183-overview.md",
+      "number": "1.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-189-111q-work-packages-cursor-4agent-lanes\\TD-189-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-19-12s-acceptance-criteria-mark-12-final-only-when-all-are-true\\TD-19-overview.md",
+      "number": "1.2"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-19-12s-acceptance-criteria-mark-12-final-only-when-all-are-true\\TD-19-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-19-12s-acceptance-criteria-mark-12-final-only-when-all-are-true\\TD-19-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-190-111r-acceptance-criteria-mark-111-final-only-when-all-true\\TD-190-overview.md",
+      "number": "1.11"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-190-111r-acceptance-criteria-mark-111-final-only-when-all-true\\TD-190-overview.md",
+      "number": "1.12"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-190-111r-acceptance-criteria-mark-111-final-only-when-all-true\\TD-190-overview.md",
+      "number": "1.12"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-191-112a-canon-invariants\\TD-191-overview.md",
+      "number": "1.12"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-192-112b-tech-stack-version-pins-initial\\TD-192-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-193-112c-environments-accounts-and-regions\\TD-193-overview.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-197-112g-identity-access-cognito\\TD-197-overview.md",
+      "number": "1.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-208-112r-acceptance-criteria-mark-112-final-only-when-all-true\\TD-208-overview.md",
+      "number": "1.12"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-209-112s-test-matrix-ci-stage-drills\\TD-209-overview.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-209-112s-test-matrix-ci-stage-drills\\TD-209-overview.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-210-113a-canon-invariants\\TD-210-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-211-113b-highlevel-architecture\\TD-211-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-212-113c-event-envelope-contracts\\TD-212-overview.md",
+      "number": "1.2"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-212-113c-event-envelope-contracts\\TD-212-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-212-113c-event-envelope-contracts\\TD-212-overview.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-212-113c-event-envelope-contracts\\TD-212-overview.md",
+      "number": "1.5"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-212-113c-event-envelope-contracts\\TD-212-overview.md",
+      "number": "1.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-212-113c-event-envelope-contracts\\TD-212-overview.md",
+      "number": "1.7"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-212-113c-event-envelope-contracts\\TD-212-overview.md",
+      "number": "1.8"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-212-113c-event-envelope-contracts\\TD-212-overview.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-212-113c-event-envelope-contracts\\TD-212-overview.md",
+      "number": "1.11"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-212-113c-event-envelope-contracts\\TD-212-overview.md",
+      "number": "1.12"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-225-113p-acceptance-criteria-mark-113-final-only-when-all-true\\TD-225-overview.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-225-113p-acceptance-criteria-mark-113-final-only-when-all-true\\TD-225-overview.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-230-113h-expanded-privacy-governance-retention\\TD-230.2-h2-dsar-right-to-erasure-workflow.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-236-113p-restated-final-acceptance-checklist-for-113\\TD-236-overview.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-236-113p-restated-final-acceptance-checklist-for-113\\TD-236-overview.md",
+      "number": "1.14"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-236-113p-restated-final-acceptance-checklist-for-113\\TD-236-overview.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-236-113p-restated-final-acceptance-checklist-for-113\\TD-236-overview.md",
+      "number": "1.5"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-236-113p-restated-final-acceptance-checklist-for-113\\TD-236-overview.md",
+      "number": "1.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-236-113p-restated-final-acceptance-checklist-for-113\\TD-236-overview.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-236-113p-restated-final-acceptance-checklist-for-113\\TD-236-overview.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-236-113p-restated-final-acceptance-checklist-for-113\\TD-236-overview.md",
+      "number": "1.11"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-236-113p-restated-final-acceptance-checklist-for-113\\TD-236-overview.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-236-113p-restated-final-acceptance-checklist-for-113\\TD-236-overview.md",
+      "number": "1.14"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-237-114a-canon-invariants\\TD-237-overview.md",
+      "number": "1.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-237-114a-canon-invariants\\TD-237-overview.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-237-114a-canon-invariants\\TD-237-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-237-114a-canon-invariants\\TD-237-overview.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-239-114c-data-model-aurora-dynamo-s3\\TD-239.1-c1-aurora-source-of-truth.md",
+      "number": "1.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-239-114c-data-model-aurora-dynamo-s3\\TD-239.1-c1-aurora-source-of-truth.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-239-114c-data-model-aurora-dynamo-s3\\TD-239.1-c1-aurora-source-of-truth.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-239-114c-data-model-aurora-dynamo-s3\\TD-239.3-c3-s3-buckets-previews-only.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-240-114d-payment-flows-stripe-taxes\\TD-240-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-240-114d-payment-flows-stripe-taxes\\TD-240-overview.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-240-114d-payment-flows-stripe-taxes\\TD-240-overview.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-240-114d-payment-flows-stripe-taxes\\TD-240-overview.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-242-114f-messaging-integrations-action-cards\\TD-242-overview.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-242-114f-messaging-integrations-action-cards\\TD-242-overview.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-245-114i-graphql-api-appsync-selected\\TD-245-overview.md",
+      "number": "1.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-246-114j-notifications-comms-from-110\\TD-246-overview.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-247-114k-analytics-experiments-from-113\\TD-247-overview.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-252-114p-work-packages-cursor-4agent-lanes\\TD-252-overview.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-253-114q-acceptance-criteria-mark-114-final-only-when-all-true\\TD-253-overview.md",
+      "number": "1.14"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-253-114q-acceptance-criteria-mark-114-final-only-when-all-true\\TD-253-overview.md",
+      "number": "1.14"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-253-114q-acceptance-criteria-mark-114-final-only-when-all-true\\TD-253-overview.md",
+      "number": "1.14"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-254-1141-roles-gates-and-global-invariants-recap-expansions\\TD-254-overview.md",
+      "number": "1.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-254-1141-roles-gates-and-global-invariants-recap-expansions\\TD-254-overview.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-258-1145-stripe-object-mappings-flows\\TD-258.3-11453-refunds-disputes.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-259-1146-tax-fee-math-digital-goods\\TD-259-overview.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-260-1147-accounting-gl-platform-side\\TD-260-overview.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-262-1149-moderation-dmca-safety-runbooks\\TD-262.2-11492-dmca-flow-admin-console.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-263-11410-pricing-policy-limits-abuse-protections\\TD-263-overview.md",
+      "number": "1.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-271-11418-acceptance-criteria-final-gate-for-114\\TD-271-overview.md",
+      "number": "1.14"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-271-11418-acceptance-criteria-final-gate-for-114\\TD-271-overview.md",
+      "number": "1.15"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-271-11418-acceptance-criteria-final-gate-for-114\\TD-271-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-271-11418-acceptance-criteria-final-gate-for-114\\TD-271-overview.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-271-11418-acceptance-criteria-final-gate-for-114\\TD-271-overview.md",
+      "number": "1.5"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-271-11418-acceptance-criteria-final-gate-for-114\\TD-271-overview.md",
+      "number": "1.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-271-11418-acceptance-criteria-final-gate-for-114\\TD-271-overview.md",
+      "number": "1.7"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-271-11418-acceptance-criteria-final-gate-for-114\\TD-271-overview.md",
+      "number": "1.8"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-271-11418-acceptance-criteria-final-gate-for-114\\TD-271-overview.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-271-11418-acceptance-criteria-final-gate-for-114\\TD-271-overview.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-271-11418-acceptance-criteria-final-gate-for-114\\TD-271-overview.md",
+      "number": "1.11"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-271-11418-acceptance-criteria-final-gate-for-114\\TD-271-overview.md",
+      "number": "1.12"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-271-11418-acceptance-criteria-final-gate-for-114\\TD-271-overview.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-271-11418-acceptance-criteria-final-gate-for-114\\TD-271-overview.md",
+      "number": "1.14"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-271-11418-acceptance-criteria-final-gate-for-114\\TD-271-overview.md",
+      "number": "1.16"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-271-11418-acceptance-criteria-final-gate-for-114\\TD-271-overview.md",
+      "number": "1.15"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-274-115c-refund-dispute-policy-deterministic-kernels\\TD-274-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-274-115c-refund-dispute-policy-deterministic-kernels\\TD-274-overview.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-274-115c-refund-dispute-policy-deterministic-kernels\\TD-274-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-276-115e-data-model-aurora-s3\\TD-276-overview.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-277-115f-evidence-timeline-stitching\\TD-277-overview.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-277-115f-evidence-timeline-stitching\\TD-277-overview.md",
+      "number": "1.5"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-277-115f-evidence-timeline-stitching\\TD-277-overview.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-277-115f-evidence-timeline-stitching\\TD-277-overview.md",
+      "number": "1.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-278-115g-api-graphql-support-center-userfacing\\TD-278-overview.md",
+      "number": "1.14.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-282-115k-chargebacks-representment\\TD-282-overview.md",
+      "number": "1.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-282-115k-chargebacks-representment\\TD-282-overview.md",
+      "number": "1.7"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-287-115p-test-plan-ci-sandbox\\TD-287-overview.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-288-115q-work-packages-cursor-4agent-lanes\\TD-288-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-288-115q-work-packages-cursor-4agent-lanes\\TD-288-overview.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-288-115q-work-packages-cursor-4agent-lanes\\TD-288-overview.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-289-115r-acceptance-criteria-mark-115-final-only-when-all-true\\TD-289-overview.md",
+      "number": "1.15"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-289-115r-acceptance-criteria-mark-115-final-only-when-all-true\\TD-289-overview.md",
+      "number": "1.16"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-289-115r-acceptance-criteria-mark-115-final-only-when-all-true\\TD-289-overview.md",
+      "number": "1.16"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-290-116a-canon-invariants\\TD-290-overview.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-294-116e-feed-follow\\TD-294.3-e3-authoring.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-294-116e-feed-follow\\TD-294.3-e3-authoring.md",
+      "number": "1.14"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-297-116h-referrals-credits-twosided-abuseresistant\\TD-297.3-h3-mechanics.md",
+      "number": "1.15"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-297-116h-referrals-credits-twosided-abuseresistant\\TD-297.3-h3-mechanics.md",
+      "number": "1.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-300-116k-telemetry-experiments-hooked-into-113\\TD-300-overview.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-303-116n-test-plan-ci-sandbox\\TD-303-overview.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-305-116p-acceptance-criteria-mark-116-final-only-when-all-true\\TD-305-overview.md",
+      "number": "1.16"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-305-116p-acceptance-criteria-mark-116-final-only-when-all-true\\TD-305-overview.md",
+      "number": "1.16"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-313-116h-cost-guardrails-observability-notes\\TD-313-overview.md",
+      "number": "1.16"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-318-116-m-utm-attribution-rules\\TD-318-overview.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-321-116-p-cost-slo-guardrails-growth-jobs\\TD-321-overview.md",
+      "number": "1.17"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-333-117l-telemetry-dashboards\\TD-333-overview.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-336-117o-inline-artifacts-block\\TD-336-overview.md",
+      "number": "1.17"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-336-117o-inline-artifacts-block\\TD-336-overview.md",
+      "number": "1.17"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-336-117o-inline-artifacts-block\\TD-336-overview.md",
+      "number": "1.17"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-336-117o-inline-artifacts-block\\TD-336-overview.md",
+      "number": "1.17"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-336-117o-inline-artifacts-block\\TD-336-overview.md",
+      "number": "1.17"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-337-117p-acceptance-criteria-mark-117-final-only-when-all-true\\TD-337-overview.md",
+      "number": "1.17"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-337-117p-acceptance-criteria-mark-117-final-only-when-all-true\\TD-337-overview.md",
+      "number": "1.17"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-349-11712-logfile-analysis-search-console-ingestion\\TD-349-overview.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-354-11717-acceptance-criteria-mark-117-final-only-when-all-true\\TD-354-overview.md",
+      "number": "1.17"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-354-11717-acceptance-criteria-mark-117-final-only-when-all-true\\TD-354-overview.md",
+      "number": "1.18"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-36-13q-work-packages-cursor-agents\\TD-36-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-361-118g-data-classification-handling\\TD-361-overview.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-361-118g-data-classification-handling\\TD-361-overview.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-37-13r-acceptance-criteria-mark-13-final-only-when-all-true\\TD-37-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-37-13r-acceptance-criteria-mark-13-final-only-when-all-true\\TD-37-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-37-13r-acceptance-criteria-mark-13-final-only-when-all-true\\TD-37-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-370-118p-acceptance-criteria-mark-118-final-only-when-all-true\\TD-370-overview.md",
+      "number": "1.18"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-370-118p-acceptance-criteria-mark-118-final-only-when-all-true\\TD-370-overview.md",
+      "number": "1.18"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-382-118l-owasp-asvs-mapping-excerpt\\TD-382-overview.md",
+      "number": "1.18"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-382-118l-owasp-asvs-mapping-excerpt\\TD-382-overview.md",
+      "number": "1.18"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-382-118l-owasp-asvs-mapping-excerpt\\TD-382-overview.md",
+      "number": "1.18"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-382-118l-owasp-asvs-mapping-excerpt\\TD-382-overview.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-385-118o-access-recertification-schedule\\TD-385.1-118-determination-postaddendum.md",
+      "number": "1.18"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-385-118o-access-recertification-schedule\\TD-385.1-118-determination-postaddendum.md",
+      "number": "1.18"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-385-118o-access-recertification-schedule\\TD-385.1-118-determination-postaddendum.md",
+      "number": "1.19"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-388-119c-hreflang-negotiation\\TD-388-overview.md",
+      "number": "1.17"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-388-119c-hreflang-negotiation\\TD-388-overview.md",
+      "number": "1.19"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-389-1191-canon-invariants\\TD-389-overview.md",
+      "number": "1.17"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-397-1199-public-seo-pages-localized-metadata-jsonld\\TD-397-overview.md",
+      "number": "1.17"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-404-11916-acceptance-criteria-mark-119-final-only-when-all-true\\TD-404-overview.md",
+      "number": "1.19"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-404-11916-acceptance-criteria-mark-119-final-only-when-all-true\\TD-404-overview.md",
+      "number": "1.20"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-409-120e-auth-session-on-device\\TD-409-overview.md",
+      "number": "1.18"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-411-120g-push-notifications-apnsfcm-via-pinpointsns\\TD-411-overview.md",
+      "number": "1.16"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-412-120h-file-uploads-from-cameragallery\\TD-412-overview.md",
+      "number": "1.18"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-412-120h-file-uploads-from-cameragallery\\TD-412-overview.md",
+      "number": "1.14"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-412-120h-file-uploads-from-cameragallery\\TD-412-overview.md",
+      "number": "1.10"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-413-120i-safemode-age-gating-ux\\TD-413-overview.md",
+      "number": "1.18"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-415-120k-accessibility-mobile-a11y\\TD-415-overview.md",
+      "number": "1.19"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-417-120m-cicd-releases-pwa-rn-shells\\TD-417-overview.md",
+      "number": "1.18"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-418-120n-telemetry-crash-reporting\\TD-418-overview.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-422-120r-acceptance-criteria-mark-120-final-only-when-all-true\\TD-422-overview.md",
+      "number": "1.20"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-422-120r-acceptance-criteria-mark-120-final-only-when-all-true\\TD-422-overview.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-422-120r-acceptance-criteria-mark-120-final-only-when-all-true\\TD-422-overview.md",
+      "number": "1.21"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-422-120r-acceptance-criteria-mark-120-final-only-when-all-true\\TD-422-overview.md",
+      "number": "1.21"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-425-121c-query-model-anyall-safemode-geoprice\\TD-425-overview.md",
+      "number": "1.16"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-435-121m-acceptance-criteria-mark-121-final-only-when-all-true\\TD-435-overview.md",
+      "number": "1.21"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-435-121m-acceptance-criteria-mark-121-final-only-when-all-true\\TD-435-overview.md",
+      "number": "1.22"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-438-1223-data-model-aurora-orders-intents-transfers-refunds\\TD-438-overview.md",
+      "number": "1.16"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-440-1225-stripe-connect-onboarding-providers\\TD-440-overview.md",
+      "number": "1.22.11"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-442-1227-webhooks-idempotency-order-state-machine\\TD-442-overview.md",
+      "number": "1.18"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-444-1229-credits-vouchers-taxes\\TD-444-overview.md",
+      "number": "1.16"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-445-12210-payout-scheduling-reserves\\TD-445-overview.md",
+      "number": "1.22.12"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-446-12211-fraud-controls-risk-flags-tied-to-118-115\\TD-446-overview.md",
+      "number": "1.18"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-446-12211-fraud-controls-risk-flags-tied-to-118-115\\TD-446-overview.md",
+      "number": "1.15"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-446-12211-fraud-controls-risk-flags-tied-to-118-115\\TD-446-overview.md",
+      "number": "1.18"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-448-12213-admin-finance-console\\TD-448-overview.md",
+      "number": "1.18"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-452-12217-acceptance-criteria-mark-122-final-only-when-all-true\\TD-452-overview.md",
+      "number": "1.22"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-452-12217-acceptance-criteria-mark-122-final-only-when-all-true\\TD-452-overview.md",
+      "number": "1.23"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-454-1232-data-model\\TD-454.1-12321-dynamodb-primary-realtime-path.md",
+      "number": "1.23.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-456-1234-realtime-delivery-receipts-typing\\TD-456-overview.md",
+      "number": "1.20"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-458-1236-action-cards-structured-forms-in-chat\\TD-458-overview.md",
+      "number": "1.22"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-458-1236-action-cards-structured-forms-in-chat\\TD-458-overview.md",
+      "number": "1.22"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-459-1237-attachments-previews-s3-safemode\\TD-459-overview.md",
+      "number": "1.18"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-46-13s-acceptance-criteria-part-2\\TD-46-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-46-13s-acceptance-criteria-part-2\\TD-46-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-46-13s-acceptance-criteria-part-2\\TD-46-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-46-13s-acceptance-criteria-part-2\\TD-46-overview.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-468-12316-test-plan\\TD-468-overview.md",
+      "number": "1.19"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-470-12318-acceptance-criteria-mark-123-final-only-when-all-true\\TD-470-overview.md",
+      "number": "1.23"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-470-12318-acceptance-criteria-mark-123-final-only-when-all-true\\TD-470-overview.md",
+      "number": "1.24"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-471-1241-objectives-scope\\TD-471-overview.md",
+      "number": "1.21"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-472-1242-architecture-costsavvy-elastic\\TD-472-overview.md",
+      "number": "1.12"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-472-1242-architecture-costsavvy-elastic\\TD-472-overview.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-472-1242-architecture-costsavvy-elastic\\TD-472-overview.md",
+      "number": "1.22"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-473-1243-data-model-aurora-postgresql-s3\\TD-473-overview.md",
+      "number": "3.9"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-476-1246-reviews-reputation-spacescoped\\TD-476-overview.md",
+      "number": "1.21"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-476-1246-reviews-reputation-spacescoped\\TD-476-overview.md",
+      "number": "1.19"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-484-12414-cost-scale\\TD-484-overview.md",
+      "number": "1.21"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-486-12416-acceptance-criteria-mark-124-final-only-when-all-true\\TD-486.12-l-expanded-tests-add-to-12413.md",
+      "number": "1.24.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-486-12416-acceptance-criteria-mark-124-final-only-when-all-true\\TD-486.13-m-workpackages-delta-cursor-4agent-lanes.md",
+      "number": "1.26"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-487-1261-canon-invariants\\TD-487-overview.md",
+      "number": "1.18"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-488-1262-roles-permissions-rbac\\TD-488-overview.md",
+      "number": "1.21"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-488-1262-roles-permissions-rbac\\TD-488-overview.md",
+      "number": "1.25"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-491-1265-modules-screens\\TD-491.4-d-finance-ops.md",
+      "number": "1.22"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-491-1265-modules-screens\\TD-491.5-e-search-curation-121.md",
+      "number": "1.21"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-491-1265-modules-screens\\TD-491.6-f-smart-docs-admin-125.md",
+      "number": "1.25"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-495-1269-content-seo-operations-light-cms\\TD-495-overview.md",
+      "number": "1.19"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-501-12615-acceptance-criteria-mark-126-final-only-when-all-true\\TD-501-overview.md",
+      "number": "1.26"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-501-12615-acceptance-criteria-mark-126-final-only-when-all-true\\TD-501-overview.md",
+      "number": "1.27"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-501-12615-acceptance-criteria-mark-126-final-only-when-all-true\\TD-501-overview.md",
+      "number": "1.21"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-501-12615-acceptance-criteria-mark-126-final-only-when-all-true\\TD-501-overview.md",
+      "number": "1.24"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-501-12615-acceptance-criteria-mark-126-final-only-when-all-true\\TD-501-overview.md",
+      "number": "1.23"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-501-12615-acceptance-criteria-mark-126-final-only-when-all-true\\TD-501-overview.md",
+      "number": "1.22"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-501-12615-acceptance-criteria-mark-126-final-only-when-all-true\\TD-501-overview.md",
+      "number": "1.26"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-507-1276-structured-data-jsonld\\TD-507.2-b-place-studio-listing-approximate-coordinates-only.md",
+      "number": "1.24"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-510-1279-internal-linking-content-hubs\\TD-510-overview.md",
+      "number": "1.24"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-512-12711-core-web-vitals-budgets-enforcements\\TD-512-overview.md",
+      "number": "1.13"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-519-12718-acceptance-criteria-mark-127-final-only-when-all-true\\TD-519-overview.md",
+      "number": "1.27"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-519-12718-acceptance-criteria-mark-127-final-only-when-all-true\\TD-519-overview.md",
+      "number": "1.28"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-523-1284-data-model-cases-actions-audit\\TD-523-overview.md",
+      "number": "1.18"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-524-1285-modules-screens\\TD-524.2-b-listing-management-people-studios.md",
+      "number": "1.24"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-524-1285-modules-screens\\TD-524.4-d-finance-operations.md",
+      "number": "1.22"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-524-1285-modules-screens\\TD-524.5-e-search-curation-ties-121.md",
+      "number": "1.21"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-524-1285-modules-screens\\TD-524.6-f-smart-docs-admin-ties-126.md",
+      "number": "1.26"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-53-13z-acceptance-criteria-mark-13-final-only-when-all-true\\TD-53-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-53-13z-acceptance-criteria-mark-13-final-only-when-all-true\\TD-53-overview.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-53-13z-acceptance-criteria-mark-13-final-only-when-all-true\\TD-53-overview.md",
+      "number": "1.5"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-53-13z-acceptance-criteria-mark-13-final-only-when-all-true\\TD-53-overview.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-534-12815-acceptance-criteria-mark-128-final-only-when-all-true\\TD-534-overview.md",
+      "number": "1.28"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-534-12815-acceptance-criteria-mark-128-final-only-when-all-true\\TD-534-overview.md",
+      "number": "1.29"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-536-1292-architecture-costconscious-elastic\\TD-536-overview.md",
+      "number": "1.28"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-540-1296-safemode-policy\\TD-540-overview.md",
+      "number": "1.28"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-542-1298-discovery-seo\\TD-542-overview.md",
+      "number": "1.27"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-542-1298-discovery-seo\\TD-542-overview.md",
+      "number": "1.24"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-546-12912-test-plan\\TD-546-overview.md",
+      "number": "1.27"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-548-12914-acceptance-criteria-mark-129-final-only-when-all-true\\TD-548-overview.md",
+      "number": "1.29"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-548-12914-acceptance-criteria-mark-129-final-only-when-all-true\\TD-548-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-551-133-data-model-aurora-schema-booking\\TD-551-overview.md",
+      "number": "1.24"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-557-139-cancellations-reschedules-noshows-policy-engine\\TD-557-overview.md",
+      "number": "1.24"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-558-1310-disputes-chargebacks\\TD-558-overview.md",
+      "number": "1.26"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-558-1310-disputes-chargebacks\\TD-558-overview.md",
+      "number": "1.24"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-56-14c-graphql-api-appsync-types-queries-mutations-subscriptions\\TD-56.3-c3-mutations-selected.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-565-1317-acceptance-criteria-mark-13-final-only-when-all-true\\TD-565-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-565-1317-acceptance-criteria-mark-13-final-only-when-all-true\\TD-565-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-567-1317-acceptance-criteria-mark-13-final-only-when-all-true\\TD-567-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-567-1317-acceptance-criteria-mark-13-final-only-when-all-true\\TD-567-overview.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-567-1317-acceptance-criteria-mark-13-final-only-when-all-true\\TD-567-overview.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-57-14d-project-panel-tabs-schemas-behavior\\TD-57.6-d6-expenses.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-571-144-graphql-schema-selected\\TD-571-overview.md",
+      "number": "1.4.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-573-146-action-cards-structured-flows-inside-chat\\TD-573-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-573-146-action-cards-structured-flows-inside-chat\\TD-573-overview.md",
+      "number": "1.24"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-575-148-notifications-digests\\TD-575-overview.md",
+      "number": "1.24"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-579-1412-test-plan-part-1\\TD-579-overview.md",
+      "number": "1.24"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-58-14e-action-cards-contract-state-machines-examples\\TD-58-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-58-14e-action-cards-contract-state-machines-examples\\TD-58-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-580-1413-acceptance-criteria-part-1\\TD-580-overview.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-581-14a-action-card-payload-schemas-authoritative\\TD-581.2-2-extras-overtime-typeextras.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-581-14a-action-card-payload-schemas-authoritative\\TD-581.5-5-mark-complete-deliver-typecomplete.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-595-14o-acceptance-criteria-mark-14-final-only-when-all-true\\TD-595-overview.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-596-15-trust-safety-verification-technical-development-plan\\TD-596.1-15a-objectives-nongoals.md",
+      "number": "8.2"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-596-15-trust-safety-verification-technical-development-plan\\TD-596.15-15o-cursor-4agents-build-plan-so-we-can-ship-on-autopilot.md",
+      "number": "1.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-596-15-trust-safety-verification-technical-development-plan\\TD-596.7-15g-safemode-public-surfaces.md",
+      "number": "1.2"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-596-15-trust-safety-verification-technical-development-plan\\TD-596.9-15i-admin-console-ts-support-finance.md",
+      "number": "4.14"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-612-1616-acceptance-criteria-mark-16-final-only-when-all-true\\TD-612-overview.md",
+      "number": "1.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-63-14j-admin-consoles-support-ts-finance\\TD-63-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-64-14k-observability-telemetry-and-lineage\\TD-64-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-66-14m-error-taxonomy-clientsafe\\TD-66-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-67-14n-test-plan-ci-sandbox\\TD-67-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-68-14o-work-packages-cursor-agents\\TD-68-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-69-14p-acceptance-criteria-mark-14-final-only-when-all-true\\TD-69-overview.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-69-14p-acceptance-criteria-mark-14-final-only-when-all-true\\TD-69-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-69-14p-acceptance-criteria-mark-14-final-only-when-all-true\\TD-69-overview.md",
+      "number": "1.5"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-69-14p-acceptance-criteria-mark-14-final-only-when-all-true\\TD-69-overview.md",
+      "number": "1.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-69-14p-acceptance-criteria-mark-14-final-only-when-all-true\\TD-69-overview.md",
+      "number": "1.5"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-74-15e-pack-assembly-docsbeforepay\\TD-74-overview.md",
+      "number": "1.5"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-79-15j-integrations-with-1314\\TD-79-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-79-15j-integrations-with-1314\\TD-79-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-79-15j-integrations-with-1314\\TD-79-overview.md",
+      "number": "1.4"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-87-15r-acceptance-criteria-mark-15-final-only-when-all-true\\TD-87-overview.md",
+      "number": "1.5"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-87-15r-acceptance-criteria-mark-15-final-only-when-all-true\\TD-87-overview.md",
+      "number": "1.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-87-15r-acceptance-criteria-mark-15-final-only-when-all-true\\TD-87-overview.md",
+      "number": "1.6"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-93-16f-integration-points\\TD-93-overview.md",
+      "number": "1.2"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-93-16f-integration-points\\TD-93-overview.md",
+      "number": "1.3"
+    },
+    {
+      "file": "docs\\blueprints\\tech\\TD-93-16f-integration-points\\TD-93-overview.md",
+      "number": "1.4"
+    }
+  ],
+  "unresolved_titles": []
+}
