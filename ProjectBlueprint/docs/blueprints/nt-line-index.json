@@ -1,1 +1,128 @@
-{}
+{
+  "NT-22": {
+    "path": "docs/blueprints/non-tech/NT-all.md",
+    "start_line": 1,
+    "end_line": 464,
+    "level": 2
+  },
+  "NT-2": {
+    "path": "docs/blueprints/non-tech/NT-all.md",
+    "start_line": 464,
+    "end_line": 1311,
+    "level": 2
+  },
+  "NT-3": {
+    "path": "docs/blueprints/non-tech/NT-all.md",
+    "start_line": 1311,
+    "end_line": 2006,
+    "level": 2
+  },
+  "NT-58": {
+    "path": "docs/blueprints/non-tech/NT-all.md",
+    "start_line": 2006,
+    "end_line": 2559,
+    "level": 2
+  },
+  "NT-59": {
+    "path": "docs/blueprints/non-tech/NT-all.md",
+    "start_line": 2559,
+    "end_line": 3102,
+    "level": 2
+  },
+  "NT-60": {
+    "path": "docs/blueprints/non-tech/NT-all.md",
+    "start_line": 3102,
+    "end_line": 3387,
+    "level": 2
+  },
+  "NT-61": {
+    "path": "docs/blueprints/non-tech/NT-all.md",
+    "start_line": 3387,
+    "end_line": 3474,
+    "level": 2
+  },
+  "NT-57": {
+    "path": "docs/blueprints/non-tech/NT-all.md",
+    "start_line": 3474,
+    "end_line": 3641,
+    "level": 2
+  },
+  "NT-52": {
+    "path": "docs/blueprints/non-tech/NT-all.md",
+    "start_line": 3641,
+    "end_line": 3966,
+    "level": 2
+  },
+  "NT-46": {
+    "path": "docs/blueprints/non-tech/NT-all.md",
+    "start_line": 3966,
+    "end_line": 4159,
+    "level": 2
+  },
+  "NT-39": {
+    "path": "docs/blueprints/non-tech/NT-all.md",
+    "start_line": 4159,
+    "end_line": 4352,
+    "level": 2
+  },
+  "NT-31": {
+    "path": "docs/blueprints/non-tech/NT-all.md",
+    "start_line": 4352,
+    "end_line": 4833,
+    "level": 2
+  },
+  "NT-13": {
+    "path": "docs/blueprints/non-tech/NT-all.md",
+    "start_line": 4833,
+    "end_line": 5922,
+    "level": 2
+  },
+  "NT-14": {
+    "path": "docs/blueprints/non-tech/NT-all.md",
+    "start_line": 5922,
+    "end_line": 18184,
+    "level": 2
+  },
+  "NT-15": {
+    "path": "docs/blueprints/non-tech/NT-all.md",
+    "start_line": 18184,
+    "end_line": 19648,
+    "level": 2
+  },
+  "NT-16": {
+    "path": "docs/blueprints/non-tech/NT-all.md",
+    "start_line": 19648,
+    "end_line": 21959,
+    "level": 2
+  },
+  "NT-17": {
+    "path": "docs/blueprints/non-tech/NT-all.md",
+    "start_line": 21959,
+    "end_line": 23232,
+    "level": 2
+  },
+  "NT-18": {
+    "path": "docs/blueprints/non-tech/NT-all.md",
+    "start_line": 23232,
+    "end_line": 24701,
+    "level": 2
+  },
+  "NT-19": {
+    "path": "docs/blueprints/non-tech/NT-all.md",
+    "start_line": 24701,
+    "end_line": 25906,
+    "level": 2
+  },
+  "NT-20": {
+    "path": "docs/blueprints/non-tech/NT-all.md",
+    "start_line": 25906,
+    "end_line": 27992,
+    "level": 2
+  },
+  "NT-21": {
+    "path": "docs/blueprints/non-tech/NT-all.md",
+    "start_line": 27992,
+    "end_line": 30397,
+    "level": 2
+  }
+}
