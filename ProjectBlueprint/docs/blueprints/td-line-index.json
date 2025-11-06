@@ -1,0 +1,4808 @@
+{
+  "TD-1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 260,
+    "end_line": 277,
+    "level": 2
+  },
+  "TD-2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 277,
+    "end_line": 291,
+    "level": 2
+  },
+  "TD-3": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 291,
+    "end_line": 301,
+    "level": 2
+  },
+  "TD-4": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 301,
+    "end_line": 326,
+    "level": 2
+  },
+  "TD-5": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 326,
+    "end_line": 344,
+    "level": 2
+  },
+  "TD-6": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 344,
+    "end_line": 360,
+    "level": 2
+  },
+  "TD-7": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 360,
+    "end_line": 386,
+    "level": 2
+  },
+  "TD-8": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 386,
+    "end_line": 394,
+    "level": 2
+  },
+  "TD-9": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 394,
+    "end_line": 411,
+    "level": 2
+  },
+  "TD-10": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 411,
+    "end_line": 429,
+    "level": 2
+  },
+  "TD-11": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 429,
+    "end_line": 441,
+    "level": 2
+  },
+  "TD-12": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 441,
+    "end_line": 457,
+    "level": 2
+  },
+  "TD-13": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 457,
+    "end_line": 468,
+    "level": 2
+  },
+  "TD-14": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 468,
+    "end_line": 478,
+    "level": 2
+  },
+  "TD-15": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 478,
+    "end_line": 485,
+    "level": 2
+  },
+  "TD-16": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 485,
+    "end_line": 491,
+    "level": 2
+  },
+  "TD-17": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 491,
+    "end_line": 520,
+    "level": 2
+  },
+  "TD-18": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 520,
+    "end_line": 543,
+    "level": 2
+  },
+  "TD-19": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 543,
+    "end_line": 562,
+    "level": 2
+  },
+  "TD-20": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 562,
+    "end_line": 571,
+    "level": 2
+  },
+  "TD-21": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 571,
+    "end_line": 584,
+    "level": 2
+  },
+  "TD-22": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 584,
+    "end_line": 609,
+    "level": 2
+  },
+  "TD-23": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 609,
+    "end_line": 638,
+    "level": 2
+  },
+  "TD-24": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 638,
+    "end_line": 648,
+    "level": 2
+  },
+  "TD-25": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 648,
+    "end_line": 653,
+    "level": 2
+  },
+  "TD-26": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 653,
+    "end_line": 665,
+    "level": 2
+  },
+  "TD-27": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 665,
+    "end_line": 670,
+    "level": 2
+  },
+  "TD-28": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 670,
+    "end_line": 680,
+    "level": 2
+  },
+  "TD-29": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 680,
+    "end_line": 685,
+    "level": 2
+  },
+  "TD-30": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 685,
+    "end_line": 691,
+    "level": 2
+  },
+  "TD-31": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 691,
+    "end_line": 699,
+    "level": 2
+  },
+  "TD-32": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 699,
+    "end_line": 710,
+    "level": 2
+  },
+  "TD-33": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 710,
+    "end_line": 715,
+    "level": 2
+  },
+  "TD-34": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 715,
+    "end_line": 727,
+    "level": 2
+  },
+  "TD-35": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 727,
+    "end_line": 746,
+    "level": 2
+  },
+  "TD-36": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 746,
+    "end_line": 764,
+    "level": 2
+  },
+  "TD-37": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 764,
+    "end_line": 783,
+    "level": 2
+  },
+  "TD-38": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 783,
+    "end_line": 785,
+    "level": 2
+  },
+  "TD-38.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 785,
+    "end_line": 793,
+    "level": 3
+  },
+  "TD-38.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 793,
+    "end_line": 802,
+    "level": 3
+  },
+  "TD-38.3": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 802,
+    "end_line": 806,
+    "level": 3
+  },
+  "TD-38.4": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 806,
+    "end_line": 823,
+    "level": 3
+  },
+  "TD-38.5": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 823,
+    "end_line": 829,
+    "level": 3
+  },
+  "TD-38.6": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 829,
+    "end_line": 834,
+    "level": 3
+  },
+  "TD-39": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 834,
+    "end_line": 836,
+    "level": 2
+  },
+  "TD-39.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 836,
+    "end_line": 842,
+    "level": 3
+  },
+  "TD-39.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 842,
+    "end_line": 846,
+    "level": 3
+  },
+  "TD-39.3": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 846,
+    "end_line": 853,
+    "level": 3
+  },
+  "TD-39.4": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 853,
+    "end_line": 857,
+    "level": 3
+  },
+  "TD-39.5": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 857,
+    "end_line": 862,
+    "level": 3
+  },
+  "TD-39.6": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 862,
+    "end_line": 867,
+    "level": 3
+  },
+  "TD-40": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 867,
+    "end_line": 869,
+    "level": 2
+  },
+  "TD-40.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 869,
+    "end_line": 875,
+    "level": 3
+  },
+  "TD-40.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 875,
+    "end_line": 880,
+    "level": 3
+  },
+  "TD-40.3": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 880,
+    "end_line": 885,
+    "level": 3
+  },
+  "TD-40.4": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 885,
+    "end_line": 889,
+    "level": 3
+  },
+  "TD-41": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 889,
+    "end_line": 891,
+    "level": 2
+  },
+  "TD-41.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 891,
+    "end_line": 895,
+    "level": 3
+  },
+  "TD-41.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 895,
+    "end_line": 902,
+    "level": 3
+  },
+  "TD-41.3": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 902,
+    "end_line": 908,
+    "level": 3
+  },
+  "TD-41.4": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 908,
+    "end_line": 913,
+    "level": 3
+  },
+  "TD-42": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 913,
+    "end_line": 915,
+    "level": 2
+  },
+  "TD-42.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 915,
+    "end_line": 920,
+    "level": 3
+  },
+  "TD-42.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 920,
+    "end_line": 924,
+    "level": 3
+  },
+  "TD-42.3": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 924,
+    "end_line": 928,
+    "level": 3
+  },
+  "TD-43": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 928,
+    "end_line": 930,
+    "level": 2
+  },
+  "TD-43.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 930,
+    "end_line": 939,
+    "level": 3
+  },
+  "TD-43.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 939,
+    "end_line": 943,
+    "level": 3
+  },
+  "TD-43.3": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 943,
+    "end_line": 947,
+    "level": 3
+  },
+  "TD-44": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 947,
+    "end_line": 955,
+    "level": 2
+  },
+  "TD-45": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 955,
+    "end_line": 966,
+    "level": 2
+  },
+  "TD-46": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 966,
+    "end_line": 985,
+    "level": 2
+  },
+  "TD-47": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 985,
+    "end_line": 987,
+    "level": 2
+  },
+  "TD-47.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 987,
+    "end_line": 994,
+    "level": 3
+  },
+  "TD-47.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 994,
+    "end_line": 999,
+    "level": 3
+  },
+  "TD-47.3": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 999,
+    "end_line": 1012,
+    "level": 3
+  },
+  "TD-47.4": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1012,
+    "end_line": 1020,
+    "level": 3
+  },
+  "TD-47.5": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1020,
+    "end_line": 1028,
+    "level": 3
+  },
+  "TD-47.6": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1028,
+    "end_line": 1034,
+    "level": 3
+  },
+  "TD-47.7": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1034,
+    "end_line": 1038,
+    "level": 3
+  },
+  "TD-48": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1038,
+    "end_line": 1040,
+    "level": 2
+  },
+  "TD-48.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1040,
+    "end_line": 1049,
+    "level": 3
+  },
+  "TD-48.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1049,
+    "end_line": 1057,
+    "level": 3
+  },
+  "TD-48.3": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1057,
+    "end_line": 1061,
+    "level": 3
+  },
+  "TD-48.4": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1061,
+    "end_line": 1065,
+    "level": 3
+  },
+  "TD-49": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1065,
+    "end_line": 1067,
+    "level": 2
+  },
+  "TD-49.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1067,
+    "end_line": 1071,
+    "level": 3
+  },
+  "TD-49.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1071,
+    "end_line": 1076,
+    "level": 3
+  },
+  "TD-49.3": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1076,
+    "end_line": 1084,
+    "level": 3
+  },
+  "TD-49.4": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1084,
+    "end_line": 1091,
+    "level": 3
+  },
+  "TD-49.5": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1091,
+    "end_line": 1096,
+    "level": 3
+  },
+  "TD-49.6": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1096,
+    "end_line": 1100,
+    "level": 3
+  },
+  "TD-50": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1100,
+    "end_line": 1102,
+    "level": 2
+  },
+  "TD-50.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1102,
+    "end_line": 1107,
+    "level": 3
+  },
+  "TD-50.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1107,
+    "end_line": 1111,
+    "level": 3
+  },
+  "TD-50.3": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1111,
+    "end_line": 1115,
+    "level": 3
+  },
+  "TD-50.4": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1115,
+    "end_line": 1121,
+    "level": 3
+  },
+  "TD-51": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1121,
+    "end_line": 1129,
+    "level": 2
+  },
+  "TD-52": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1129,
+    "end_line": 1175,
+    "level": 2
+  },
+  "TD-53": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1175,
+    "end_line": 1192,
+    "level": 2
+  },
+  "TD-54": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1192,
+    "end_line": 1207,
+    "level": 2
+  },
+  "TD-55": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1207,
+    "end_line": 1211,
+    "level": 2
+  },
+  "TD-55.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1211,
+    "end_line": 1282,
+    "level": 3
+  },
+  "TD-55.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1282,
+    "end_line": 1287,
+    "level": 3
+  },
+  "TD-55.3": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1287,
+    "end_line": 1293,
+    "level": 3
+  },
+  "TD-56": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1293,
+    "end_line": 1297,
+    "level": 2
+  },
+  "TD-56.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1297,
+    "end_line": 1351,
+    "level": 3
+  },
+  "TD-56.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1351,
+    "end_line": 1360,
+    "level": 3
+  },
+  "TD-56.3": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1360,
+    "end_line": 1390,
+    "level": 3
+  },
+  "TD-56.4": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1390,
+    "end_line": 1398,
+    "level": 3
+  },
+  "TD-57": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1398,
+    "end_line": 1400,
+    "level": 2
+  },
+  "TD-57.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1400,
+    "end_line": 1405,
+    "level": 3
+  },
+  "TD-57.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1405,
+    "end_line": 1411,
+    "level": 3
+  },
+  "TD-57.3": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1411,
+    "end_line": 1417,
+    "level": 3
+  },
+  "TD-57.4": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1417,
+    "end_line": 1423,
+    "level": 3
+  },
+  "TD-57.5": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1423,
+    "end_line": 1427,
+    "level": 3
+  },
+  "TD-57.6": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1427,
+    "end_line": 1431,
+    "level": 3
+  },
+  "TD-57.7": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1431,
+    "end_line": 1435,
+    "level": 3
+  },
+  "TD-58": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1435,
+    "end_line": 1468,
+    "level": 2
+  },
+  "TD-59": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1468,
+    "end_line": 1474,
+    "level": 2
+  },
+  "TD-60": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1474,
+    "end_line": 1488,
+    "level": 2
+  },
+  "TD-61": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1488,
+    "end_line": 1495,
+    "level": 2
+  },
+  "TD-62": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1495,
+    "end_line": 1502,
+    "level": 2
+  },
+  "TD-63": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1502,
+    "end_line": 1510,
+    "level": 2
+  },
+  "TD-64": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1510,
+    "end_line": 1527,
+    "level": 2
+  },
+  "TD-65": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1527,
+    "end_line": 1534,
+    "level": 2
+  },
+  "TD-66": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1534,
+    "end_line": 1547,
+    "level": 2
+  },
+  "TD-67": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1547,
+    "end_line": 1584,
+    "level": 2
+  },
+  "TD-68": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1584,
+    "end_line": 1599,
+    "level": 2
+  },
+  "TD-69": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1599,
+    "end_line": 1618,
+    "level": 2
+  },
+  "TD-70": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1618,
+    "end_line": 1628,
+    "level": 2
+  },
+  "TD-71": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1628,
+    "end_line": 1714,
+    "level": 2
+  },
+  "TD-72": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1714,
+    "end_line": 1735,
+    "level": 2
+  },
+  "TD-73": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1735,
+    "end_line": 1754,
+    "level": 2
+  },
+  "TD-74": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1754,
+    "end_line": 1780,
+    "level": 2
+  },
+  "TD-75": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1780,
+    "end_line": 1798,
+    "level": 2
+  },
+  "TD-76": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1798,
+    "end_line": 1821,
+    "level": 2
+  },
+  "TD-77": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1821,
+    "end_line": 1829,
+    "level": 2
+  },
+  "TD-78": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1829,
+    "end_line": 1836,
+    "level": 2
+  },
+  "TD-79": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1836,
+    "end_line": 1841,
+    "level": 2
+  },
+  "TD-80": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1841,
+    "end_line": 1847,
+    "level": 2
+  },
+  "TD-81": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1847,
+    "end_line": 1855,
+    "level": 2
+  },
+  "TD-82": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1855,
+    "end_line": 1863,
+    "level": 2
+  },
+  "TD-83": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1863,
+    "end_line": 1876,
+    "level": 2
+  },
+  "TD-84": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1876,
+    "end_line": 1882,
+    "level": 2
+  },
+  "TD-85": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1882,
+    "end_line": 1911,
+    "level": 2
+  },
+  "TD-86": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1911,
+    "end_line": 1928,
+    "level": 2
+  },
+  "TD-87": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1928,
+    "end_line": 1945,
+    "level": 2
+  },
+  "TD-88": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1945,
+    "end_line": 1954,
+    "level": 2
+  },
+  "TD-89": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 1954,
+    "end_line": 2024,
+    "level": 2
+  },
+  "TD-90": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2024,
+    "end_line": 2045,
+    "level": 2
+  },
+  "TD-91": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2045,
+    "end_line": 2063,
+    "level": 2
+  },
+  "TD-92": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2063,
+    "end_line": 2096,
+    "level": 2
+  },
+  "TD-93": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2096,
+    "end_line": 2109,
+    "level": 2
+  },
+  "TD-94": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2109,
+    "end_line": 2126,
+    "level": 2
+  },
+  "TD-95": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2126,
+    "end_line": 2148,
+    "level": 2
+  },
+  "TD-96": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2148,
+    "end_line": 2158,
+    "level": 2
+  },
+  "TD-97": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2158,
+    "end_line": 2169,
+    "level": 2
+  },
+  "TD-98": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2169,
+    "end_line": 2178,
+    "level": 2
+  },
+  "TD-99": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2178,
+    "end_line": 2191,
+    "level": 2
+  },
+  "TD-100": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2191,
+    "end_line": 2197,
+    "level": 2
+  },
+  "TD-101": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2197,
+    "end_line": 2209,
+    "level": 2
+  },
+  "TD-102": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2209,
+    "end_line": 2225,
+    "level": 2
+  },
+  "TD-103": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2225,
+    "end_line": 2244,
+    "level": 2
+  },
+  "TD-104": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2244,
+    "end_line": 2254,
+    "level": 2
+  },
+  "TD-105": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2254,
+    "end_line": 2267,
+    "level": 2
+  },
+  "TD-106": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2267,
+    "end_line": 2275,
+    "level": 2
+  },
+  "TD-107": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2275,
+    "end_line": 2277,
+    "level": 2
+  },
+  "TD-107.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2277,
+    "end_line": 2352,
+    "level": 3
+  },
+  "TD-107.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2352,
+    "end_line": 2360,
+    "level": 3
+  },
+  "TD-108": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2360,
+    "end_line": 2374,
+    "level": 2
+  },
+  "TD-109": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2374,
+    "end_line": 2392,
+    "level": 2
+  },
+  "TD-110": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2392,
+    "end_line": 2414,
+    "level": 2
+  },
+  "TD-111": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2414,
+    "end_line": 2427,
+    "level": 2
+  },
+  "TD-112": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2427,
+    "end_line": 2450,
+    "level": 2
+  },
+  "TD-113": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2450,
+    "end_line": 2518,
+    "level": 2
+  },
+  "TD-114": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2518,
+    "end_line": 2527,
+    "level": 2
+  },
+  "TD-115": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2527,
+    "end_line": 2542,
+    "level": 2
+  },
+  "TD-116": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2542,
+    "end_line": 2552,
+    "level": 2
+  },
+  "TD-117": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2552,
+    "end_line": 2559,
+    "level": 2
+  },
+  "TD-118": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2559,
+    "end_line": 2586,
+    "level": 2
+  },
+  "TD-119": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2586,
+    "end_line": 2600,
+    "level": 2
+  },
+  "TD-120": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2600,
+    "end_line": 2619,
+    "level": 2
+  },
+  "TD-121": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2619,
+    "end_line": 2629,
+    "level": 2
+  },
+  "TD-122": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2629,
+    "end_line": 2693,
+    "level": 2
+  },
+  "TD-123": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2693,
+    "end_line": 2708,
+    "level": 2
+  },
+  "TD-124": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2708,
+    "end_line": 2760,
+    "level": 2
+  },
+  "TD-125": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2760,
+    "end_line": 2783,
+    "level": 2
+  },
+  "TD-126": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2783,
+    "end_line": 2804,
+    "level": 2
+  },
+  "TD-127": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2804,
+    "end_line": 2820,
+    "level": 2
+  },
+  "TD-128": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2820,
+    "end_line": 2828,
+    "level": 2
+  },
+  "TD-129": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2828,
+    "end_line": 2834,
+    "level": 2
+  },
+  "TD-130": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2834,
+    "end_line": 2844,
+    "level": 2
+  },
+  "TD-131": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2844,
+    "end_line": 2853,
+    "level": 2
+  },
+  "TD-132": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2853,
+    "end_line": 2859,
+    "level": 2
+  },
+  "TD-133": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2859,
+    "end_line": 2885,
+    "level": 2
+  },
+  "TD-134": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2885,
+    "end_line": 2900,
+    "level": 2
+  },
+  "TD-135": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2900,
+    "end_line": 2918,
+    "level": 2
+  },
+  "TD-136": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 2918,
+    "end_line": 2937,
+    "level": 2
+  },
+  "TD-137": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3270,
+    "end_line": 3289,
+    "level": 2
+  },
+  "TD-138": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3289,
+    "end_line": 3352,
+    "level": 2
+  },
+  "TD-139": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3352,
+    "end_line": 3356,
+    "level": 2
+  },
+  "TD-139.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3356,
+    "end_line": 3383,
+    "level": 3
+  },
+  "TD-139.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3383,
+    "end_line": 3390,
+    "level": 3
+  },
+  "TD-139.3": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3390,
+    "end_line": 3395,
+    "level": 3
+  },
+  "TD-139.4": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3395,
+    "end_line": 3414,
+    "level": 3
+  },
+  "TD-139.5": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3414,
+    "end_line": 3421,
+    "level": 3
+  },
+  "TD-140": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3421,
+    "end_line": 3448,
+    "level": 2
+  },
+  "TD-141": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3448,
+    "end_line": 3455,
+    "level": 2
+  },
+  "TD-142": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3455,
+    "end_line": 3473,
+    "level": 2
+  },
+  "TD-143": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3473,
+    "end_line": 3487,
+    "level": 2
+  },
+  "TD-144": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3487,
+    "end_line": 3496,
+    "level": 2
+  },
+  "TD-145": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3496,
+    "end_line": 3504,
+    "level": 2
+  },
+  "TD-146": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3504,
+    "end_line": 3514,
+    "level": 2
+  },
+  "TD-147": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3514,
+    "end_line": 3522,
+    "level": 2
+  },
+  "TD-148": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3189,
+    "end_line": 3212,
+    "level": 2
+  },
+  "TD-149": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3545,
+    "end_line": 3567,
+    "level": 2
+  },
+  "TD-150": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3234,
+    "end_line": 3251,
+    "level": 2
+  },
+  "TD-151": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3251,
+    "end_line": 3270,
+    "level": 2
+  },
+  "TD-152": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3522,
+    "end_line": 3545,
+    "level": 2
+  },
+  "TD-153": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3567,
+    "end_line": 3586,
+    "level": 2
+  },
+  "TD-154": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3586,
+    "end_line": 3595,
+    "level": 2
+  },
+  "TD-155": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3595,
+    "end_line": 3607,
+    "level": 2
+  },
+  "TD-156": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3607,
+    "end_line": 3710,
+    "level": 2
+  },
+  "TD-157": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3710,
+    "end_line": 3732,
+    "level": 2
+  },
+  "TD-158": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3732,
+    "end_line": 3749,
+    "level": 2
+  },
+  "TD-159": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3749,
+    "end_line": 3794,
+    "level": 2
+  },
+  "TD-160": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3794,
+    "end_line": 3819,
+    "level": 2
+  },
+  "TD-161": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3819,
+    "end_line": 3828,
+    "level": 2
+  },
+  "TD-162": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3828,
+    "end_line": 3844,
+    "level": 2
+  },
+  "TD-163": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3844,
+    "end_line": 3859,
+    "level": 2
+  },
+  "TD-164": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3859,
+    "end_line": 3884,
+    "level": 2
+  },
+  "TD-165": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3884,
+    "end_line": 3900,
+    "level": 2
+  },
+  "TD-166": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3900,
+    "end_line": 3919,
+    "level": 2
+  },
+  "TD-167": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3919,
+    "end_line": 3935,
+    "level": 2
+  },
+  "TD-168": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3935,
+    "end_line": 3943,
+    "level": 2
+  },
+  "TD-169": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3943,
+    "end_line": 3951,
+    "level": 2
+  },
+  "TD-170": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3951,
+    "end_line": 3968,
+    "level": 2
+  },
+  "TD-171": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3968,
+    "end_line": 3998,
+    "level": 2
+  },
+  "TD-172": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 3998,
+    "end_line": 4014,
+    "level": 2
+  },
+  "TD-173": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4014,
+    "end_line": 4023,
+    "level": 2
+  },
+  "TD-174": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4023,
+    "end_line": 4124,
+    "level": 2
+  },
+  "TD-175": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4124,
+    "end_line": 4139,
+    "level": 2
+  },
+  "TD-176": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4139,
+    "end_line": 4158,
+    "level": 2
+  },
+  "TD-177": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4158,
+    "end_line": 4186,
+    "level": 2
+  },
+  "TD-178": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4186,
+    "end_line": 4198,
+    "level": 2
+  },
+  "TD-179": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4198,
+    "end_line": 4205,
+    "level": 2
+  },
+  "TD-180": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4205,
+    "end_line": 4212,
+    "level": 2
+  },
+  "TD-181": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4212,
+    "end_line": 4219,
+    "level": 2
+  },
+  "TD-182": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4219,
+    "end_line": 4227,
+    "level": 2
+  },
+  "TD-183": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4227,
+    "end_line": 4311,
+    "level": 2
+  },
+  "TD-184": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4311,
+    "end_line": 4320,
+    "level": 2
+  },
+  "TD-185": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4320,
+    "end_line": 4331,
+    "level": 2
+  },
+  "TD-186": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4331,
+    "end_line": 4343,
+    "level": 2
+  },
+  "TD-187": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4343,
+    "end_line": 4350,
+    "level": 2
+  },
+  "TD-188": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4350,
+    "end_line": 4381,
+    "level": 2
+  },
+  "TD-189": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4381,
+    "end_line": 4397,
+    "level": 2
+  },
+  "TD-190": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4397,
+    "end_line": 4415,
+    "level": 2
+  },
+  "TD-191": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4415,
+    "end_line": 4424,
+    "level": 2
+  },
+  "TD-192": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4424,
+    "end_line": 4441,
+    "level": 2
+  },
+  "TD-193": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4441,
+    "end_line": 4460,
+    "level": 2
+  },
+  "TD-194": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4460,
+    "end_line": 4498,
+    "level": 2
+  },
+  "TD-195": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4498,
+    "end_line": 4508,
+    "level": 2
+  },
+  "TD-196": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4508,
+    "end_line": 4532,
+    "level": 2
+  },
+  "TD-197": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4532,
+    "end_line": 4541,
+    "level": 2
+  },
+  "TD-198": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4541,
+    "end_line": 4557,
+    "level": 2
+  },
+  "TD-199": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4557,
+    "end_line": 4571,
+    "level": 2
+  },
+  "TD-200": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4571,
+    "end_line": 4578,
+    "level": 2
+  },
+  "TD-201": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4578,
+    "end_line": 4586,
+    "level": 2
+  },
+  "TD-202": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4586,
+    "end_line": 4592,
+    "level": 2
+  },
+  "TD-203": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4592,
+    "end_line": 4606,
+    "level": 2
+  },
+  "TD-204": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4606,
+    "end_line": 4612,
+    "level": 2
+  },
+  "TD-205": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4612,
+    "end_line": 4618,
+    "level": 2
+  },
+  "TD-206": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4618,
+    "end_line": 4626,
+    "level": 2
+  },
+  "TD-207": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4626,
+    "end_line": 4651,
+    "level": 2
+  },
+  "TD-208": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4651,
+    "end_line": 4662,
+    "level": 2
+  },
+  "TD-209": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4662,
+    "end_line": 4694,
+    "level": 2
+  },
+  "TD-210": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4694,
+    "end_line": 4712,
+    "level": 2
+  },
+  "TD-211": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4712,
+    "end_line": 4736,
+    "level": 2
+  },
+  "TD-212": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4736,
+    "end_line": 4778,
+    "level": 2
+  },
+  "TD-213": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4778,
+    "end_line": 4810,
+    "level": 2
+  },
+  "TD-214": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4810,
+    "end_line": 4817,
+    "level": 2
+  },
+  "TD-215": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4817,
+    "end_line": 4835,
+    "level": 2
+  },
+  "TD-216": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4835,
+    "end_line": 4842,
+    "level": 2
+  },
+  "TD-217": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4842,
+    "end_line": 4858,
+    "level": 2
+  },
+  "TD-218": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4858,
+    "end_line": 4873,
+    "level": 2
+  },
+  "TD-219": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4873,
+    "end_line": 4881,
+    "level": 2
+  },
+  "TD-220": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4881,
+    "end_line": 4888,
+    "level": 2
+  },
+  "TD-221": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4888,
+    "end_line": 4897,
+    "level": 2
+  },
+  "TD-222": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4897,
+    "end_line": 4906,
+    "level": 2
+  },
+  "TD-223": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4906,
+    "end_line": 4932,
+    "level": 2
+  },
+  "TD-224": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4932,
+    "end_line": 4946,
+    "level": 2
+  },
+  "TD-225": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4946,
+    "end_line": 4961,
+    "level": 2
+  },
+  "TD-226": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4961,
+    "end_line": 4963,
+    "level": 2
+  },
+  "TD-226.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 4963,
+    "end_line": 5023,
+    "level": 3
+  },
+  "TD-226.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5023,
+    "end_line": 5083,
+    "level": 3
+  },
+  "TD-227": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5083,
+    "end_line": 5085,
+    "level": 2
+  },
+  "TD-227.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5085,
+    "end_line": 5097,
+    "level": 3
+  },
+  "TD-227.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5097,
+    "end_line": 5111,
+    "level": 3
+  },
+  "TD-227.3": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5111,
+    "end_line": 5135,
+    "level": 3
+  },
+  "TD-227.4": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5135,
+    "end_line": 5167,
+    "level": 3
+  },
+  "TD-228": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5167,
+    "end_line": 5169,
+    "level": 2
+  },
+  "TD-228.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5169,
+    "end_line": 5212,
+    "level": 3
+  },
+  "TD-228.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5212,
+    "end_line": 5273,
+    "level": 3
+  },
+  "TD-229": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5273,
+    "end_line": 5275,
+    "level": 2
+  },
+  "TD-229.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5275,
+    "end_line": 5302,
+    "level": 3
+  },
+  "TD-229.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5302,
+    "end_line": 5307,
+    "level": 3
+  },
+  "TD-230": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5307,
+    "end_line": 5309,
+    "level": 2
+  },
+  "TD-230.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5309,
+    "end_line": 5319,
+    "level": 3
+  },
+  "TD-230.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5319,
+    "end_line": 5335,
+    "level": 3
+  },
+  "TD-230.3": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5335,
+    "end_line": 5341,
+    "level": 3
+  },
+  "TD-231": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5341,
+    "end_line": 5343,
+    "level": 2
+  },
+  "TD-231.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5343,
+    "end_line": 5363,
+    "level": 3
+  },
+  "TD-231.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5363,
+    "end_line": 5388,
+    "level": 3
+  },
+  "TD-232": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5388,
+    "end_line": 5390,
+    "level": 2
+  },
+  "TD-232.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5390,
+    "end_line": 5401,
+    "level": 3
+  },
+  "TD-232.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5401,
+    "end_line": 5421,
+    "level": 3
+  },
+  "TD-233": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5421,
+    "end_line": 5437,
+    "level": 2
+  },
+  "TD-234": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5437,
+    "end_line": 5454,
+    "level": 2
+  },
+  "TD-235": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5454,
+    "end_line": 5456,
+    "level": 2
+  },
+  "TD-235.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5456,
+    "end_line": 5464,
+    "level": 3
+  },
+  "TD-235.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5464,
+    "end_line": 5472,
+    "level": 3
+  },
+  "TD-235.3": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5472,
+    "end_line": 5480,
+    "level": 3
+  },
+  "TD-235.4": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5480,
+    "end_line": 5503,
+    "level": 3
+  },
+  "TD-236": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5503,
+    "end_line": 5521,
+    "level": 2
+  },
+  "TD-237": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5521,
+    "end_line": 5531,
+    "level": 2
+  },
+  "TD-238": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5531,
+    "end_line": 5541,
+    "level": 2
+  },
+  "TD-239": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5541,
+    "end_line": 5543,
+    "level": 2
+  },
+  "TD-239.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5543,
+    "end_line": 5636,
+    "level": 3
+  },
+  "TD-239.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5636,
+    "end_line": 5641,
+    "level": 3
+  },
+  "TD-239.3": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5641,
+    "end_line": 5647,
+    "level": 3
+  },
+  "TD-240": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5647,
+    "end_line": 5674,
+    "level": 2
+  },
+  "TD-241": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5674,
+    "end_line": 5697,
+    "level": 2
+  },
+  "TD-242": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5697,
+    "end_line": 5703,
+    "level": 2
+  },
+  "TD-243": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5703,
+    "end_line": 5724,
+    "level": 2
+  },
+  "TD-244": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5724,
+    "end_line": 5732,
+    "level": 2
+  },
+  "TD-245": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5732,
+    "end_line": 5776,
+    "level": 2
+  },
+  "TD-246": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5776,
+    "end_line": 5783,
+    "level": 2
+  },
+  "TD-247": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5783,
+    "end_line": 5791,
+    "level": 2
+  },
+  "TD-248": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5791,
+    "end_line": 5801,
+    "level": 2
+  },
+  "TD-249": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5801,
+    "end_line": 5809,
+    "level": 2
+  },
+  "TD-250": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5809,
+    "end_line": 5821,
+    "level": 2
+  },
+  "TD-251": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5821,
+    "end_line": 5850,
+    "level": 2
+  },
+  "TD-252": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5850,
+    "end_line": 5866,
+    "level": 2
+  },
+  "TD-253": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5866,
+    "end_line": 5880,
+    "level": 2
+  },
+  "TD-254": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5880,
+    "end_line": 5897,
+    "level": 2
+  },
+  "TD-255": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5897,
+    "end_line": 5899,
+    "level": 2
+  },
+  "TD-255.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5899,
+    "end_line": 5937,
+    "level": 3
+  },
+  "TD-255.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5937,
+    "end_line": 5950,
+    "level": 3
+  },
+  "TD-255.3": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5950,
+    "end_line": 5956,
+    "level": 3
+  },
+  "TD-256": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5956,
+    "end_line": 5960,
+    "level": 2
+  },
+  "TD-256.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5960,
+    "end_line": 5995,
+    "level": 3
+  },
+  "TD-256.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 5995,
+    "end_line": 6004,
+    "level": 3
+  },
+  "TD-257": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6004,
+    "end_line": 6006,
+    "level": 2
+  },
+  "TD-257.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6006,
+    "end_line": 6018,
+    "level": 3
+  },
+  "TD-257.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6018,
+    "end_line": 6024,
+    "level": 3
+  },
+  "TD-258": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6024,
+    "end_line": 6026,
+    "level": 2
+  },
+  "TD-258.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6026,
+    "end_line": 6045,
+    "level": 3
+  },
+  "TD-258.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6045,
+    "end_line": 6058,
+    "level": 3
+  },
+  "TD-258.3": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6058,
+    "end_line": 6067,
+    "level": 3
+  },
+  "TD-259": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6067,
+    "end_line": 6083,
+    "level": 2
+  },
+  "TD-260": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6083,
+    "end_line": 6106,
+    "level": 2
+  },
+  "TD-261": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6106,
+    "end_line": 6108,
+    "level": 2
+  },
+  "TD-261.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6108,
+    "end_line": 6129,
+    "level": 3
+  },
+  "TD-261.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6129,
+    "end_line": 6133,
+    "level": 3
+  },
+  "TD-262": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6133,
+    "end_line": 6135,
+    "level": 2
+  },
+  "TD-262.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6135,
+    "end_line": 6141,
+    "level": 3
+  },
+  "TD-262.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6141,
+    "end_line": 6149,
+    "level": 3
+  },
+  "TD-263": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6149,
+    "end_line": 6164,
+    "level": 2
+  },
+  "TD-264": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6164,
+    "end_line": 6175,
+    "level": 2
+  },
+  "TD-265": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6175,
+    "end_line": 6210,
+    "level": 2
+  },
+  "TD-266": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6210,
+    "end_line": 6216,
+    "level": 2
+  },
+  "TD-267": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6216,
+    "end_line": 6227,
+    "level": 2
+  },
+  "TD-268": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6227,
+    "end_line": 6233,
+    "level": 2
+  },
+  "TD-269": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6233,
+    "end_line": 6243,
+    "level": 2
+  },
+  "TD-270": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6243,
+    "end_line": 6250,
+    "level": 2
+  },
+  "TD-271": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6250,
+    "end_line": 6268,
+    "level": 2
+  },
+  "TD-272": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6268,
+    "end_line": 6280,
+    "level": 2
+  },
+  "TD-273": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6280,
+    "end_line": 6310,
+    "level": 2
+  },
+  "TD-274": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6310,
+    "end_line": 6333,
+    "level": 2
+  },
+  "TD-275": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6333,
+    "end_line": 6335,
+    "level": 2
+  },
+  "TD-275.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6335,
+    "end_line": 6343,
+    "level": 3
+  },
+  "TD-275.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6343,
+    "end_line": 6350,
+    "level": 3
+  },
+  "TD-275.3": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6350,
+    "end_line": 6356,
+    "level": 3
+  },
+  "TD-275.4": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6356,
+    "end_line": 6362,
+    "level": 3
+  },
+  "TD-276": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6362,
+    "end_line": 6435,
+    "level": 2
+  },
+  "TD-277": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6435,
+    "end_line": 6449,
+    "level": 2
+  },
+  "TD-278": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6449,
+    "end_line": 6492,
+    "level": 2
+  },
+  "TD-279": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6492,
+    "end_line": 6498,
+    "level": 2
+  },
+  "TD-280": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6498,
+    "end_line": 6512,
+    "level": 2
+  },
+  "TD-281": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6512,
+    "end_line": 6518,
+    "level": 2
+  },
+  "TD-282": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6518,
+    "end_line": 6533,
+    "level": 2
+  },
+  "TD-283": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6533,
+    "end_line": 6540,
+    "level": 2
+  },
+  "TD-284": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6540,
+    "end_line": 6560,
+    "level": 2
+  },
+  "TD-285": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6560,
+    "end_line": 6567,
+    "level": 2
+  },
+  "TD-286": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6567,
+    "end_line": 6576,
+    "level": 2
+  },
+  "TD-287": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6576,
+    "end_line": 6604,
+    "level": 2
+  },
+  "TD-288": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6604,
+    "end_line": 6619,
+    "level": 2
+  },
+  "TD-289": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6619,
+    "end_line": 6659,
+    "level": 2
+  },
+  "TD-290": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6659,
+    "end_line": 6679,
+    "level": 2
+  },
+  "TD-291": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6679,
+    "end_line": 6681,
+    "level": 2
+  },
+  "TD-291.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6681,
+    "end_line": 6772,
+    "level": 3
+  },
+  "TD-291.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6772,
+    "end_line": 6778,
+    "level": 3
+  },
+  "TD-291.3": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6778,
+    "end_line": 6784,
+    "level": 3
+  },
+  "TD-292": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6784,
+    "end_line": 6786,
+    "level": 2
+  },
+  "TD-292.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6786,
+    "end_line": 6796,
+    "level": 3
+  },
+  "TD-292.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6796,
+    "end_line": 6814,
+    "level": 3
+  },
+  "TD-293": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6814,
+    "end_line": 6826,
+    "level": 2
+  },
+  "TD-294": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6826,
+    "end_line": 6828,
+    "level": 2
+  },
+  "TD-294.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6828,
+    "end_line": 6842,
+    "level": 3
+  },
+  "TD-294.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6842,
+    "end_line": 6847,
+    "level": 3
+  },
+  "TD-294.3": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6847,
+    "end_line": 6855,
+    "level": 3
+  },
+  "TD-295": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6855,
+    "end_line": 6857,
+    "level": 2
+  },
+  "TD-295.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6857,
+    "end_line": 6866,
+    "level": 3
+  },
+  "TD-295.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6866,
+    "end_line": 6874,
+    "level": 3
+  },
+  "TD-296": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6874,
+    "end_line": 6883,
+    "level": 2
+  },
+  "TD-297": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6883,
+    "end_line": 6885,
+    "level": 2
+  },
+  "TD-297.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6885,
+    "end_line": 6899,
+    "level": 3
+  },
+  "TD-297.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6899,
+    "end_line": 6905,
+    "level": 3
+  },
+  "TD-297.3": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6905,
+    "end_line": 6911,
+    "level": 3
+  },
+  "TD-298": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6911,
+    "end_line": 6938,
+    "level": 2
+  },
+  "TD-299": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6938,
+    "end_line": 6948,
+    "level": 2
+  },
+  "TD-300": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6948,
+    "end_line": 6955,
+    "level": 2
+  },
+  "TD-301": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6955,
+    "end_line": 6964,
+    "level": 2
+  },
+  "TD-302": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6964,
+    "end_line": 6973,
+    "level": 2
+  },
+  "TD-303": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 6973,
+    "end_line": 7013,
+    "level": 2
+  },
+  "TD-304": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 7013,
+    "end_line": 7020,
+    "level": 2
+  },
+  "TD-305": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 7020,
+    "end_line": 7056,
+    "level": 2
+  },
+  "TD-306": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 7056,
+    "end_line": 7158,
+    "level": 2
+  },
+  "TD-307": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 7158,
+    "end_line": 7178,
+    "level": 2
+  },
+  "TD-308": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 7178,
+    "end_line": 7247,
+    "level": 2
+  },
+  "TD-309": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 7247,
+    "end_line": 7269,
+    "level": 2
+  },
+  "TD-310": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 7269,
+    "end_line": 7305,
+    "level": 2
+  },
+  "TD-311": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 7305,
+    "end_line": 7343,
+    "level": 2
+  },
+  "TD-312": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 7343,
+    "end_line": 7390,
+    "level": 2
+  },
+  "TD-313": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 7390,
+    "end_line": 7404,
+    "level": 2
+  },
+  "TD-314": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 7404,
+    "end_line": 7503,
+    "level": 2
+  },
+  "TD-315": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 7503,
+    "end_line": 7540,
+    "level": 2
+  },
+  "TD-316": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 7540,
+    "end_line": 7605,
+    "level": 2
+  },
+  "TD-317": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 7605,
+    "end_line": 7653,
+    "level": 2
+  },
+  "TD-318": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 7653,
+    "end_line": 7670,
+    "level": 2
+  },
+  "TD-319": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 7670,
+    "end_line": 7696,
+    "level": 2
+  },
+  "TD-320": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 7696,
+    "end_line": 7722,
+    "level": 2
+  },
+  "TD-321": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 7722,
+    "end_line": 7746,
+    "level": 2
+  },
+  "TD-322": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 7746,
+    "end_line": 7754,
+    "level": 2
+  },
+  "TD-323": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 7754,
+    "end_line": 7781,
+    "level": 2
+  },
+  "TD-324": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 7781,
+    "end_line": 7795,
+    "level": 2
+  },
+  "TD-325": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 7795,
+    "end_line": 7799,
+    "level": 2
+  },
+  "TD-325.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 7799,
+    "end_line": 7832,
+    "level": 3
+  },
+  "TD-325.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 7832,
+    "end_line": 7850,
+    "level": 3
+  },
+  "TD-325.3": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 7850,
+    "end_line": 7866,
+    "level": 3
+  },
+  "TD-326": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 7866,
+    "end_line": 7888,
+    "level": 2
+  },
+  "TD-327": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 7888,
+    "end_line": 7914,
+    "level": 2
+  },
+  "TD-328": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 7914,
+    "end_line": 7935,
+    "level": 2
+  },
+  "TD-329": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 7935,
+    "end_line": 7944,
+    "level": 2
+  },
+  "TD-330": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 7944,
+    "end_line": 7978,
+    "level": 2
+  },
+  "TD-331": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 7978,
+    "end_line": 7987,
+    "level": 2
+  },
+  "TD-332": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 7987,
+    "end_line": 7995,
+    "level": 2
+  },
+  "TD-333": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 7995,
+    "end_line": 8002,
+    "level": 2
+  },
+  "TD-334": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8002,
+    "end_line": 8013,
+    "level": 2
+  },
+  "TD-335": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8013,
+    "end_line": 8020,
+    "level": 2
+  },
+  "TD-336": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8020,
+    "end_line": 8030,
+    "level": 2
+  },
+  "TD-337": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8030,
+    "end_line": 8044,
+    "level": 2
+  },
+  "TD-338": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8044,
+    "end_line": 8087,
+    "level": 2
+  },
+  "TD-339": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8087,
+    "end_line": 8122,
+    "level": 2
+  },
+  "TD-340": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8122,
+    "end_line": 8139,
+    "level": 2
+  },
+  "TD-341": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8139,
+    "end_line": 8192,
+    "level": 2
+  },
+  "TD-342": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8192,
+    "end_line": 8234,
+    "level": 2
+  },
+  "TD-343": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8234,
+    "end_line": 8262,
+    "level": 2
+  },
+  "TD-344": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8262,
+    "end_line": 8289,
+    "level": 2
+  },
+  "TD-345": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8289,
+    "end_line": 8302,
+    "level": 2
+  },
+  "TD-346": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8302,
+    "end_line": 8309,
+    "level": 2
+  },
+  "TD-347": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8309,
+    "end_line": 8329,
+    "level": 2
+  },
+  "TD-348": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8329,
+    "end_line": 8340,
+    "level": 2
+  },
+  "TD-349": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8340,
+    "end_line": 8357,
+    "level": 2
+  },
+  "TD-350": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8357,
+    "end_line": 8363,
+    "level": 2
+  },
+  "TD-351": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8363,
+    "end_line": 8371,
+    "level": 2
+  },
+  "TD-352": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8371,
+    "end_line": 8387,
+    "level": 2
+  },
+  "TD-353": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8387,
+    "end_line": 8394,
+    "level": 2
+  },
+  "TD-354": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8394,
+    "end_line": 8411,
+    "level": 2
+  },
+  "TD-355": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8411,
+    "end_line": 8421,
+    "level": 2
+  },
+  "TD-356": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8421,
+    "end_line": 8448,
+    "level": 2
+  },
+  "TD-357": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8448,
+    "end_line": 8471,
+    "level": 2
+  },
+  "TD-358": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8471,
+    "end_line": 8487,
+    "level": 2
+  },
+  "TD-359": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8487,
+    "end_line": 8494,
+    "level": 2
+  },
+  "TD-360": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8494,
+    "end_line": 8512,
+    "level": 2
+  },
+  "TD-361": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8512,
+    "end_line": 8525,
+    "level": 2
+  },
+  "TD-362": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8525,
+    "end_line": 8544,
+    "level": 2
+  },
+  "TD-363": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8544,
+    "end_line": 8563,
+    "level": 2
+  },
+  "TD-364": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8563,
+    "end_line": 8590,
+    "level": 2
+  },
+  "TD-365": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8590,
+    "end_line": 8597,
+    "level": 2
+  },
+  "TD-366": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8597,
+    "end_line": 8611,
+    "level": 2
+  },
+  "TD-367": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8611,
+    "end_line": 8626,
+    "level": 2
+  },
+  "TD-368": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8626,
+    "end_line": 8637,
+    "level": 2
+  },
+  "TD-369": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8637,
+    "end_line": 8644,
+    "level": 2
+  },
+  "TD-370": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8644,
+    "end_line": 8660,
+    "level": 2
+  },
+  "TD-371": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8660,
+    "end_line": 8686,
+    "level": 2
+  },
+  "TD-372": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8686,
+    "end_line": 8702,
+    "level": 2
+  },
+  "TD-373": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8702,
+    "end_line": 8727,
+    "level": 2
+  },
+  "TD-374": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8727,
+    "end_line": 8741,
+    "level": 2
+  },
+  "TD-375": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8741,
+    "end_line": 8758,
+    "level": 2
+  },
+  "TD-376": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8758,
+    "end_line": 8773,
+    "level": 2
+  },
+  "TD-377": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8773,
+    "end_line": 8785,
+    "level": 2
+  },
+  "TD-378": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8785,
+    "end_line": 8798,
+    "level": 2
+  },
+  "TD-379": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8798,
+    "end_line": 8818,
+    "level": 2
+  },
+  "TD-380": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8818,
+    "end_line": 8829,
+    "level": 2
+  },
+  "TD-381": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8829,
+    "end_line": 8839,
+    "level": 2
+  },
+  "TD-382": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8839,
+    "end_line": 8850,
+    "level": 2
+  },
+  "TD-383": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8850,
+    "end_line": 8864,
+    "level": 2
+  },
+  "TD-384": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8864,
+    "end_line": 8878,
+    "level": 2
+  },
+  "TD-385": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8878,
+    "end_line": 8894,
+    "level": 2
+  },
+  "TD-385.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8894,
+    "end_line": 8902,
+    "level": 3
+  },
+  "TD-386": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8902,
+    "end_line": 8911,
+    "level": 2
+  },
+  "TD-387": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8911,
+    "end_line": 8932,
+    "level": 2
+  },
+  "TD-388": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8932,
+    "end_line": 8946,
+    "level": 2
+  },
+  "TD-389": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8946,
+    "end_line": 8956,
+    "level": 2
+  },
+  "TD-390": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8956,
+    "end_line": 8988,
+    "level": 2
+  },
+  "TD-391": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 8988,
+    "end_line": 9024,
+    "level": 2
+  },
+  "TD-392": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9024,
+    "end_line": 9045,
+    "level": 2
+  },
+  "TD-393": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9045,
+    "end_line": 9063,
+    "level": 2
+  },
+  "TD-394": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9063,
+    "end_line": 9075,
+    "level": 2
+  },
+  "TD-395": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9075,
+    "end_line": 9103,
+    "level": 2
+  },
+  "TD-396": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9103,
+    "end_line": 9121,
+    "level": 2
+  },
+  "TD-397": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9121,
+    "end_line": 9140,
+    "level": 2
+  },
+  "TD-398": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9140,
+    "end_line": 9152,
+    "level": 2
+  },
+  "TD-399": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9152,
+    "end_line": 9168,
+    "level": 2
+  },
+  "TD-400": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9168,
+    "end_line": 9174,
+    "level": 2
+  },
+  "TD-401": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9174,
+    "end_line": 9185,
+    "level": 2
+  },
+  "TD-402": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9185,
+    "end_line": 9191,
+    "level": 2
+  },
+  "TD-403": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9191,
+    "end_line": 9198,
+    "level": 2
+  },
+  "TD-404": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9198,
+    "end_line": 9216,
+    "level": 2
+  },
+  "TD-405": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9216,
+    "end_line": 9225,
+    "level": 2
+  },
+  "TD-406": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9225,
+    "end_line": 9236,
+    "level": 2
+  },
+  "TD-407": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9236,
+    "end_line": 9283,
+    "level": 2
+  },
+  "TD-408": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9283,
+    "end_line": 9319,
+    "level": 2
+  },
+  "TD-409": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9319,
+    "end_line": 9325,
+    "level": 2
+  },
+  "TD-410": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9325,
+    "end_line": 9332,
+    "level": 2
+  },
+  "TD-411": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9332,
+    "end_line": 9347,
+    "level": 2
+  },
+  "TD-412": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9347,
+    "end_line": 9364,
+    "level": 2
+  },
+  "TD-413": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9364,
+    "end_line": 9370,
+    "level": 2
+  },
+  "TD-414": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9370,
+    "end_line": 9384,
+    "level": 2
+  },
+  "TD-415": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9384,
+    "end_line": 9390,
+    "level": 2
+  },
+  "TD-416": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9390,
+    "end_line": 9399,
+    "level": 2
+  },
+  "TD-417": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9399,
+    "end_line": 9405,
+    "level": 2
+  },
+  "TD-418": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9405,
+    "end_line": 9411,
+    "level": 2
+  },
+  "TD-419": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9411,
+    "end_line": 9416,
+    "level": 2
+  },
+  "TD-420": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9416,
+    "end_line": 9427,
+    "level": 2
+  },
+  "TD-421": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9427,
+    "end_line": 9434,
+    "level": 2
+  },
+  "TD-422": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9434,
+    "end_line": 9448,
+    "level": 2
+  },
+  "TD-423": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9448,
+    "end_line": 9514,
+    "level": 2
+  },
+  "TD-424": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9514,
+    "end_line": 9535,
+    "level": 2
+  },
+  "TD-425": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9535,
+    "end_line": 9553,
+    "level": 2
+  },
+  "TD-426": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9553,
+    "end_line": 9574,
+    "level": 2
+  },
+  "TD-427": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9574,
+    "end_line": 9592,
+    "level": 2
+  },
+  "TD-428": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9592,
+    "end_line": 9598,
+    "level": 2
+  },
+  "TD-429": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9598,
+    "end_line": 9604,
+    "level": 2
+  },
+  "TD-430": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9604,
+    "end_line": 9611,
+    "level": 2
+  },
+  "TD-431": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9611,
+    "end_line": 9629,
+    "level": 2
+  },
+  "TD-432": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9629,
+    "end_line": 9637,
+    "level": 2
+  },
+  "TD-433": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9637,
+    "end_line": 9671,
+    "level": 2
+  },
+  "TD-434": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9671,
+    "end_line": 9681,
+    "level": 2
+  },
+  "TD-435": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9681,
+    "end_line": 9696,
+    "level": 2
+  },
+  "TD-436": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9696,
+    "end_line": 9706,
+    "level": 2
+  },
+  "TD-437": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9706,
+    "end_line": 9721,
+    "level": 2
+  },
+  "TD-438": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9721,
+    "end_line": 9785,
+    "level": 2
+  },
+  "TD-439": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9785,
+    "end_line": 9787,
+    "level": 2
+  },
+  "TD-439.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9787,
+    "end_line": 9794,
+    "level": 3
+  },
+  "TD-439.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9794,
+    "end_line": 9798,
+    "level": 3
+  },
+  "TD-439.3": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9798,
+    "end_line": 9816,
+    "level": 3
+  },
+  "TD-440": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9816,
+    "end_line": 9836,
+    "level": 2
+  },
+  "TD-441": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9836,
+    "end_line": 9850,
+    "level": 2
+  },
+  "TD-442": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9850,
+    "end_line": 9880,
+    "level": 2
+  },
+  "TD-443": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9880,
+    "end_line": 9898,
+    "level": 2
+  },
+  "TD-444": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9898,
+    "end_line": 9908,
+    "level": 2
+  },
+  "TD-445": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9908,
+    "end_line": 9921,
+    "level": 2
+  },
+  "TD-446": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9921,
+    "end_line": 9927,
+    "level": 2
+  },
+  "TD-447": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9927,
+    "end_line": 9949,
+    "level": 2
+  },
+  "TD-448": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9949,
+    "end_line": 9974,
+    "level": 2
+  },
+  "TD-449": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9974,
+    "end_line": 9981,
+    "level": 2
+  },
+  "TD-450": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9981,
+    "end_line": 9992,
+    "level": 2
+  },
+  "TD-451": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9992,
+    "end_line": 9999,
+    "level": 2
+  },
+  "TD-452": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 9999,
+    "end_line": 10020,
+    "level": 2
+  },
+  "TD-453": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10020,
+    "end_line": 10045,
+    "level": 2
+  },
+  "TD-454": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10045,
+    "end_line": 10051,
+    "level": 2
+  },
+  "TD-454.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10051,
+    "end_line": 10096,
+    "level": 3
+  },
+  "TD-454.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10096,
+    "end_line": 10108,
+    "level": 3
+  },
+  "TD-455": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10108,
+    "end_line": 10191,
+    "level": 2
+  },
+  "TD-456": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10191,
+    "end_line": 10202,
+    "level": 2
+  },
+  "TD-457": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10202,
+    "end_line": 10218,
+    "level": 2
+  },
+  "TD-458": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10218,
+    "end_line": 10235,
+    "level": 2
+  },
+  "TD-459": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10235,
+    "end_line": 10243,
+    "level": 2
+  },
+  "TD-460": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10243,
+    "end_line": 10259,
+    "level": 2
+  },
+  "TD-461": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10259,
+    "end_line": 10275,
+    "level": 2
+  },
+  "TD-462": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10275,
+    "end_line": 10281,
+    "level": 2
+  },
+  "TD-463": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10281,
+    "end_line": 10287,
+    "level": 2
+  },
+  "TD-464": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10287,
+    "end_line": 10291,
+    "level": 2
+  },
+  "TD-465": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10291,
+    "end_line": 10297,
+    "level": 2
+  },
+  "TD-466": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10297,
+    "end_line": 10304,
+    "level": 2
+  },
+  "TD-467": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10304,
+    "end_line": 10310,
+    "level": 2
+  },
+  "TD-468": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10310,
+    "end_line": 10334,
+    "level": 2
+  },
+  "TD-469": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10334,
+    "end_line": 10341,
+    "level": 2
+  },
+  "TD-470": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10341,
+    "end_line": 10380,
+    "level": 2
+  },
+  "TD-471": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10380,
+    "end_line": 10402,
+    "level": 2
+  },
+  "TD-472": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10402,
+    "end_line": 10429,
+    "level": 2
+  },
+  "TD-473": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10429,
+    "end_line": 10488,
+    "level": 2
+  },
+  "TD-474": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10488,
+    "end_line": 10555,
+    "level": 2
+  },
+  "TD-475": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10555,
+    "end_line": 10577,
+    "level": 2
+  },
+  "TD-476": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10577,
+    "end_line": 10591,
+    "level": 2
+  },
+  "TD-477": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10591,
+    "end_line": 10602,
+    "level": 2
+  },
+  "TD-478": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10602,
+    "end_line": 10616,
+    "level": 2
+  },
+  "TD-479": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10616,
+    "end_line": 10624,
+    "level": 2
+  },
+  "TD-480": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10624,
+    "end_line": 10642,
+    "level": 2
+  },
+  "TD-481": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10642,
+    "end_line": 10650,
+    "level": 2
+  },
+  "TD-482": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10650,
+    "end_line": 10655,
+    "level": 2
+  },
+  "TD-483": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10655,
+    "end_line": 10687,
+    "level": 2
+  },
+  "TD-484": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10687,
+    "end_line": 10695,
+    "level": 2
+  },
+  "TD-485": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10695,
+    "end_line": 10702,
+    "level": 2
+  },
+  "TD-486": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10702,
+    "end_line": 10736,
+    "level": 2
+  },
+  "TD-486.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10736,
+    "end_line": 10756,
+    "level": 3
+  },
+  "TD-486.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10756,
+    "end_line": 10778,
+    "level": 3
+  },
+  "TD-486.3": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10778,
+    "end_line": 10793,
+    "level": 3
+  },
+  "TD-486.4": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10793,
+    "end_line": 10803,
+    "level": 3
+  },
+  "TD-486.5": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10803,
+    "end_line": 10812,
+    "level": 3
+  },
+  "TD-486.6": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10812,
+    "end_line": 10822,
+    "level": 3
+  },
+  "TD-486.7": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10822,
+    "end_line": 10836,
+    "level": 3
+  },
+  "TD-486.8": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10836,
+    "end_line": 10854,
+    "level": 3
+  },
+  "TD-486.9": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10854,
+    "end_line": 10861,
+    "level": 3
+  },
+  "TD-486.10": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10861,
+    "end_line": 10869,
+    "level": 3
+  },
+  "TD-486.11": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10869,
+    "end_line": 10877,
+    "level": 3
+  },
+  "TD-486.12": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10877,
+    "end_line": 10890,
+    "level": 3
+  },
+  "TD-486.13": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10890,
+    "end_line": 10903,
+    "level": 3
+  },
+  "TD-487": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10903,
+    "end_line": 10911,
+    "level": 2
+  },
+  "TD-488": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10911,
+    "end_line": 10938,
+    "level": 2
+  },
+  "TD-489": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10938,
+    "end_line": 10945,
+    "level": 2
+  },
+  "TD-490": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10945,
+    "end_line": 10991,
+    "level": 2
+  },
+  "TD-491": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10991,
+    "end_line": 10993,
+    "level": 2
+  },
+  "TD-491.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10993,
+    "end_line": 10999,
+    "level": 3
+  },
+  "TD-491.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 10999,
+    "end_line": 11005,
+    "level": 3
+  },
+  "TD-491.3": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11005,
+    "end_line": 11012,
+    "level": 3
+  },
+  "TD-491.4": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11012,
+    "end_line": 11018,
+    "level": 3
+  },
+  "TD-491.5": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11018,
+    "end_line": 11022,
+    "level": 3
+  },
+  "TD-491.6": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11022,
+    "end_line": 11026,
+    "level": 3
+  },
+  "TD-491.7": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11026,
+    "end_line": 11031,
+    "level": 3
+  },
+  "TD-491.8": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11031,
+    "end_line": 11037,
+    "level": 3
+  },
+  "TD-492": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11037,
+    "end_line": 11072,
+    "level": 2
+  },
+  "TD-493": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11072,
+    "end_line": 11078,
+    "level": 2
+  },
+  "TD-494": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11078,
+    "end_line": 11091,
+    "level": 2
+  },
+  "TD-495": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11091,
+    "end_line": 11096,
+    "level": 2
+  },
+  "TD-496": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11096,
+    "end_line": 11101,
+    "level": 2
+  },
+  "TD-497": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11101,
+    "end_line": 11106,
+    "level": 2
+  },
+  "TD-498": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11106,
+    "end_line": 11112,
+    "level": 2
+  },
+  "TD-499": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11112,
+    "end_line": 11125,
+    "level": 2
+  },
+  "TD-500": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11125,
+    "end_line": 11132,
+    "level": 2
+  },
+  "TD-501": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11132,
+    "end_line": 11149,
+    "level": 2
+  },
+  "TD-502": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11149,
+    "end_line": 11158,
+    "level": 2
+  },
+  "TD-503": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11158,
+    "end_line": 11171,
+    "level": 2
+  },
+  "TD-504": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11171,
+    "end_line": 11194,
+    "level": 2
+  },
+  "TD-505": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11194,
+    "end_line": 11211,
+    "level": 2
+  },
+  "TD-506": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11211,
+    "end_line": 11230,
+    "level": 2
+  },
+  "TD-507": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11230,
+    "end_line": 11232,
+    "level": 2
+  },
+  "TD-507.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11232,
+    "end_line": 11250,
+    "level": 3
+  },
+  "TD-507.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11250,
+    "end_line": 11255,
+    "level": 3
+  },
+  "TD-507.3": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11255,
+    "end_line": 11259,
+    "level": 3
+  },
+  "TD-508": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11259,
+    "end_line": 11267,
+    "level": 2
+  },
+  "TD-509": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11267,
+    "end_line": 11273,
+    "level": 2
+  },
+  "TD-510": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11273,
+    "end_line": 11279,
+    "level": 2
+  },
+  "TD-511": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11279,
+    "end_line": 11288,
+    "level": 2
+  },
+  "TD-512": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11288,
+    "end_line": 11301,
+    "level": 2
+  },
+  "TD-513": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11301,
+    "end_line": 11320,
+    "level": 2
+  },
+  "TD-514": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11320,
+    "end_line": 11326,
+    "level": 2
+  },
+  "TD-515": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11326,
+    "end_line": 11333,
+    "level": 2
+  },
+  "TD-516": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11333,
+    "end_line": 11339,
+    "level": 2
+  },
+  "TD-517": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11339,
+    "end_line": 11349,
+    "level": 2
+  },
+  "TD-518": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11349,
+    "end_line": 11361,
+    "level": 2
+  },
+  "TD-519": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11361,
+    "end_line": 11376,
+    "level": 2
+  },
+  "TD-520": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11376,
+    "end_line": 11384,
+    "level": 2
+  },
+  "TD-521": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11384,
+    "end_line": 11411,
+    "level": 2
+  },
+  "TD-522": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11411,
+    "end_line": 11417,
+    "level": 2
+  },
+  "TD-523": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11417,
+    "end_line": 11463,
+    "level": 2
+  },
+  "TD-524": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11463,
+    "end_line": 11465,
+    "level": 2
+  },
+  "TD-524.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11465,
+    "end_line": 11470,
+    "level": 3
+  },
+  "TD-524.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11470,
+    "end_line": 11475,
+    "level": 3
+  },
+  "TD-524.3": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11475,
+    "end_line": 11482,
+    "level": 3
+  },
+  "TD-524.4": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11482,
+    "end_line": 11488,
+    "level": 3
+  },
+  "TD-524.5": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11488,
+    "end_line": 11492,
+    "level": 3
+  },
+  "TD-524.6": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11492,
+    "end_line": 11496,
+    "level": 3
+  },
+  "TD-524.7": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11496,
+    "end_line": 11501,
+    "level": 3
+  },
+  "TD-524.8": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11501,
+    "end_line": 11506,
+    "level": 3
+  },
+  "TD-525": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11506,
+    "end_line": 11541,
+    "level": 2
+  },
+  "TD-526": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11541,
+    "end_line": 11547,
+    "level": 2
+  },
+  "TD-527": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11547,
+    "end_line": 11560,
+    "level": 2
+  },
+  "TD-528": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11560,
+    "end_line": 11565,
+    "level": 2
+  },
+  "TD-529": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11565,
+    "end_line": 11570,
+    "level": 2
+  },
+  "TD-530": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11570,
+    "end_line": 11575,
+    "level": 2
+  },
+  "TD-531": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11575,
+    "end_line": 11580,
+    "level": 2
+  },
+  "TD-532": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11580,
+    "end_line": 11593,
+    "level": 2
+  },
+  "TD-533": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11593,
+    "end_line": 11600,
+    "level": 2
+  },
+  "TD-534": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11600,
+    "end_line": 11617,
+    "level": 2
+  },
+  "TD-535": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11617,
+    "end_line": 11639,
+    "level": 2
+  },
+  "TD-536": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11639,
+    "end_line": 11648,
+    "level": 2
+  },
+  "TD-537": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11648,
+    "end_line": 11689,
+    "level": 2
+  },
+  "TD-538": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11689,
+    "end_line": 11737,
+    "level": 2
+  },
+  "TD-539": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11737,
+    "end_line": 11767,
+    "level": 2
+  },
+  "TD-540": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11767,
+    "end_line": 11780,
+    "level": 2
+  },
+  "TD-541": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11780,
+    "end_line": 11787,
+    "level": 2
+  },
+  "TD-542": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11787,
+    "end_line": 11796,
+    "level": 2
+  },
+  "TD-543": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11796,
+    "end_line": 11803,
+    "level": 2
+  },
+  "TD-544": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11803,
+    "end_line": 11809,
+    "level": 2
+  },
+  "TD-545": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11809,
+    "end_line": 11821,
+    "level": 2
+  },
+  "TD-546": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11821,
+    "end_line": 11845,
+    "level": 2
+  },
+  "TD-547": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11845,
+    "end_line": 11852,
+    "level": 2
+  },
+  "TD-548": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 11852,
+    "end_line": 11887,
+    "level": 2
+  },
+  "TD-549": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 12270,
+    "end_line": 12288,
+    "level": 2
+  },
+  "TD-550": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 12288,
+    "end_line": 12296,
+    "level": 2
+  },
+  "TD-551": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 12296,
+    "end_line": 12406,
+    "level": 2
+  },
+  "TD-552": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 12406,
+    "end_line": 12465,
+    "level": 2
+  },
+  "TD-553": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 12465,
+    "end_line": 12467,
+    "level": 2
+  },
+  "TD-553.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 12467,
+    "end_line": 12477,
+    "level": 3
+  },
+  "TD-553.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 12477,
+    "end_line": 12483,
+    "level": 3
+  },
+  "TD-553.3": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 12483,
+    "end_line": 12489,
+    "level": 3
+  },
+  "TD-554": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 12489,
+    "end_line": 12505,
+    "level": 2
+  },
+  "TD-555": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 12505,
+    "end_line": 12522,
+    "level": 2
+  },
+  "TD-556": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 12522,
+    "end_line": 12531,
+    "level": 2
+  },
+  "TD-557": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 12531,
+    "end_line": 12551,
+    "level": 2
+  },
+  "TD-558": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 12551,
+    "end_line": 12557,
+    "level": 2
+  },
+  "TD-559": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 12557,
+    "end_line": 12574,
+    "level": 2
+  },
+  "TD-560": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 12574,
+    "end_line": 12579,
+    "level": 2
+  },
+  "TD-561": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 12579,
+    "end_line": 12585,
+    "level": 2
+  },
+  "TD-562": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 12585,
+    "end_line": 12590,
+    "level": 2
+  },
+  "TD-563": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 12590,
+    "end_line": 12599,
+    "level": 2
+  },
+  "TD-564": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 12216,
+    "end_line": 12245,
+    "level": 2
+  },
+  "TD-565": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 12245,
+    "end_line": 12270,
+    "level": 2
+  },
+  "TD-566": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 12599,
+    "end_line": 12628,
+    "level": 2
+  },
+  "TD-567": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 12628,
+    "end_line": 12651,
+    "level": 2
+  },
+  "TD-568": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 12651,
+    "end_line": 12663,
+    "level": 2
+  },
+  "TD-569": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 12663,
+    "end_line": 12679,
+    "level": 2
+  },
+  "TD-570": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 12679,
+    "end_line": 12763,
+    "level": 2
+  },
+  "TD-571": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 12763,
+    "end_line": 12820,
+    "level": 2
+  },
+  "TD-572": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 12820,
+    "end_line": 12836,
+    "level": 2
+  },
+  "TD-573": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 12836,
+    "end_line": 12881,
+    "level": 2
+  },
+  "TD-574": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 12881,
+    "end_line": 12888,
+    "level": 2
+  },
+  "TD-575": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 12888,
+    "end_line": 12895,
+    "level": 2
+  },
+  "TD-576": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 12895,
+    "end_line": 12901,
+    "level": 2
+  },
+  "TD-577": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 12901,
+    "end_line": 12907,
+    "level": 2
+  },
+  "TD-578": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 12907,
+    "end_line": 12914,
+    "level": 2
+  },
+  "TD-579": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 12914,
+    "end_line": 12923,
+    "level": 2
+  },
+  "TD-580": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 12923,
+    "end_line": 12936,
+    "level": 2
+  },
+  "TD-581": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 12936,
+    "end_line": 12952,
+    "level": 2
+  },
+  "TD-581.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 12952,
+    "end_line": 12966,
+    "level": 3
+  },
+  "TD-581.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 12966,
+    "end_line": 12978,
+    "level": 3
+  },
+  "TD-581.3": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 12978,
+    "end_line": 12993,
+    "level": 3
+  },
+  "TD-581.4": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 12993,
+    "end_line": 13008,
+    "level": 3
+  },
+  "TD-581.5": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13008,
+    "end_line": 13021,
+    "level": 3
+  },
+  "TD-581.6": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13021,
+    "end_line": 13033,
+    "level": 3
+  },
+  "TD-581.7": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13033,
+    "end_line": 13045,
+    "level": 3
+  },
+  "TD-582": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13045,
+    "end_line": 13087,
+    "level": 2
+  },
+  "TD-583": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13087,
+    "end_line": 13103,
+    "level": 2
+  },
+  "TD-584": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13103,
+    "end_line": 13128,
+    "level": 2
+  },
+  "TD-585": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13128,
+    "end_line": 13138,
+    "level": 2
+  },
+  "TD-586": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13138,
+    "end_line": 13145,
+    "level": 2
+  },
+  "TD-587": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13145,
+    "end_line": 13168,
+    "level": 2
+  },
+  "TD-588": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13168,
+    "end_line": 13175,
+    "level": 2
+  },
+  "TD-589": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13175,
+    "end_line": 13191,
+    "level": 2
+  },
+  "TD-590": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13191,
+    "end_line": 13200,
+    "level": 2
+  },
+  "TD-591": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13200,
+    "end_line": 13209,
+    "level": 2
+  },
+  "TD-592": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13209,
+    "end_line": 13218,
+    "level": 2
+  },
+  "TD-593": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13218,
+    "end_line": 13225,
+    "level": 2
+  },
+  "TD-594": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13225,
+    "end_line": 13239,
+    "level": 2
+  },
+  "TD-595": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13239,
+    "end_line": 13267,
+    "level": 2
+  },
+  "TD-596": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13267,
+    "end_line": 13289,
+    "level": 2
+  },
+  "TD-596.1": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13289,
+    "end_line": 13323,
+    "level": 3
+  },
+  "TD-596.2": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13323,
+    "end_line": 13354,
+    "level": 3
+  },
+  "TD-596.3": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13354,
+    "end_line": 13396,
+    "level": 3
+  },
+  "TD-596.4": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13396,
+    "end_line": 13447,
+    "level": 3
+  },
+  "TD-596.5": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13447,
+    "end_line": 13465,
+    "level": 3
+  },
+  "TD-596.6": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13465,
+    "end_line": 13484,
+    "level": 3
+  },
+  "TD-596.7": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13484,
+    "end_line": 13496,
+    "level": 3
+  },
+  "TD-596.8": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13496,
+    "end_line": 13510,
+    "level": 3
+  },
+  "TD-596.9": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13510,
+    "end_line": 13524,
+    "level": 3
+  },
+  "TD-596.10": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13524,
+    "end_line": 13536,
+    "level": 3
+  },
+  "TD-596.11": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13536,
+    "end_line": 13554,
+    "level": 3
+  },
+  "TD-596.12": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13554,
+    "end_line": 13567,
+    "level": 3
+  },
+  "TD-596.13": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13567,
+    "end_line": 13595,
+    "level": 3
+  },
+  "TD-596.14": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13595,
+    "end_line": 13607,
+    "level": 3
+  },
+  "TD-596.15": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13607,
+    "end_line": 13622,
+    "level": 3
+  },
+  "TD-597": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13622,
+    "end_line": 13648,
+    "level": 2
+  },
+  "TD-598": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13648,
+    "end_line": 13665,
+    "level": 2
+  },
+  "TD-599": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13665,
+    "end_line": 13681,
+    "level": 2
+  },
+  "TD-600": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13681,
+    "end_line": 13754,
+    "level": 2
+  },
+  "TD-601": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13754,
+    "end_line": 13777,
+    "level": 2
+  },
+  "TD-602": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13777,
+    "end_line": 13811,
+    "level": 2
+  },
+  "TD-603": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13811,
+    "end_line": 13847,
+    "level": 2
+  },
+  "TD-604": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13847,
+    "end_line": 13857,
+    "level": 2
+  },
+  "TD-605": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13857,
+    "end_line": 13883,
+    "level": 2
+  },
+  "TD-606": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13883,
+    "end_line": 13889,
+    "level": 2
+  },
+  "TD-607": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13889,
+    "end_line": 13897,
+    "level": 2
+  },
+  "TD-608": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13897,
+    "end_line": 13904,
+    "level": 2
+  },
+  "TD-609": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13904,
+    "end_line": 13913,
+    "level": 2
+  },
+  "TD-610": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13913,
+    "end_line": 13941,
+    "level": 2
+  },
+  "TD-611": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13941,
+    "end_line": 13952,
+    "level": 2
+  },
+  "TD-612": {
+    "path": "docs/blueprints/tech/TD-all.md",
+    "start_line": 13952,
+    "end_line": 13975,
+    "level": 2
+  }
+}

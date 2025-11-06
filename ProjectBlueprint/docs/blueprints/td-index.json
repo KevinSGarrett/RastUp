@@ -1,1 +1,4808 @@
-{}
+{
+  "TD-1": {
+    "title": "**1.2.A Surfaces & UX contract**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-1",
+    "parent": ""
+  },
+  "TD-2": {
+    "title": "**1.2.B Engine & collections**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-2",
+    "parent": ""
+  },
+  "TD-3": {
+    "title": "**1.2.C Index schema (canonical)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-3",
+    "parent": ""
+  },
+  "TD-4": {
+    "title": "**1.2.D Analyzers & normalization**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-4",
+    "parent": ""
+  },
+  "TD-5": {
+    "title": "**1.2.E Filters & UI chips**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-5",
+    "parent": ""
+  },
+  "TD-6": {
+    "title": "**1.2.F Query grammar & API contracts**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-6",
+    "parent": ""
+  },
+  "TD-7": {
+    "title": "**1.2.G Ranking & fairness**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-7",
+    "parent": ""
+  },
+  "TD-8": {
+    "title": "**1.2.H Promotions integrity (invalid‑click handling)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-8",
+    "parent": ""
+  },
+  "TD-9": {
+    "title": "**1.2.I Caching, rate limits, and SLOs**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-9",
+    "parent": ""
+  },
+  "TD-10": {
+    "title": "**1.2.J Ingestion & update pipeline**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-10",
+    "parent": ""
+  },
+  "TD-11": {
+    "title": "**1.2.K Telemetry & analytics**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-11",
+    "parent": ""
+  },
+  "TD-12": {
+    "title": "**1.2.L Admin tools (console)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-12",
+    "parent": ""
+  },
+  "TD-13": {
+    "title": "**1.2.M Error model (API)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-13",
+    "parent": ""
+  },
+  "TD-14": {
+    "title": "**1.2.N Synonyms & taxonomies (starter sets)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-14",
+    "parent": ""
+  },
+  "TD-15": {
+    "title": "**1.2.O Security, privacy, safety controls**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-15",
+    "parent": ""
+  },
+  "TD-16": {
+    "title": "**1.2.P Cost controls**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-16",
+    "parent": ""
+  },
+  "TD-17": {
+    "title": "**1.2.Q Test plan (must‑pass)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-17",
+    "parent": ""
+  },
+  "TD-18": {
+    "title": "**1.2.R Work packages (for your 4 Cursor agents)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-18",
+    "parent": ""
+  },
+  "TD-19": {
+    "title": "**1.2.S Acceptance criteria (mark §1.2 FINAL only when ALL are true)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-19",
+    "parent": ""
+  },
+  "TD-20": {
+    "title": "**1.3.A Canon & invariants**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-20",
+    "parent": ""
+  },
+  "TD-21": {
+    "title": "**1.3.B Domain model (Aurora PostgreSQL, source of record)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-21",
+    "parent": ""
+  },
+  "TD-22": {
+    "title": "**1.3.C State machines (per leg and for LBG)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-22",
+    "parent": ""
+  },
+  "TD-23": {
+    "title": "**1.3.D Checkout & payment flows**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-23",
+    "parent": ""
+  },
+  "TD-24": {
+    "title": "**1.3.E Tax & jurisdictions**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-24",
+    "parent": ""
+  },
+  "TD-25": {
+    "title": "**1.3.F Amendments, extras & overtime**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-25",
+    "parent": ""
+  },
+  "TD-26": {
+    "title": "**1.3.G Refunds & cancellations**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-26",
+    "parent": ""
+  },
+  "TD-27": {
+    "title": "**1.3.H Disputes**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-27",
+    "parent": ""
+  },
+  "TD-28": {
+    "title": "**1.3.I GraphQL API (checkout & lifecycle) — key operations**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-28",
+    "parent": ""
+  },
+  "TD-29": {
+    "title": "**1.3.J Receipts & statements**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-29",
+    "parent": ""
+  },
+  "TD-30": {
+    "title": "**1.3.K Payout scheduler & reserves**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-30",
+    "parent": ""
+  },
+  "TD-31": {
+    "title": "**1.3.L Admin surfaces (Finance, Support, Trust)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-31",
+    "parent": ""
+  },
+  "TD-32": {
+    "title": "**1.3.M Telemetry (immutable events)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-32",
+    "parent": ""
+  },
+  "TD-33": {
+    "title": "**1.3.N SLOs & cost**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-33",
+    "parent": ""
+  },
+  "TD-34": {
+    "title": "**1.3.O Error taxonomy (client‑safe)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-34",
+    "parent": ""
+  },
+  "TD-35": {
+    "title": "**1.3.P Test plan (must‑pass, CI + sandbox)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-35",
+    "parent": ""
+  },
+  "TD-36": {
+    "title": "**1.3.Q Work packages (Cursor agents)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-36",
+    "parent": ""
+  },
+  "TD-37": {
+    "title": "**1.3.R Acceptance criteria (mark §1.3 FINAL only when ALL true)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-37",
+    "parent": ""
+  },
+  "TD-38": {
+    "title": "**1.3.K Change Orders, Extras & Overtime (full specification)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-38",
+    "parent": ""
+  },
+  "TD-38.1": {
+    "title": "**K.1 Purpose & invariants**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-38.1",
+    "parent": "TD-38"
+  },
+  "TD-38.2": {
+    "title": "**K.2 Data model (amendments, already introduced; here are line details)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-38.2",
+    "parent": "TD-38"
+  },
+  "TD-38.3": {
+    "title": "**K.3 API**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-38.3",
+    "parent": "TD-38"
+  },
+  "TD-38.4": {
+    "title": "**K.4 Flow**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-38.4",
+    "parent": "TD-38"
+  },
+  "TD-38.5": {
+    "title": "**K.5 Validation & caps**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-38.5",
+    "parent": "TD-38"
+  },
+  "TD-38.6": {
+    "title": "**K.6 Telemetry**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-38.6",
+    "parent": "TD-38"
+  },
+  "TD-39": {
+    "title": "**1.3.L Cancellation & Refund Policy Engine**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-39",
+    "parent": ""
+  },
+  "TD-39.1": {
+    "title": "**L.1 Invariants**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-39.1",
+    "parent": "TD-39"
+  },
+  "TD-39.2": {
+    "title": "**L.2 Policy schema**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-39.2",
+    "parent": "TD-39"
+  },
+  "TD-39.3": {
+    "title": "**L.3 Engine behavior**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-39.3",
+    "parent": "TD-39"
+  },
+  "TD-39.4": {
+    "title": "**L.4 API**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-39.4",
+    "parent": "TD-39"
+  },
+  "TD-39.5": {
+    "title": "**L.5 Refund execution**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-39.5",
+    "parent": "TD-39"
+  },
+  "TD-39.6": {
+    "title": "**L.6 Edge cases**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-39.6",
+    "parent": "TD-39"
+  },
+  "TD-40": {
+    "title": "**1.3.M Acceptance Window (Buyer Confirmation After Session)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-40",
+    "parent": ""
+  },
+  "TD-40.1": {
+    "title": "**M.1 Contract**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-40.1",
+    "parent": "TD-40"
+  },
+  "TD-40.2": {
+    "title": "**M.2 Data points**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-40.2",
+    "parent": "TD-40"
+  },
+  "TD-40.3": {
+    "title": "**M.3 Implementation**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-40.3",
+    "parent": "TD-40"
+  },
+  "TD-40.4": {
+    "title": "**M.4 Telemetry**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-40.4",
+    "parent": "TD-40"
+  },
+  "TD-41": {
+    "title": "**1.3.N Studio Deposit Claims**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-41",
+    "parent": ""
+  },
+  "TD-41.1": {
+    "title": "**N.1 Purpose**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-41.1",
+    "parent": "TD-41"
+  },
+  "TD-41.2": {
+    "title": "**N.2 Flow**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-41.2",
+    "parent": "TD-41"
+  },
+  "TD-41.3": {
+    "title": "**N.3 API & data**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-41.3",
+    "parent": "TD-41"
+  },
+  "TD-41.4": {
+    "title": "**N.4 Constraints**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-41.4",
+    "parent": "TD-41"
+  },
+  "TD-42": {
+    "title": "**1.3.O Receipts (Per‑Leg + Group Summary)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-42",
+    "parent": ""
+  },
+  "TD-42.1": {
+    "title": "**O.1 Templates**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-42.1",
+    "parent": "TD-42"
+  },
+  "TD-42.2": {
+    "title": "**O.2 Rendering**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-42.2",
+    "parent": "TD-42"
+  },
+  "TD-42.3": {
+    "title": "**O.3 Rounding**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-42.3",
+    "parent": "TD-42"
+  },
+  "TD-43": {
+    "title": "**1.3.P Webhooks → Normalized Events (Mapping)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-43",
+    "parent": ""
+  },
+  "TD-43.1": {
+    "title": "**P.1 Stripe (examples)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-43.1",
+    "parent": "TD-43"
+  },
+  "TD-43.2": {
+    "title": "**P.2 Tax provider**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-43.2",
+    "parent": "TD-43"
+  },
+  "TD-43.3": {
+    "title": "**P.3 E‑sign vendor**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-43.3",
+    "parent": "TD-43"
+  },
+  "TD-44": {
+    "title": "**1.3.Q Error Taxonomy (additions for this part)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-44",
+    "parent": ""
+  },
+  "TD-45": {
+    "title": "**1.3.R Test Plan (Part 2 focus)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-45",
+    "parent": ""
+  },
+  "TD-46": {
+    "title": "**1.3.S Acceptance Criteria (Part 2)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-46",
+    "parent": ""
+  },
+  "TD-47": {
+    "title": "**1.3.T Payouts, Reserves, Instant Payouts (timing & failure modes)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-47",
+    "parent": ""
+  },
+  "TD-47.1": {
+    "title": "**T.1 Principles**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-47.1",
+    "parent": "TD-47"
+  },
+  "TD-47.2": {
+    "title": "**T.2 Data & states**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-47.2",
+    "parent": "TD-47"
+  },
+  "TD-47.3": {
+    "title": "**T.3 Computation of payout amounts**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-47.3",
+    "parent": "TD-47"
+  },
+  "TD-47.4": {
+    "title": "**T.4 Scheduler & execution**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-47.4",
+    "parent": "TD-47"
+  },
+  "TD-47.5": {
+    "title": "**T.5 Instant payouts (optional)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-47.5",
+    "parent": "TD-47"
+  },
+  "TD-47.6": {
+    "title": "**T.6 Failure modes & handling**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-47.6",
+    "parent": "TD-47"
+  },
+  "TD-47.7": {
+    "title": "**T.7 Telemetry**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-47.7",
+    "parent": "TD-47"
+  },
+  "TD-48": {
+    "title": "**1.3.U Disputes (chargebacks) & Evidence Kits**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-48",
+    "parent": ""
+  },
+  "TD-48.1": {
+    "title": "**U.1 Sources of evidence**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-48.1",
+    "parent": "TD-48"
+  },
+  "TD-48.2": {
+    "title": "**U.2 Flow**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-48.2",
+    "parent": "TD-48"
+  },
+  "TD-48.3": {
+    "title": "**U.3 Admin console (Trust & Finance)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-48.3",
+    "parent": "TD-48"
+  },
+  "TD-48.4": {
+    "title": "**U.4 Telemetry**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-48.4",
+    "parent": "TD-48"
+  },
+  "TD-49": {
+    "title": "**1.3.V Daily Finance Close & Reconciliation (hard gate)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-49",
+    "parent": ""
+  },
+  "TD-49.1": {
+    "title": "**V.1 Purpose**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-49.1",
+    "parent": "TD-49"
+  },
+  "TD-49.2": {
+    "title": "**V.2 Inputs**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-49.2",
+    "parent": "TD-49"
+  },
+  "TD-49.3": {
+    "title": "**V.3 Checks (examples)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-49.3",
+    "parent": "TD-49"
+  },
+  "TD-49.4": {
+    "title": "**V.4 Flow**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-49.4",
+    "parent": "TD-49"
+  },
+  "TD-49.5": {
+    "title": "**V.5 Admin tiles**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-49.5",
+    "parent": "TD-49"
+  },
+  "TD-49.6": {
+    "title": "**V.6 Telemetry**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-49.6",
+    "parent": "TD-49"
+  },
+  "TD-50": {
+    "title": "**1.3.W Admin Consoles (Finance · Support · Trust · City Ops)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-50",
+    "parent": ""
+  },
+  "TD-50.1": {
+    "title": "**W.1 Finance**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-50.1",
+    "parent": "TD-50"
+  },
+  "TD-50.2": {
+    "title": "**W.2 Support**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-50.2",
+    "parent": "TD-50"
+  },
+  "TD-50.3": {
+    "title": "**W.3 Trust & Safety**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-50.3",
+    "parent": "TD-50"
+  },
+  "TD-50.4": {
+    "title": "**W.4 City Ops / Promotions**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-50.4",
+    "parent": "TD-50"
+  },
+  "TD-51": {
+    "title": "**1.3.X Error & Incident Playbook (selected)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-51",
+    "parent": ""
+  },
+  "TD-52": {
+    "title": "**1.3.Y Full E2E Test Matrix (implement in CI + sandbox)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-52",
+    "parent": ""
+  },
+  "TD-53": {
+    "title": "**1.3.Z Acceptance Criteria — mark §1.3 FINAL only when ALL true**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-53",
+    "parent": ""
+  },
+  "TD-54": {
+    "title": "**1.4.A Canon & invariants**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-54",
+    "parent": ""
+  },
+  "TD-55": {
+    "title": "**1.4.B Data model & storage**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-55",
+    "parent": ""
+  },
+  "TD-55.1": {
+    "title": "**B.1 DynamoDB single‑table (messaging)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-55.1",
+    "parent": "TD-55"
+  },
+  "TD-55.2": {
+    "title": "**B.2 Presence & typing (ephemeral)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-55.2",
+    "parent": "TD-55"
+  },
+  "TD-55.3": {
+    "title": "**B.3 S3 buckets (previews only)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-55.3",
+    "parent": "TD-55"
+  },
+  "TD-56": {
+    "title": "**1.4.C GraphQL API (AppSync) — types, queries, mutations, subscriptions**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-56",
+    "parent": ""
+  },
+  "TD-56.1": {
+    "title": "**C.1 Core types (excerpt)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-56.1",
+    "parent": "TD-56"
+  },
+  "TD-56.2": {
+    "title": "**C.2 Queries**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-56.2",
+    "parent": "TD-56"
+  },
+  "TD-56.3": {
+    "title": "**C.3 Mutations (selected)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-56.3",
+    "parent": "TD-56"
+  },
+  "TD-56.4": {
+    "title": "**C.4 Subscriptions**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-56.4",
+    "parent": "TD-56"
+  },
+  "TD-57": {
+    "title": "**1.4.D Project Panel tabs — schemas & behavior**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-57",
+    "parent": ""
+  },
+  "TD-57.1": {
+    "title": "**D.1 Brief**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-57.1",
+    "parent": "TD-57"
+  },
+  "TD-57.2": {
+    "title": "**D.2 Moodboard**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-57.2",
+    "parent": "TD-57"
+  },
+  "TD-57.3": {
+    "title": "**D.3 Shot list**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-57.3",
+    "parent": "TD-57"
+  },
+  "TD-57.4": {
+    "title": "**D.4 Files**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-57.4",
+    "parent": "TD-57"
+  },
+  "TD-57.5": {
+    "title": "**D.5 Docs & e‑sign**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-57.5",
+    "parent": "TD-57"
+  },
+  "TD-57.6": {
+    "title": "**D.6 Expenses**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-57.6",
+    "parent": "TD-57"
+  },
+  "TD-57.7": {
+    "title": "**D.7 Actions**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-57.7",
+    "parent": "TD-57"
+  },
+  "TD-58": {
+    "title": "**1.4.E Action cards — contract & state machines (examples)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-58",
+    "parent": ""
+  },
+  "TD-59": {
+    "title": "**1.4.F Presence, read receipts, typing**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-59",
+    "parent": ""
+  },
+  "TD-60": {
+    "title": "**1.4.G Moderation, safety, anticircumvention**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-60",
+    "parent": ""
+  },
+  "TD-61": {
+    "title": "**1.4.H Notifications (email, push, SMS)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-61",
+    "parent": ""
+  },
+  "TD-62": {
+    "title": "**1.4.I File pipeline & limits**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-62",
+    "parent": ""
+  },
+  "TD-63": {
+    "title": "**1.4.J Admin consoles (Support, T&S, Finance)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-63",
+    "parent": ""
+  },
+  "TD-64": {
+    "title": "**1.4.K Observability, telemetry, and lineage**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-64",
+    "parent": ""
+  },
+  "TD-65": {
+    "title": "**1.4.L Performance & cost**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-65",
+    "parent": ""
+  },
+  "TD-66": {
+    "title": "**1.4.M Error taxonomy (client‑safe)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-66",
+    "parent": ""
+  },
+  "TD-67": {
+    "title": "**1.4.N Test plan (CI + sandbox)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-67",
+    "parent": ""
+  },
+  "TD-68": {
+    "title": "**1.4.O Work packages (Cursor agents)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-68",
+    "parent": ""
+  },
+  "TD-69": {
+    "title": "**1.4.P Acceptance criteria (mark §1.4 FINAL only when ALL true)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-69",
+    "parent": ""
+  },
+  "TD-70": {
+    "title": "**1.5.A Canon & invariants**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-70",
+    "parent": ""
+  },
+  "TD-71": {
+    "title": "**1.5.B Data model (Aurora Postgres + S3)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-71",
+    "parent": ""
+  },
+  "TD-72": {
+    "title": "**1.5.C Clause library & variables**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-72",
+    "parent": ""
+  },
+  "TD-73": {
+    "title": "**1.5.D Template composition**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-73",
+    "parent": ""
+  },
+  "TD-74": {
+    "title": "**1.5.E Pack assembly (Docs‑Before‑Pay)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-74",
+    "parent": ""
+  },
+  "TD-75": {
+    "title": "**1.5.F Variable binding (examples)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-75",
+    "parent": ""
+  },
+  "TD-76": {
+    "title": "**1.5.G E‑sign adapter (Dropbox Sign / DocuSign)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-76",
+    "parent": ""
+  },
+  "TD-77": {
+    "title": "**1.5.H Hashing & immutability**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-77",
+    "parent": ""
+  },
+  "TD-78": {
+    "title": "**1.5.I Access control & privacy**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-78",
+    "parent": ""
+  },
+  "TD-79": {
+    "title": "**1.5.J Integrations with §§1.3–1.4**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-79",
+    "parent": ""
+  },
+  "TD-80": {
+    "title": "**1.5.K Notifications & templates**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-80",
+    "parent": ""
+  },
+  "TD-81": {
+    "title": "**1.5.L Admin console (Legal, Support, City Ops)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-81",
+    "parent": ""
+  },
+  "TD-82": {
+    "title": "**1.5.M Telemetry & lineage**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-82",
+    "parent": ""
+  },
+  "TD-83": {
+    "title": "**1.5.N Error taxonomy**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-83",
+    "parent": ""
+  },
+  "TD-84": {
+    "title": "**1.5.O Performance & cost**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-84",
+    "parent": ""
+  },
+  "TD-85": {
+    "title": "**1.5.P Test plan (CI + sandbox)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-85",
+    "parent": ""
+  },
+  "TD-86": {
+    "title": "**1.5.Q Work packages (Cursor 4‑agent lanes)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-86",
+    "parent": ""
+  },
+  "TD-87": {
+    "title": "**1.5.R Acceptance criteria — mark §1.5 FINAL only when ALL true**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-87",
+    "parent": ""
+  },
+  "TD-88": {
+    "title": "**1.6.A Canon & invariants**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-88",
+    "parent": ""
+  },
+  "TD-89": {
+    "title": "**1.6.B Data model (Aurora + DynamoDB)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-89",
+    "parent": ""
+  },
+  "TD-90": {
+    "title": "**1.6.C Adapters (IDV, BG, Social) — contracts**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-90",
+    "parent": ""
+  },
+  "TD-91": {
+    "title": "**1.6.D Badge logic, gates & expiration**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-91",
+    "parent": ""
+  },
+  "TD-92": {
+    "title": "**1.6.E GraphQL API (user-facing flows)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-92",
+    "parent": ""
+  },
+  "TD-93": {
+    "title": "**1.6.F Integration points**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-93",
+    "parent": ""
+  },
+  "TD-94": {
+    "title": "**1.6.G Risk signals & throttles**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-94",
+    "parent": ""
+  },
+  "TD-95": {
+    "title": "**1.6.H Admin consoles & workflows**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-95",
+    "parent": ""
+  },
+  "TD-96": {
+    "title": "**1.6.I Webhooks → normalized events**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-96",
+    "parent": ""
+  },
+  "TD-97": {
+    "title": "**1.6.J Privacy & retention**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-97",
+    "parent": ""
+  },
+  "TD-98": {
+    "title": "**1.6.K Error taxonomy (client-safe)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-98",
+    "parent": ""
+  },
+  "TD-99": {
+    "title": "**1.6.L Telemetry & SLOs**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-99",
+    "parent": ""
+  },
+  "TD-100": {
+    "title": "**1.6.M Cost controls**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-100",
+    "parent": ""
+  },
+  "TD-101": {
+    "title": "**1.6.N Test plan (CI + sandbox)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-101",
+    "parent": ""
+  },
+  "TD-102": {
+    "title": "**1.6.O Work packages (Cursor agents)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-102",
+    "parent": ""
+  },
+  "TD-103": {
+    "title": "**1.6.P Acceptance criteria (mark §1.6 FINAL only when ALL true)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-103",
+    "parent": ""
+  },
+  "TD-104": {
+    "title": "**1.7.A Canon & invariants**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-104",
+    "parent": ""
+  },
+  "TD-105": {
+    "title": "**1.7.B Surfaces & formats (MVP)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-105",
+    "parent": ""
+  },
+  "TD-106": {
+    "title": "**1.7.C Eligibility & safety gates**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-106",
+    "parent": ""
+  },
+  "TD-107": {
+    "title": "**1.7.D Data model (Aurora + DynamoDB + S3)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-107",
+    "parent": ""
+  },
+  "TD-107.1": {
+    "title": "**D.1 Core SQL tables**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-107.1",
+    "parent": "TD-107"
+  },
+  "TD-107.2": {
+    "title": "**D.2 DynamoDB (hot path)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-107.2",
+    "parent": "TD-107"
+  },
+  "TD-108": {
+    "title": "**1.7.E Targeting & matching**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-108",
+    "parent": ""
+  },
+  "TD-109": {
+    "title": "**1.7.F Blending & fairness**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-109",
+    "parent": ""
+  },
+  "TD-110": {
+    "title": "**1.7.G Click validation & fraud defenses**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-110",
+    "parent": ""
+  },
+  "TD-111": {
+    "title": "**1.7.H Budgets, pacing & pausing**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-111",
+    "parent": ""
+  },
+  "TD-112": {
+    "title": "**1.7.I Billing & credits (cost‑conscious MVP)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-112",
+    "parent": ""
+  },
+  "TD-113": {
+    "title": "**1.7.J GraphQL API (seller‑facing & admin)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-113",
+    "parent": ""
+  },
+  "TD-114": {
+    "title": "**1.7.K Admin consoles**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-114",
+    "parent": ""
+  },
+  "TD-115": {
+    "title": "**1.7.L Telemetry & reconciliation**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-115",
+    "parent": ""
+  },
+  "TD-116": {
+    "title": "**1.7.M Error taxonomy (client‑safe)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-116",
+    "parent": ""
+  },
+  "TD-117": {
+    "title": "**1.7.N Performance & cost**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-117",
+    "parent": ""
+  },
+  "TD-118": {
+    "title": "**1.7.O Test plan (CI + sandbox)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-118",
+    "parent": ""
+  },
+  "TD-119": {
+    "title": "**1.7.P Work packages (Cursor agents)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-119",
+    "parent": ""
+  },
+  "TD-120": {
+    "title": "**1.7.Q Acceptance criteria (mark §1.7 FINAL only when ALL true)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-120",
+    "parent": ""
+  },
+  "TD-121": {
+    "title": "**1.8.A Canon & invariants**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-121",
+    "parent": ""
+  },
+  "TD-122": {
+    "title": "**1.8.B Data model (Aurora Postgres)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-122",
+    "parent": ""
+  },
+  "TD-123": {
+    "title": "**1.8.C Write rules & lifecycle**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-123",
+    "parent": ""
+  },
+  "TD-124": {
+    "title": "**1.8.D API (GraphQL) — user-facing**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-124",
+    "parent": ""
+  },
+  "TD-125": {
+    "title": "**1.8.E Weighting, decay & aggregation**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-125",
+    "parent": ""
+  },
+  "TD-126": {
+    "title": "**1.8.F Fraud & abuse controls**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-126",
+    "parent": ""
+  },
+  "TD-127": {
+    "title": "**1.8.G Surfacing & UX**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-127",
+    "parent": ""
+  },
+  "TD-128": {
+    "title": "**1.8.H Moderation & appeals (Admin console)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-128",
+    "parent": ""
+  },
+  "TD-129": {
+    "title": "**1.8.I Notifications**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-129",
+    "parent": ""
+  },
+  "TD-130": {
+    "title": "**1.8.J Telemetry & lineage**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-130",
+    "parent": ""
+  },
+  "TD-131": {
+    "title": "**1.8.K Error taxonomy (client-safe)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-131",
+    "parent": ""
+  },
+  "TD-132": {
+    "title": "**1.8.L Performance & cost**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-132",
+    "parent": ""
+  },
+  "TD-133": {
+    "title": "**1.8.M Test plan (CI + sandbox)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-133",
+    "parent": ""
+  },
+  "TD-134": {
+    "title": "**1.8.N Work packages (Cursor agents)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-134",
+    "parent": ""
+  },
+  "TD-135": {
+    "title": "**1.8.O Acceptance criteria (mark §1.8 FINAL only when ALL true)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-135",
+    "parent": ""
+  },
+  "TD-136": {
+    "title": "**1.9.A Canon & invariants**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-136",
+    "parent": ""
+  },
+  "TD-137": {
+    "title": "**1.9.B Fee taxonomy (launch)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-137",
+    "parent": ""
+  },
+  "TD-138": {
+    "title": "**1.9.C Data model (SQL additions for fees, wallet & GL)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-138",
+    "parent": ""
+  },
+  "TD-139": {
+    "title": "**1.9.D Accounting model & GL entries (MVP)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-139",
+    "parent": ""
+  },
+  "TD-139.1": {
+    "title": "**D.1 At capture (LBG confirmed & charge succeeded)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-139.1",
+    "parent": "TD-139"
+  },
+  "TD-139.2": {
+    "title": "**D.2 On completion/accept (leg earns platform fee revenue)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-139.2",
+    "parent": "TD-139"
+  },
+  "TD-139.3": {
+    "title": "**D.3 On payout transfer to seller (per leg)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-139.3",
+    "parent": "TD-139"
+  },
+  "TD-139.4": {
+    "title": "**D.4 Refunds (leg policy or admin)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-139.4",
+    "parent": "TD-139"
+  },
+  "TD-139.5": {
+    "title": "**D.5 Chargebacks (lost dispute)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-139.5",
+    "parent": "TD-139"
+  },
+  "TD-140": {
+    "title": "**1.9.E Wallet (buyer credits) — rules & flows**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-140",
+    "parent": ""
+  },
+  "TD-141": {
+    "title": "**1.9.F Taxes on platform fees**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-141",
+    "parent": ""
+  },
+  "TD-142": {
+    "title": "**1.9.G Statements & exports**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-142",
+    "parent": ""
+  },
+  "TD-143": {
+    "title": "**1.9.H APIs (GraphQL) — finance views**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-143",
+    "parent": ""
+  },
+  "TD-144": {
+    "title": "**1.9.I Admin consoles (Finance)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-144",
+    "parent": ""
+  },
+  "TD-145": {
+    "title": "**1.9.J Telemetry & lineage**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-145",
+    "parent": ""
+  },
+  "TD-146": {
+    "title": "**1.9.K SLOs & cost posture**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-146",
+    "parent": ""
+  },
+  "TD-147": {
+    "title": "**1.9.L Error taxonomy (client‑safe)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-147",
+    "parent": ""
+  },
+  "TD-148": {
+    "title": "**1.9.M Test plan (CI + sandbox)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-148",
+    "parent": ""
+  },
+  "TD-149": {
+    "title": "**1.9.N Work packages (Cursor agents)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-149",
+    "parent": ""
+  },
+  "TD-150": {
+    "title": "**1.9.O Acceptance criteria (mark §1.9 FINAL only when ALL true)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-150",
+    "parent": ""
+  },
+  "TD-151": {
+    "title": "**1.9.A Canon & invariants**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-151",
+    "parent": ""
+  },
+  "TD-152": {
+    "title": "**1.9.M Test plan (CI + sandbox)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-152",
+    "parent": ""
+  },
+  "TD-153": {
+    "title": "**1.9.O Acceptance criteria (mark §1.9 FINAL only when ALL true)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-153",
+    "parent": ""
+  },
+  "TD-154": {
+    "title": "**1.10.A Canon & invariants**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-154",
+    "parent": ""
+  },
+  "TD-155": {
+    "title": "**1.10.B Providers & architecture**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-155",
+    "parent": ""
+  },
+  "TD-156": {
+    "title": "**1.10.C Data model (Aurora + DynamoDB + S3)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-156",
+    "parent": ""
+  },
+  "TD-157": {
+    "title": "**1.10.D Template system & variables**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-157",
+    "parent": ""
+  },
+  "TD-158": {
+    "title": "**1.10.E Routing rules (Comms Router)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-158",
+    "parent": ""
+  },
+  "TD-159": {
+    "title": "**1.10.F Preferences & quiet hours (user‑facing)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-159",
+    "parent": ""
+  },
+  "TD-160": {
+    "title": "**1.10.G Channel workers & dedupe/batching**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-160",
+    "parent": ""
+  },
+  "TD-161": {
+    "title": "**1.10.H Error taxonomy (client‑safe and admin)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-161",
+    "parent": ""
+  },
+  "TD-162": {
+    "title": "**1.10.I Work packages (Cursor agent lanes)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-162",
+    "parent": ""
+  },
+  "TD-163": {
+    "title": "**1.10.J Acceptance criteria (for Part 1) — we won’t move to Part 2 until all hold**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-163",
+    "parent": ""
+  },
+  "TD-164": {
+    "title": "**1.10.R Deliverability setup (email)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-164",
+    "parent": ""
+  },
+  "TD-165": {
+    "title": "**1.10.S Bounce/complaint handling & suppression**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-165",
+    "parent": ""
+  },
+  "TD-166": {
+    "title": "**1.10.T In‑app Notification Center (details)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-166",
+    "parent": ""
+  },
+  "TD-167": {
+    "title": "**1.10.U Experiments & localization**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-167",
+    "parent": ""
+  },
+  "TD-168": {
+    "title": "**1.10.V Link tracking & privacy**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-168",
+    "parent": ""
+  },
+  "TD-169": {
+    "title": "**1.10.W Admin console (Comms)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-169",
+    "parent": ""
+  },
+  "TD-170": {
+    "title": "**1.10.X Telemetry, dashboards & SLOs**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-170",
+    "parent": ""
+  },
+  "TD-171": {
+    "title": "**1.10.Y Full test matrix (Part 2)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-171",
+    "parent": ""
+  },
+  "TD-172": {
+    "title": "**1.10.Z Acceptance criteria — mark §1.10 FINAL only when ALL true**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-172",
+    "parent": ""
+  },
+  "TD-173": {
+    "title": "**1.11.A Canon & invariants**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-173",
+    "parent": ""
+  },
+  "TD-174": {
+    "title": "**1.11.B Data model (Aurora Postgres, source of record)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-174",
+    "parent": ""
+  },
+  "TD-175": {
+    "title": "**1.11.C Amenity taxonomy (canonical keys)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-175",
+    "parent": ""
+  },
+  "TD-176": {
+    "title": "**1.11.D Onboarding & verification flow**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-176",
+    "parent": ""
+  },
+  "TD-177": {
+    "title": "**1.11.E Pricing & quote engine (deterministic)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-177",
+    "parent": ""
+  },
+  "TD-178": {
+    "title": "**1.11.F Availability, buffers & conflicts**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-178",
+    "parent": ""
+  },
+  "TD-179": {
+    "title": "**1.11.G House rules & compliance docs**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-179",
+    "parent": ""
+  },
+  "TD-180": {
+    "title": "**1.11.H Images, safety & SEO**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-180",
+    "parent": ""
+  },
+  "TD-181": {
+    "title": "**1.11.I Search facets (tie‑in to §1.2)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-181",
+    "parent": ""
+  },
+  "TD-182": {
+    "title": "**1.11.J Checkout & deposits (tie‑in to §1.3)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-182",
+    "parent": ""
+  },
+  "TD-183": {
+    "title": "**1.11.K GraphQL API (AppSync) — Studio management & browse**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-183",
+    "parent": ""
+  },
+  "TD-184": {
+    "title": "**1.11.L Admin console (Studios)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-184",
+    "parent": ""
+  },
+  "TD-185": {
+    "title": "**1.11.M Error taxonomy (client‑safe)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-185",
+    "parent": ""
+  },
+  "TD-186": {
+    "title": "**1.11.N Telemetry & lineage**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-186",
+    "parent": ""
+  },
+  "TD-187": {
+    "title": "**1.11.O Performance & cost**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-187",
+    "parent": ""
+  },
+  "TD-188": {
+    "title": "**1.11.P Test plan (CI + sandbox)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-188",
+    "parent": ""
+  },
+  "TD-189": {
+    "title": "**1.11.Q Work packages (Cursor 4‑agent lanes)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-189",
+    "parent": ""
+  },
+  "TD-190": {
+    "title": "**1.11.R Acceptance criteria (mark §1.11 FINAL only when ALL true)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-190",
+    "parent": ""
+  },
+  "TD-191": {
+    "title": "**1.12.A Canon & invariants**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-191",
+    "parent": ""
+  },
+  "TD-192": {
+    "title": "**1.12.B Tech stack & version pins (initial)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-192",
+    "parent": ""
+  },
+  "TD-193": {
+    "title": "**1.12.C Environments, accounts, and regions**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-193",
+    "parent": ""
+  },
+  "TD-194": {
+    "title": "**1.12.D Amplify Gen 2 configuration (and “never Classic” guardrails)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-194",
+    "parent": ""
+  },
+  "TD-195": {
+    "title": "**1.12.E Networking & security baseline**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-195",
+    "parent": ""
+  },
+  "TD-196": {
+    "title": "**1.12.F Data stores & retention**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-196",
+    "parent": ""
+  },
+  "TD-197": {
+    "title": "**1.12.G Identity & access (Cognito)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-197",
+    "parent": ""
+  },
+  "TD-198": {
+    "title": "**1.12.H API shape (AppSync)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-198",
+    "parent": ""
+  },
+  "TD-199": {
+    "title": "**1.12.I CI/CD and migrations**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-199",
+    "parent": ""
+  },
+  "TD-200": {
+    "title": "**1.12.J Observability**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-200",
+    "parent": ""
+  },
+  "TD-201": {
+    "title": "**1.12.K Security posture**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-201",
+    "parent": ""
+  },
+  "TD-202": {
+    "title": "**1.12.L Data privacy & retention**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-202",
+    "parent": ""
+  },
+  "TD-203": {
+    "title": "**1.12.M Cost guardrails**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-203",
+    "parent": ""
+  },
+  "TD-204": {
+    "title": "**1.12.N Disaster recovery**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-204",
+    "parent": ""
+  },
+  "TD-205": {
+    "title": "**1.12.O Local dev, previews, and seed data**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-205",
+    "parent": ""
+  },
+  "TD-206": {
+    "title": "**1.12.P Developer experience & governance**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-206",
+    "parent": ""
+  },
+  "TD-207": {
+    "title": "**1.12.Q Work packages (for your 4 Cursor agents)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-207",
+    "parent": ""
+  },
+  "TD-208": {
+    "title": "**1.12.R Acceptance criteria (mark §1.12 FINAL only when ALL true)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-208",
+    "parent": ""
+  },
+  "TD-209": {
+    "title": "**1.12.S Test matrix (CI + stage drills)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-209",
+    "parent": ""
+  },
+  "TD-210": {
+    "title": "**1.13.A Canon & invariants**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-210",
+    "parent": ""
+  },
+  "TD-211": {
+    "title": "**1.13.B High‑level architecture**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-211",
+    "parent": ""
+  },
+  "TD-212": {
+    "title": "**1.13.C Event envelope & contracts**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-212",
+    "parent": ""
+  },
+  "TD-213": {
+    "title": "**1.13.D Bronze → Silver → Gold modeling**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-213",
+    "parent": ""
+  },
+  "TD-214": {
+    "title": "**1.13.E Near‑real‑time ops views**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-214",
+    "parent": ""
+  },
+  "TD-215": {
+    "title": "**1.13.F Experimentation framework**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-215",
+    "parent": ""
+  },
+  "TD-216": {
+    "title": "**1.13.G Data quality, validation & lineage**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-216",
+    "parent": ""
+  },
+  "TD-217": {
+    "title": "**1.13.H Privacy, governance & retention**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-217",
+    "parent": ""
+  },
+  "TD-218": {
+    "title": "**1.13.I BI & dashboards**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-218",
+    "parent": ""
+  },
+  "TD-219": {
+    "title": "**1.13.J Cost posture & performance**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-219",
+    "parent": ""
+  },
+  "TD-220": {
+    "title": "**1.13.K Admin tooling**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-220",
+    "parent": ""
+  },
+  "TD-221": {
+    "title": "**1.13.L Error taxonomy (data platform)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-221",
+    "parent": ""
+  },
+  "TD-222": {
+    "title": "**1.13.M SLOs & alerts**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-222",
+    "parent": ""
+  },
+  "TD-223": {
+    "title": "**1.13.N Test plan (CI + stage)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-223",
+    "parent": ""
+  },
+  "TD-224": {
+    "title": "**1.13.O Work packages (Cursor agents)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-224",
+    "parent": ""
+  },
+  "TD-225": {
+    "title": "**1.13.P Acceptance criteria (mark §1.13 FINAL only when ALL true)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-225",
+    "parent": ""
+  },
+  "TD-226": {
+    "title": "**1.13.C (expanded) — Event Envelope & Contracts**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-226",
+    "parent": ""
+  },
+  "TD-226.1": {
+    "title": "**C.1 Canonical envelope (JSON Schema v1)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-226.1",
+    "parent": "TD-226"
+  },
+  "TD-226.2": {
+    "title": "**C.2 Example event schemas (selected)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-226.2",
+    "parent": "TD-226"
+  },
+  "TD-227": {
+    "title": "**1.13.B & 1.13.E (expanded) — Ingestion, Bronze, and Near‑Real‑Time Views**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-227",
+    "parent": ""
+  },
+  "TD-227.1": {
+    "title": "**B.1 Event ingress path**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-227.1",
+    "parent": "TD-227"
+  },
+  "TD-227.2": {
+    "title": "**B.2 EventBridge → Firehose → S3 (Bronze)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-227.2",
+    "parent": "TD-227"
+  },
+  "TD-227.3": {
+    "title": "**B.3 Glue Catalog & Athena (Bronze table)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-227.3",
+    "parent": "TD-227"
+  },
+  "TD-227.4": {
+    "title": "**E.1 Near‑Real‑Time (NRT) Ops Views**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-227.4",
+    "parent": "TD-227"
+  },
+  "TD-228": {
+    "title": "**1.13.D (expanded) — Silver/Gold Modeling**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-228",
+    "parent": ""
+  },
+  "TD-228.1": {
+    "title": "**D.1 CTAS: Silver facts (examples)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-228.1",
+    "parent": "TD-228"
+  },
+  "TD-228.2": {
+    "title": "**D.2 dbt project skeleton (Athena adapter)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-228.2",
+    "parent": "TD-228"
+  },
+  "TD-229": {
+    "title": "**1.13.G (expanded) — Data Quality, Validation & Lineage**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-229",
+    "parent": ""
+  },
+  "TD-229.1": {
+    "title": "**G.1 Great Expectations suite (examples)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-229.1",
+    "parent": "TD-229"
+  },
+  "TD-229.2": {
+    "title": "**G.2 Lineage**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-229.2",
+    "parent": "TD-229"
+  },
+  "TD-230": {
+    "title": "**1.13.H (expanded) — Privacy, Governance & Retention**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-230",
+    "parent": ""
+  },
+  "TD-230.1": {
+    "title": "**H.1 Lake Formation & permissions**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-230.1",
+    "parent": "TD-230"
+  },
+  "TD-230.2": {
+    "title": "**H.2 DSAR (Right to Erasure) workflow**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-230.2",
+    "parent": "TD-230"
+  },
+  "TD-230.3": {
+    "title": "**H.3 Retention**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-230.3",
+    "parent": "TD-230"
+  },
+  "TD-231": {
+    "title": "**1.13.F (expanded) — Experimentation Framework**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-231",
+    "parent": ""
+  },
+  "TD-231.1": {
+    "title": "**F.1 Assignment & exposure**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-231.1",
+    "parent": "TD-231"
+  },
+  "TD-231.2": {
+    "title": "**F.2 Guardrails & metrics**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-231.2",
+    "parent": "TD-231"
+  },
+  "TD-232": {
+    "title": "**1.13.I (expanded) — BI Datasets & Dashboards**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-232",
+    "parent": ""
+  },
+  "TD-232.1": {
+    "title": "**I.1 Datasets (QuickSight SPICE)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-232.1",
+    "parent": "TD-232"
+  },
+  "TD-232.2": {
+    "title": "**I.2 Dashboard tiles (definitions)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-232.2",
+    "parent": "TD-232"
+  },
+  "TD-233": {
+    "title": "**1.13.J (expanded) — Cost Posture & Performance**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-233",
+    "parent": ""
+  },
+  "TD-234": {
+    "title": "**1.13.K (expanded) — Admin & Runbooks**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-234",
+    "parent": ""
+  },
+  "TD-235": {
+    "title": "**1.13.L/M/N/O (expanded) — Error Taxonomy, SLOs, Tests, Work Packages**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-235",
+    "parent": ""
+  },
+  "TD-235.1": {
+    "title": "**L. Error codes (operational)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-235.1",
+    "parent": "TD-235"
+  },
+  "TD-235.2": {
+    "title": "**M. SLOs & Alerts (detail)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-235.2",
+    "parent": "TD-235"
+  },
+  "TD-235.3": {
+    "title": "**N. Test matrix (concrete add‑ons)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-235.3",
+    "parent": "TD-235"
+  },
+  "TD-235.4": {
+    "title": "**O. Work packages (ready to assign to your 4 Cursor agents)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-235.4",
+    "parent": "TD-235"
+  },
+  "TD-236": {
+    "title": "**1.13.P (re‑stated) — Final Acceptance Checklist for §1.13**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-236",
+    "parent": ""
+  },
+  "TD-237": {
+    "title": "**1.14.A Canon & invariants**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-237",
+    "parent": ""
+  },
+  "TD-238": {
+    "title": "**1.14.B Feature set (MVP + flags)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-238",
+    "parent": ""
+  },
+  "TD-239": {
+    "title": "**1.14.C Data model (Aurora + Dynamo + S3)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-239",
+    "parent": ""
+  },
+  "TD-239.1": {
+    "title": "**C.1 Aurora (source of truth)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-239.1",
+    "parent": "TD-239"
+  },
+  "TD-239.2": {
+    "title": "**C.2 DynamoDB (hot path caches)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-239.2",
+    "parent": "TD-239"
+  },
+  "TD-239.3": {
+    "title": "**C.3 S3 buckets (previews only)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-239.3",
+    "parent": "TD-239"
+  },
+  "TD-240": {
+    "title": "**1.14.D Payment flows (Stripe) & taxes**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-240",
+    "parent": ""
+  },
+  "TD-241": {
+    "title": "**1.14.E Watermarking, access, and anti‑scrape**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-241",
+    "parent": ""
+  },
+  "TD-242": {
+    "title": "**1.14.F Messaging integrations (action cards)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-242",
+    "parent": ""
+  },
+  "TD-243": {
+    "title": "**1.14.G Safety, policy, and moderation**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-243",
+    "parent": ""
+  },
+  "TD-244": {
+    "title": "**1.14.H UX surfaces**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-244",
+    "parent": ""
+  },
+  "TD-245": {
+    "title": "**1.14.I GraphQL API (AppSync) — selected**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-245",
+    "parent": ""
+  },
+  "TD-246": {
+    "title": "**1.14.J Notifications & comms (from §1.10)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-246",
+    "parent": ""
+  },
+  "TD-247": {
+    "title": "**1.14.K Analytics & experiments (from §1.13)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-247",
+    "parent": ""
+  },
+  "TD-248": {
+    "title": "**1.14.L Admin consoles**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-248",
+    "parent": ""
+  },
+  "TD-249": {
+    "title": "**1.14.M Performance & cost**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-249",
+    "parent": ""
+  },
+  "TD-250": {
+    "title": "**1.14.N Error taxonomy (client‑safe)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-250",
+    "parent": ""
+  },
+  "TD-251": {
+    "title": "**1.14.O Test plan (CI + sandbox)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-251",
+    "parent": ""
+  },
+  "TD-252": {
+    "title": "**1.14.P Work packages (Cursor 4‑agent lanes)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-252",
+    "parent": ""
+  },
+  "TD-253": {
+    "title": "**1.14.Q Acceptance criteria (mark §1.14 FINAL only when ALL true)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-253",
+    "parent": ""
+  },
+  "TD-254": {
+    "title": "**1.14.1 Roles, gates, and global invariants (recap + expansions)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-254",
+    "parent": ""
+  },
+  "TD-255": {
+    "title": "**1.14.2 Data contracts (DB, cache, storage)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-255",
+    "parent": ""
+  },
+  "TD-255.1": {
+    "title": "**1.14.2.1 SQL (additions & refinements)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-255.1",
+    "parent": "TD-255"
+  },
+  "TD-255.2": {
+    "title": "**1.14.2.2 DynamoDB (hot‑path caches)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-255.2",
+    "parent": "TD-255"
+  },
+  "TD-255.3": {
+    "title": "**1.14.2.3 S3 keys & CF**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-255.3",
+    "parent": "TD-255"
+  },
+  "TD-256": {
+    "title": "**1.14.3 Manifests for final media (off‑platform)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-256",
+    "parent": ""
+  },
+  "TD-256.1": {
+    "title": "**1.14.3.1 Manifest JSON (v1)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-256.1",
+    "parent": "TD-256"
+  },
+  "TD-256.2": {
+    "title": "**1.14.3.2 Tokenized access (short‑lived)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-256.2",
+    "parent": "TD-256"
+  },
+  "TD-257": {
+    "title": "**1.14.4 Watermarking & previews**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-257",
+    "parent": ""
+  },
+  "TD-257.1": {
+    "title": "**1.14.4.1 Image previews**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-257.1",
+    "parent": "TD-257"
+  },
+  "TD-257.2": {
+    "title": "**1.14.4.2 Video previews**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-257.2",
+    "parent": "TD-257"
+  },
+  "TD-258": {
+    "title": "**1.14.5 Stripe object mappings & flows**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-258",
+    "parent": ""
+  },
+  "TD-258.1": {
+    "title": "**1.14.5.1 Subscriptions (Stripe Billing + Connect)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-258.1",
+    "parent": "TD-258"
+  },
+  "TD-258.2": {
+    "title": "**1.14.5.2 PPV, Tips, Requests (PaymentIntents)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-258.2",
+    "parent": "TD-258"
+  },
+  "TD-258.3": {
+    "title": "**1.14.5.3 Refunds & disputes**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-258.3",
+    "parent": "TD-258"
+  },
+  "TD-259": {
+    "title": "**1.14.6 Tax & fee math (digital goods)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-259",
+    "parent": ""
+  },
+  "TD-260": {
+    "title": "**1.14.7 Accounting & GL (platform side)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-260",
+    "parent": ""
+  },
+  "TD-261": {
+    "title": "**1.14.8 State machines**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-261",
+    "parent": ""
+  },
+  "TD-261.1": {
+    "title": "**1.14.8.1 Custom Request flow (Step Functions)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-261.1",
+    "parent": "TD-261"
+  },
+  "TD-261.2": {
+    "title": "**1.14.8.2 Subscription lifecycle**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-261.2",
+    "parent": "TD-261"
+  },
+  "TD-262": {
+    "title": "**1.14.9 Moderation, DMCA & safety runbooks**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-262",
+    "parent": ""
+  },
+  "TD-262.1": {
+    "title": "**1.14.9.1 Moderation pipeline**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-262.1",
+    "parent": "TD-262"
+  },
+  "TD-262.2": {
+    "title": "**1.14.9.2 DMCA flow (Admin console)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-262.2",
+    "parent": "TD-262"
+  },
+  "TD-263": {
+    "title": "**1.14.10 Pricing policy, limits & abuse protections**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-263",
+    "parent": ""
+  },
+  "TD-264": {
+    "title": "**1.14.11 Notifications & templates (MJML snippets)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-264",
+    "parent": ""
+  },
+  "TD-265": {
+    "title": "**1.14.12 GraphQL SDL — extended (selected)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-265",
+    "parent": ""
+  },
+  "TD-266": {
+    "title": "**1.14.13 Telemetry & ops dashboards (NRT)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-266",
+    "parent": ""
+  },
+  "TD-267": {
+    "title": "**1.14.14 Errors & UX copy (client‑safe)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-267",
+    "parent": ""
+  },
+  "TD-268": {
+    "title": "**1.14.15 Performance & cost budgets**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-268",
+    "parent": ""
+  },
+  "TD-269": {
+    "title": "**1.14.16 Test plan (expanded)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-269",
+    "parent": ""
+  },
+  "TD-270": {
+    "title": "**1.14.17 Work packages (ready to assign)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-270",
+    "parent": ""
+  },
+  "TD-271": {
+    "title": "**1.14.18 Acceptance criteria — FINAL gate for §1.14**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-271",
+    "parent": ""
+  },
+  "TD-272": {
+    "title": "**1.15.A Canon & invariants**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-272",
+    "parent": ""
+  },
+  "TD-273": {
+    "title": "**1.15.B Case taxonomy (types & subtypes)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-273",
+    "parent": ""
+  },
+  "TD-274": {
+    "title": "**1.15.C Refund & dispute policy (deterministic kernels)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-274",
+    "parent": ""
+  },
+  "TD-275": {
+    "title": "**1.15.D State machines (high‑level)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-275",
+    "parent": ""
+  },
+  "TD-275.1": {
+    "title": "**D.1 Generic Support Case**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-275.1",
+    "parent": "TD-275"
+  },
+  "TD-275.2": {
+    "title": "**D.2 Booking dispute (people/studios)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-275.2",
+    "parent": "TD-275"
+  },
+  "TD-275.3": {
+    "title": "**D.3 Chargeback**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-275.3",
+    "parent": "TD-275"
+  },
+  "TD-275.4": {
+    "title": "**D.4 DMCA**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-275.4",
+    "parent": "TD-275"
+  },
+  "TD-276": {
+    "title": "**1.15.E Data model (Aurora + S3)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-276",
+    "parent": ""
+  },
+  "TD-277": {
+    "title": "**1.15.F Evidence & timeline stitching**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-277",
+    "parent": ""
+  },
+  "TD-278": {
+    "title": "**1.15.G API (GraphQL) & Support Center (user‑facing)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-278",
+    "parent": ""
+  },
+  "TD-279": {
+    "title": "**1.15.H Email bridge (SES) & routing**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-279",
+    "parent": ""
+  },
+  "TD-280": {
+    "title": "**1.15.I Automations, macros, and rules**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-280",
+    "parent": ""
+  },
+  "TD-281": {
+    "title": "**1.15.J Payout holds & releases**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-281",
+    "parent": ""
+  },
+  "TD-282": {
+    "title": "**1.15.K Chargebacks & representment**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-282",
+    "parent": ""
+  },
+  "TD-283": {
+    "title": "**1.15.L DMCA & policy violations**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-283",
+    "parent": ""
+  },
+  "TD-284": {
+    "title": "**1.15.M Telemetry, dashboards & SLOs**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-284",
+    "parent": ""
+  },
+  "TD-285": {
+    "title": "**1.15.N Performance & cost posture**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-285",
+    "parent": ""
+  },
+  "TD-286": {
+    "title": "**1.15.O Error taxonomy (client‑safe)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-286",
+    "parent": ""
+  },
+  "TD-287": {
+    "title": "**1.15.P Test plan (CI + sandbox)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-287",
+    "parent": ""
+  },
+  "TD-288": {
+    "title": "**1.15.Q Work packages (Cursor 4‑agent lanes)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-288",
+    "parent": ""
+  },
+  "TD-289": {
+    "title": "**1.15.R Acceptance criteria (mark §1.15 FINAL only when ALL true)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-289",
+    "parent": ""
+  },
+  "TD-290": {
+    "title": "**1.16.A Canon & invariants**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-290",
+    "parent": ""
+  },
+  "TD-291": {
+    "title": "**1.16.B Data model (Aurora + Dynamo + Typesense)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-291",
+    "parent": ""
+  },
+  "TD-291.1": {
+    "title": "**B.1 Aurora (source of truth)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-291.1",
+    "parent": "TD-291"
+  },
+  "TD-291.2": {
+    "title": "**B.2 DynamoDB (hot path)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-291.2",
+    "parent": "TD-291"
+  },
+  "TD-291.3": {
+    "title": "**B.3 Search indices (Typesense/OpenSearch)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-291.3",
+    "parent": "TD-291"
+  },
+  "TD-292": {
+    "title": "**1.16.C Saved Searches & Alerts (ANY/ALL + 1/day cap)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-292",
+    "parent": ""
+  },
+  "TD-292.1": {
+    "title": "**C.1 Query model**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-292.1",
+    "parent": "TD-292"
+  },
+  "TD-292.2": {
+    "title": "**C.2 Daily job (EventBridge Scheduler → Lambda)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-292.2",
+    "parent": "TD-292"
+  },
+  "TD-293": {
+    "title": "**1.16.D Weekly City Digest (opt‑in)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-293",
+    "parent": ""
+  },
+  "TD-294": {
+    "title": "**1.16.E Feed & Follow**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-294",
+    "parent": ""
+  },
+  "TD-294.1": {
+    "title": "**E.1 Surfaces (mirrors plan language)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-294.1",
+    "parent": "TD-294"
+  },
+  "TD-294.2": {
+    "title": "**E.2 Delivery & ranking**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-294.2",
+    "parent": "TD-294"
+  },
+  "TD-294.3": {
+    "title": "**E.3 Authoring**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-294.3",
+    "parent": "TD-294"
+  },
+  "TD-295": {
+    "title": "**1.16.F Social Share & Link‑in‑Bio**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-295",
+    "parent": ""
+  },
+  "TD-295.1": {
+    "title": "**F.1 Sharecard generator**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-295.1",
+    "parent": "TD-295"
+  },
+  "TD-295.2": {
+    "title": "**F.2 Link‑in‑bio minisite**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-295.2",
+    "parent": "TD-295"
+  },
+  "TD-296": {
+    "title": "**1.16.G “Book Again” reminders (7/30/90)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-296",
+    "parent": ""
+  },
+  "TD-297": {
+    "title": "**1.16.H Referrals & Credits (two‑sided, abuse‑resistant)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-297",
+    "parent": ""
+  },
+  "TD-297.1": {
+    "title": "**H.1 Programs (as per plan)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-297.1",
+    "parent": "TD-297"
+  },
+  "TD-297.2": {
+    "title": "**H.2 Guardrails (explicit from plan)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-297.2",
+    "parent": "TD-297"
+  },
+  "TD-297.3": {
+    "title": "**H.3 Mechanics**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-297.3",
+    "parent": "TD-297"
+  },
+  "TD-298": {
+    "title": "**1.16.I GraphQL API (selected)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-298",
+    "parent": ""
+  },
+  "TD-299": {
+    "title": "**1.16.J Comms & templates**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-299",
+    "parent": ""
+  },
+  "TD-300": {
+    "title": "**1.16.K Telemetry & experiments (hooked into §1.13)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-300",
+    "parent": ""
+  },
+  "TD-301": {
+    "title": "**1.16.L Performance & cost**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-301",
+    "parent": ""
+  },
+  "TD-302": {
+    "title": "**1.16.M Error taxonomy (client‑safe)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-302",
+    "parent": ""
+  },
+  "TD-303": {
+    "title": "**1.16.N Test plan (CI + sandbox)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-303",
+    "parent": ""
+  },
+  "TD-304": {
+    "title": "**1.16.O Work packages (Cursor 4‑agent lanes)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-304",
+    "parent": ""
+  },
+  "TD-305": {
+    "title": "**1.16.P Acceptance criteria (mark §1.16 FINAL only when ALL true)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-305",
+    "parent": ""
+  },
+  "TD-306": {
+    "title": "**1.16‑A. SQL — Growth & Referrals schema (Aurora PostgreSQL)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-306",
+    "parent": ""
+  },
+  "TD-307": {
+    "title": "**1.16‑B. DynamoDB — hot‑path/TTL tables**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-307",
+    "parent": ""
+  },
+  "TD-308": {
+    "title": "**1.16‑C. GraphQL SDL — Saved Search, Feed, Referrals**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-308",
+    "parent": ""
+  },
+  "TD-309": {
+    "title": "**1.16‑D. EventBridge schedules (cron) — Alerts/Digests/Book‑Again**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-309",
+    "parent": ""
+  },
+  "TD-310": {
+    "title": "**1.16‑E. Lambda handler skeleton — Saved Search Alerts**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-310",
+    "parent": ""
+  },
+  "TD-311": {
+    "title": "**1.16‑F. MJML template — Saved Search Alert (SFW‑only)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-311",
+    "parent": ""
+  },
+  "TD-312": {
+    "title": "**1.16‑G. JSON Schemas — Key Growth Events**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-312",
+    "parent": ""
+  },
+  "TD-313": {
+    "title": "**1.16‑H. Cost guardrails (observability notes)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-313",
+    "parent": ""
+  },
+  "TD-314": {
+    "title": "**1.16-I. MJML — Weekly City Digest (SFW-only, opt-in)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-314",
+    "parent": ""
+  },
+  "TD-315": {
+    "title": "**1.16-J. MJML — “Book Again” (7/30/90 variants)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-315",
+    "parent": ""
+  },
+  "TD-316": {
+    "title": "**1.16-K. HTML/CSS — Link-in-Bio microsite (SFW previews)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-316",
+    "parent": ""
+  },
+  "TD-317": {
+    "title": "**1.16-L. ANY/ALL Query Builder — Typesense/OpenSearch spec**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-317",
+    "parent": ""
+  },
+  "TD-318": {
+    "title": "**1.16-M. UTM & Attribution Rules**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-318",
+    "parent": ""
+  },
+  "TD-319": {
+    "title": "**1.16-N. Lambda Skeleton — Weekly Digest**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-319",
+    "parent": ""
+  },
+  "TD-320": {
+    "title": "**1.16-O. Lambda Skeleton — Book Again (7/30/90)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-320",
+    "parent": ""
+  },
+  "TD-321": {
+    "title": "**1.16-P. Cost & SLO Guardrails (growth jobs)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-321",
+    "parent": ""
+  },
+  "TD-322": {
+    "title": "**1.17.A Canon & invariants**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-322",
+    "parent": ""
+  },
+  "TD-323": {
+    "title": "**1.17.B URL topology (stable, human‑readable)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-323",
+    "parent": ""
+  },
+  "TD-324": {
+    "title": "**1.17.C Metadata & canonicalization**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-324",
+    "parent": ""
+  },
+  "TD-325": {
+    "title": "**1.17.D JSON‑LD structured data (copy‑paste)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-325",
+    "parent": ""
+  },
+  "TD-325.1": {
+    "title": "**D.1 Service Profile as** ***Person***** +** ***Product*** **(package)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-325.1",
+    "parent": "TD-325"
+  },
+  "TD-325.2": {
+    "title": "**D.2 Studio as** ***LocalBusiness***",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-325.2",
+    "parent": "TD-325"
+  },
+  "TD-325.3": {
+    "title": "**D.3 Guides/Case Studies as** ***Article***",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-325.3",
+    "parent": "TD-325"
+  },
+  "TD-326": {
+    "title": "**1.17.E Robots, Safe‑Mode, and** ***noindex*** **policy**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-326",
+    "parent": ""
+  },
+  "TD-327": {
+    "title": "**1.17.F Sitemaps (segmented, auto‑rotating)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-327",
+    "parent": ""
+  },
+  "TD-328": {
+    "title": "**1.17.G Hreflang & locale routing**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-328",
+    "parent": ""
+  },
+  "TD-329": {
+    "title": "**1.17.H Rendering strategy & caching (ISR/SSR + CDN)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-329",
+    "parent": ""
+  },
+  "TD-330": {
+    "title": "**1.17.I Core Web Vitals & performance budgets**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-330",
+    "parent": ""
+  },
+  "TD-331": {
+    "title": "**1.17.J Accessibility synergy (SEO + a11y)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-331",
+    "parent": ""
+  },
+  "TD-332": {
+    "title": "**1.17.K Admin content ops & safeguards**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-332",
+    "parent": ""
+  },
+  "TD-333": {
+    "title": "**1.17.L Telemetry & dashboards**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-333",
+    "parent": ""
+  },
+  "TD-334": {
+    "title": "**1.17.M Test plan (CI + stage)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-334",
+    "parent": ""
+  },
+  "TD-335": {
+    "title": "**1.17.N Cost posture**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-335",
+    "parent": ""
+  },
+  "TD-336": {
+    "title": "**1.17.O Inline artifacts block**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-336",
+    "parent": ""
+  },
+  "TD-337": {
+    "title": "**1.17.P Acceptance criteria — mark §1.17 FINAL only when ALL true**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-337",
+    "parent": ""
+  },
+  "TD-338": {
+    "title": "**1.17.1 Crawl & Indexation Control (robots, meta, headers)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-338",
+    "parent": ""
+  },
+  "TD-339": {
+    "title": "**1.17.2 Canonicalization & URL Normalization**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-339",
+    "parent": ""
+  },
+  "TD-340": {
+    "title": "**1.17.3 Faceted Navigation, Pagination & Filters**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-340",
+    "parent": ""
+  },
+  "TD-341": {
+    "title": "**1.17.4 Structured Data (JSON‑LD) — Full Coverage**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-341",
+    "parent": ""
+  },
+  "TD-342": {
+    "title": "**1.17.5 Content Templates & On‑Page Optimization**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-342",
+    "parent": ""
+  },
+  "TD-343": {
+    "title": "**1.17.6 Image & Video SEO (SFW‑only)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-343",
+    "parent": ""
+  },
+  "TD-344": {
+    "title": "**1.17.7 Performance for SEO (CWV‑first Build)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-344",
+    "parent": ""
+  },
+  "TD-345": {
+    "title": "**1.17.8 Internationalization (hreflang) & Localization**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-345",
+    "parent": ""
+  },
+  "TD-346": {
+    "title": "**1.17.9 Accessibility (A11y) Synergy for SEO**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-346",
+    "parent": ""
+  },
+  "TD-347": {
+    "title": "**1.17.10 Sitemaps (Web, Image, Video)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-347",
+    "parent": ""
+  },
+  "TD-348": {
+    "title": "**1.17.11 Internal Linking & Breadcrumbs**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-348",
+    "parent": ""
+  },
+  "TD-349": {
+    "title": "**1.17.12 Log‑File Analysis & Search Console Ingestion**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-349",
+    "parent": ""
+  },
+  "TD-350": {
+    "title": "**1.17.13 SEO‑Safe Experimentation**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-350",
+    "parent": ""
+  },
+  "TD-351": {
+    "title": "**1.17.14 Risk Register & Mitigations**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-351",
+    "parent": ""
+  },
+  "TD-352": {
+    "title": "**1.17.15 QA Checklists (Pre‑launch & Ongoing)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-352",
+    "parent": ""
+  },
+  "TD-353": {
+    "title": "**1.17.16 Work Packages (Cursor 4‑agent lanes)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-353",
+    "parent": ""
+  },
+  "TD-354": {
+    "title": "**1.17.17 Acceptance Criteria (mark §1.17 FINAL only when ALL true)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-354",
+    "parent": ""
+  },
+  "TD-355": {
+    "title": "**1.18.A Security canon & threat model**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-355",
+    "parent": ""
+  },
+  "TD-356": {
+    "title": "**1.18.B Identity & access management (IAM) boundaries**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-356",
+    "parent": ""
+  },
+  "TD-357": {
+    "title": "**1.18.C Authentication & authorization (Amplify/AppSync/Cognito)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-357",
+    "parent": ""
+  },
+  "TD-358": {
+    "title": "**1.18.D Secrets & key management**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-358",
+    "parent": ""
+  },
+  "TD-359": {
+    "title": "**1.18.E Encryption (in transit & at rest)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-359",
+    "parent": ""
+  },
+  "TD-360": {
+    "title": "**1.18.F Network & edge protections**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-360",
+    "parent": ""
+  },
+  "TD-361": {
+    "title": "**1.18.G Data classification & handling**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-361",
+    "parent": ""
+  },
+  "TD-362": {
+    "title": "**1.18.H Logging, audit, and tamper‑evidence**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-362",
+    "parent": ""
+  },
+  "TD-363": {
+    "title": "**1.18.I Vulnerability management & CI/CD hardening**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-363",
+    "parent": ""
+  },
+  "TD-364": {
+    "title": "**1.18.J Incident response (IR) & disaster recovery (DR)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-364",
+    "parent": ""
+  },
+  "TD-365": {
+    "title": "**1.18.K Compliance scaffolding (SOC 2‑ready baseline)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-365",
+    "parent": ""
+  },
+  "TD-366": {
+    "title": "**1.18.L Monitoring & detection**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-366",
+    "parent": ""
+  },
+  "TD-367": {
+    "title": "**1.18.M SLOs, budgets & costs**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-367",
+    "parent": ""
+  },
+  "TD-368": {
+    "title": "**1.18.N Test plan (security)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-368",
+    "parent": ""
+  },
+  "TD-369": {
+    "title": "**1.18.O Work packages (Cursor 4‑agent lanes)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-369",
+    "parent": ""
+  },
+  "TD-370": {
+    "title": "**1.18.P Acceptance criteria (mark §1.18 FINAL only when ALL true)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-370",
+    "parent": ""
+  },
+  "TD-371": {
+    "title": "**1.18.A Threat Model (assets, trust boundaries, controls)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-371",
+    "parent": ""
+  },
+  "TD-372": {
+    "title": "**1.18.B Security Headers (CSP, Referrer, Permissions)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-372",
+    "parent": ""
+  },
+  "TD-373": {
+    "title": "**1.18.C GraphQL Complexity/Depth Limits + Rate Quotas**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-373",
+    "parent": ""
+  },
+  "TD-374": {
+    "title": "**1.18.D Cookie & Session Policy**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-374",
+    "parent": ""
+  },
+  "TD-375": {
+    "title": "**1.18.E Webhook HMAC Verification (Stripe/Plaid)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-375",
+    "parent": ""
+  },
+  "TD-376": {
+    "title": "**1.18.F S3 & CloudFront: Private Origins, No Public ACLs**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-376",
+    "parent": ""
+  },
+  "TD-377": {
+    "title": "**1.18.G Pre‑Signed Uploads (size/type guard)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-377",
+    "parent": ""
+  },
+  "TD-378": {
+    "title": "**1.18.H Break‑Glass & JIT Admin Access**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-378",
+    "parent": ""
+  },
+  "TD-379": {
+    "title": "**1.18.I Secrets Rotation Runbook (Stripe, SES, KMS)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-379",
+    "parent": ""
+  },
+  "TD-380": {
+    "title": "**1.18.J Vendor Risk Management**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-380",
+    "parent": ""
+  },
+  "TD-381": {
+    "title": "**1.18.K Pen‑Test Scope & Safe Harbor**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-381",
+    "parent": ""
+  },
+  "TD-382": {
+    "title": "**1.18.L OWASP ASVS Mapping (excerpt)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-382",
+    "parent": ""
+  },
+  "TD-383": {
+    "title": "**1.18.M DR Drill & Severity Matrix**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-383",
+    "parent": ""
+  },
+  "TD-384": {
+    "title": "**1.18.N SIEM/Athena Queries (suspicious patterns)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-384",
+    "parent": ""
+  },
+  "TD-385": {
+    "title": "**1.18.O Access Recertification Schedule**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-385",
+    "parent": ""
+  },
+  "TD-385.1": {
+    "title": "**§1.18 Determination (post‑addendum)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-385.1",
+    "parent": "TD-385"
+  },
+  "TD-386": {
+    "title": "**1.19.A Canon & invariants**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-386",
+    "parent": ""
+  },
+  "TD-387": {
+    "title": "**1.19.B Locale catalog & message format**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-387",
+    "parent": ""
+  },
+  "TD-388": {
+    "title": "**1.19.C Hreflang & negotiation**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-388",
+    "parent": ""
+  },
+  "TD-389": {
+    "title": "**1.19.1 Canon & invariants**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-389",
+    "parent": ""
+  },
+  "TD-390": {
+    "title": "**1.19.2 Data model & user preferences**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-390",
+    "parent": ""
+  },
+  "TD-391": {
+    "title": "**1.19.3 Locale catalogs & loading**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-391",
+    "parent": ""
+  },
+  "TD-392": {
+    "title": "**1.19.4 Locale detection & routing (no auto‑redirect loop)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-392",
+    "parent": ""
+  },
+  "TD-393": {
+    "title": "**1.19.5 Numbers, currency, dates & time zones**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-393",
+    "parent": ""
+  },
+  "TD-394": {
+    "title": "**1.19.6 RTL support & logical CSS**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-394",
+    "parent": ""
+  },
+  "TD-395": {
+    "title": "**1.19.7 Accessible components (WCAG 2.2 AA)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-395",
+    "parent": ""
+  },
+  "TD-396": {
+    "title": "**1.19.8 Form localization & validation**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-396",
+    "parent": ""
+  },
+  "TD-397": {
+    "title": "**1.19.9 Public SEO pages: localized metadata & JSON‑LD**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-397",
+    "parent": ""
+  },
+  "TD-398": {
+    "title": "**1.19.10 Emails & notifications localization (MJML)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-398",
+    "parent": ""
+  },
+  "TD-399": {
+    "title": "**1.19.11 Translation workflow, QA & pseudolocalization**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-399",
+    "parent": ""
+  },
+  "TD-400": {
+    "title": "**1.19.12 A11y testing (automated + manual)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-400",
+    "parent": ""
+  },
+  "TD-401": {
+    "title": "**1.19.13 Performance & bundle budgets for i18n**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-401",
+    "parent": ""
+  },
+  "TD-402": {
+    "title": "**1.19.14 Governance: language coverage & content policy**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-402",
+    "parent": ""
+  },
+  "TD-403": {
+    "title": "**1.19.15 Work packages (Cursor 4‑agent lanes)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-403",
+    "parent": ""
+  },
+  "TD-404": {
+    "title": "**1.19.16 Acceptance criteria — mark §1.19 FINAL only when ALL true**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-404",
+    "parent": ""
+  },
+  "TD-405": {
+    "title": "**1.20.A Canon & invariants**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-405",
+    "parent": ""
+  },
+  "TD-406": {
+    "title": "**1.20.B Client architecture**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-406",
+    "parent": ""
+  },
+  "TD-407": {
+    "title": "**1.20.C PWA configuration (manifest, SW, caching, offline)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-407",
+    "parent": ""
+  },
+  "TD-408": {
+    "title": "**1.20.D Optional native shells (React Native + Expo)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-408",
+    "parent": ""
+  },
+  "TD-409": {
+    "title": "**1.20.E Auth & session on device**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-409",
+    "parent": ""
+  },
+  "TD-410": {
+    "title": "**1.20.F Messaging UX on mobile**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-410",
+    "parent": ""
+  },
+  "TD-411": {
+    "title": "**1.20.G Push notifications (APNs/FCM via Pinpoint/SNS)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-411",
+    "parent": ""
+  },
+  "TD-412": {
+    "title": "**1.20.H File uploads from camera/gallery**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-412",
+    "parent": ""
+  },
+  "TD-413": {
+    "title": "**1.20.I Safe‑Mode & age gating UX**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-413",
+    "parent": ""
+  },
+  "TD-414": {
+    "title": "**1.20.J Performance budgets (mobile)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-414",
+    "parent": ""
+  },
+  "TD-415": {
+    "title": "**1.20.K Accessibility (mobile a11y)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-415",
+    "parent": ""
+  },
+  "TD-416": {
+    "title": "**1.20.L Deep links & universal links**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-416",
+    "parent": ""
+  },
+  "TD-417": {
+    "title": "**1.20.M CI/CD & releases (PWA + RN shells)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-417",
+    "parent": ""
+  },
+  "TD-418": {
+    "title": "**1.20.N Telemetry & crash reporting**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-418",
+    "parent": ""
+  },
+  "TD-419": {
+    "title": "**1.20.O Error taxonomy (client‑safe)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-419",
+    "parent": ""
+  },
+  "TD-420": {
+    "title": "**1.20.P Test plan (device & CI)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-420",
+    "parent": ""
+  },
+  "TD-421": {
+    "title": "**1.20.Q Work packages (Cursor 4‑agent lanes)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-421",
+    "parent": ""
+  },
+  "TD-422": {
+    "title": "**1.20.R Acceptance criteria — mark §1.20 FINAL only when ALL true**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-422",
+    "parent": ""
+  },
+  "TD-423": {
+    "title": "**1.21.A Index documents & schemas**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-423",
+    "parent": ""
+  },
+  "TD-424": {
+    "title": "**1.21.B Ingest & indexing pipeline**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-424",
+    "parent": ""
+  },
+  "TD-425": {
+    "title": "**1.21.C Query model (ANY/ALL, Safe‑Mode, geo/price)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-425",
+    "parent": ""
+  },
+  "TD-426": {
+    "title": "**1.21.D Autocomplete & suggestions**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-426",
+    "parent": ""
+  },
+  "TD-427": {
+    "title": "**1.21.E Ranking & boosts (default “best” sort)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-427",
+    "parent": ""
+  },
+  "TD-428": {
+    "title": "**1.21.F Synonyms, stemming & typo tolerance**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-428",
+    "parent": ""
+  },
+  "TD-429": {
+    "title": "**1.21.G Safe‑Mode, policy & exclusion**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-429",
+    "parent": ""
+  },
+  "TD-430": {
+    "title": "**1.21.H Caching, throughput & cost**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-430",
+    "parent": ""
+  },
+  "TD-431": {
+    "title": "**1.21.I Admin & curation tools**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-431",
+    "parent": ""
+  },
+  "TD-432": {
+    "title": "**1.21.J Telemetry, evaluation & experimentation**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-432",
+    "parent": ""
+  },
+  "TD-433": {
+    "title": "**1.21.K API (GraphQL)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-433",
+    "parent": ""
+  },
+  "TD-434": {
+    "title": "**1.21.L Test plan**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-434",
+    "parent": ""
+  },
+  "TD-435": {
+    "title": "**1.21.M Acceptance criteria — mark §1.21 FINAL only when ALL true**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-435",
+    "parent": ""
+  },
+  "TD-436": {
+    "title": "**1.22.1 Canon & invariants**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-436",
+    "parent": ""
+  },
+  "TD-437": {
+    "title": "**1.22.2 Pricing & fee model (baseline)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-437",
+    "parent": ""
+  },
+  "TD-438": {
+    "title": "**1.22.3 Data model (Aurora) — orders, intents, transfers, refunds**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-438",
+    "parent": ""
+  },
+  "TD-439": {
+    "title": "**1.22.4 Checkout & payment flows**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-439",
+    "parent": ""
+  },
+  "TD-439.1": {
+    "title": "**A) Card (default) — immediate capture**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-439.1",
+    "parent": "TD-439"
+  },
+  "TD-439.2": {
+    "title": "**B) Manual capture (short hold)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-439.2",
+    "parent": "TD-439"
+  },
+  "TD-439.3": {
+    "title": "**C) ACH (Phase 2) — Financial Connections**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-439.3",
+    "parent": "TD-439"
+  },
+  "TD-440": {
+    "title": "**1.22.5 Stripe Connect onboarding (providers)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-440",
+    "parent": ""
+  },
+  "TD-441": {
+    "title": "**1.22.6 Charges & transfers pattern**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-441",
+    "parent": ""
+  },
+  "TD-442": {
+    "title": "**1.22.7 Webhooks, idempotency & order state machine**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-442",
+    "parent": ""
+  },
+  "TD-443": {
+    "title": "**1.22.8 Refunds, cancellations & disputes**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-443",
+    "parent": ""
+  },
+  "TD-444": {
+    "title": "**1.22.9 Credits, vouchers & taxes**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-444",
+    "parent": ""
+  },
+  "TD-445": {
+    "title": "**1.22.10 Payout scheduling & reserves**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-445",
+    "parent": ""
+  },
+  "TD-446": {
+    "title": "**1.22.11 Fraud controls & risk flags (tied to §1.18 / §1.15)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-446",
+    "parent": ""
+  },
+  "TD-447": {
+    "title": "**1.22.12 Reconciliation — ledgers & analytics lake**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-447",
+    "parent": ""
+  },
+  "TD-448": {
+    "title": "**1.22.13 Admin finance console**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-448",
+    "parent": ""
+  },
+  "TD-449": {
+    "title": "**1.22.14 Telemetry, SLOs & cost**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-449",
+    "parent": ""
+  },
+  "TD-450": {
+    "title": "**1.22.15 Test plan**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-450",
+    "parent": ""
+  },
+  "TD-451": {
+    "title": "**1.22.16 Work packages (Cursor 4‑agent lanes)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-451",
+    "parent": ""
+  },
+  "TD-452": {
+    "title": "**1.22.17 Acceptance criteria — mark §1.22 FINAL only when ALL true**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-452",
+    "parent": ""
+  },
+  "TD-453": {
+    "title": "**1.23.1 Canon & Invariants**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-453",
+    "parent": ""
+  },
+  "TD-454": {
+    "title": "**1.23.2 Data Model**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-454",
+    "parent": ""
+  },
+  "TD-454.1": {
+    "title": "**1.23.2.1 DynamoDB (primary, realtime path)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-454.1",
+    "parent": "TD-454"
+  },
+  "TD-454.2": {
+    "title": "**1.23.2.2 Aurora (relational join & analytics)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-454.2",
+    "parent": "TD-454"
+  },
+  "TD-455": {
+    "title": "**1.23.3 GraphQL Schema (AppSync)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-455",
+    "parent": ""
+  },
+  "TD-456": {
+    "title": "**1.23.4 Realtime Delivery, Receipts & Typing**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-456",
+    "parent": ""
+  },
+  "TD-457": {
+    "title": "**1.23.5 Message Requests, Credits & Contact Filters**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-457",
+    "parent": ""
+  },
+  "TD-458": {
+    "title": "**1.23.6 Action Cards (Structured Forms in Chat)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-458",
+    "parent": ""
+  },
+  "TD-459": {
+    "title": "**1.23.7 Attachments & Previews (S3 + Safe‑Mode)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-459",
+    "parent": ""
+  },
+  "TD-460": {
+    "title": "**1.23.8 Inbox Folders, Filters & Search**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-460",
+    "parent": ""
+  },
+  "TD-461": {
+    "title": "**1.23.9 Spam Controls, Rate Limits & Safety**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-461",
+    "parent": ""
+  },
+  "TD-462": {
+    "title": "**1.23.10 Notifications (Email/Push) & Quiet Hours**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-462",
+    "parent": ""
+  },
+  "TD-463": {
+    "title": "**1.23.11 Project Panel (Right‑Pane) Data**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-463",
+    "parent": ""
+  },
+  "TD-464": {
+    "title": "**1.23.12 Error Taxonomy (client‑safe)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-464",
+    "parent": ""
+  },
+  "TD-465": {
+    "title": "**1.23.13 Observability & Telemetry**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-465",
+    "parent": ""
+  },
+  "TD-466": {
+    "title": "**1.23.14 Cost & Scale Posture**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-466",
+    "parent": ""
+  },
+  "TD-467": {
+    "title": "**1.23.15 Security, Privacy & Retention**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-467",
+    "parent": ""
+  },
+  "TD-468": {
+    "title": "**1.23.16 Test Plan**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-468",
+    "parent": ""
+  },
+  "TD-469": {
+    "title": "**1.23.17 Work Packages (Cursor 4‑agent lanes)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-469",
+    "parent": ""
+  },
+  "TD-470": {
+    "title": "**1.23.18 Acceptance Criteria — mark §1.23 FINAL only when ALL true**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-470",
+    "parent": ""
+  },
+  "TD-471": {
+    "title": "**1.24.1 Objectives & Scope**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-471",
+    "parent": ""
+  },
+  "TD-472": {
+    "title": "**1.24.2 Architecture (cost‑savvy, elastic)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-472",
+    "parent": ""
+  },
+  "TD-473": {
+    "title": "**1.24.3 Data Model (Aurora PostgreSQL + S3)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-473",
+    "parent": ""
+  },
+  "TD-474": {
+    "title": "**1.24.4 GraphQL Schema (selected)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-474",
+    "parent": ""
+  },
+  "TD-475": {
+    "title": "**1.24.5 Booking Widget (UI & validation)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-475",
+    "parent": ""
+  },
+  "TD-476": {
+    "title": "**1.24.6 Reviews & Reputation (space‑scoped)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-476",
+    "parent": ""
+  },
+  "TD-477": {
+    "title": "**1.24.7 Host Create/Edit Wizard (end‑to‑end)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-477",
+    "parent": ""
+  },
+  "TD-478": {
+    "title": "**1.24.8 Host Dashboard & Operations**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-478",
+    "parent": ""
+  },
+  "TD-479": {
+    "title": "**1.24.9 Search & “Pair with Talent” Links**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-479",
+    "parent": ""
+  },
+  "TD-480": {
+    "title": "**1.24.10 Privacy, Policy & Safety**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-480",
+    "parent": ""
+  },
+  "TD-481": {
+    "title": "**1.24.11 Notifications & ICS**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-481",
+    "parent": ""
+  },
+  "TD-482": {
+    "title": "**1.24.12 Observability & KPIs**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-482",
+    "parent": ""
+  },
+  "TD-483": {
+    "title": "**1.24.13 Test Plan**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-483",
+    "parent": ""
+  },
+  "TD-484": {
+    "title": "**1.24.14 Cost & Scale**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-484",
+    "parent": ""
+  },
+  "TD-485": {
+    "title": "**1.24.15 Work Packages (Cursor 4‑agent lanes)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-485",
+    "parent": ""
+  },
+  "TD-486": {
+    "title": "**1.24.16 Acceptance Criteria — mark §1.24 FINAL only when ALL true**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-486",
+    "parent": ""
+  },
+  "TD-486.1": {
+    "title": "**A) Insurance / COI Requirements (optional but supported at launch)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-486.1",
+    "parent": "TD-486"
+  },
+  "TD-486.2": {
+    "title": "**B) Pricing Tiers, Overtime & Crew‑size Multipliers**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-486.2",
+    "parent": "TD-486"
+  },
+  "TD-486.3": {
+    "title": "**C) ADA / Accessibility Quick‑Facts (public & filterable)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-486.3",
+    "parent": "TD-486"
+  },
+  "TD-486.4": {
+    "title": "**D) Host Cancellation Penalties & Reputation Impact**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-486.4",
+    "parent": "TD-486"
+  },
+  "TD-486.5": {
+    "title": "**E) Evidence & Deposit Capture Rules (post‑booking)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-486.5",
+    "parent": "TD-486"
+  },
+  "TD-486.6": {
+    "title": "**F) Response SLA / Autocancel for Requests (not IB)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-486.6",
+    "parent": "TD-486"
+  },
+  "TD-486.7": {
+    "title": "**G) Availability Blackouts & Holidays**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-486.7",
+    "parent": "TD-486"
+  },
+  "TD-486.8": {
+    "title": "**H) SEO JSON‑LD for Studio Listings (SFW‑only)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-486.8",
+    "parent": "TD-486"
+  },
+  "TD-486.9": {
+    "title": "**I) Approximate Location Policy (geohash precision)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-486.9",
+    "parent": "TD-486"
+  },
+  "TD-486.10": {
+    "title": "**J) House‑Rules & Releases — Template Library & Versioning**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-486.10",
+    "parent": "TD-486"
+  },
+  "TD-486.11": {
+    "title": "**K) Calendar Sync Posture (Phase 2 two‑way)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-486.11",
+    "parent": "TD-486"
+  },
+  "TD-486.12": {
+    "title": "**L) Expanded Tests (add to §1.24.13)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-486.12",
+    "parent": "TD-486"
+  },
+  "TD-486.13": {
+    "title": "**M) Work‑packages delta (Cursor 4‑agent lanes)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-486.13",
+    "parent": "TD-486"
+  },
+  "TD-487": {
+    "title": "**1.26.1 Canon & invariants**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-487",
+    "parent": ""
+  },
+  "TD-488": {
+    "title": "**1.26.2 Roles & permissions (RBAC)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-488",
+    "parent": ""
+  },
+  "TD-489": {
+    "title": "**1.26.3 App shell & security**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-489",
+    "parent": ""
+  },
+  "TD-490": {
+    "title": "**1.26.4 Data model (Aurora) — cases, actions, audit**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-490",
+    "parent": ""
+  },
+  "TD-491": {
+    "title": "**1.26.5 Modules & screens**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-491",
+    "parent": ""
+  },
+  "TD-491.1": {
+    "title": "**A) User management**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-491.1",
+    "parent": "TD-491"
+  },
+  "TD-491.2": {
+    "title": "**B) Listing management**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-491.2",
+    "parent": "TD-491"
+  },
+  "TD-491.3": {
+    "title": "**C) Trust & Safety casework**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-491.3",
+    "parent": "TD-491"
+  },
+  "TD-491.4": {
+    "title": "**D) Finance Ops**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-491.4",
+    "parent": "TD-491"
+  },
+  "TD-491.5": {
+    "title": "**E) Search curation (§1.21)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-491.5",
+    "parent": "TD-491"
+  },
+  "TD-491.6": {
+    "title": "**F) Smart Docs admin (§1.25)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-491.6",
+    "parent": "TD-491"
+  },
+  "TD-491.7": {
+    "title": "**G) Content Ops (CMS)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-491.7",
+    "parent": "TD-491"
+  },
+  "TD-491.8": {
+    "title": "**H) Flags & configuration**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-491.8",
+    "parent": "TD-491"
+  },
+  "TD-492": {
+    "title": "**1.26.6 Admin API (GraphQL)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-492",
+    "parent": ""
+  },
+  "TD-493": {
+    "title": "**1.26.7 JIT access & privacy guardrails**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-493",
+    "parent": ""
+  },
+  "TD-494": {
+    "title": "**1.26.8 Observability & SLAs**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-494",
+    "parent": ""
+  },
+  "TD-495": {
+    "title": "**1.26.9 Content & SEO operations (light CMS)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-495",
+    "parent": ""
+  },
+  "TD-496": {
+    "title": "**1.26.10 Rate‑limit & risk tuning**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-496",
+    "parent": ""
+  },
+  "TD-497": {
+    "title": "**1.26.11 Feature flags & config**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-497",
+    "parent": ""
+  },
+  "TD-498": {
+    "title": "**1.26.12 CI/CD & access controls**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-498",
+    "parent": ""
+  },
+  "TD-499": {
+    "title": "**1.26.13 Test plan**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-499",
+    "parent": ""
+  },
+  "TD-500": {
+    "title": "**1.26.14 Work packages (Cursor 4‑agent lanes)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-500",
+    "parent": ""
+  },
+  "TD-501": {
+    "title": "**1.26.15 Acceptance criteria — mark §1.26 FINAL only when ALL true**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-501",
+    "parent": ""
+  },
+  "TD-502": {
+    "title": "**1.27.1 Canon & invariants**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-502",
+    "parent": ""
+  },
+  "TD-503": {
+    "title": "**1.27.2 URL design & routing**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-503",
+    "parent": ""
+  },
+  "TD-504": {
+    "title": "**1.27.3 Canonical, robots, and meta tags**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-504",
+    "parent": ""
+  },
+  "TD-505": {
+    "title": "**1.27.4 robots.txt and crawl allowances**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-505",
+    "parent": ""
+  },
+  "TD-506": {
+    "title": "**1.27.5 Sitemap strategy (index + modular feeds)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-506",
+    "parent": ""
+  },
+  "TD-507": {
+    "title": "**1.27.6 Structured data (JSON‑LD)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-507",
+    "parent": ""
+  },
+  "TD-507.1": {
+    "title": "**A) Person (SFW profile)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-507.1",
+    "parent": "TD-507"
+  },
+  "TD-507.2": {
+    "title": "**B) Place (Studio listing, approximate coordinates only)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-507.2",
+    "parent": "TD-507"
+  },
+  "TD-507.3": {
+    "title": "**C) BreadcrumbList for directories**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-507.3",
+    "parent": "TD-507"
+  },
+  "TD-508": {
+    "title": "**1.27.7 SSR/ISR build plan**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-508",
+    "parent": ""
+  },
+  "TD-509": {
+    "title": "**1.27.8 Pagination & faceted navigation**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-509",
+    "parent": ""
+  },
+  "TD-510": {
+    "title": "**1.27.9 Internal linking & content hubs**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-510",
+    "parent": ""
+  },
+  "TD-511": {
+    "title": "**1.27.10 Media, OpenGraph & Twitter cards**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-511",
+    "parent": ""
+  },
+  "TD-512": {
+    "title": "**1.27.11 Core Web Vitals budgets & enforcements**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-512",
+    "parent": ""
+  },
+  "TD-513": {
+    "title": "**1.27.12 Error & redirect policy**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-513",
+    "parent": ""
+  },
+  "TD-514": {
+    "title": "**1.27.13 Safe‑Mode & SFW gating (SEO)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-514",
+    "parent": ""
+  },
+  "TD-515": {
+    "title": "**1.27.14 Analytics & monitoring**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-515",
+    "parent": ""
+  },
+  "TD-516": {
+    "title": "**1.27.15 Cost posture**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-516",
+    "parent": ""
+  },
+  "TD-517": {
+    "title": "**1.27.16 Artifacts (copy‑pasteable)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-517",
+    "parent": ""
+  },
+  "TD-518": {
+    "title": "**1.27.17 Test plan**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-518",
+    "parent": ""
+  },
+  "TD-519": {
+    "title": "**1.27.18 Acceptance criteria — mark §1.27 FINAL only when ALL true**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-519",
+    "parent": ""
+  },
+  "TD-520": {
+    "title": "**1.28.1 Canon & invariants**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-520",
+    "parent": ""
+  },
+  "TD-521": {
+    "title": "**1.28.2 Roles & permissions (RBAC)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-521",
+    "parent": ""
+  },
+  "TD-522": {
+    "title": "**1.28.3 App shell & perimeter security**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-522",
+    "parent": ""
+  },
+  "TD-523": {
+    "title": "**1.28.4 Data model (cases, actions, audit)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-523",
+    "parent": ""
+  },
+  "TD-524": {
+    "title": "**1.28.5 Modules & screens**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-524",
+    "parent": ""
+  },
+  "TD-524.1": {
+    "title": "**A) User management**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-524.1",
+    "parent": "TD-524"
+  },
+  "TD-524.2": {
+    "title": "**B) Listing management (People & Studios)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-524.2",
+    "parent": "TD-524"
+  },
+  "TD-524.3": {
+    "title": "**C) Trust & Safety casework**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-524.3",
+    "parent": "TD-524"
+  },
+  "TD-524.4": {
+    "title": "**D) Finance operations**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-524.4",
+    "parent": "TD-524"
+  },
+  "TD-524.5": {
+    "title": "**E) Search curation (ties §1.21)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-524.5",
+    "parent": "TD-524"
+  },
+  "TD-524.6": {
+    "title": "**F) Smart Docs admin (ties §1.26)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-524.6",
+    "parent": "TD-524"
+  },
+  "TD-524.7": {
+    "title": "**G) Content Ops (light CMS)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-524.7",
+    "parent": "TD-524"
+  },
+  "TD-524.8": {
+    "title": "**H) Feature flags & risk knobs**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-524.8",
+    "parent": "TD-524"
+  },
+  "TD-525": {
+    "title": "**1.28.6 Admin API (GraphQL)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-525",
+    "parent": ""
+  },
+  "TD-526": {
+    "title": "**1.28.7 JIT access & privacy guardrails**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-526",
+    "parent": ""
+  },
+  "TD-527": {
+    "title": "**1.28.8 Observability & SLAs**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-527",
+    "parent": ""
+  },
+  "TD-528": {
+    "title": "**1.28.9 CMS & SEO ops (public content)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-528",
+    "parent": ""
+  },
+  "TD-529": {
+    "title": "**1.28.10 Rate‑limit & risk tuning**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-529",
+    "parent": ""
+  },
+  "TD-530": {
+    "title": "**1.28.11 Feature flags & configuration**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-530",
+    "parent": ""
+  },
+  "TD-531": {
+    "title": "**1.28.12 CI/CD & access controls**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-531",
+    "parent": ""
+  },
+  "TD-532": {
+    "title": "**1.28.13 Test plan**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-532",
+    "parent": ""
+  },
+  "TD-533": {
+    "title": "**1.28.14 Work packages (Cursor 4‑agent lanes)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-533",
+    "parent": ""
+  },
+  "TD-534": {
+    "title": "**1.28.15 Acceptance criteria — mark §1.28 FINAL only when ALL true**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-534",
+    "parent": ""
+  },
+  "TD-535": {
+    "title": "**1.29.1 Scope (from non‑technical plan → technical)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-535",
+    "parent": ""
+  },
+  "TD-536": {
+    "title": "**1.29.2 Architecture (cost‑conscious, elastic)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-536",
+    "parent": ""
+  },
+  "TD-537": {
+    "title": "**1.29.3 Data model (Aurora PostgreSQL + S3)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-537",
+    "parent": ""
+  },
+  "TD-538": {
+    "title": "**1.29.4 GraphQL schema (selected)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-538",
+    "parent": ""
+  },
+  "TD-539": {
+    "title": "**1.29.5 Public UI (web) & owner/editor flows**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-539",
+    "parent": ""
+  },
+  "TD-540": {
+    "title": "**1.29.6 Safe‑Mode & policy**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-540",
+    "parent": ""
+  },
+  "TD-541": {
+    "title": "**1.29.7 Media pipeline**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-541",
+    "parent": ""
+  },
+  "TD-542": {
+    "title": "**1.29.8 Discovery & SEO**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-542",
+    "parent": ""
+  },
+  "TD-543": {
+    "title": "**1.29.9 Analytics & KPIs**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-543",
+    "parent": ""
+  },
+  "TD-544": {
+    "title": "**1.29.10 Cost & scale**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-544",
+    "parent": ""
+  },
+  "TD-545": {
+    "title": "**1.29.11 Artifacts (copy‑pasteable into your Word plan)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-545",
+    "parent": ""
+  },
+  "TD-546": {
+    "title": "**1.29.12 Test plan**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-546",
+    "parent": ""
+  },
+  "TD-547": {
+    "title": "**1.29.13 Work packages (Cursor 4‑agent lanes)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-547",
+    "parent": ""
+  },
+  "TD-548": {
+    "title": "**1.29.14 Acceptance criteria — mark §1.29 FINAL only when ALL true**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-548",
+    "parent": ""
+  },
+  "TD-549": {
+    "title": "**1.3.1 Scope confirmation (from non‑technical → technical)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-549",
+    "parent": ""
+  },
+  "TD-550": {
+    "title": "**1.3.2 Architecture & cost posture**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-550",
+    "parent": ""
+  },
+  "TD-551": {
+    "title": "**1.3.3 Data model (Aurora, schema** ***booking*****)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-551",
+    "parent": ""
+  },
+  "TD-552": {
+    "title": "**1.3.4 GraphQL API (AppSync)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-552",
+    "parent": ""
+  },
+  "TD-553": {
+    "title": "**1.3.5 Booking modes & flows**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-553",
+    "parent": ""
+  },
+  "TD-553.1": {
+    "title": "**A) Instant Book (IB) (opt‑in per provider)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-553.1",
+    "parent": "TD-553"
+  },
+  "TD-553.2": {
+    "title": "**B) Request‑to‑Book (RTB)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-553.2",
+    "parent": "TD-553"
+  },
+  "TD-553.3": {
+    "title": "**C) Smart Invite (private, multi‑recipient)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-553.3",
+    "parent": "TD-553"
+  },
+  "TD-554": {
+    "title": "**1.3.6 Checkout, contracts & e‑sign**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-554",
+    "parent": ""
+  },
+  "TD-555": {
+    "title": "**1.3.7 Money movement (“escrow”), release & payouts**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-555",
+    "parent": ""
+  },
+  "TD-556": {
+    "title": "**1.3.8 Fees, tax, currencies**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-556",
+    "parent": ""
+  },
+  "TD-557": {
+    "title": "**1.3.9 Cancellations, reschedules & no‑shows (policy engine)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-557",
+    "parent": ""
+  },
+  "TD-558": {
+    "title": "**1.3.10 Disputes & chargebacks**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-558",
+    "parent": ""
+  },
+  "TD-559": {
+    "title": "**1.3.11 Events, webhooks & idempotency**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-559",
+    "parent": ""
+  },
+  "TD-560": {
+    "title": "**1.3.12 Messaging & calendar integration**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-560",
+    "parent": ""
+  },
+  "TD-561": {
+    "title": "**1.3.13 Security, privacy, and Safe‑Mode**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-561",
+    "parent": ""
+  },
+  "TD-562": {
+    "title": "**1.3.14 Cost controls**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-562",
+    "parent": ""
+  },
+  "TD-563": {
+    "title": "**1.3.15 Artifacts (text‑only, paste into your doc)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-563",
+    "parent": ""
+  },
+  "TD-564": {
+    "title": "**1.3.16 Test plan (representative, not exhaustive)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-564",
+    "parent": ""
+  },
+  "TD-565": {
+    "title": "**1.3.17 Acceptance criteria — mark §1.3 FINAL only when ALL true**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-565",
+    "parent": ""
+  },
+  "TD-566": {
+    "title": "**1.3.16 Test plan (representative, not exhaustive)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-566",
+    "parent": ""
+  },
+  "TD-567": {
+    "title": "**1.3.17 Acceptance criteria — mark §1.3 FINAL only when ALL true**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-567",
+    "parent": ""
+  },
+  "TD-568": {
+    "title": "**1.4.1 Scope confirmation**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-568",
+    "parent": ""
+  },
+  "TD-569": {
+    "title": "**1.4.2 Architecture (elastic & low‑cost)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-569",
+    "parent": ""
+  },
+  "TD-570": {
+    "title": "**1.4.3 Data model (Aurora + Dynamo + S3)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-570",
+    "parent": ""
+  },
+  "TD-571": {
+    "title": "**1.4.4 GraphQL schema (selected)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-571",
+    "parent": ""
+  },
+  "TD-572": {
+    "title": "**1.4.5 Inbox UX & folders**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-572",
+    "parent": ""
+  },
+  "TD-573": {
+    "title": "**1.4.6 Action Cards (structured flows inside chat)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-573",
+    "parent": ""
+  },
+  "TD-574": {
+    "title": "**1.4.7 Message Requests & Anti‑circumvention**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-574",
+    "parent": ""
+  },
+  "TD-575": {
+    "title": "**1.4.8 Notifications & Digests**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-575",
+    "parent": ""
+  },
+  "TD-576": {
+    "title": "**1.4.9 Moderation, Safety & Privacy**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-576",
+    "parent": ""
+  },
+  "TD-577": {
+    "title": "**1.4.10 Observability, KPIs & Cost**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-577",
+    "parent": ""
+  },
+  "TD-578": {
+    "title": "**1.4.11 Work packages (Cursor 4‑agent lanes)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-578",
+    "parent": ""
+  },
+  "TD-579": {
+    "title": "**1.4.12 Test plan (Part 1)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-579",
+    "parent": ""
+  },
+  "TD-580": {
+    "title": "**1.4.13 Acceptance criteria (Part 1)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-580",
+    "parent": ""
+  },
+  "TD-581": {
+    "title": "**1.4.A Action Card payload schemas (authoritative)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-581",
+    "parent": ""
+  },
+  "TD-581.1": {
+    "title": "**1) Reschedule (*****type=\"reschedule\"*****)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-581.1",
+    "parent": "TD-581"
+  },
+  "TD-581.2": {
+    "title": "**2) Extras / Overtime (*****type=\"extras\"*****)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-581.2",
+    "parent": "TD-581"
+  },
+  "TD-581.3": {
+    "title": "**3) Proofs / Approvals (*****type=\"proofs\"*****)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-581.3",
+    "parent": "TD-581"
+  },
+  "TD-581.4": {
+    "title": "**4) Expense / Receipt (*****type=\"expense\"*****)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-581.4",
+    "parent": "TD-581"
+  },
+  "TD-581.5": {
+    "title": "**5) Mark Complete / Deliver (*****type=\"complete\"*****)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-581.5",
+    "parent": "TD-581"
+  },
+  "TD-581.6": {
+    "title": "**6) Dispute (*****type=\"dispute\"*****)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-581.6",
+    "parent": "TD-581"
+  },
+  "TD-581.7": {
+    "title": "**7) Safety Flag (*****type=\"safety\"*****)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-581.7",
+    "parent": "TD-581"
+  },
+  "TD-582": {
+    "title": "**1.4.B Inbox search syntax & Typesense mapping**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-582",
+    "parent": ""
+  },
+  "TD-583": {
+    "title": "**1.4.C Presence, typing, delivery & read receipts**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-583",
+    "parent": ""
+  },
+  "TD-584": {
+    "title": "**1.4.D Email + Push templates (transactional & digest)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-584",
+    "parent": ""
+  },
+  "TD-585": {
+    "title": "**1.4.E Digest generation & batching**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-585",
+    "parent": ""
+  },
+  "TD-586": {
+    "title": "**1.4.F Quiet Hours & exceptions**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-586",
+    "parent": ""
+  },
+  "TD-587": {
+    "title": "**1.4.G Anti‑circumvention patterns & thresholds**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-587",
+    "parent": ""
+  },
+  "TD-588": {
+    "title": "**1.4.H Admin case‑bound access to threads**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-588",
+    "parent": ""
+  },
+  "TD-589": {
+    "title": "**1.4.I Credits, contact filters & rate limits**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-589",
+    "parent": ""
+  },
+  "TD-590": {
+    "title": "**1.4.J Safety, attachments & retention**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-590",
+    "parent": ""
+  },
+  "TD-591": {
+    "title": "**1.4.K Error codes (selected)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-591",
+    "parent": ""
+  },
+  "TD-592": {
+    "title": "**1.4.L Observability & KPIs (expansion)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-592",
+    "parent": ""
+  },
+  "TD-593": {
+    "title": "**1.4.M Work packages (Cursor 4‑agent lanes — continued)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-593",
+    "parent": ""
+  },
+  "TD-594": {
+    "title": "**1.4.N Test plan — additional cases to reach 99.9%**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-594",
+    "parent": ""
+  },
+  "TD-595": {
+    "title": "**1.4.O Acceptance criteria — mark §1.4 FINAL only when ALL true**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-595",
+    "parent": ""
+  },
+  "TD-596": {
+    "title": "**§1.5 — Trust, Safety & Verification — Technical Development Plan**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-596",
+    "parent": ""
+  },
+  "TD-596.1": {
+    "title": "**1.5.A Objectives & Non‑goals**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-596.1",
+    "parent": "TD-596"
+  },
+  "TD-596.2": {
+    "title": "**1.5.B Architecture (AWS Amplify Gen‑2 / AppSync / Stripe‑first)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-596.2",
+    "parent": "TD-596"
+  },
+  "TD-596.3": {
+    "title": "**1.5.C Data model (DynamoDB & S3)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-596.3",
+    "parent": "TD-596"
+  },
+  "TD-596.4": {
+    "title": "**1.5.D GraphQL schema (AppSync)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-596.4",
+    "parent": "TD-596"
+  },
+  "TD-596.5": {
+    "title": "**1.5.E State machines (AWS Step Functions)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-596.5",
+    "parent": "TD-596"
+  },
+  "TD-596.6": {
+    "title": "**1.5.F Enforcement & risk**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-596.6",
+    "parent": "TD-596"
+  },
+  "TD-596.7": {
+    "title": "**1.5.G Safe‑Mode & public surfaces**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-596.7",
+    "parent": "TD-596"
+  },
+  "TD-596.8": {
+    "title": "**1.5.H Verification Center (UX + backend)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-596.8",
+    "parent": "TD-596"
+  },
+  "TD-596.9": {
+    "title": "**1.5.I Admin console (T&S + Support + Finance)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-596.9",
+    "parent": "TD-596"
+  },
+  "TD-596.10": {
+    "title": "**1.5.J Security, privacy, retention**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-596.10",
+    "parent": "TD-596"
+  },
+  "TD-596.11": {
+    "title": "**1.5.K Cost profile & phase plan (build → launch → growth)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-596.11",
+    "parent": "TD-596"
+  },
+  "TD-596.12": {
+    "title": "**1.5.L Telemetry, metrics & alarms**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-596.12",
+    "parent": "TD-596"
+  },
+  "TD-596.13": {
+    "title": "**1.5.M Acceptance criteria (mirrors your L‑list, made testable)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-596.13",
+    "parent": "TD-596"
+  },
+  "TD-596.14": {
+    "title": "**1.5.N Rollout & ops playbook**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-596.14",
+    "parent": "TD-596"
+  },
+  "TD-596.15": {
+    "title": "**1.5.O Cursor “4‑agents” build plan (so we can ship on autopilot)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-596.15",
+    "parent": "TD-596"
+  },
+  "TD-597": {
+    "title": "**1.6.1 Scope confirmation (from your non‑technical plan → technical)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-597",
+    "parent": ""
+  },
+  "TD-598": {
+    "title": "**1.6.2 Architecture & cost posture**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-598",
+    "parent": ""
+  },
+  "TD-599": {
+    "title": "**1.6.3 Information Architecture (IA)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-599",
+    "parent": ""
+  },
+  "TD-600": {
+    "title": "**1.6.4 KB data model (Aurora schema** ***kb*****)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-600",
+    "parent": ""
+  },
+  "TD-601": {
+    "title": "**1.6.5 KB search (Typesense)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-601",
+    "parent": ""
+  },
+  "TD-602": {
+    "title": "**1.6.6 Support Widget (guided flows & deflection)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-602",
+    "parent": ""
+  },
+  "TD-603": {
+    "title": "**1.6.7 Ticketing: priorities, routing, SLAs, macros, QA**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-603",
+    "parent": ""
+  },
+  "TD-604": {
+    "title": "**1.6.8 Agent console (context + one‑click outcomes)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-604",
+    "parent": ""
+  },
+  "TD-605": {
+    "title": "**1.6.9 Policy playbooks (agent‑facing summaries)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-605",
+    "parent": ""
+  },
+  "TD-606": {
+    "title": "**1.6.10 Accessibility & Localization**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-606",
+    "parent": ""
+  },
+  "TD-607": {
+    "title": "**1.6.11 Email templates (SES) — text‑only artifacts**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-607",
+    "parent": ""
+  },
+  "TD-608": {
+    "title": "**1.6.12 Observability & dashboards**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-608",
+    "parent": ""
+  },
+  "TD-609": {
+    "title": "**1.6.13 Cost & scaling**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-609",
+    "parent": ""
+  },
+  "TD-610": {
+    "title": "**1.6.14 Tests (representative)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-610",
+    "parent": ""
+  },
+  "TD-611": {
+    "title": "**1.6.15 Artifacts (copy‑pasteable into your plan)**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-611",
+    "parent": ""
+  },
+  "TD-612": {
+    "title": "**1.6.16 Acceptance criteria — mark §1.6 FINAL only when ALL true**",
+    "path": "docs/blueprints/tech/TD-all.md",
+    "anchor": "TD-612",
+    "parent": ""
+  }
+}
