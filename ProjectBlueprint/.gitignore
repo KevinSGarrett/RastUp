@@ -2,3 +2,8 @@
 # ignore pycache
 **/__pycache__/
 *.pyc
+# Single-file blueprints only
+docs/blueprints/non-tech/NT-*--*.md
+docs/blueprints/tech/TD-*--*.md
+docs/blueprints/html/
+docs/blueprints/acceptance/
