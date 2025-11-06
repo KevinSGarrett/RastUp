@@ -2,7 +2,6 @@
 import argparse, hashlib, json, os, re, sys, time
 from typing import Dict, List, Optional, Tuple
 
-# Simple, robust ID map stored at repo root (current working directory)
 ID_MAP_FILE = os.path.join(os.getcwd(), "id_map.json")
 RE_HEADING = re.compile(r"^(#{2,6})\s+(.*)\s*$")
 
@@ -34,10 +33,10 @@ def _parse_headings(lines: List[str]) -> List[Tuple[int,int,str,int,int,Optional
 
 def _norm_body(lines: List[str], start: int, end: int) -> str:
     body = "\n".join(lines[start+1:end])
-    body = re.sub(r"<!--.*?-->", "", body, flags=re.S)
-    body = re.sub(r"[^]*", "", body)
-    body = re.sub(r"\[(.*?)\]\((.*?)\)", r"\1", body)
-    body = re.sub(r"\s+", "", body)
+    body = re.sub(r"<!--.*?-->", "", body, flags=re.S)        # strip HTML comments
+    body = re.sub(r"`[^`]*`", "", body)                       # remove inline code
+    body = re.sub(r"\[(.*?)\]\((.*?)\)", r"\1", body)         # links -> text
+    body = re.sub(r"\s+", "", body)                           # collapse whitespace
     return body[:20000]
 
 def _fp(doc_type: str, level: int, title: str, body_norm: str, doc_path: str) -> str:
@@ -128,3 +127,4 @@ def main():
 
 if __name__=="__main__":
     main()
+
