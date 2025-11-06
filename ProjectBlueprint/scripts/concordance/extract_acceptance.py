@@ -1,78 +1,53 @@
-#!/usr/bin/env python3
-"""
-extract_acceptance.py — Extract "Acceptance Criteria" and Gherkin-style blocks into
-docs/blueprints/acceptance/NT-*.md, linking back to the source anchor.
-
-Why it works now: your NT plan already includes explicit 'Acceptance Criteria' sections
-throughout (e.g., §1.1–§1.3), which this scanner captures.  (It’s content-only; IDs/anchors come from split files.) 
-"""
-from __future__ import annotations
-import os, re, sys, json
+﻿from __future__ import annotations
+import os, re, json
 from pathlib import Path
-from typing import List, Tuple
 
-REPO = Path(__file__).resolve().parents[2]
-NT_DIR = REPO / "docs" / "blueprints" / "non-tech"
-ACC_DIR = REPO / "docs" / "blueprints" / "acceptance"
-ACC_DIR.mkdir(parents=True, exist_ok=True)
+ACC_RE = re.compile(r'^\s*#{1,6}\s+(Acceptance|Acceptance Criteria|Criteria|Success Metrics)\b', re.I)
+GWT_RE = re.compile(r'^\s*(Given|When|Then|And|But)\b', re.I)
+MUST_RE = re.compile(r'\b(must|shall|should|required|acceptable)\b', re.I)
 
-FM_RE = re.compile(r"^---\n(.*?)\n---\n", re.S)
-ANCHOR_RE = re.compile(r'<a id="([^"]+)"></a>')
-AC_HEAD_RE = re.compile(r"^#{1,6}\s+Acceptance Criteria\b", re.I)
-GHERKIN_RE = re.compile(r"^\s*(Given|When|Then|And|But)\b.*", re.I)
-
-def parse_fm(text: str) -> dict:
-    m = FM_RE.match(text)
-    import yaml
-    return yaml.safe_load(m.group(1)) if m else {}
-
-def extract_ac_blocks(text: str) -> List[str]:
-    lines = text.splitlines()
-    blocks: List[str] = []
-    in_ac_section = False
-    current: List[str] = []
-    for line in lines:
-        if AC_HEAD_RE.match(line):
-            if current:
-                blocks.append("\n".join(current).strip())
-                current = []
-            in_ac_section = True
-            continue
-        if in_ac_section:
-            if line.startswith("#"):
-                # next heading ends AC section
-                if current:
-                    blocks.append("\n".join(current).strip())
-                in_ac_section = False
-                current = []
-            else:
-                current.append(line)
-        elif GHERKIN_RE.match(line):
-            current.append(line)
+def extract_blocks(text: str) -> list[str]:
+    lines=text.splitlines()
+    i=0; n=len(lines); out=[]
+    while i<n:
+        if ACC_RE.match(lines[i]):
+            j=i+1; buff=[]
+            while j<n and not lines[j].startswith('#'):
+                buff.append(lines[j]); j+=1
+            cand='\n'.join(buff).strip()
+            if cand: out.append(cand)
+            i=j
         else:
-            if current and not GHERKIN_RE.match(line):
-                blocks.append("\n".join(current).strip()); current=[]
-    if current: blocks.append("\n".join(current).strip())
-    return [b for b in blocks if b]
+            i+=1
+    if not out:
+        g=[]
+        for ln in lines:
+            if GWT_RE.match(ln) or ('- ' in ln and MUST_RE.search(ln)):
+                g.append(ln)
+        if g: out.append('\n'.join(g))
+    return out
 
-def run():
-    written = []
-    for p in sorted(NT_DIR.glob("*.md")):
-        if p.name.endswith("all.md"): continue
-        text = p.read_text(encoding="utf-8", errors="ignore")
-        fm = parse_fm(text)
-        m = ANCHOR_RE.search(text)
-        _id = fm.get("id")
-        if not _id or not m: continue
-        anchor = m.group(1)
-        blocks = extract_ac_blocks(text)
-        if not blocks: continue
-        out = ACC_DIR / f"{_id}.md"
-        header = f"# Acceptance — {_id}: {fm.get('title','')}\n\n_Source_: [{p.name}]({os.path.relpath(p, ACC_DIR).replace(os.sep,'/') }#{_id})\n\n---\n\n"
-        body = "\n\n---\n\n".join(f"```\n{b}\n```" for b in blocks)
-        out.write_text(header + body + "\n", encoding="utf-8")
-        written.append(out.as_posix())
-    (REPO / "docs" / "reports" / "acceptance.log").write_text("\n".join(written), encoding="utf-8")
+def main():
+    repo=Path('.'); nontech=repo/'docs'/'blueprints'/'non-tech'
+    acc_dir=repo/'docs'/'blueprints'/'acceptance'; acc_dir.mkdir(parents=True,exist_ok=True)
+    coverage={'nt_total':0,'nt_with_criteria':0,'ids':[]}
+    for p in nontech.glob('**/*.md'):
+        if p.name.endswith('all.md'): continue
+        text=p.read_text(encoding='utf-8',errors='ignore')
+        m=re.search(r'<a id="([^"]+)"></a>', text)
+        if not m: continue
+        _id=m.group(1)
+        coverage['ids'].append(_id)
+        coverage['nt_total']+=1
+        blocks=extract_blocks(text)
+        out = acc_dir/f"{_id}.md"
+        if blocks:
+            coverage['nt_with_criteria']+=1
+            body = "\n\n---\n\n".join([f"`\n{b}\n`" for b in blocks])
+        else:
+            body = "_No explicit acceptance criteria detected in source — stub generated._\n\n- [ ] Define Given/When/Then for this section.\n"
+        out.write_text(f"# Acceptance — {_id}\n\n{body}\n", encoding='utf-8')
+    (repo/'docs'/'reports'/'blueprint-coverage.json').write_text(json.dumps(coverage,indent=2),encoding='utf-8')
 
-if __name__ == "__main__":
-    run()
+if __name__=='__main__':
+    main()
