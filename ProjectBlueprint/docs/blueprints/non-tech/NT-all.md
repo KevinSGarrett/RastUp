@@ -1,4 +1,5 @@
-SubSection 1.1 — Role System Design
+<a id="NT-22"></a>
+## SubSection 1.1 — Role System Design
 
 1\) Core Concept: “Linked Service Profiles” under One Account
 
@@ -460,7 +461,8 @@ Scalability: One account can grow horizontally (new roles) and vertically (add s
 
 Low coupling: Linking is optional and displayonly, preserving clean ownership and independent
 
-SubSection 1.2 — RoleSpecific Data & Advanced Search
+<a id="NT-2"></a>
+## SubSection 1.2 — RoleSpecific Data & Advanced Search
 
 1\) Design Goal
 
@@ -1306,7 +1308,8 @@ Low friction attach: Suggesting studios in context boosts award rates without bl
 
 Clean ranking: Availability & fit come before badges, keeping search results trustworthy.
 
-SubSection 1.3 — Booking, Payments & Disputes
+<a id="NT-3"></a>
+## SubSection 1.3 — Booking, Payments & Disputes
 
 Purpose: Make booking as fast and trustable as Airbnb/Fiverr: clear options, instant or nearinstant confirmation, escrowed payment, transparent cancellation rules, and a fair dispute process — all optimized for repeatable revenue and low support overhead.
 
@@ -2000,7 +2003,8 @@ Group convenience: Linked groups let buyers plan shoots endtoend with predictabl
 
 Operationally sane: Evidencebased adjustments and timeboxed claims keep support scalable.
 
-SubSection 1.4 — Messaging, Inbox & Collaboration UX
+<a id="NT-53"></a>
+## SubSection 1.4 — Messaging, Inbox & Collaboration UX
 
 Goal: Make communication effortless and professional from first contact through final delivery. Keep everything in one place, roleaware, and bookingaware to cut backandforth, prevent misunderstandings, and increase completed bookings.
 
@@ -2552,7 +2556,8 @@ Retention banners & responsibilities shown; acceptance blocked if required links
 
 OAuth + linkonly ingestion; secure storage of tokens/passwords; no bulk mirroring.
 
-SubSection 1.5 — Trust, Safety & Verification
+<a id="NT-54"></a>
+## SubSection 1.5 — Trust, Safety & Verification
 
 Goal: Give every user confidence to book and meet new collaborators—safely, transparently, and with minimal friction—while protecting the marketplace from abuse, fraud, and policy risk. This spec covers user verifications, badges, safety features, moderation, enforcement, and operations.
 
@@ -3094,7 +3099,8 @@ Protects users & brand: artisticonly boundary, privacy rules, and strike ladder 
 
 Lowlift ops: Lite verification + templated docs + hazard toggles keep support scalable while giving buyers predictable safety signals.
 
-SubSection 1.6 — Support, Help Center & Knowledge Base
+<a id="NT-55"></a>
+## SubSection 1.6 — Support, Help Center & Knowledge Base
 
 Goal: Resolve user issues fast, fairly, and consistently—with the lowest support overhead possible. Blend selfserve (knowledge base, guided flows, inproduct smart prompts) with human support that’s roleaware (Model/Photographer/Videographer/Creator), bookingaware, and safetyfirst.
 
@@ -3378,7 +3384,8 @@ Safety & money get priority, with evidencefirst decisions that stand up to dispu
 
 Macros and playbooks deliver consistency, speed, and fairness—scaling support without scaling cost.
 
-Section 2 — GotoMarket & City Launch Plan
+<a id="NT-56"></a>
+## Section 2 — GotoMarket & City Launch Plan
 
 Expanding the business city by city requires a structured go-to-market strategy combined with a detailed launch plan for each new location. Successful geographic expansion is grounded in clear metrics, phased milestones, and effective knowledge transfer to local teams. In this section, we outline a comprehensive plan for entering new cities, from initial market research through post-launch optimization, ensuring each launch is executed efficiently and sets the stage for sustainable growth.
 
@@ -3464,7 +3471,8 @@ End of 2024: 8-10 cities live. Milestone: Prove the model can scale; hit corpora
 
 (The exact numbers and cities are placeholders for planning purposes and will be adjusted based on real-time feedback and results.) By laying out a timeline with such milestones, we can track our progress and make go/no-go decisions for each subsequent wave of expansion. If milestones are met or exceeded, it’s a green light to continue scaling. If we fall short in a particular city, we will troubleshoot and improve the model before proceeding further, ensuring we don’t expand faster than we can manage quality and performance.
 
-Section 2.6 — Success Metrics & Continuous Improvement
+<a id="NT-57"></a>
+## Section 2.6 — Success Metrics & Continuous Improvement
 
 To ensure the Go-to-Market and city launch plan stays on track, we will closely monitor success metrics and institute a cycle of continuous improvement. Each city launch will be accompanied by a dashboard of KPIs that measure how well our strategy is working. Key metrics include:
 
@@ -3630,7 +3638,8 @@ Operationally sane: Lite verification, instant book defaults, deposits, and simp
 
 Option value: If traction pops, we can elevate Studios in the nav and expand supply; if not, we gracefully tuck it behind “Attach” without harming core flows.
 
-SubSection 3.1 — Core Monetization Mechanics
+<a id="NT-52"></a>
+## SubSection 3.1 — Core Monetization Mechanics
 
 Goal: Monetize in ways that increase trust and throughput, not friction. Keep pricing simple, fair, and transparent; reward the behaviors that grow the marketplace (verification, Instant Book, reliability).
 
@@ -3954,7 +3963,8 @@ Scalable ops: perbooking ledgers + group receipts make refunds, disputes, and re
 
 Aligned incentives: IB discount encourages fast conversion; fee tiers keep highvalue bookings onplatform.
 
-SubSection 3.2 — Pricing & Tiers (Launch: Start Free, Grow, Then Monetize in Layers)
+<a id="NT-46"></a>
+## SubSection 3.2 — Pricing & Tiers (Launch: Start Free, Grow, Then Monetize in Layers)
 
 Goal: Maximize early adoption and bookings by removing monthly paywalls and monetizing via takerate (see §3.1) and optional, usagebased addons that never compromise fairness. Introduce an optional Pro tier only after we reach liquidity and can prove it increases creator revenue.
 
@@ -4146,7 +4156,8 @@ Keep 12% provider / 5% buyer (min \$3; 3% ACH); Instant Book –1%, Trusted Pro 
 
 Early Payout is peruse (0.5%) and eligibilitybased — not tied to any subscription.
 
-SubSection 3.3 — Paid Boosting & Promotions (UsageBased Only)
+<a id="NT-39"></a>
+## SubSection 3.3 — Paid Boosting & Promotions (UsageBased Only)
 
 Goal: Unlock incremental bookings and early revenue without harming trust or liquidity. Paid visibility is optional, eligibilitygated, clearly labeled, and strictly capped. Organic relevance remains the primary ranking signal. We pilot quietly (Houston) and scale only if metrics prove netpositive.
 
@@ -4338,7 +4349,8 @@ Avoids known pitfalls: No inbox/proposal boosting (sidesteps “paytowin” back
 
 Scales responsibly: Pilot → prove → expand. If metrics or sentiment sag, kill switch lets us pull back instantly.
 
-SubSection 3.4 — Verification & Compliance Monetization
+<a id="NT-31"></a>
+## SubSection 3.4 — Verification & Compliance Monetization
 
 Goal: Maximize early adoption and bookings while raising trust. Use automationfirst verification with manualexception only, verify at milestones (not at signup), and absorb essential costs during launch. Store attestations (Pass/Fail) rather than raw PII.
 
@@ -4818,7 +4830,8 @@ Acceptance criteria
 
 Brief & Compare views reflect promo deliverable specifics; escrow & Smart Docs include Posting & Attribution Addendum.
 
-SubSection 3.6 — Seller Tools & Workflows (Models • Photographers • Videographers • Creators)
+<a id="NT-13"></a>
+## SubSection 3.6 — Seller Tools & Workflows (Models • Photographers • Videographers • Creators)
 
 Goal: Give sellers a fast, repeatable workflow that turns profile views into booked, wellscoped jobs—and makes delivery, disputes, and payouts painless. Tools are roleaware, storagesane, and trustfirst. Monetization remains usagebased (no subscriptions at launch).
 
@@ -5906,7 +5919,8 @@ It keeps group bookings easy to explain and adjudicate: two bookings, one summar
 
 It ensures deposits don’t become support landmines (clear windows, tools, and receipts).
 
-Section 4 — Product Architecture & Page Map
+<a id="NT-14"></a>
+## Section 4 — Product Architecture & Page Map
 
 Goal: Define a coherent, scalable UX architecture that turns our marketplace rules into screens and flows. Keep the system roleaware (people vs places), cityaware, SafeModebydefault, and storagesane. Bake in trust (verification ladder, reputation), fairness (no paytowin ranking), and booking clarity (escrow, Smart Docs, Delivery Room).  
 Studios launch as space listings (not roles): a subhub + AttachinFlow (brief/checkout), with separate bookings and policies, tied by Linked Booking Group when purchased with talent.
@@ -18167,7 +18181,8 @@ S4 Backfills, replays, ML offline Low Offpeak only Paused during S1 incidents
 
 *— Begin: NonTechBlueprint_Part3.docx —*
 
-Section 7 — Org, Hiring & On‑Call Plan
+<a id="NT-15"></a>
+## Section 7 — Org, Hiring & On‑Call Plan
 
 Generated on 2025-11-04 21:18:26 UTC
 
@@ -19630,7 +19645,8 @@ Implementation notes:
 • City gating: risky changes (promotions inventory, tax expansion, studios deposits) are rolled out city‑by‑city with measurable acceptance gates.  
 • Close‑the‑loop: every process has an owner, a dashboard, and a mechanism to retire or revise it when it no longer serves the intended outcome.
 
-Section 8 — Legal, Policy & Compliance (8.0–8.10)
+<a id="NT-16"></a>
+## Section 8 — Legal, Policy & Compliance (8.0–8.10)
 
 Generated on 2025-11-04 21:26:38 UTC
 
@@ -21940,7 +21956,8 @@ Implementation Notes:
 • Training: quarterly refreshers for T&S, Support, Finance; FCRA basics; chargeback representment; accessibility etiquette.  
 • Measurement: we track leading/lagging indicators to tune thresholds and staffing.
 
-Section 9 — Financial Model & Unit Economics (9.0–9.8)
+<a id="NT-17"></a>
+## Section 9 — Financial Model & Unit Economics (9.0–9.8)
 
 Generated on 2025-11-04 22:41:06 UTC
 
@@ -23212,7 +23229,8 @@ Modeling Deep‑Dive:
 • Sensitivity toggles: Vary ACH adoption (10–40%), chargebacks (0.2–0.6%), cancellations (3–10%), and promotions adoption (5–25%) to see contribution margin swings.  
 • City expansion: Add a second city with a 3–6 month lag. Reuse maturation curves and observe shared services leverage (support, SRE).
 
-Section 10 — Launch Playbooks & Checklists (10.0–10.8)
+<a id="NT-18"></a>
+## Section 10 — Launch Playbooks & Checklists (10.0–10.8)
 
 Generated on 2025-11-04 22:52:27 UTC
 
@@ -24680,7 +24698,8 @@ Implementation Notes:
 • Holdouts & Experiments: Promotions, ranking, and any economic nudges run with control cells and pre‑registered guardrails. We pause experiments when guardrails breach.  
 • Close‑the‑Loop: Post‑launch, we hold 7/30/90‑day reviews that tie metrics to actions and retire ineffective steps.
 
-Section 11 — Risk Register & Mitigations (11.0–11.8)
+<a id="NT-19"></a>
+## Section 11 — Risk Register & Mitigations (11.0–11.8)
 
 Generated on 2025-11-04 23:18:34 UTC
 
@@ -25884,7 +25903,8 @@ Execution Notes:
 Execution Notes:  
 • Every risk has a dashboard tile with an owner, a definition of the denominator, and a weekly narrative. • Risk reviews pair with §10 post‑launch 7/30/90‑day reviews and §8 compliance calendar. • Where a risk spans multiple squads, the city GM or Risk DRI chairs the review; actions have due dates. • We prefer reversible changes (flags) and narrow blast radius (city gates). • We avoid 'security by obscurity'; we publish clear user guidance, train staff, and keep audit trails for all sensitive actions. • The risk register itself is versioned; changes record rationale and observed metrics.
 
-Section 12 — Roadmap & Phased Delivery (12.0–12.10)
+<a id="NT-20"></a>
+## Section 12 — Roadmap & Phased Delivery (12.0–12.10)
 
 Generated on 2025-11-04 23:33:51 UTC
 
@@ -27969,7 +27989,8 @@ Implementation Notes:
 • City Readiness: City‑first artifacts (press kit, creator ambassadors, studio partners) prepared in §10.1 runbook.  
 • Post‑Launch: 7/30/90‑day reviews convert observations into roadmap changes; flags let us tune by city without forks.
 
-Section 13 — Partnerships & Ecosystem (13.0–13.7)
+<a id="NT-21"></a>
+## Section 13 — Partnerships & Ecosystem (13.0–13.7)
 
 Generated on 2025-11-04 23:42:25 UTC
 

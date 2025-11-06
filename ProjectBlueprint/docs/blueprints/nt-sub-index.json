@@ -95,91 +95,91 @@
     "start_line": 1832,
     "end_line": 2006
   },
-  "NT-53.1": {
-    "title": "NT-53 (part 1)",
+  "NT-58.1": {
+    "title": "NT-58 (part 1)",
     "path": "docs/blueprints/non-tech/NT-all.md",
-    "anchor": "NT-53.1",
-    "parent": "NT-53",
+    "anchor": "NT-58.1",
+    "parent": "NT-58",
     "start_line": 2006,
     "end_line": 2144
   },
-  "NT-53.2": {
-    "title": "NT-53 (part 2)",
+  "NT-58.2": {
+    "title": "NT-58 (part 2)",
     "path": "docs/blueprints/non-tech/NT-all.md",
-    "anchor": "NT-53.2",
-    "parent": "NT-53",
+    "anchor": "NT-58.2",
+    "parent": "NT-58",
     "start_line": 2144,
     "end_line": 2282
   },
-  "NT-53.3": {
-    "title": "NT-53 (part 3)",
+  "NT-58.3": {
+    "title": "NT-58 (part 3)",
     "path": "docs/blueprints/non-tech/NT-all.md",
-    "anchor": "NT-53.3",
-    "parent": "NT-53",
+    "anchor": "NT-58.3",
+    "parent": "NT-58",
     "start_line": 2282,
     "end_line": 2421
   },
-  "NT-53.4": {
-    "title": "NT-53 (part 4)",
+  "NT-58.4": {
+    "title": "NT-58 (part 4)",
     "path": "docs/blueprints/non-tech/NT-all.md",
-    "anchor": "NT-53.4",
-    "parent": "NT-53",
+    "anchor": "NT-58.4",
+    "parent": "NT-58",
     "start_line": 2421,
     "end_line": 2559
   },
-  "NT-54.1": {
-    "title": "NT-54 (part 1)",
+  "NT-59.1": {
+    "title": "NT-59 (part 1)",
     "path": "docs/blueprints/non-tech/NT-all.md",
-    "anchor": "NT-54.1",
-    "parent": "NT-54",
+    "anchor": "NT-59.1",
+    "parent": "NT-59",
     "start_line": 2559,
     "end_line": 2695
   },
-  "NT-54.2": {
-    "title": "NT-54 (part 2)",
+  "NT-59.2": {
+    "title": "NT-59 (part 2)",
     "path": "docs/blueprints/non-tech/NT-all.md",
-    "anchor": "NT-54.2",
-    "parent": "NT-54",
+    "anchor": "NT-59.2",
+    "parent": "NT-59",
     "start_line": 2695,
     "end_line": 2831
   },
-  "NT-54.3": {
-    "title": "NT-54 (part 3)",
+  "NT-59.3": {
+    "title": "NT-59 (part 3)",
     "path": "docs/blueprints/non-tech/NT-all.md",
-    "anchor": "NT-54.3",
-    "parent": "NT-54",
+    "anchor": "NT-59.3",
+    "parent": "NT-59",
     "start_line": 2831,
     "end_line": 2966
   },
-  "NT-54.4": {
-    "title": "NT-54 (part 4)",
+  "NT-59.4": {
+    "title": "NT-59 (part 4)",
     "path": "docs/blueprints/non-tech/NT-all.md",
-    "anchor": "NT-54.4",
-    "parent": "NT-54",
+    "anchor": "NT-59.4",
+    "parent": "NT-59",
     "start_line": 2966,
     "end_line": 3102
   },
-  "NT-55.1": {
-    "title": "NT-55 (part 1)",
+  "NT-60.1": {
+    "title": "NT-60 (part 1)",
     "path": "docs/blueprints/non-tech/NT-all.md",
-    "anchor": "NT-55.1",
-    "parent": "NT-55",
+    "anchor": "NT-60.1",
+    "parent": "NT-60",
     "start_line": 3102,
     "end_line": 3244
   },
-  "NT-55.2": {
-    "title": "NT-55 (part 2)",
+  "NT-60.2": {
+    "title": "NT-60 (part 2)",
     "path": "docs/blueprints/non-tech/NT-all.md",
-    "anchor": "NT-55.2",
-    "parent": "NT-55",
+    "anchor": "NT-60.2",
+    "parent": "NT-60",
     "start_line": 3244,
     "end_line": 3387
   },
-  "NT-56.1": {
-    "title": "NT-56 (part 1)",
+  "NT-61.1": {
+    "title": "NT-61 (part 1)",
     "path": "docs/blueprints/non-tech/NT-all.md",
-    "anchor": "NT-56.1",
-    "parent": "NT-56",
+    "anchor": "NT-61.1",
+    "parent": "NT-61",
     "start_line": 3387,
     "end_line": 3474
   },
