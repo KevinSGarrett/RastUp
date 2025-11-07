@@ -1,0 +1,3 @@
+Warning: 'headless' is not in the list of known options, but still passed to Electron/Chromium.
+Warning: 'project' is not in the list of known options, but still passed to Electron/Chromium.
+Warning: 'prompt' is not in the list of known options, but still passed to Electron/Chromium.

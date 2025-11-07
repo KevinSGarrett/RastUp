@@ -1,0 +1,5 @@
+﻿dev:
+  weekly_usd_cap: 75
+  soft_alert_pct: 80
+  boost_stop_loss_usd: 5
+  max_boosts_per_week: 3
