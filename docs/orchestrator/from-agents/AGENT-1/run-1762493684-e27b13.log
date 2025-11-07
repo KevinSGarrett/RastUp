@@ -1,0 +1,6 @@
+[2025-11-06 23:34:44] INFO start: AGENT-1 run_id=1762493684-e27b13
+[2025-11-06 23:34:44] INFO cmd: "C:\Users\Windows 11\AppData\Local\Programs\cursor\resources\app\bin\cursor.cmd" agent --headless --project "C:\RastUp\RastUp" --prompt "Demo run: write a log and attach pack"
+Warning: 'headless' is not in the list of known options, but still passed to Electron/Chromium.
+Warning: 'project' is not in the list of known options, but still passed to Electron/Chromium.
+Warning: 'prompt' is not in the list of known options, but still passed to Electron/Chromium.
+[2025-11-06 23:34:45] INFO finish: exit_code=0
