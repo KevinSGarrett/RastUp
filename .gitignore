@@ -19,3 +19,7 @@ docs/orchestrator/from-agents/*/*.log
 docs/orchestrator/from-agents/*/*.zip
 docs/logs/*.jsonl
 orchestrator/__pycache__/
+
+docs/blueprints/NonTech.md
+docs/blueprints/Tech.md
+
