@@ -1,0 +1,22 @@
+name: Docs Link Check
+
+on:
+  pull_request:
+    paths:
+      - 'docs/**/*.md'
+      - 'ProjectBlueprint/docs/**/*.md'
+  schedule:
+    - cron: '0 8 * * 1'
+  workflow_dispatch:
+
+jobs:
+  lychee:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Link check
+        uses: lycheeverse/lychee-action@v1
+        with:
+          args: --no-progress --verbose --accept 200,206,429 --exclude-mail --timeout 20s "docs/**/*.md" "ProjectBlueprint/docs/**/*.md"
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
