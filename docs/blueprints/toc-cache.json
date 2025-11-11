@@ -1,18 +1,9 @@
 {
   "counts": {
-    "all": 2,
-    "non_tech": 1,
-    "tech": 1,
-    "chunks": 3402
+    "all": 4,
+    "non_tech": 2,
+    "tech": 2,
+    "chunks": 6842
   },
-  "skipped": [
-    {
-      "path": "/mnt/c/RastUp/RastUp/docs/blueprints/Combined_Master_PLAIN_Non_Tech_001.docx",
-      "reason": "No text extracted from Combined_Master_PLAIN_Non_Tech_001.docx"
-    },
-    {
-      "path": "/mnt/c/RastUp/RastUp/docs/blueprints/TechnicalDevelopmentPlan.odt",
-      "reason": "No text extracted from TechnicalDevelopmentPlan.odt"
-    }
-  ]
+  "skipped": []
 }
