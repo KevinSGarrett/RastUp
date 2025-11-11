@@ -1,0 +1,32 @@
+name: CI - Knowledge Coverage
+on:
+  pull_request:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+jobs:
+  knowledge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+      - name: Install indexer deps
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f tools/requirements-ci.txt ]; then pip install -r tools/requirements-ci.txt; fi
+      - name: Build indexes (tech + non-tech)
+        run: |
+          python scripts/blueprints/build_index.py
+      - name: Check coverage
+        run: |
+          python scripts/orchestrator/check_coverage.py
+      - name: Upload HEALTH report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: orchestrator-health
+          path: docs/orchestrator/HEALTH.md
