@@ -26,3 +26,18 @@ docs/blueprints/Tech.md
 .venv/
 *.bak
 docs/orchestrator/AUDIT.jsonl
+.env
+.env
+.env.*
+!.env.example
+
+# Cursor agent runtime artifacts
+docs/orchestrator/from-agents/
+ops/prompts/.cursor_prompt_*.txt
+ops/flags/socket.lock
+ops/cache/
+ops/index/
+
+# misc logs
+scripts/orchestrator/stdout.txt
+scripts/orchestrator/stderr.txt
