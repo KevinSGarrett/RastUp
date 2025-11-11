@@ -1,0 +1,32 @@
+﻿name: CI - Preview Build
+on:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check SAFE-MODE (skip push if on)
+        id: safe
+        shell: bash
+        run: |
+          if [ -f ops/flags/safe-mode.json ]; then
+            echo "safe=true" >> 
+          else
+            echo "safe=false" >> 
+          fi
+      - name: Build (if Dockerfile present)
+        run: |
+          if ls docker/*Dockerfile 2>/dev/null | head -n1 >/dev/null; then
+            echo "Building preview image..."
+            DOCKER_BUILDKIT=1 docker build -f  -t preview:ci .
+          else
+            echo "No docker/*Dockerfile; skipping build"
+          fi
+      - name: Push (preview only, and only if SAFE-MODE is off)
+        if: steps.safe.outputs.safe == 'false'
+        continue-on-error: true
+        run: |
+          echo "No registry configured; skipping actual push (preview only)."

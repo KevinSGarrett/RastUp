@@ -1,0 +1,29 @@
+﻿name: CI - Smoke
+on:
+  pull_request:
+    paths:
+      - ''orchestrator/**''
+      - ''scripts/smoke/**''
+      - ''ops/**''
+  schedule:
+    - cron: "33 7 * * *"
+  workflow_dispatch:
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run bash smoke (if present)
+        run: |
+          if [ -f scripts/smoke/smoke.sh ]; then
+            bash scripts/smoke/smoke.sh | tee docs/test-reports/smoke/linux.log
+          else
+            echo "No scripts/smoke/smoke.sh; skipping"
+          fi
+      - name: Upload smoke logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: smoke-logs
+          path: docs/test-reports/smoke/

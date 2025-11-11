@@ -1,0 +1,39 @@
+﻿name: CI - Deps & License
+on:
+  pull_request:
+  push:
+    branches: [ "main" ]
+  schedule:
+    - cron: "11 6 * * 3"
+  workflow_dispatch:
+jobs:
+  deps:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+      - name: Install audit tools
+        run: |
+          python -m pip install --upgrade pip
+          pip install pip-audit pip-licenses || true
+          mkdir -p docs/reports
+      - name: pip-audit
+        run: |
+          if [ -f tools/requirements-ci.txt ]; then
+            pip-audit -r tools/requirements-ci.txt || true
+          else
+            pip-audit || true
+          fi
+      - name: License report
+        run: |
+          pip-licenses --format=markdown --with-urls --with-license-file > docs/reports/deps-license.md || true
+      - name: Upload deps/license report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: deps-license
+          path: docs/reports/deps-license.md

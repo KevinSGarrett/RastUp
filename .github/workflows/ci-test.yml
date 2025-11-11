@@ -1,0 +1,43 @@
+﻿name: CI - Tests
+on:
+  pull_request:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+      - name: Install test deps
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f tools/requirements-ci.txt ]; then pip install -r tools/requirements-ci.txt; fi
+          pip install pytest pytest-cov coverage || true
+      - name: Run pytest (if tests exist)
+        run: |
+          if ls -1 tests/*.py 2>/dev/null | head -n1 >/dev/null || ls -1 **/*_test.py 2>/dev/null | head -n1 >/dev/null; then
+            pytest --maxfail=1 -q --cov=. --cov-report=xml
+            python - <<'PY'
+import sys, xml.etree.ElementTree as ET
+try:
+    pct=float(ET.parse("coverage.xml").getroot().get("line-rate","0"))*100
+except Exception:
+    pct=0.0
+print(f"TOTAL_COVERAGE={pct:.1f}%")
+sys.exit(0 if pct>=85.0 else 1)
+PY
+          else
+            echo "No tests found; skipping."
+          fi
+      - name: Upload coverage (artifact)
+        if: always() && hashFiles(''coverage.xml'') != ''''
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-xml
+          path: coverage.xml
