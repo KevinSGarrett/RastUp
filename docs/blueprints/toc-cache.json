@@ -1,0 +1,18 @@
+{
+  "counts": {
+    "all": 2,
+    "non_tech": 1,
+    "tech": 1,
+    "chunks": 3402
+  },
+  "skipped": [
+    {
+      "path": "C:\\RastUp\\RastUp\\docs\\blueprints\\Combined_Master_PLAIN_Non_Tech_001.docx",
+      "reason": "No text extracted from Combined_Master_PLAIN_Non_Tech_001.docx"
+    },
+    {
+      "path": "C:\\RastUp\\RastUp\\docs\\blueprints\\TechnicalDevelopmentPlan.odt",
+      "reason": "No text extracted from TechnicalDevelopmentPlan.odt"
+    }
+  ]
+}

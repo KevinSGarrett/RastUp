@@ -1,0 +1,83 @@
+name: Project Blueprints Build
+
+on:
+  pull_request:
+    paths:
+      - 'ProjectBlueprint/docs/**'
+      - 'ProjectBlueprint/scripts/concordance/**.py'
+      - '.github/workflows/blueprints-build.yml'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies (pandoc + PyYAML)
+        run: |
+          sudo apt-get update && sudo apt-get install -y pandoc
+          python -m pip install --upgrade pip
+          pip install pyyaml
+
+      - name: Ensure folders
+        run: |
+          mkdir -p ProjectBlueprint/docs/blueprints/non-tech ProjectBlueprint/docs/blueprints/tech
+          mkdir -p ProjectBlueprint/docs/blueprints/media/nt ProjectBlueprint/docs/blueprints/media/td
+          mkdir -p ProjectBlueprint/docs/blueprints/html/NT ProjectBlueprint/docs/blueprints/html/TD
+          mkdir -p ProjectBlueprint/docs/reports
+
+      - name: Convert NT DOCX -> Markdown
+        run: |
+          pandoc -s "ProjectBlueprint/NonTechBlueprint.docx" \
+                 --to gfm --wrap=none \
+                 --extract-media=ProjectBlueprint/docs/blueprints/media/nt \
+                 -o ProjectBlueprint/docs/blueprints/non-tech/NT-all.md
+
+      # - name: Convert TD DOCX -> Markdown (enable when TD doc available)
+      #   run: |
+      #     pandoc -s "ProjectBlueprint/TechnicalDevelopmentPlan.odt" \
+      #            --to gfm --wrap=none \
+      #            --extract-media=ProjectBlueprint/docs/blueprints/media/td \
+      #            -o ProjectBlueprint/docs/blueprints/tech/TD-all.md
+
+      - name: Assign IDs
+        run: |
+          python ProjectBlueprint/scripts/concordance/assign_ids.py \
+                 --nt ProjectBlueprint/docs/blueprints/non-tech/NT-all.md
+
+      - name: Split & Annotate
+        run: |
+          python ProjectBlueprint/scripts/concordance/split_and_annotate.py \
+                 --nt ProjectBlueprint/docs/blueprints/non-tech/NT-all.md \
+                 --out-root ProjectBlueprint/docs/blueprints \
+                 --source-docx ProjectBlueprint/NonTechBlueprint.docx
+
+      - name: Build Indexes
+        run: python ProjectBlueprint/scripts/concordance/build_indexes.py
+
+      - name: Extract Acceptance (optional)
+        run: python ProjectBlueprint/scripts/concordance/extract_acceptance.py || true
+
+      - name: Check Blueprints
+        run: python ProjectBlueprint/scripts/concordance/check_blueprints.py
+
+      - name: Upload reports & artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: blueprint-reports
+          path: |
+            ProjectBlueprint/docs/blueprints/nt-index.json
+            ProjectBlueprint/docs/blueprints/td-index.json
+            ProjectBlueprint/docs/blueprints/toc-cache.json
+            ProjectBlueprint/docs/reports/**
+            ProjectBlueprint/id_map.json
+            ProjectBlueprint/docs/blueprints/non-tech/**
+            ProjectBlueprint/docs/blueprints/acceptance/**

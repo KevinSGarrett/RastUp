@@ -1,0 +1,4 @@
+﻿Compare the CI workflows under ".github/workflows/" with the policies in "ops/cursor-project-rules.md".
+- List any missing checks or deviations.
+- Propose minimal diffs (unified) to close the gaps.
+- Output only the analysis and diffs (no questions).

@@ -1,0 +1,355 @@
+﻿import os, re, threading, json, time
+from pathlib import Path
+from slack_bolt import App
+from slack_bolt.adapter.socket_mode import SocketModeHandler
+from orchestrator.config import SETTINGS
+from orchestrator.budget import Budget
+from orchestrator.cursor_runner import run_cursor
+
+app = App(token=SETTINGS.slack_bot_token, signing_secret=SETTINGS.slack_signing_secret)
+BUDGET = Budget()
+
+# ----- SAFE-MODE flags -----
+FLAGS_DIR = Path("ops") / "flags"
+FLAGS_DIR.mkdir(parents=True, exist_ok=True)
+SAFE_FILE = FLAGS_DIR / "safe-mode.json"
+def is_safe_mode() -> bool: return SAFE_FILE.exists()
+def enable_safe_mode(reason:str): SAFE_FILE.write_text(json.dumps({"reason":reason}, indent=2), encoding="utf-8")
+def disable_safe_mode():
+    if SAFE_FILE.exists(): SAFE_FILE.unlink()
+
+# ----- Queue (JSONL) -----
+QUEUE_PATH = Path("ops") / "queue.jsonl"
+def append_queue(item: dict):
+    QUEUE_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with open(QUEUE_PATH, "a", encoding="utf-8") as f:
+        f.write(json.dumps(item, ensure_ascii=False) + "\n")
+def read_queue() -> list[dict]:
+    if not QUEUE_PATH.exists(): return []
+    out=[]
+    for ln in QUEUE_PATH.read_text(encoding="utf-8").splitlines():
+        try: out.append(json.loads(ln))
+        except: pass
+    return out
+def write_queue(items: list[dict]):
+    QUEUE_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with open(QUEUE_PATH, "w", encoding="utf-8") as f:
+        for it in items: f.write(json.dumps(it, ensure_ascii=False)+"\n")
+def drain_queue_async(say):
+    def _drain():
+        items = read_queue()
+        if not items: say(":white_check_mark: Queue is empty."); return
+        say(f":arrow_forward: Draining queue — {len(items)} item(s).")
+        remaining=[]
+        for it in items:
+            title = it.get("title","Queued task"); wbs=it.get("wbs")
+            try:
+                res = run_cursor(SETTINGS.repo_root, f"{title}", cursor_cli=SETTINGS.cursor_cli, agent_name="AGENT-1")
+                say(f"Run finished: {res['run_id']} ret={res['retcode']} • Attach: {res['attach']} • From queue")
+                time.sleep(0.5)
+            except Exception as e:
+                remaining.append(it)
+                say(f":warning: Failed queued item `{title}` — kept. ({e})")
+        write_queue(remaining)
+        say(":white_check_mark: Queue drain complete — all items processed." if not remaining else f":pause_button: Queue drain complete with {len(remaining)} remaining.")
+    threading.Thread(target=_drain, daemon=True).start()
+
+# ----- logs -----
+def find_latest_log(agent="AGENT-1"):
+    base = Path("docs")/"orchestrator"/"from-agents"/agent
+    if not base.exists(): return None
+    logs = sorted(base.glob("run-*.log"), key=lambda p: p.stat().st_mtime)
+    return str(logs[-1]) if logs else None
+def tail_last_lines(path, n=120):
+    try:
+        size=os.path.getsize(path)
+        if size<=8192:
+            with open(path,"r",encoding="utf-8",errors="ignore") as f: lines=f.read().splitlines()
+            return "\n".join(lines[-n:])
+        data=b""
+        with open(path,"rb") as f:
+            f.seek(0,os.SEEK_END); block=-1
+            while len(data.splitlines())<=n and abs(block)*4096<size:
+                f.seek(block*4096,os.SEEK_END); data=f.read()+data; block-=1
+        return b"\n".join(data.splitlines()[-n:]).decode("utf-8",errors="ignore")
+    except Exception as e:
+        return f"(tail error: {e})"
+
+\#\ -----\ blueprint\ indices\ \(original\ DOCX/ODT\)\ -----\nfrom\ docx\ import\ Document\nfrom\ odf\.opendocument\ import\ load\ as\ odf_load\nfrom\ odf\ import\ text\ as\ odf_text\n\nNT_INDEX\ =\ Path\("docs/blueprints/nt-index\.json"\)\nTD_INDEX\ =\ Path\("docs/blueprints/td-index\.json"\)\nTOC_CACHE\ =\ Path\("docs/blueprints/toc-cache\.json"\)\n\ndef\ load_indices\(\):\n\ \ \ \ nt\ =\ json\.loads\(NT_INDEX\.read_text\(encoding="utf-8"\)\)\ if\ NT_INDEX\.exists\(\)\ else\ \[]\n\ \ \ \ td\ =\ json\.loads\(TD_INDEX\.read_text\(encoding="utf-8"\)\)\ if\ TD_INDEX\.exists\(\)\ else\ \[]\n\ \ \ \ toc\ =\ json\.loads\(TOC_CACHE\.read_text\(encoding="utf-8"\)\)\ if\ TOC_CACHE\.exists\(\)\ else\ \{"nt":\{},\ "td":\{}}\n\ \ \ \ return\ nt,\ td,\ toc\n\ndef\ find_id\(prefix,\ target_id,\ nt,\ td\):\n\ \ \ \ pool\ =\ nt\ if\ prefix=="NT"\ else\ td\n\ \ \ \ for\ it\ in\ pool:\n\ \ \ \ \ \ \ \ if\ it\["id"]\.upper\(\)\ ==\ target_id\.upper\(\):\n\ \ \ \ \ \ \ \ \ \ \ \ return\ it\n\ \ \ \ return\ None\n\ndef\ read_docx_snippet\(path:\ str,\ para_start:\ int,\ para_end:\ int,\ lines:\ int\):\n\ \ \ \ doc\ =\ Document\(path\)\n\ \ \ \ paras\ =\ \[p\.text\.strip\(\)\ for\ p\ in\ doc\.paragraphs]\n\ \ \ \ s\ =\ max\(para_start,\ 0\);\ e\ =\ min\(para_end,\ len\(paras\)-1\)\n\ \ \ \ return\ "\\n"\.join\(paras\[s:min\(s\+lines,\ e\+1\)]\)\n\ndef\ read_odt_snippet\(path:\ str,\ para_start:\ int,\ para_end:\ int,\ lines:\ int\):\n\ \ \ \ odt\ =\ odf_load\(path\)\n\ \ \ \ paras=\[]\n\ \ \ \ for\ ptag\ in\ odt\.getElementsByType\(odf_text\.P\):\n\ \ \ \ \ \ \ \ s\ =\ ""\.join\(node\.data\ for\ node\ in\ ptag\.childNodes\ if\ node\.nodeType\ ==\ node\.TEXT_NODE\)\.strip\(\)\n\ \ \ \ \ \ \ \ paras\.append\(s\)\n\ \ \ \ s\ =\ max\(para_start,\ 0\);\ e\ =\ min\(para_end,\ len\(paras\)-1\)\n\ \ \ \ return\ "\\n"\.join\(paras\[s:min\(s\+lines,\ e\+1\)]\)    except Exception as e:
+        return f"(snippet error: {e})"
+
+@app.command("/orchestrator")
+def orchestrator_cmd(ack, body, respond, say, client):
+    ack()
+    text = (body.get("text") or "").strip()
+
+    # echo
+    if text.startswith("echo"):
+        respond(f"DEBUG raw text: `{text}`"); return
+
+    # status (also auto SAFE-MODE on soft)
+    if BUDGET.economy_mode() and not is_safe_mode():
+        enable_safe_mode("weekly cap soft threshold reached")
+        say(":warning: *SAFE-MODE ACTIVATED* — soft budget reached (80%). Heavy ops will queue until `/orchestrator safe off`.")
+    if text.startswith("status"):
+        pct=BUDGET.percent(); mode="ECONOMY" if BUDGET.economy_mode() else "NORMAL"; safe="ON" if is_safe_mode() else "OFF"
+        respond(f"*Orchestrator status*\n• Budget: ${BUDGET.week_spend:.2f}/${BUDGET.cap} ({pct:.1f}%) — mode: {mode}\n• SAFE-MODE: *{safe}*\n• Boosts used: {BUDGET.boosts_used}/3")
+        return
+
+    # ---- budget simulate / simulate / reset ----
+    if text.startswith("budget simulate"):
+        parts=text.split()
+        try: amt=float(parts[-1])
+        except: respond("Usage: `/orchestrator budget simulate <amount>`"); return
+        BUDGET.simulate(amt)
+        if BUDGET.economy_mode() and not is_safe_mode(): enable_safe_mode("weekly cap soft threshold reached"); say(":warning: *SAFE-MODE ACTIVATED* — soft budget reached (80%).")
+        pct=BUDGET.percent(); safe="ON" if is_safe_mode() else "OFF"
+        respond(f"*Budget updated*\n• Cap: ${BUDGET.cap:.2f}\n• Spent: ${BUDGET.week_spend:.2f} ({pct:.1f}%)\n• SAFE-MODE: *{safe}*")
+        return
+
+    m = re.match(r'^simulate\s+([-+]?\d+(?:\.\d+)?)\s*$', text)
+    if m:
+        amt=float(m.group(1)); BUDGET.simulate(amt)
+        if BUDGET.economy_mode() and not is_safe_mode(): enable_safe_mode("weekly cap soft threshold reached"); say(":warning: *SAFE-MODE ACTIVATED* — soft budget reached (80%).")
+        pct=BUDGET.percent(); safe="ON" if is_safe_mode() else "OFF"
+        respond(f"*Budget updated*\n• Cap: ${BUDGET.cap:.2f}\n• Spent: ${BUDGET.week_spend:.2f} ({pct:.1f}%)\n• SAFE-MODE: *{safe}*")
+        return
+
+    if text.startswith("budget reset"):
+        BUDGET.week_spend=0.0
+        if is_safe_mode(): disable_safe_mode()
+        respond("*Budget reset* — Spent is now $0.00; SAFE-MODE cleared."); return
+
+    if text.startswith("budget"):
+        pct=BUDGET.percent(); safe="ON" if is_safe_mode() else "OFF"
+        respond(f"*Budget*\n• Cap: ${BUDGET.cap:.2f}\n• Spent: ${BUDGET.week_spend:.2f} ({pct:.1f}%)\n• SAFE-MODE: *{safe}* (toggle with `/orchestrator safe on|off`)")
+        return
+
+    # ---- SAFE-MODE ----
+    if text.startswith("safe"):
+        parts=text.split()
+        if len(parts)>=2 and parts[1].lower() in ("on","off"):
+            if parts[1].lower()=="on": enable_safe_mode("manual"); respond(":shield: SAFE-MODE is now *ON* (manual).")
+            else: disable_safe_mode(); respond(":white_check_mark: SAFE-MODE is now *OFF* (manual). Draining queue …"); drain_queue_async(say)
+        else: respond("Usage: `/orchestrator safe on` or `/orchestrator safe off`")
+        return
+
+    # ---- Queue info ----
+    if text.startswith("queue"):
+        items=read_queue()
+        if not items: respond(":inbox_tray: Queue is empty.")
+        else: head=items[0]; respond(f":inbox_tray: Queue has *{len(items)}* item(s). Next: *{head.get('title','(no title)')}* (WBS {head.get('wbs')})")
+        return
+
+    # ---- Run ----
+    if text.startswith("run"):
+        m=re.search(r'run\s+"(.+?)"(?:\s+--wbs\s+(\S+))?', text)
+        title = m.group(1) if m else "Ad-hoc task"; wbs = m.group(2) if m and m.group(2) else None
+        if is_safe_mode():
+            append_queue({"title":title,"wbs":wbs,"ts":time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())})
+            respond(f":pause_button: SAFE-MODE is ON — queued: *{title}*{' ('+wbs+')' if wbs else ''}. Turn off with `/orchestrator safe off` to execute.")
+            return
+        respond(f"Starting agent run: *{title}*{' ('+wbs+')' if wbs else ''} …")
+        def _bg(): 
+            res=run_cursor(SETTINGS.repo_root, f"{title}", cursor_cli=SETTINGS.cursor_cli, agent_name="AGENT-1")
+            say(f"Run finished: {res['run_id']} ret={res['retcode']} • Attach: {res['attach']}")
+        threading.Thread(target=_bg, daemon=True).start()
+        return
+
+    # ---- tail -f (15-minute stream) ----
+    if text.startswith("tail -f"):
+        parts=text.split(); agent="AGENT-1"
+        if len(parts)>=3 and not parts[2].isdigit(): agent=parts[2]
+        log_path=find_latest_log(agent)
+        if not log_path: respond(f"No log found for *{agent}*."); return
+        respond(f":satellite: streaming `{log_path}` for up to 15 minutes … (auto-stop on finish)")
+        deadline=time.time()+15*60; last_size=0
+        while time.time()<deadline:
+            try:
+                size=os.path.getsize(log_path)
+                if size>last_size:
+                    with open(log_path,"r",encoding="utf-8",errors="ignore") as f:
+                        f.seek(last_size); chunk=f.read()
+                    last_size=size
+                    send=chunk[-2500:] if len(chunk)>2500 else chunk
+                    if send.strip(): respond(f"```{send}```")
+                    if "INFO finish: exit_code=" in chunk: respond(":white_check_mark: finished — tail stopped."); return
+                time.sleep(2.0)
+            except Exception as e:
+                respond(f"(tail error: {e})"); return
+        respond(":hourglass_flowing_sand: 15 minutes elapsed — tail stopped.")
+        return
+
+    # ---- tail [agent] [lines] ----
+    if text.startswith("tail"):
+        parts=text.split(); agent="AGENT-1"; lines=120
+        if len(parts)>=2 and not parts[1].isdigit(): agent=parts[1]
+        if len(parts)>=3 and parts[-1].isdigit(): lines=int(parts[-1])
+        log_path=find_latest_log(agent)
+        if not log_path: respond(f"No log found for *{agent}*."); return
+        snippet=tail_last_lines(log_path, n=lines)
+        respond(f"*Latest log for* `{agent}`\n`{log_path}`\n```{snippet[-2800:]}```")
+        try: client.files_upload_v2(channel=body["channel_id"], initial_comment=f"Full log for `{agent}`", file=log_path, filename=os.path.basename(log_path))
+        except Exception as e: respond(f"(file upload skipped: {e})")
+        return
+
+    \ \ \ \ \#\ ----\ cite\ list\ /\ cite\ ----\n\ \ \ \ if\ text\.startswith\("cite\ list"\):\n\ \ \ \ \ \ \ \ parts=text\.split\(\);\ kind="NT";\ limit=10\n\ \ \ \ \ \ \ \ if\ len\(parts\)>=3\ and\ parts\[2]\.upper\(\)\ in\ \("NT","TD"\):\ kind=parts\[2]\.upper\(\)\n\ \ \ \ \ \ \ \ if\ len\(parts\)>=4\ and\ parts\[3]\.isdigit\(\):\ limit=int\(parts\[3]\)\n\ \ \ \ \ \ \ \ nt,td,toc\ =\ load_indices\(\)\n\ \ \ \ \ \ \ \ pool\ =\ nt\ if\ kind=="NT"\ else\ td\n\ \ \ \ \ \ \ \ head\ =\ pool\[:limit]\n\ \ \ \ \ \ \ \ lines\ =\ \[f"-\ `\{it\['id']}`\ —\ \{it\['title']\[:120]}"\ for\ it\ in\ head]\n\ \ \ \ \ \ \ \ respond\(f"\*First\ \{min\(limit,len\(head\)\)}\ \{kind}\ IDs:\*\\n"\ \+\ "\\n"\.join\(lines\)\ if\ lines\ else\ f"No\ \{kind}\ IDs\ found\ in\ the\ originals\."\)\n\ \ \ \ \ \ \ \ return\n\n\ \ \ \ m\ =\ re\.match\(r'\^cite\\s\+\(\[A-Za-z]\+-\[\\d\.]\+\)\(\?:\\s\+\(\\d\+\)\)\?\
+
+    m = re.match(r'^cite\s+([A-Za-z]+-[\d.]+)(?:\s+(\d+))?$', text)
+    if m:
+        target=m.group(1).upper(); lines=int(m.group(2)) if m.group(2) else 12
+        nt,td,toc = load_indices()
+        kind="NT" if target.startswith("NT-") else "TD"
+        it = find_id(kind, target, nt, td)
+        if not it: respond(f"ID `{target}` not found. Try `/orchestrator cite list {kind} 10`."); return
+        toc_map = toc["nontech"] if kind=="NT" else toc["tech"]
+        meta = toc_map.get(it["anchor"])
+        if not meta: respond(f"Anchor for `{target}` not found in toc-cache."); return
+        snippet = read_snippet(meta["file"], meta["start"], meta["end"], lines)
+        respond(f"*{target}* — {it['title']}\n`{meta['file']}#{it['anchor']}`\n```{snippet}```")
+        return
+
+    # default help
+    respond("Usage: `/orchestrator status` | `budget` | `budget simulate <amount>` | `simulate <amount>` | `budget reset` | `safe on|off` | `queue` | `run \"Title\" --wbs WBS-x.y` | `tail [AGENT-1] [lines]` | `tail -f [AGENT-1]` | `cite ID [lines]` | `cite list NT|TD [limit]`")
+
+# helpers for cite
+def load_indices():
+    nt = json.loads(Path('docs/blueprints/nt-index.json').read_text(encoding='utf-8')) if Path('docs/blueprints/nt-index.json').exists() else []
+    td = json.loads(Path('docs/blueprints/td-index.json').read_text(encoding='utf-8')) if Path('docs/blueprints/td-index.json').exists() else []
+    toc = json.loads(Path('docs/blueprints/toc-cache.json').read_text(encoding='utf-8')) if Path('docs/blueprints/toc-cache.json').exists() else {"nontech":{}, "tech":{}}
+    return nt, td, toc
+def find_id(prefix, target_id, nt, td):
+    pool = nt if prefix=="NT" else td
+    for it in pool:
+        if it["id"].upper()==target_id.upper(): return it
+    return None
+def read_snippet(md_file: str, start: int, end: int, lines: int):
+    start0=max(start-1,0); stop=min(end,start0+lines)
+    try:
+        with open(md_file, "r", encoding="utf-8", errors="ignore") as f: all_lines=f.read().splitlines()
+        return "\n".join(all_lines[start0:stop])
+    except Exception as e:
+        return f"(snippet error: {e})"
+
+# ----- DIRECT SOURCE SEARCH (DOCX/ODT) -----
+from docx import Document
+from odf.opendocument import load as odf_load
+from odf import text as odf_text
+
+NT_SRC = Path("docs/blueprints/Combined_Master_PLAIN_Non_Tech_001.docx")
+TD_SRC = Path("docs/blueprints/TechnicalDevelopmentPlan.odt")
+
+def _docx_paras(path: str):
+    doc = Document(path)
+    return [p.text.strip() for p in doc.paragraphs]
+
+def _odt_paras(path: str):
+    odt = odf_load(path)
+    paras=[]
+    for ptag in odt.getElementsByType(odf_text.P):
+        s="".join(n.data for n in ptag.childNodes if n.nodeType == n.TEXT_NODE).strip()
+        paras.append(s)
+    return paras
+
+def find_in_source(phrase: str, kind: str = "TD", lines: int = 12):
+    """Search first occurrence of phrase in the chosen source. Returns (file, index, snippet)."""
+    if kind == "NT":
+        if not NT_SRC.exists(): return ("(missing)", -1, "(Non-Tech docx not found)")
+        paras = _docx_paras(str(NT_SRC))
+        srcfile = str(NT_SRC).replace("\\","/")
+    else:
+        if not TD_SRC.exists(): return ("(missing)", -1, "(Tech odt not found)")
+        paras = _odt_paras(str(TD_SRC))
+        srcfile = str(TD_SRC).replace("\\","/")
+    q = phrase.lower()
+    for i, p in enumerate(paras):
+        if q in p.lower():
+            start = i
+            end = min(i+lines-1, len(paras)-1)
+            snippet = "\n".join(paras[start:end+1])
+            return (srcfile, i, snippet)
+    return (srcfile, -1, f"(no match for {phrase!r})")
+if __name__ == "__main__":
+    handler = SocketModeHandler(app, SETTINGS.slack_app_token)
+    handler.start()
+,\ text\)\n\ \ \ \ if\ m:\n\ \ \ \ \ \ \ \ target=m\.group\(1\)\.upper\(\);\ lines=int\(m\.group\(2\)\)\ if\ m\.group\(2\)\ else\ 12\n\ \ \ \ \ \ \ \ nt,td,toc\ =\ load_indices\(\)\n\ \ \ \ \ \ \ \ kind="NT"\ if\ target\.startswith\("NT-"\)\ else\ "TD"\n\ \ \ \ \ \ \ \ it\ =\ find_id\(kind,\ target,\ nt,\ td\)\n\ \ \ \ \ \ \ \ if\ not\ it:\ respond\(f"ID\ `\{target}`\ not\ found\ in\ originals\.\ Try\ `/orchestrator\ cite\ list\ \{kind}\ 10`\."\);\ return\n\ \ \ \ \ \ \ \ meta_map\ =\ toc\["nt"]\ if\ kind=="NT"\ else\ toc\["td"]\n\ \ \ \ \ \ \ \ meta\ =\ meta_map\.get\(it\["id"]\)\n\ \ \ \ \ \ \ \ if\ not\ meta:\ respond\(f"Ranges\ for\ `\{target}`\ not\ found\.\ Rebuild\ indices\."\);\ return\n\ \ \ \ \ \ \ \ snippet\ =\ ""\n\ \ \ \ \ \ \ \ if\ meta\["file"]\.lower\(\)\.endswith\("\.docx"\):\n\ \ \ \ \ \ \ \ \ \ \ \ snippet\ =\ read_docx_snippet\(meta\["file"],\ meta\["para_start"],\ meta\["para_end"],\ lines\)\n\ \ \ \ \ \ \ \ else:\n\ \ \ \ \ \ \ \ \ \ \ \ snippet\ =\ read_odt_snippet\(meta\["file"],\ meta\["para_start"],\ meta\["para_end"],\ lines\)\n\ \ \ \ \ \ \ \ respond\(f"\*\{target}\*\ —\ \{it\['title']\[:140]}\\n`\{meta\['file']}`\ para\ \{meta\['para_start']}–\{meta\['para_end']}\\n```\{snippet}```"\)\n\ \ \ \ \ \ \ \ return
+
+    m = re.match(r'^cite\s+([A-Za-z]+-[\d.]+)(?:\s+(\d+))?$', text)
+    if m:
+        target=m.group(1).upper(); lines=int(m.group(2)) if m.group(2) else 12
+        nt,td,toc = load_indices()
+        kind="NT" if target.startswith("NT-") else "TD"
+        it = find_id(kind, target, nt, td)
+        if not it: respond(f"ID `{target}` not found. Try `/orchestrator cite list {kind} 10`."); return
+        toc_map = toc["nontech"] if kind=="NT" else toc["tech"]
+        meta = toc_map.get(it["anchor"])
+        if not meta: respond(f"Anchor for `{target}` not found in toc-cache."); return
+        snippet = read_snippet(meta["file"], meta["start"], meta["end"], lines)
+        respond(f"*{target}* — {it['title']}\n`{meta['file']}#{it['anchor']}`\n```{snippet}```")
+        return
+
+    # default help
+    respond("Usage: `/orchestrator status` | `budget` | `budget simulate <amount>` | `simulate <amount>` | `budget reset` | `safe on|off` | `queue` | `run \"Title\" --wbs WBS-x.y` | `tail [AGENT-1] [lines]` | `tail -f [AGENT-1]` | `cite ID [lines]` | `cite list NT|TD [limit]`")
+
+# helpers for cite
+def load_indices():
+    nt = json.loads(Path('docs/blueprints/nt-index.json').read_text(encoding='utf-8')) if Path('docs/blueprints/nt-index.json').exists() else []
+    td = json.loads(Path('docs/blueprints/td-index.json').read_text(encoding='utf-8')) if Path('docs/blueprints/td-index.json').exists() else []
+    toc = json.loads(Path('docs/blueprints/toc-cache.json').read_text(encoding='utf-8')) if Path('docs/blueprints/toc-cache.json').exists() else {"nontech":{}, "tech":{}}
+    return nt, td, toc
+def find_id(prefix, target_id, nt, td):
+    pool = nt if prefix=="NT" else td
+    for it in pool:
+        if it["id"].upper()==target_id.upper(): return it
+    return None
+def read_snippet(md_file: str, start: int, end: int, lines: int):
+    start0=max(start-1,0); stop=min(end,start0+lines)
+    try:
+        with open(md_file, "r", encoding="utf-8", errors="ignore") as f: all_lines=f.read().splitlines()
+        return "\n".join(all_lines[start0:stop])
+    except Exception as e:
+        return f"(snippet error: {e})"
+
+# ----- DIRECT SOURCE SEARCH (DOCX/ODT) -----
+from docx import Document
+from odf.opendocument import load as odf_load
+from odf import text as odf_text
+
+NT_SRC = Path("docs/blueprints/Combined_Master_PLAIN_Non_Tech_001.docx")
+TD_SRC = Path("docs/blueprints/TechnicalDevelopmentPlan.odt")
+
+def _docx_paras(path: str):
+    doc = Document(path)
+    return [p.text.strip() for p in doc.paragraphs]
+
+def _odt_paras(path: str):
+    odt = odf_load(path)
+    paras=[]
+    for ptag in odt.getElementsByType(odf_text.P):
+        s="".join(n.data for n in ptag.childNodes if n.nodeType == n.TEXT_NODE).strip()
+        paras.append(s)
+    return paras
+
+def find_in_source(phrase: str, kind: str = "TD", lines: int = 12):
+    """Search first occurrence of phrase in the chosen source. Returns (file, index, snippet)."""
+    if kind == "NT":
+        if not NT_SRC.exists(): return ("(missing)", -1, "(Non-Tech docx not found)")
+        paras = _docx_paras(str(NT_SRC))
+        srcfile = str(NT_SRC).replace("\\","/")
+    else:
+        if not TD_SRC.exists(): return ("(missing)", -1, "(Tech odt not found)")
+        paras = _odt_paras(str(TD_SRC))
+        srcfile = str(TD_SRC).replace("\\","/")
+    q = phrase.lower()
+    for i, p in enumerate(paras):
+        if q in p.lower():
+            start = i
+            end = min(i+lines-1, len(paras)-1)
+            snippet = "\n".join(paras[start:end+1])
+            return (srcfile, i, snippet)
+    return (srcfile, -1, f"(no match for {phrase!r})")
+if __name__ == "__main__":
+    handler = SocketModeHandler(app, SETTINGS.slack_app_token)
+    handler.start()
+
+

@@ -1,0 +1,7 @@
+﻿{
+  "slug": "wbs-1-2-ci",
+  "title": "WBS-1.2 CI pipelines (write + git ops)",
+  "status": "approved",
+  "allowed": ["write", "git", "docker-build"],
+  "ts": "' + (Get-Date).ToUniversalTime().ToString("s") + 'Z"
+}

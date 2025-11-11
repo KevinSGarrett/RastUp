@@ -1,0 +1,7 @@
+﻿{
+  "slug": "build-orchestrator",
+  "title": "Allow orchestrator module & smoke tests changes",
+  "status": "approved",
+  "allowed": ["write"],
+  "ts": "NOW"
+}

@@ -1,0 +1,34 @@
+{
+  "generated_at": "2025-11-11T06:23:59.764451+00:00",
+  "root": "docs/blueprints",
+  "plain_root": "docs/blueprints/plain",
+  "index_root": "docs/index",
+  "chunk_size": 1200,
+  "overlap": 200,
+  "counts": {
+    "sources": 2,
+    "chunks": 3402
+  },
+  "sources": [
+    {
+      "source_rel": "NonTech.md",
+      "plain_rel": "plain/NonTech.md",
+      "title": "NonTech",
+      "domain": "non_tech",
+      "words": 292101,
+      "sha1": "45c48b8e2108cced42c9d5fb459d28ee6d4771a8",
+      "mtime": "2025-11-07T05:00:35.817832+00:00",
+      "num_chunks": 2151
+    },
+    {
+      "source_rel": "Tech.md",
+      "plain_rel": "plain/Tech.md",
+      "title": "Tech",
+      "domain": "tech",
+      "words": 147519,
+      "sha1": "491222f0e34ded8a960c8139b07f208f8241ea1b",
+      "mtime": "2025-11-07T05:01:08.119014+00:00",
+      "num_chunks": 1251
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+Create a file at docs/probe.txt containing exactly one line: OK.
+After writing the file, print exactly: WROTE docs/probe.txt

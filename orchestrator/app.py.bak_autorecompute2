@@ -1,0 +1,498 @@
+﻿import os, re, json, time, threading, unicodedata
+from pathlib import Path
+from datetime import datetime
+from slack_bolt import App
+from slack_bolt.adapter.socket_mode import SocketModeHandler
+from orchestrator.config import SETTINGS
+from orchestrator.budget import Budget
+from orchestrator.cursor_runner import run_cursor
+
+# --- Bolt app ---
+app = App(token=SETTINGS.slack_bot_token, signing_secret=SETTINGS.slack_signing_secret)
+BUDGET = Budget()
+
+# =========================
+# SAFE-MODE, BOOST, APPROVALS
+# =========================
+FLAGS_DIR = Path("ops") / "flags"
+FLAGS_DIR.mkdir(parents=True, exist_ok=True)
+
+SAFE_FILE   = FLAGS_DIR / "safe-mode.json"
+BOOST_FILE  = FLAGS_DIR / "boost.json"        # {"remaining": 5.0, "ts": ...}
+APPR_DIR    = Path("ops") / "approvals"       # one JSON per proposal
+
+HEAVY_APPROVAL_THRESHOLD = 5.00  # USD; heavy >= this requires an approved proposal (unless Boost fully covers)
+
+def is_safe_mode() -> bool: return SAFE_FILE.exists()
+def enable_safe_mode(reason:str): SAFE_FILE.write_text(json.dumps({"reason":reason}, indent=2), encoding="utf-8")
+def disable_safe_mode():
+    if SAFE_FILE.exists(): SAFE_FILE.unlink()
+
+def boost_get():
+    if not BOOST_FILE.exists(): return None
+    try: return json.loads(BOOST_FILE.read_text(encoding="utf-8"))
+    except: return None
+
+def boost_set(amount: float):
+    BOOST_FILE.write_text(json.dumps({"remaining": float(amount), "ts": time.time()}, indent=2), encoding="utf-8")
+    BUDGET.boosts_used += 1
+
+def boost_clear():
+    if BOOST_FILE.exists(): BOOST_FILE.unlink()
+
+def boost_consume(amount: float) -> bool:
+    info = boost_get()
+    if not info: return False
+    rem = float(info.get("remaining", 0.0))
+    if rem <= 0: return False
+    if amount <= rem:
+        info["remaining"] = round(rem - amount, 4)
+        BOOST_FILE.write_text(json.dumps(info, indent=2), encoding="utf-8")
+        if info["remaining"] <= 0.0 + 1e-9:
+            boost_clear()
+        return True
+    return False
+
+def slugify(s: str) -> str:
+    t = unicodedata.normalize("NFKC", s).strip().lower()
+    t = re.sub(r"[^\w\s-]", "", t)
+    t = re.sub(r"\s+", "-", t)
+    return t[:60] if t else f"proposal-{int(time.time())}"
+
+def approvals_list():
+    APPR_DIR.mkdir(parents=True, exist_ok=True)
+    out=[]
+    for p in sorted(APPR_DIR.glob("*.json")):
+        try:
+            d=json.loads(p.read_text(encoding="utf-8"))
+            d["_file"]=str(p).replace("\\","/")
+            out.append(d)
+        except: pass
+    return out
+
+def approval_get(slug: str):
+    f = APPR_DIR / f"{slug}.json"
+    return json.loads(f.read_text(encoding="utf-8")) if f.exists() else None
+
+def approval_save(payload: dict):
+    APPR_DIR.mkdir(parents=True, exist_ok=True)
+    slug = payload.get("slug") or slugify(payload.get("title","proposal"))
+    payload["slug"] = slug
+    (APPR_DIR / f"{slug}.json").write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    return slug
+
+# =========================
+# Queue (JSONL) — supports "run" and "heavy"
+# =========================
+QUEUE_PATH = Path("ops") / "queue.jsonl"
+def append_queue(item: dict):
+    QUEUE_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with open(QUEUE_PATH, "a", encoding="utf-8") as f: f.write(json.dumps(item, ensure_ascii=False) + "\n")
+def read_queue() -> list[dict]:
+    if not QUEUE_PATH.exists(): return []
+    out=[]
+    for ln in QUEUE_PATH.read_text(encoding="utf-8").splitlines():
+        try: out.append(json.loads(ln))
+        except: pass
+    return out
+def write_queue(items: list[dict]):
+    with open(QUEUE_PATH, "w", encoding="utf-8") as f:
+        for it in items: f.write(json.dumps(it, ensure_ascii=False) + "\n")
+
+def drain_queue_async(say):
+    def _drain():
+        items = read_queue()
+        if not items:
+            say(":white_check_mark: Queue is empty. Nothing to run."); return
+        say(f":arrow_forward: Draining queue — {len(items)} item(s).")
+        rem=[]
+        for it in items:
+            t = it.get("type","run")
+            try:
+                if t == "heavy":
+                    usd   = float(it.get("usd", 0.0))
+                    rsn   = it.get("reason","heavy step")
+                    # approvals bypass here (we assume it was queued due to missing approval or SAFE); record now
+                    BUDGET.record("heavy", usd, {"reason":rsn,"source":"queue"})
+                    say(f":gear: Heavy step from queue — `${usd:.2f}` for *{rsn}* (recorded)")
+                else:
+                    title = it.get("title","Queued task"); wbs = it.get("wbs")
+                    res = run_cursor(SETTINGS.repo_root, f"{title}", cursor_cli=SETTINGS.cursor_cli, agent_name="AGENT-1")
+                    say(f"Run finished: {res['run_id']} ret={res['retcode']} • Attach: {res['attach']} • From queue")
+                time.sleep(0.5)
+            except Exception as e:
+                rem.append(it); say(f":warning: Failed queued item `{it.get('title',it.get('reason','(no-title)'))}` — kept. ({e})")
+        write_queue(rem)
+        say(":white_check_mark: Queue drain complete — all items processed." if not rem else f":pause_button: Queue drain complete with {len(rem)} remaining.")
+    threading.Thread(target=_drain, daemon=True).start()
+
+# =========================
+# Logs (tail helpers)
+# =========================
+def find_latest_log(agent="AGENT-1"):
+    base = Path("docs")/"orchestrator"/"from-agents"/agent
+    if not base.exists(): return None
+    logs = sorted(base.glob("run-*.log"), key=lambda p: p.stat().st_mtime)
+    return str(logs[-1]) if logs else None
+def tail_last_lines(path, n=120):
+    try:
+        size=os.path.getsize(path)
+        if size<=8192:
+            with open(path,"r",encoding="utf-8",errors="ignore") as f: lines=f.read().splitlines()
+            return "\n".join(lines[-n:])
+        data=b""
+        with open(path,"rb") as f:
+            f.seek(0,os.SEEK_END); block=-1
+            while len(data.splitlines())<=n and abs(block)*4096<size:
+                f.seek(block*4096,os.SEEK_END); data=f.read()+data; block-=1
+        return b"\n".join(data.splitlines()[-n:]).decode("utf-8",errors="ignore")
+    except Exception as e:
+        return f"(tail error: {e})"
+
+# =========================
+# DIRECT SOURCE SEARCH (DOCX / ODT)
+# =========================
+from docx import Document
+from odf.opendocument import load as odf_load
+from odf import text as odf_text
+
+NT_SRC = Path("docs/blueprints/Combined_Master_PLAIN_Non_Tech_001.docx")
+TD_SRC = Path("docs/blueprints/TechnicalDevelopmentPlan.odt")
+
+def _docx_paras(path: str):
+    doc = Document(path); return [p.text.strip() for p in doc.paragraphs]
+def _odt_paras(path: str):
+    odt = odf_load(path); paras=[]
+    for ptag in odt.getElementsByType(odf_text.P):
+        s="".join(n.data for n in ptag.childNodes if n.nodeType==n.TEXT_NODE).strip()
+        paras.append(s)
+    return paras
+def _norm_text(s: str) -> str:
+    if s is None: return ""
+    t = unicodedata.normalize("NFKC", s)
+    t = (t.replace("“","\"").replace("”","\"").replace("‘","'").replace("’","'").replace("—","-").replace("–","-"))
+    return " ".join(t.split()).lower()
+def search_source(phrase: str, kind="TD", lines: int = 12):
+    if kind.upper()=="NT":
+        if not NT_SRC.exists(): return ("(missing)", -1, "(Non-Tech DOCX not found)")
+        paras=_docx_paras(str(NT_SRC)); src=str(NT_SRC).replace("\\","/")
+    else:
+        if not TD_SRC.exists(): return ("(missing)", -1, "(Tech ODT not found)")
+        paras=_odt_paras(str(TD_SRC)); src=str(TD_SRC).replace("\\","/")
+    q=_norm_text(phrase)
+    for i,p in enumerate(paras):
+        if q and q in _norm_text(p):
+            start=i; end=min(i+lines-1, len(paras)-1)
+            return (src, i, "\n".join(paras[start:end+1]))
+    return (src, -1, f"(no match for {phrase!r})")
+
+# =========================
+# SECTIONS (DOCX IDs)
+# =========================
+SECTIONS_PATH = Path("docs/blueprints/sections.json")
+def load_sections():
+    if not SECTIONS_PATH.exists(): return []
+    return json.loads(SECTIONS_PATH.read_text(encoding="utf-8"))
+def get_section_by_id(sec_id: str):
+    for s in load_sections():
+        if s.get("id","").upper()==sec_id.upper(): return s
+    return None
+def read_docx_paras_range(path: str, start: int, end: int, lines: int):
+    doc = Document(path); paras=[p.text.strip() for p in doc.paragraphs]
+    s=max(start,0); e=min(end,len(paras)-1)
+    return "\n".join(paras[s:min(s+lines,e+1)])
+def read_odt_paras_range(path: str, start: int, end: int, lines: int):
+    odt = odf_load(path); paras=[]
+    for ptag in odt.getElementsByType(odf_text.P):
+        t="".join(n.data for n in ptag.childNodes if n.nodeType==n.TEXT_NODE).strip()
+        paras.append(t)
+    s=max(start,0); e=min(end,len(paras)-1)
+    return "\n".join(paras[s:min(s+lines,e+1)])
+
+COST_LEDGER = Path("docs/logs/cost-ledger.jsonl")
+def recompute_spend():
+    total = 0.0
+    if COST_LEDGER.exists():
+        for ln in COST_LEDGER.read_text(encoding="utf-8").splitlines():
+            try:
+                d = json.loads(ln)
+                total += float(d.get("usd", 0.0))
+            except:
+                pass
+    BUDGET.week_spend = round(total, 4)
+# =========================
+# SLASH COMMAND HANDLER
+# =========================
+@app.command("/orchestrator")
+def orchestrator_cmd(ack, body, respond, say, client):
+    ack()
+    text = (body.get("text") or "").strip()
+
+    # ping
+    if text.lower()=="ping":
+        b = boost_get()
+        respond(f":green_circle: alive — SAFE={'ON' if is_safe_mode() else 'OFF'}, BOOST={b['remaining'] if b else 'none'}")
+        return
+
+    # auto SAFE on soft threshold
+    if BUDGET.economy_mode() and not is_safe_mode():
+        enable_safe_mode("weekly cap soft threshold reached")
+        say(":warning: *SAFE-MODE ACTIVATED* — soft budget reached (80%).")
+
+    # status        recompute_spend()
+        pct=BUDGET.percent()
+        mode="ECONOMY" if BUDGET.economy_mode() else "NORMAL"
+        safe="ON" if is_safe_mode() else "OFF"
+        b = boost_get()
+        respond(f"*Orchestrator status*\n• Budget: ${BUDGET.week_spend:.2f}/${BUDGET.cap} ({pct:.1f}%) — mode: {mode}\n• SAFE-MODE: *{safe}*\n• Boosts used: {BUDGET.boosts_used}/3\n• Active Boost: {b['remaining'] if b else 'none'}")
+        return
+
+    # -------------- approvals --------------
+    if text.lower().startswith("propose "):
+        m = re.match(r'^propose\s+"(.+?)"\s+(\d+(?:\.\d+)?)\s*$', text, re.IGNORECASE)
+        if not m:
+            respond('Usage: `/orchestrator propose "Title" <amount>`'); return
+        title = m.group(1); amount = float(m.group(2))
+        slug = slugify(title)
+        payload = {"slug":slug,"title":title,"usd":amount,"status":"pending","created_at":datetime.utcnow().isoformat()+"Z"}
+        approval_save(payload)
+        respond(f":memo: Proposal created: `{slug}` — ${amount:.2f}  (sign with `/orchestrator sign {slug}`)")
+        return
+
+    if text.lower().startswith("sign "):
+        m = re.match(r'^sign\s+([a-z0-9-]{3,})\s*$', text, re.IGNORECASE)
+        if not m:
+            respond('Usage: `/orchestrator sign <slug>`'); return
+        slug = m.group(1).lower()
+        ap = approval_get(slug)
+        if not ap:
+            respond(f"Proposal `{slug}` not found."); return
+        ap["status"]="approved"; ap["approved_at"]=datetime.utcnow().isoformat()+"Z"
+        approval_save(ap)
+        respond(f":white_check_mark: Proposal `{slug}` approved.")
+        return
+
+    if text.lower()=="approvals":
+        items = approvals_list()
+        if not items:
+            respond(":inbox_tray: No proposals on file.")
+        else:
+            lines=[]
+            for ap in items[:20]:
+                lines.append(f"- `{ap['slug']}` — ${ap['usd']:.2f} — *{ap['status']}* — {ap['title'][:80]}")
+            respond("*Approvals*\n" + "\n".join(lines))
+        return
+
+    # -------------- boost --------------
+    m_boost = re.match(r'^boost\s+(\d+(?:\.\d+)?)\s*$', text, re.IGNORECASE)
+    if m_boost:
+        amt = float(m_boost.group(1))
+        boost_set(amt)
+        respond(f":zap: Boost set to ${amt:.2f}. Use `/orchestrator heavy \"reason\" <amount>` to consume or `/orchestrator boost clear` to clear.")
+        return
+    if text.lower()=="boost clear":
+        boost_clear()
+        respond(":white_check_mark: Boost cleared.")
+        return
+
+    # -------------- heavy "<reason>" <amount> --------------
+    m_heavy = re.match(r'^heavy\s+"(.+?)"\s+(\d+(?:\.\d+)?)\s*$', text, re.IGNORECASE)
+    if m_heavy:
+        reason = m_heavy.group(1); usd=float(m_heavy.group(2))
+        # Approval check (if not covered by Boost)
+        covered_by_boost = boost_consume(usd) if is_safe_mode() else False
+        needs_approval = (usd >= HEAVY_APPROVAL_THRESHOLD) and not covered_by_boost
+        if needs_approval:
+            # look for an approved proposal with same amount (±1c) and title slug
+            slug = slugify(reason)
+            ap = approval_get(slug)
+            if not ap or ap.get("status")!="approved" or abs(float(ap.get("usd",0.0))-usd) > 0.01:
+                # queue it with the slug hint
+                append_queue({"type":"heavy","reason":reason,"usd":usd,"slug":slug,"ts":datetime.utcnow().isoformat()+"Z"})
+                respond(f":pause_button: Heavy `${usd:.2f}` for *{reason}* requires approval. Create & sign: `/orchestrator propose \"{reason}\" {usd}` then `/orchestrator sign {slug}`. It is queued and will run when approved & SAFE is OFF.")
+                return
+
+        # Allowed paths:
+        # SAFE OFF → run (record spend)
+        # SAFE ON + Boost covered → already consumed above, now record
+        # SAFE ON w/out Boost but approved — *still queue* until SAFE OFF
+        if not is_safe_mode():
+            BUDGET.record("heavy", usd, {"reason":reason,"source":"direct" if not covered_by_boost else "boost"})
+            respond(f":gear: Heavy step — `${usd:.2f}` for *{reason}* (recorded)")
+        else:
+            # SAFE on; if covered_by_boost we can still record now; if only approved, defer to queue to be safer
+            if covered_by_boost:
+                BUDGET.record("heavy", usd, {"reason":reason,"source":"boost"})
+                respond(f":gear: Heavy (via Boost) — `${usd:.2f}` for *{reason}* (recorded under SAFE).")
+            else:
+                append_queue({"type":"heavy","reason":reason,"usd":usd,"slug":slugify(reason),"ts":datetime.utcnow().isoformat()+"Z"})
+                respond(f":pause_button: SAFE is ON — queued heavy `${usd:.2f}` for *{reason}* (approval satisfied). Turn SAFE OFF to drain.")
+        return
+
+    # -------------- budget / simulate / reset --------------
+    if text.startswith("budget simulate"):
+        parts=text.split()
+        try: amt=float(parts[-1])
+        except: respond("Usage: `/orchestrator budget simulate <amount>`"); return
+        BUDGET.simulate(amt)
+        if BUDGET.economy_mode() and not is_safe_mode(): enable_safe_mode("weekly cap soft threshold reached")
+        pct=BUDGET.percent(); safe="ON" if is_safe_mode() else "OFF"
+        respond(f"*Budget updated*\n• Cap: ${BUDGET.cap:.2f}\n• Spent: ${BUDGET.week_spend:.2f} ({pct:.1f}%)\n• SAFE-MODE: *{safe}*")
+        return
+
+    m=re.match(r'^simulate\s+([-+]?\d+(?:\.\d+)?)\s*$', text)
+    if m:
+        amt=float(m.group(1)); BUDGET.simulate(amt)
+        if BUDGET.economy_mode() and not is_safe_mode(): enable_safe_mode("weekly cap soft threshold reached")
+        pct=BUDGET.percent(); safe="ON" if is_safe_mode() else "OFF"
+        respond(f"*Budget updated*\n• Cap: ${BUDGET.cap:.2f}\n• Spent: ${BUDGET.week_spend:.2f} ({pct:.1f}%)\n• SAFE-MODE: *{safe}*")
+        return
+
+    if text.startswith("budget reset"):
+        BUDGET.week_spend=0.0
+        if is_safe_mode(): disable_safe_mode()
+        boost_clear()
+        respond("*Budget reset* — Spent is now $0.00; SAFE-MODE and Boost cleared.")
+        return
+
+    if text.startswith("budget"):
+        recompute_spend()
+        pct=BUDGET.percent(); safe="ON" if is_safe_mode() else "OFF"
+        b = boost_get()
+        respond(f"*Budget*\n• Cap: ${BUDGET.cap:.2f}\n• Spent: ${BUDGET.week_spend:.2f} ({pct:.1f}%)\n• SAFE-MODE: *{safe}*\n• Boost: {b['remaining'] if b else 'none'}")
+        return
+
+    # -------------- queue info --------------
+    if text.startswith("queue"):
+        items=read_queue()
+        if not items: respond(":inbox_tray: Queue is empty.")
+        else: head=items[0]; respond(f":inbox_tray: Queue has *{len(items)}* item(s). Next: *{head.get('title', head.get('reason','(no title)'))}*")
+        return
+
+    # -------------- run --------------
+    if text.startswith("run"):
+        m=re.search(r'run\s+"(.+?)"(?:\s+--wbs\s+(\S+))?', text)
+        title=m.group(1) if m else "Ad-hoc task"; wbs=m.group(2) if m and m.group(2) else None
+        if is_safe_mode():
+            append_queue({"type":"run","title":title,"wbs":wbs,"ts":datetime.utcnow().isoformat()+"Z"})
+            respond(f":pause_button: SAFE-MODE is ON — queued: *{title}*{' ('+wbs+')' if wbs else ''}."); return
+        respond(f"Starting agent run: *{title}*{' ('+wbs+')' if wbs else ''} …")
+        def _bg():
+            res=run_cursor(SETTINGS.repo_root, f"{title}", cursor_cli=SETTINGS.cursor_cli, agent_name="AGENT-1")
+            say(f"Run finished: {res['run_id']} ret={res['retcode']} • Attach: {res['attach']}")
+        threading.Thread(target=_bg, daemon=True).start(); return
+
+    # -------------- tail features --------------
+    if text.startswith("tail -f"):
+        parts=text.split(); agent="AGENT-1"
+        if len(parts)>=3 and not parts[2].isdigit(): agent=parts[2]
+        log_path=find_latest_log(agent)
+        if not log_path: respond(f"No log found for *{agent}*."); return
+        respond(f":satellite: streaming `{log_path}` for up to 15 minutes … (auto-stop on finish)")
+        deadline=time.time()+15*60; last_size=0
+        while time.time()<deadline:
+            try:
+                size=os.path.getsize(log_path)
+                if size>last_size:
+                    with open(log_path,"r",encoding="utf-8",errors="ignore") as f:
+                        f.seek(last_size); chunk=f.read()
+                    last_size=size
+                    send=chunk[-2500:] if len(chunk)>2500 else chunk
+                    if send.strip(): respond(f"```{send}```")
+                    if "INFO finish: exit_code=" in chunk: respond(":white_check_mark: finished — tail stopped."); return
+                time.sleep(2.0)
+            except Exception as e:
+                respond(f"(tail error: {e})"); return
+        respond(":hourglass_flowing_sand: 15 minutes elapsed — tail stopped."); return
+
+    if text.startswith("tail"):
+        parts=text.split(); agent="AGENT-1"; lines=120
+        if len(parts)>=2 and not parts[1].isdigit(): agent=parts[1]
+        if len(parts)>=3 and parts[-1].isdigit(): lines=int(parts[-1])
+        log_path=find_latest_log(agent)
+        if not log_path: respond(f"No log found for *{agent}*."); return
+        snippet=tail_last_lines(log_path, n=lines)
+        respond(f"*Latest log for* `{agent}`\n`{log_path}`\n```{snippet[-2800:]}```")
+        try: client.files_upload_v2(channel=body["channel_id"], initial_comment=f"Full log for `{agent}`", file=log_path, filename=os.path.basename(log_path))
+        except Exception as e: respond(f"(file upload skipped: {e})")
+        return
+
+    # -------------- search / msearch / sections / cite-id --------------
+    if text.lower().startswith("search "):
+        s=text[7:].strip(); phrase=None; kind="TD"; lines=12
+        m=re.match(r'^"(.+?)"(?:\s+(NT|TD))?(?:\s+(\d+))?\s*$', s, re.IGNORECASE)
+        if m:
+            phrase=m.group(1)
+            if m.group(2): kind=m.group(2).upper()
+            if m.group(3): lines=int(m.group(3))
+        else:
+            toks=s.split()
+            if not toks: respond('Usage: `/orchestrator search "phrase" [NT|TD] [lines]`'); return
+            if toks[-1].isdigit(): lines=int(toks.pop())
+            if toks and toks[-1].upper() in ("NT","TD"): kind=toks.pop().upper()
+            phrase=" ".join(toks)
+        src, idx, snip = search_source(phrase, kind, lines)
+        if idx<0: respond(f"*Search* `{phrase}` in {kind} → `{src}`\n{snip}")
+        else: respond(f"*Search* `{phrase}` in {kind} → `{src}` para {idx}\n```{snip}```")
+        return
+
+    if text.lower().startswith("msearch "):
+        s=text[8:].strip()
+        items=[p.strip() for p in s.split(";") if p.strip()]
+        if not items:
+            respond('Usage: `/orchestrator msearch "phrase A" NT 8 ; "phrase B" TD ; "phrase C"`'); return
+        for i,item in enumerate(items, start=1):
+            phrase=None; kind="TD"; lines=12
+            m=re.match(r'^"(.+?)"(?:\s+(NT|TD))?(?:\s+(\d+))?\s*$', item, re.IGNORECASE)
+            if m:
+                phrase=m.group(1)
+                if m.group(2): kind=m.group(2).upper()
+                if m.group(3): lines=int(m.group(3))
+            else:
+                toks=item.split()
+                if not toks: respond(f"*{i}.* (empty item)"); continue
+                if toks[-1].isdigit(): lines=int(toks.pop())
+                if toks and toks[-1].upper() in ("NT","TD"): kind=toks.pop().upper()
+                phrase=" ".join(toks)
+            src, idx, snip = search_source(phrase, kind, lines)
+            if idx<0: respond(f"*{i}.* Search `{phrase}` in {kind} → `{src}`\n{snip}")
+            else: respond(f"*{i}.* Search `{phrase}` in {kind} → `{src}` para {idx}\n```{snip}```")
+        return
+
+    if text.lower().startswith("sections list"):
+        parts=text.split(); kind=None; limit=20
+        if len(parts)>=3 and parts[2].upper() in ("NT","TD"): kind=parts[2].upper()
+        if len(parts)>=4 and parts[3].isdigit(): limit=int(parts[3])
+        secs=[s for s in load_sections() if (kind is None or s.get("kind")==kind)]
+        head=secs[:limit]
+        if not head: respond("No sections found. Run: `python scripts/blueprints/build_sections.py`"); return
+        lines=[f"- `{s['id']}` — {s['title'][:120]}" for s in head]
+        respond(f"*First {min(limit,len(head))} sections{(' '+kind) if kind else ''}:*\n" + "\n".join(lines))
+        return
+
+    m_id=re.match(r'^cite-id\s+([A-Za-z]+-H\d+-\d{4})(?:\s+(\d+))?$', text, re.IGNORECASE)
+    if m_id:
+        sec_id=m_id.group(1).upper(); lines=int(m_id.group(2)) if m_id.group(2) else 12
+        sec=get_section_by_id(sec_id)
+        if not sec: respond(f"ID `{sec_id}` not found in sections.json"); return
+        path=sec["file"]; start=sec.get("para_start",0); end=sec.get("para_end",start+lines-1)
+        if path.lower().endswith(".docx"): snip=read_docx_paras_range(path,start,end,lines)
+        else: snip=read_odt_paras_range(path,start,end,lines)
+        respond(f"*{sec_id}* — {sec['title'][:140]}\n`{path}` para {start}..{min(end,start+lines-1)}\n```{snip}```")
+        return
+    # budget recompute — set week_spend from ledger
+    if text.lower() == "budget recompute":
+        recompute_spend()
+        pct=BUDGET.percent(); safe="ON" if is_safe_mode() else "OFF"
+        respond(f"*Budget recomputed*\n• Cap: ${BUDGET.cap:.2f}\n• Spent: ${BUDGET.week_spend:.2f} ({pct:.1f}%)\n• SAFE-MODE: *{safe}*")
+        return
+
+    # default help
+    respond('Usage: `/orchestrator status` | `ping` | `budget` | `budget simulate <amount>` | `simulate <amount>` | `budget reset` | `safe on|off` | `queue` | `run "Title" --wbs WBS-x.y` | `tail [AGENT-1] [lines]` | `tail -f [AGENT-1]` | `search "phrase" [NT|TD] [lines]` | `msearch "a" NT ; "b" TD ; "c"` | `sections list [NT|TD] [limit]` | `cite-id <ID> [lines]` | `boost <amount>` | `boost clear` | `propose "Title" <amount>` | `sign <slug>` | `approvals` | `heavy "reason" <amount>`')
+if __name__ == "__main__":
+    handler = SocketModeHandler(app, SETTINGS.slack_app_token)
+    handler.start()
+
+
+
+

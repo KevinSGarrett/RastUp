@@ -1,0 +1,143 @@
+﻿import os, re, threading, json
+from pathlib import Path
+from slack_bolt import App
+from slack_bolt.adapter.socket_mode import SocketModeHandler
+from orchestrator.config import SETTINGS
+from orchestrator.budget import Budget
+from orchestrator.cursor_runner import run_cursor
+from orchestrator.logger_jsonl import append_event
+
+app = App(token=SETTINGS.slack_bot_token, signing_secret=SETTINGS.slack_signing_secret)
+BUDGET = Budget()
+
+# ----- SAFE-MODE flags -----
+FLAGS_DIR = Path("ops") / "flags"
+FLAGS_DIR.mkdir(parents=True, exist_ok=True)
+SAFE_FILE = FLAGS_DIR / "safe-mode.json"
+def is_safe_mode() -> bool: return SAFE_FILE.exists()
+def enable_safe_mode(reason:str): SAFE_FILE.write_text(json.dumps({"reason":reason}, indent=2), encoding="utf-8")
+def disable_safe_mode():
+    if SAFE_FILE.exists(): SAFE_FILE.unlink()
+
+# ----- logs -----
+def find_latest_log(agent="AGENT-1"):
+    base = Path("docs")/"orchestrator"/"from-agents"/agent
+    if not base.exists(): return None
+    logs = sorted(base.glob("run-*.log"), key=lambda p: p.stat().st_mtime)
+    return str(logs[-1]) if logs else None
+
+def tail_last_lines(path, n=120):
+    try:
+        size = os.path.getsize(path)
+        if size <= 8192:
+            with open(path,"r",encoding="utf-8",errors="ignore") as f: lines=f.read().splitlines()
+            return "\n".join(lines[-n:])
+        data=b""
+        with open(path,"rb") as f:
+            f.seek(0, os.SEEK_END); block=-1
+            while len(data.splitlines())<=n and abs(block)*4096<size:
+                f.seek(block*4096, os.SEEK_END); data=f.read()+data; block-=1
+        return b"\n".join(data.splitlines()[-n:]).decode("utf-8",errors="ignore")
+    except Exception as e:
+        return f"(tail error: {e})"
+
+@app.command("/orchestrator")
+def orchestrator_cmd(ack, body, respond, say, client):
+    ack()
+    text = (body.get("text") or "").strip()
+
+    # auto SAFE-MODE on soft threshold
+    if BUDGET.economy_mode() and not is_safe_mode():
+        enable_safe_mode("weekly cap soft threshold reached")
+        say(":warning: *SAFE-MODE ACTIVATED* — soft budget reached (80%). Heavy ops will queue until `/orchestrator safe off`.")
+
+    # status
+    if text.startswith("status"):
+        pct = BUDGET.percent()
+        mode = "ECONOMY" if BUDGET.economy_mode() else "NORMAL"
+        safe = "ON" if is_safe_mode() else "OFF"
+        respond(f"*Orchestrator status*\n• Budget: ${BUDGET.week_spend:.2f}/${BUDGET.cap} ({pct:.1f}%) — mode: {mode}\n• SAFE-MODE: *{safe}*\n• Boosts used: {BUDGET.boosts_used}/3")
+        return
+
+    # budget simulate <amount>
+    if text.startswith("budget simulate"):
+        parts = text.split()
+        try:
+            amt = float(parts[-1])
+        except Exception:
+            respond("Usage: `/orchestrator budget simulate <amount>` (e.g., 60.00)")
+            return
+        BUDGET.simulate(amt)
+        if BUDGET.economy_mode() and not is_safe_mode():
+            enable_safe_mode("weekly cap soft threshold reached")
+            say(":warning: *SAFE-MODE ACTIVATED* — soft budget reached (80%). Heavy ops will queue until `/orchestrator safe off`.")
+        pct = BUDGET.percent(); safe = "ON" if is_safe_mode() else "OFF"
+        respond(f"*Budget updated*\n• Cap: ${BUDGET.cap:.2f}\n• Spent: ${BUDGET.week_spend:.2f} ({pct:.1f}%)\n• SAFE-MODE: *{safe}*")
+        return
+
+    # simulate <amount>  (shortcut)
+    m = re.match(r'^simulate\s+([-+]?\d+(?:\.\d+)?)\s*$', text)
+    if m:
+        amt = float(m.group(1))
+        BUDGET.simulate(amt)
+        if BUDGET.economy_mode() and not is_safe_mode():
+            enable_safe_mode("weekly cap soft threshold reached")
+            say(":warning: *SAFE-MODE ACTIVATED* — soft budget reached (80%). Heavy ops will queue until `/orchestrator safe off`.")
+        pct = BUDGET.percent(); safe = "ON" if is_safe_mode() else "OFF"
+        respond(f"*Budget updated*\n• Cap: ${BUDGET.cap:.2f}\n• Spent: ${BUDGET.week_spend:.2f} ({pct:.1f}%)\n• SAFE-MODE: *{safe}*")
+        return
+
+    # budget
+    if text.startswith("budget"):
+        pct = BUDGET.percent(); safe = "ON" if is_safe_mode() else "OFF"
+        respond(f"*Budget*\n• Cap: ${BUDGET.cap:.2f}\n• Spent: ${BUDGET.week_spend:.2f} ({pct:.1f}%)\n• SAFE-MODE: *{safe}* (toggle with `/orchestrator safe on|off`)")
+        return
+
+    # safe on|off
+    if text.startswith("safe"):
+        parts = text.split()
+        if len(parts)>=2 and parts[1].lower() in ("on","off"):
+            if parts[1].lower()=="on":
+                enable_safe_mode("manual"); respond(":shield: SAFE-MODE is now *ON* (manual).")
+            else:
+                disable_safe_mode(); respond(":white_check_mark: SAFE-MODE is now *OFF* (manual).")
+        else:
+            respond("Usage: `/orchestrator safe on` or `/orchestrator safe off`")
+        return
+
+    # run "Title" --wbs WBS-x.y
+    if text.startswith("run"):
+        m = re.search(r'run\s+"(.+?)"(?:\s+--wbs\s+(\S+))?', text)
+        title = m.group(1) if m else "Ad-hoc task"
+        wbs = m.group(2) if m and m.group(2) else None
+        if is_safe_mode():
+            respond(f":pause_button: SAFE-MODE is ON — run queued logically (demo): *{title}*{' ('+wbs+')' if wbs else ''}. Turn off with `/orchestrator safe off`.")
+            return
+        respond(f"Starting agent run: *{title}*{' ('+wbs+')' if wbs else ''} …")
+        def _bg():
+            res = run_cursor(SETTINGS.repo_root, f"{title}", cursor_cli=SETTINGS.cursor_cli, agent_name="AGENT-1")
+            say(f"Run finished: `{res['run_id']}` ret={res['retcode']} • Attach: `{res['attach']}`")
+        threading.Thread(target=_bg, daemon=True).start()
+        return
+
+    # tail [agent] [lines]
+    if text.startswith("tail"):
+        parts = text.split()
+        agent = "AGENT-1"; lines = 120
+        if len(parts)>=2 and not parts[1].isdigit(): agent = parts[1]
+        if len(parts)>=3 and parts[-1].isdigit(): lines = int(parts[-1])
+        log_path = find_latest_log(agent)
+        if not log_path: respond(f"No log found for *{agent}*."); return
+        snippet = tail_last_lines(log_path, n=lines)
+        respond(f"*Latest log for* `{agent}`\n`{log_path}`\n```{snippet[-2800:]}```")
+        try:
+            client.files_upload_v2(channel=body["channel_id"], initial_comment=f"Full log for `{agent}`", file=log_path, filename=os.path.basename(log_path))
+        except Exception as e:
+            respond(f"(file upload skipped: {e})")
+        return
+
+    respond("Usage: `/orchestrator status` | `budget` | `budget simulate <amount>` | `simulate <amount>` | `safe on|off` | `run \"Title\" --wbs WBS-x.y` | `tail [AGENT-1] [lines]`")
+
+if __name__ == "__main__":
+    handler = SocketModeHandler(app, SETTINGS.slack_app_token)
+    handler.start()

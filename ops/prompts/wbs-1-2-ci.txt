@@ -1,0 +1,27 @@
+WBS-1.2: Implement CI pipelines per /ops/cursor-project-rules.md.
+
+Deliverables (create/update under .github/workflows/):
+1) ci-lint.yml
+2) ci-test.yml
+3) ci-security.yml
+4) ci-deps-license.yml
+5) ci-smoke.yml
+6) ci-build-push.yml (preview only; skip when ops/flags/safe-mode.json exists)
+
+Conventions:
+- Enforce required PR checks: lint, test, security, deps-license, smoke.
+- Respect SAFE-MODE by checking ops/flags/safe-mode.json.
+- If a tool is missing (e.g., gitleaks, pip-audit), scaffold steps with continue-on-error: true and TODO notes.
+- Add/update .github/pull_request_template.md sections: "Access & Traceability" and "Blueprint Concordance".
+- Keep changes PR-sized and additive; do not break existing workflows.
+
+After making changes, stage only the new/updated workflow files and any new smoke scripts you add.
+Commit with:
+  ci: WBS-1.2 CI pipelines per repo rules
+Trailers:
+  NT: NT-1.2
+  TD: TD-1.2
+  WBS: WBS-1.2
+
+Finally, print exactly:
+DONE

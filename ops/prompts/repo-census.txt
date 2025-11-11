@@ -1,0 +1,8 @@
+Repo census:
+- Print the working directory path.
+- List only top-level entries (depth 1).
+- Show the first 20 lines of orchestrator/app.py (as a fenced code block). If missing, say NOT FOUND.
+- Show the first 20 lines of ops/cursor-project-rules.md (as a fenced code block). If missing, say NOT FOUND.
+Rules:
+- Output only what was requested.
+- Do not ask questions.

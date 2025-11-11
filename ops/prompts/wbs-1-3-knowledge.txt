@@ -1,0 +1,42 @@
+HEADLESS RUN — DO NOT ASK QUESTIONS.
+
+Model: gpt-5
+Repo: C:\RastUp
+
+Task: WBS‑1.3 orchestrator knowledge plumbing & control plane (single agent).
+Goal: Ensure the orchestrator can index/read both technical and non‑technical blueprints, expose a CLI, and is ready to be triggered by Slack (minimal wiring stubs OK). Respect SAFE‑MODE and approvals.
+
+Do:
+- Verify/refresh blueprint normalization and indices:
+  * scripts/blueprints/build_index.py builds:
+      - docs/blueprints/plain/*.md
+      - docs/blueprints/nt-index.json, td-index.json, sections.json, toc-cache.json
+      - docs/index/manifest.json
+      - docs/index/chunks.jsonl and docs/index/segments.jsonl
+- Ensure orchestrator/knowledge.py supports:
+  * python -m orchestrator.knowledge build
+  * python -m orchestrator.knowledge audit --strict
+  * python -m orchestrator.knowledge read --path PATH --first N
+  * python -m orchestrator.knowledge query --text "..." --k 5
+- Respect SAFE‑MODE and approvals:
+  * If ops/flags/safe-mode.json exists: do not push/publish/modify beyond allowed ops.
+  * Honor explicit approvals in ops/approvals/*.json for any writes outside workflows/prompts/docs.
+- Minimal Slack wiring stubs in orchestrator/app.py:
+  * (non-destructive) confirm handlers or leave TODOs gated by SAFE‑MODE.
+- CI gate:
+  * Ensure .github/workflows/ci-knowledge.yml is present or updated without breaking existing workflows.
+
+Conventions:
+- Keep diffs additive and PR‑sized.
+- If a tool is missing, scaffold steps with continue-on-error: true and TODO note.
+- Commit message: "orchestrator: WBS-1.3 knowledge plumbing & control plane"
+  Trailers:
+    NT: NT-1.3
+    TD: TD-1.3
+    WBS: WBS-1.3
+
+Output:
+- Print exactly: DONE
+- Exit 0 on success; non‑zero with a short reason otherwise.
+
+Focus: orchestrator knowledge indexing approvals safe-mode slack

@@ -1,0 +1,7 @@
+{
+  "slug": "write-proof",
+  "title": "Allow simple repo write (docs/probe.txt)",
+  "status": "approved",
+  "allowed": ["write"],
+  "ts": "NOW"
+}

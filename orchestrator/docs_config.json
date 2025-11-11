@@ -1,0 +1,10 @@
+{
+  "roots": [
+    { "name": "technical",     "path": "orchestrator/",       "include": ["**/*.py","**/*.yml","**/*.yaml"], "exclude": ["**/__pycache__/**","**/*.bak*","**/*.zip"] },
+    { "name": "ci",            "path": ".github/workflows/",  "include": ["**/*.yml","**/*.yaml"] },
+    { "name": "non-technical", "path": "docs/blueprints/",    "include": ["**/*.md","**/*.docx","**/*.odt","**/*.json"] }
+  ],
+  "max_file_size_mb": 8,
+  "chunk": { "size": 1200, "overlap": 200 },
+  "embeddings": { "provider": "tfidf" }
+}
