@@ -133,6 +133,47 @@ def _parse_run_args(text: str) -> Tuple[str, str, str]:
         i += 1
     return title, agent, model
 
+
+def _help_text() -> str:
+    return (
+        "Orchestrator commands\n"
+        "• ping — quick liveness and SAFE/Boost\n"
+        "• status — budget and mode\n"
+        "• safe on|off — toggle SAFE-MODE (off requires approval)\n"
+        "• boost <amount>|clear — set/clear Boost (requires approval)\n"
+        "• tail [AGENT] [--lines N] — show recent agent log\n"
+        "• run \"Title\" --agent AGENT-1 --model gpt-5 — start agent run\n"
+        "Also available: /agent run ... (alias)."
+    )
+
+
+def _launch_agent_run(title: str, agent: str, model: str, channel_id: str, respond) -> None:
+    if _safe_mode() and _get_boost() <= 0.0:
+        respond(text=":warning: SAFE-MODE is ON and no Boost is available — run queued or requires approval.", response_type="ephemeral")
+        return
+
+    respond(text=f":hourglass_flowing_sand: Starting *{agent}* — {title}\nModel: `{model}`", response_type="ephemeral")
+
+    def _bg():
+        try:
+            res = run_cursor(str(REPO_ROOT), f"{title}", agent_name=agent, model=model)
+            log_path = res.get("attach", "").replace("\\", "/")
+            rc = res.get("retcode", 1)
+            head = ":white_check_mark:" if rc == 0 else ":x:"
+            msg = f"{head} *{agent}* finished — exit_code={rc}\nAttach: `{log_path}`"
+        except Exception as e:
+            msg = f":x: *{agent}* failed to launch: `{e}`"
+        try:
+            app.client.chat_postMessage(channel=channel_id, text=msg)
+        except Exception:
+            try:
+                respond(text=msg, response_type="ephemeral")
+            except Exception:
+                pass
+
+    threading.Thread(target=_bg, daemon=True).start()
+    return
+
 # ------------------------------------------------------------------------------
 # Slash command
 # ------------------------------------------------------------------------------
@@ -155,6 +196,10 @@ def orchestrator_cmd(ack, body, respond, logger):
         # minimal alive
         sm = "ON" if _safe_mode() else "OFF"
         say_ephemeral(f":green_circle: alive — SAFE={sm}, BOOST={_get_boost():.1f}")
+        return
+
+    if text.lower().startswith("help"):
+        say_ephemeral(_help_text())
         return
 
     if text.lower().startswith("status"):
@@ -225,34 +270,34 @@ def orchestrator_cmd(ack, body, respond, logger):
 
     if text.lower().startswith("run"):
         title, agent, model = _parse_run_args(text)
-
-        if _safe_mode() and _get_boost() <= 0.0:
-            say_ephemeral(":warning: SAFE-MODE is ON and no Boost is available — run queued or requires approval.")
-            return
-
-        say_ephemeral(f":hourglass_flowing_sand: Starting *{agent}* — {title}\nModel: `{model}`")
-
-        def _bg():
-            try:
-                res = run_cursor(str(REPO_ROOT), f"{title}", agent_name=agent, model=model)
-                log_path = res.get("attach", "").replace("\\", "/")
-                rc = res.get("retcode", 1)
-                head = ":white_check_mark:" if rc == 0 else ":x:"
-                msg = f"{head} *{agent}* finished — exit_code={rc}\nAttach: `{log_path}`"
-            except Exception as e:
-                msg = f":x: *{agent}* failed to launch: `{e}`"
-            try:
-                app.client.chat_postMessage(channel=channel_id, text=msg)
-            except Exception:
-                # fall back: ephemeral respond (command context may be gone)
-                try: respond(text=msg, response_type="ephemeral")
-                except Exception: pass
-
-        threading.Thread(target=_bg, daemon=True).start()
+        _launch_agent_run(title, agent, model, channel_id, respond)
         return
 
     # Unknown subcommand
     say_ephemeral("Unknown command. Try: `ping`, `status`, `safe on|off`, `boost <amount>|clear`, `tail [AGENT] [--lines N]`, `run \"Title\" --agent AGENT-1 --model gpt-5`")
+
+
+@app.command("/agent")
+def agent_cmd(ack, body, respond, logger):
+    ack()
+    channel_id = body.get("channel_id")
+    text = (body.get("text") or "").strip()
+
+    if not text or text.lower().startswith("help"):
+        respond(text="Usage: `/agent run \"Title\" --agent AGENT-1 --model gpt-5`", response_type="ephemeral")
+        return
+
+    if text.lower().startswith("run"):
+        title, agent, model = _parse_run_args(text)
+        _launch_agent_run(title, agent, model, channel_id, respond)
+        return
+
+    # treat the whole text as a title (shorthand)
+    title = text
+    agent = "AGENT-1"
+    model = DEFAULT_MODEL
+    _launch_agent_run(title, agent, model, channel_id, respond)
+    return
 
 # ------------------------------------------------------------------------------
 # Keep the export `app` so orchestrator.socket_main can import it
