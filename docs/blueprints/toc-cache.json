@@ -7,11 +7,11 @@
   },
   "skipped": [
     {
-      "path": "C:\\RastUp\\RastUp\\docs\\blueprints\\Combined_Master_PLAIN_Non_Tech_001.docx",
+      "path": "/mnt/c/RastUp/RastUp/docs/blueprints/Combined_Master_PLAIN_Non_Tech_001.docx",
       "reason": "No text extracted from Combined_Master_PLAIN_Non_Tech_001.docx"
     },
     {
-      "path": "C:\\RastUp\\RastUp\\docs\\blueprints\\TechnicalDevelopmentPlan.odt",
+      "path": "/mnt/c/RastUp/RastUp/docs/blueprints/TechnicalDevelopmentPlan.odt",
       "reason": "No text extracted from TechnicalDevelopmentPlan.odt"
     }
   ]
