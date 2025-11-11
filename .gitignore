@@ -14,4 +14,15 @@ Thumbs.db
 # Node/other common
 node_modules/
 dist/
-build/
+build/# Orchestrator runtime artifacts
+docs/orchestrator/from-agents/*/*.log
+docs/orchestrator/from-agents/*/*.zip
+docs/logs/*.jsonl
+orchestrator/__pycache__/
+
+docs/blueprints/NonTech.md
+docs/blueprints/Tech.md
+
+.venv/
+*.bak
+docs/orchestrator/AUDIT.jsonl

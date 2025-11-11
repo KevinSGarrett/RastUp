@@ -1,0 +1,17 @@
+﻿principals:
+  orchestrator: { type: service, roles: [repo_rw, ci_trigger, secrets_read_dev] }
+  agent-1:      { type: service, roles: [repo_rw, registry_rw, secrets_read_dev] }
+  agent-2:      { type: service, roles: [repo_rw, registry_rw, secrets_read_dev] }
+  agent-3:      { type: service, roles: [repo_rw, registry_rw, secrets_read_dev] }
+  agent-4:      { type: service, roles: [repo_r,  ci_trigger, secrets_read_dev] }
+roles:
+  repo_r:         { github: [contents:read, prs:read] }
+  repo_rw:        { github: [contents:write, prs:write] }
+  ci_trigger:     { ci: [workflows:dispatch] }
+  registry_rw:    { registry: [push, pull] }
+  secrets_read_dev: { secrets: [read:dev] }
+resources:
+  repo: "**[REPO_URL]**"
+  local_root: "**[LOCAL_ROOT_PATH]**"
+  registry: "**[REGISTRY]**"
+  secrets: "**[SECRET_MANAGER]**"
