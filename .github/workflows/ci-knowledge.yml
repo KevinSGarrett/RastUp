@@ -1,9 +1,11 @@
-name: CI - Knowledge Coverage
+name: CI - Knowledge
+
 on:
   pull_request:
   push:
     branches: [ "main" ]
   workflow_dispatch:
+
 jobs:
   knowledge:
     runs-on: ubuntu-latest
@@ -14,19 +16,22 @@ jobs:
         with:
           python-version: "3.11"
           cache: "pip"
-      - name: Install indexer deps
+      - name: Install deps (optional)
         run: |
           python -m pip install --upgrade pip
           if [ -f tools/requirements-ci.txt ]; then pip install -r tools/requirements-ci.txt; fi
-      - name: Build indexes (tech + non-tech)
+      - name: Build knowledge (continue on error if tool missing)
+        continue-on-error: true
         run: |
-          python scripts/blueprints/build_index.py
-      - name: Check coverage
+          python -m orchestrator.knowledge build
+      - name: Audit knowledge (strict)
         run: |
-          python scripts/orchestrator/check_coverage.py
-      - name: Upload HEALTH report
+          python -m orchestrator.knowledge audit --strict
+      - name: Upload knowledge artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: orchestrator-health
-          path: docs/orchestrator/HEALTH.md
+          name: docs-index
+          path: |
+            docs/index/manifest.json
+            docs/index/segments.jsonl
