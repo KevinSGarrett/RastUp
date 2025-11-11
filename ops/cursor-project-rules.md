@@ -1,81 +1,126 @@
-# Cursor Project Rules (Repo‑Level)
+﻿# Cursor Project Rules (Repo‑Level) — v0.1
 
-## Purpose
+Purpose
+-------
 Define how Cursor agents operate in this repo so the Orchestrator can run near‑autopilot and produce small, reviewable, test‑gated changes with full traceability to the blueprints.
 
-## Blueprint‑First Sources (single source of truth)
-- Non‑Technical Plan: `docs/blueprints/Combined_Master_PLAIN_Non_Tech_001.docx`  (IDs `NT‑…`)
-- Technical Plan: `docs/blueprints/TechnicalDevelopmentPlan.odt`                (IDs `TD‑…`)
-- Index of sections/anchors: `docs/blueprints/sections.json`
+Terminology (trailers go in commit messages and PR descriptions)
+----------------------------------------------------------------
+NT: NT-x.y
+TD: TD-a.b
+WBS: WBS-<phase>.<task>
 
-**Hard rule:** Every plan/PR/commit must cite relevant `NT-` and `TD-` IDs and one `WBS-` id in trailers.
+Blueprint‑First Sources (single source of truth)
+------------------------------------------------
+- Non‑Technical Plan: docs/blueprints/Combined_Master_PLAIN_Non_Tech_001.docx  (IDs NT‑…)
+- Technical Plan:     docs/blueprints/TechnicalDevelopmentPlan.odt              (IDs TD‑…)
+- Sections index:     docs/blueprints/sections.json
 
-## Hard Rules (must follow)
-1. **Non‑Interference / Locks**  
-   Before changing files, acquire a lock at `ops/locks/agent-<name>.lock` JSON with `task_id`, `scope_paths[]`, and `blueprint_refs[]`. Do not change files outside your declared scope. Release the lock at the end of the run.
+Hard rule: Every plan/PR/commit must cite relevant NT and TD IDs and one WBS id in trailers.
 
-2. **Access Smoke Tests (before edits)**  
-   Run relevant checks under `/scripts/smoke/` for your scope (local FS write to repo root, Docker build if used, Git operations, etc.). If a smoke fails, stop and output an *Access Enablement Plan* instead of proceeding.
+Operating Modes
+---------------
+- SAFE‑MODE: when ops/flags/safe-mode.json exists → read‑only checks, dry‑runs, draft PRs; no pushes/deploys.
+- Two‑Key: destructive or cost‑incurring actions require an approval artifact under ops/approvals/ before execution.
 
-3. **Two‑Key for Destructive/Costly Actions**  
-   Any destructive or cost‑incurring action must create a proposal under `ops/approvals/` and stop until approved. Default to dry‑runs and draft PRs.
+Hard Rules (must follow)
+------------------------
+1) Non‑Interference / Locks
+   - Before edits, create ops/locks/agent-<name>.lock (JSON) with:
+     task_id, scope_paths[], blueprint_refs[].
+   - Do NOT modify files outside scope_paths[]. Remove the lock at end of run.
 
-4. **No Secrets in Repo**  
-   Reference secrets only by name (AWS Secrets Manager). Never commit values or `.env` with values.
+2) Access Smoke Tests (pre‑flight)
+   - Run scripts/smoke/ for your scope (repo FS write, git dry‑run, optional docker build, CI workflow syntax, preview registry push).
+   - If any smoke fails, STOP and output an Access Enablement Plan (automation or runbook). Do not proceed.
 
-5. **Traceability & Run Reports**  
-   - Commits use Conventional Commits **and** include trailers:  
-     `NT: NT-x.y` • `TD: TD-a.b` • `WBS: WBS-p.q`  
-   - After a substantive run, write a run report under `docs/runs/YYYY‑MM‑DD/AGENT‑N/run-<timestamp>.md` and produce an attach pack zip under `docs/orchestrator/from-agents/AGENT-<N>/`.
+3) Two‑Key & Cost Control
+   - Any destructive/costly step must create ops/approvals/<id>.md or .json and pause until approved.
+   - Respect SAFE‑MODE: skip pushes/deploys while safe-mode.json exists.
 
-6. **Tests Gate Merges**  
-   Do not merge to `main` unless lint/tests/security/coverage workflows are green.
+4) Secrets
+   - Never commit secrets or .env with values. Reference secrets ONLY by name (AWS Secrets Manager).
 
-## Soft Rules (optimize)
-- Small PRs, clear ADRs for major decisions, preview envs per PR where applicable, consistent lint/format, conservative dependencies.
+5) Traceability & Run Reports
+   - Use Conventional Commits AND include trailers:
+     NT: NT-x.y
+     TD: TD-a.b
+     WBS: WBS-<phase>.<task>
+   - After substantive runs, write a report under docs/runs/YYYY‑MM‑DD/AGENT‑N/run-<timestamp>.md
+     and create an attach pack zip under docs/orchestrator/from-agents/AGENT-<N>/.
 
----
+6) Quality Gates
+   - No merge to main unless lint, tests, security, and deps/license workflows pass.
+   - Coverage target for touched code ≥ 85% (or explicit project threshold if temporary).
 
-## WBS‑1.2 — CI Pipelines Deliverables (what to build now)
+Soft Rules (optimize)
+---------------------
+Small PRs; ADRs for major decisions; preview env per PR when applicable; consistent lint/format; conservative dependencies; typed APIs; WCAG AA & Lighthouse budgets for UI work.
 
-Create or update the following GitHub Actions workflows under `.github/workflows/`:
+WBS‑1.2 — CI Pipelines (deliverables to build now)
+--------------------------------------------------
+Create/update these in .github/workflows/:
 
-1. **`ci-lint.yml`** — Lint & formatting  
-   - Triggers: `pull_request`, `push` to `main`, `workflow_dispatch`  
-   - Steps: checkout, setup Python 3.11, cache pip, install `tools/requirements-ci.txt` if present, then run:  
-     - `ruff check .`  
-     - `black --check .` (if Black config present)  
-     - `mypy` (if `mypy.ini` or `pyproject.toml` type hints present)
+1) ci-lint.yml — Lint & formatting
+   - Triggers: pull_request, push to main, workflow_dispatch
+   - Steps: checkout; setup Python 3.11; cache pip; install tools/requirements-ci.txt if present; run:
+     ruff check .
+     black --check .   (if config present)
+     mypy              (if pyproject.toml/mypy.ini configured)
 
-2. **`ci-test.yml`** — Unit/integration tests  
-   - Triggers: same as lint  
-   - Steps: checkout → setup Python → install test deps → `pytest -q` with JUnit + coverage artifact upload  
-   - Fail PR if coverage for touched files < 85% (use a simple coverage threshold if global is easier).
+2) ci-test.yml — Unit/integration tests
+   - Triggers: same as lint
+   - Steps: checkout → setup Python → install test deps → pytest -q
+   - Upload JUnit + coverage artifacts; fail PR if coverage for touched files < 85% (or a temporary global threshold).
 
-3. **`ci-build-push.yml`** — Build container(s) and (for PRs) push to a preview registry (no prod)  
-   - Triggers: `pull_request` and `workflow_dispatch`  
-   - Steps: checkout → Docker build (e.g., `docker/orchestrator.Dockerfile` if present) → push to *dev/preview* registry **only** when not SAFE‑MODE (honor `ops/flags/safe-mode.json` by skipping push).
+3) ci-build-push.yml — Build containers & push to preview
+   - Triggers: pull_request, workflow_dispatch
+   - Steps: checkout → Docker build (e.g., docker/*Dockerfile if present).
+   - Push ONLY when SAFE‑MODE is OFF (skip if ops/flags/safe-mode.json exists) and ONLY to dev/preview registry.
 
-4. **`ci-security.yml`** — SAST & secret scan  
-   - Triggers: PR, push to `main`, scheduled `cron`  
-   - Steps: run a Python‑appropriate static analyzer (e.g., `bandit -r orchestrator -x tests`) and a secret scanner (e.g., `gitleaks` or GH secret scan if available).  
-   - Fail on High‑severity findings unless an exemption file exists (e.g., `ops/exemptions/cve-justifications.json`).
+4) ci-security.yml — SAST & secret scan
+   - Triggers: PR, push to main, weekly cron
+   - Steps: Bandit (e.g., bandit -r orchestrator -x tests) + secret scanning (gitleaks or GH).
+   - Fail on High severity unless justified in ops/exemptions/cve-justifications.json.
 
-5. **`ci-deps-license.yml`** — Dependency & license check  
-   - Triggers: PR, push, weekly `cron`  
-   - Steps: deps audit (e.g., `pip-audit` or `pipdeptree` + OSV) and license policy (deny GPL‑3.0 if incompatible, etc.). Upload a short report to `docs/reports/deps-license.md`.
+5) ci-deps-license.yml — Dependencies & licenses
+   - Triggers: PR, push, weekly cron
+   - Steps: dependency audit (pip-audit or OSV) and license policy (deny disallowed licenses).
+   - Upload short report to docs/reports/deps-license.md.
 
-6. **`ci-smoke.yml`** — Access smoke tests (scripted)  
-   - Triggers: PR touching critical paths, nightly `workflow_dispatch`, `schedule`  
-   - Steps: run scripts under `scripts/smoke/` (PowerShell on Windows runner and Bash on Ubuntu runner). Upload logs to `docs/test-reports/smoke/`.
+6) ci-smoke.yml — Access smoke tests
+   - Triggers: PRs that touch critical paths, nightly schedule, workflow_dispatch
+   - Steps: run scripts/smoke/ (Windows: PowerShell; Ubuntu: Bash).
+   - Upload logs to docs/test-reports/smoke/.
 
-### Conventions the workflows must enforce
-- Required checks on PR: **lint**, **test**, **security**, **deps-license**, and **smoke** (if paths match).  
-- Every PR description must include the **Blueprint Concordance** block and **trailers**.  
-- Artifacts: upload coverage XML/HTML, smoke logs, and any generated reports.
+Workflow Conventions to Enforce
+-------------------------------
+- Required PR checks: lint, test, security, deps-license, smoke (when path‑matched).
+- Each PR description includes a “Blueprint Concordance” block and NT/TD/WBS trailers.
+- Artifacts: coverage XML/HTML, smoke logs, and generated reports.
 
----
+Commits, PRs, Ownership
+-----------------------
+- Required trailers in commit/PR text:
+  NT: NT-x.y
+  TD: TD-a.b
+  WBS: WBS-<phase>.<task>
+- Maintain ops/ownership.yaml and .github/CODEOWNERS (route orchestrator/** to your handle/AGENT‑1 initially).
 
-## Commits, PRs, and Ownership
+Definition of Done for WBS‑1.2
+------------------------------
+- All workflows above exist and pass on PRs.
+- PR template includes Access & Traceability and Blueprint Concordance; trailers present.
+- A run report and attach pack are committed.
+- docs/PROGRESS.md updated with rationale and percent complete.
 
-- **Commit trailers** (required):  
+
+When you need to read project files:
+1) Ask the orchestrator to run one of:
+   - python -m orchestrator.index read  --path <path> --first 120
+   - python -m orchestrator.index read  --path <path> --start <a> --end <b>
+   - python -m orchestrator.index query --text "<question>" --k 8
+
+2) Use the returned snippets and cite as: <path>:<start>-<end>.
+
+Do NOT try to open large files inside the prompt; always request a read/query.
