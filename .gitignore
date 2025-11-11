@@ -23,3 +23,6 @@ orchestrator/__pycache__/
 docs/blueprints/NonTech.md
 docs/blueprints/Tech.md
 
+.venv/
+*.bak
+docs/orchestrator/AUDIT.jsonl
