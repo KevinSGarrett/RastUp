@@ -1,27 +1,32 @@
-# One-shot quiet runner: blocks in this window, writes only to log, UTF-8 safe
-# Location: scripts/orchestrator/start_bolt.ps1
+#requires -version 5.1
+# scripts/orchestrator/start_bolt.ps1
+# One-shot quiet runner, logs to UTF-8 file, no auto-restart.
 
 Set-StrictMode -Version Latest
-$ErrorActionPreference = "Stop"
-
-$ScriptDir = Split-Path -LiteralPath $PSCommandPath -Parent
-$RepoRoot = Resolve-Path (Join-Path $ScriptDir "..\..") | Select-Object -ExpandProperty Path
-
-$Log = Join-Path $ScriptDir "app_live.log"
-$VenvActivate = Join-Path $RepoRoot ".venv\Scripts\Activate.ps1"
-$Py = Join-Path $RepoRoot ".venv\Scripts\python.exe"
-if (-not (Test-Path $Py)) { $Py = "python" }
-
+$ErrorActionPreference = 'Stop'
 [Console]::OutputEncoding = New-Object System.Text.UTF8Encoding($false)
-$env:PYTHONUTF8 = "1"
-$env:PYTHONIOENCODING = "utf-8"
 
-if (Test-Path $VenvActivate) { . $VenvActivate }
+$RepoRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\..')).Path
+$Log      = Join-Path $PSScriptRoot 'app_live.log'
+$VenvPy   = Join-Path $RepoRoot '.venv\Scripts\python.exe'
+$Py       = if (Test-Path $VenvPy) { $VenvPy } else { 'python' }
 
-New-Item -ItemType File -Path $Log -Force | Out-Null
-Write-Host ("Starting orchestrator - logging to {0}" -f $Log)
+# UTF-8 everywhere
+$env:PYTHONUTF8       = '1'
+$env:PYTHONIOENCODING = 'utf-8'
+$env:PYTHONPATH       = $RepoRoot
 
-& $Py -X utf8 -u -m orchestrator.socket_main 2>&1 |
-    Out-File -FilePath $Log -Append -Encoding utf8
+# UTF-8 (no BOM) log writer
+$utf8NoBom = New-Object System.Text.UTF8Encoding($false)
+$logWriter = New-Object System.IO.StreamWriter($Log, $true, $utf8NoBom)
+$logWriter.AutoFlush = $true
+function Write-Log([string]$line) { $logWriter.WriteLine($line) }
 
-exit $LASTEXITCODE
+Write-Log ("[{0}] START one-shot" -f (Get-Date).ToString('s'))
+
+try {
+    & $Py -X utf8 -u -m orchestrator.socket_main 2>&1 | ForEach-Object { Write-Log $_ }
+    exit $LASTEXITCODE
+} finally {
+    $logWriter.Dispose()
+}
