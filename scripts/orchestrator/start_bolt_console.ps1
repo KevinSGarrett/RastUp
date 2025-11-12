@@ -1,56 +1,47 @@
-# scripts/orchestrator/start_bolt_console.ps1
-# Runs the orchestrator in this window and logs to app_live.log in UTF-8.
+# Console runner: visible output + log, auto-restart loop, UTF-8 safe
+# Location: scripts/orchestrator/start_bolt_console.ps1
 
-#requires -Version 5.1
 Set-StrictMode -Version Latest
-$ErrorActionPreference = 'Stop'
+$ErrorActionPreference = "Stop"
 
-# Force UTF-8 mode for console and Python child process
+# Resolve repo root from this script's path
+$ScriptDir = Split-Path -LiteralPath $PSCommandPath -Parent
+$RepoRoot = Resolve-Path (Join-Path $ScriptDir "..\..") | Select-Object -ExpandProperty Path
+
+# Paths
+$Log = Join-Path $ScriptDir "app_live.log"
+$VenvActivate = Join-Path $RepoRoot ".venv\Scripts\Activate.ps1"
+$Py = Join-Path $RepoRoot ".venv\Scripts\python.exe"
+if (-not (Test-Path $Py)) { $Py = "python" }
+
+# Enforce UTF-8 in this console and for Python
 [Console]::OutputEncoding = New-Object System.Text.UTF8Encoding($false)
-$env:PYTHONUTF8       = "1"
+$env:PYTHONUTF8 = "1"
 $env:PYTHONIOENCODING = "utf-8"
 
-# Absolute paths only
-$Root   = "C:\RastUp\RastUp"
-$VenvPy = Join-Path $Root ".venv\Scripts\python.exe"
-$Main   = "orchestrator.socket_main"
-$LogDir = Join-Path $Root "scripts\orchestrator"
-$Log    = Join-Path $LogDir "app_live.log"
-$Lock   = Join-Path $Root "ops\flags\socket.lock"
+# Activate venv if present
+if (Test-Path $VenvActivate) { . $VenvActivate }
 
-# Ensure folders
-New-Item -ItemType Directory -Path $LogDir -Force | Out-Null
-New-Item -ItemType Directory -Path (Split-Path $Lock) -Force | Out-Null
+# Ensure log exists
+New-Item -ItemType File -Path $Log -Force | Out-Null
 
-# Choose Python
-if (Test-Path $VenvPy) {
-  $py = $VenvPy
-} elseif (Get-Command python -ErrorAction SilentlyContinue) {
-  $py = "python"
-} else {
-  $py = "py -3"
-}
+Write-Host ("Launching orchestrator (console mode) - logging to {0}" -f $Log)
 
-# Stop any existing instance
-Get-CimInstance Win32_Process | Where-Object {
-  $_.CommandLine -match "-m orchestrator\.socket_main"
-} | ForEach-Object { Stop-Process -Id $_.ProcessId -Force }
+# Auto-restart loop (Ctrl+C to stop)
+while ($true) {
+    $ts = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
+    Write-Host ("[{0}] START python -m orchestrator.socket_main" -f $ts) -ForegroundColor Cyan
 
-# Lock and banner
-Set-Content -Path $Lock -Value $PID -Encoding ascii
-$ts = Get-Date -Format "s"
-"$ts START start_bolt_console.ps1; log=$Log" | Out-File -FilePath $Log -Encoding utf8 -Append
-
-try {
-  Write-Host "Launching orchestrator (console mode) - logging to $Log" -ForegroundColor Cyan
-
-  # Stream to console and write each line to log in UTF-8
-  & $py -X utf8 -u -m $Main 2>&1 |
-    ForEach-Object {
-      $_
-      $_ | Out-File -FilePath $Log -Encoding utf8 -Append
+    try {
+        & $Py -X utf8 -u -m orchestrator.socket_main 2>&1 |
+            Tee-Object -FilePath $Log -Append
+        $code = $LASTEXITCODE
+    } catch {
+        $code = -1
+        $_ | Out-String | Tee-Object -FilePath $Log -Append | Write-Host
     }
-}
-finally {
-  Remove-Item $Lock -Force -ErrorAction SilentlyContinue
+
+    $ts = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
+    Write-Host ("[{0}] EXIT code {1}. Restarting in 3s (Ctrl+C to stop)..." -f $ts, $code) -ForegroundColor Yellow
+    Start-Sleep -Seconds 3
 }
