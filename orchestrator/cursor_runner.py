@@ -47,6 +47,10 @@ def run_cursor(
     run_id = f"{int(time.time())}-{uuid.uuid4().hex[:6]}"
     repo_abs = os.path.abspath(repo_path)
 
+    # Determine SAFE mode (file existence toggles dry-run)
+    safe_flag_path = os.path.join(repo_abs, "ops", "flags", "safe-mode.json")
+    safe_on = os.path.exists(safe_flag_path)
+
     # Use absolute attach dir so WSL path conversion is always correct
     agent_dir = os.path.join(repo_abs, "docs", "orchestrator", "from-agents", agent_name)
     os.makedirs(agent_dir, exist_ok=True)
@@ -111,6 +115,12 @@ PROMPT="$(tr -d '\\r' < "$PROMPT_PATH")"
 
 export NO_OPEN_BROWSER=1
 
+# Decide dry-run based on SAFE flag (present => dry-run)
+PRINT_OPT="--print"
+if [ ! -f "ops/flags/safe-mode.json" ]; then
+  PRINT_OPT=""
+fi
+
 # Decide on line-buffering (stdbuf) and soft timeout (timeout)
 _has_stdbuf=0
 _has_timeout=0
@@ -120,17 +130,17 @@ command -v timeout >/dev/null 2>&1 && _has_timeout=1
 TIMEOUT_SECS="${{TIMEOUT_SECS:-1200}}"  # 20 minutes default
 
 if [ "$_has_timeout" -eq 1 ] && [ "$_has_stdbuf" -eq 1 ]; then
-  timeout "$TIMEOUT_SECS" stdbuf -oL -eL "$CB" --print --output-format=text --force --approve-mcps --model {shlex.quote(model)} "$PROMPT" || \
-  timeout "$TIMEOUT_SECS" stdbuf -oL -eL "$CB" agent --print --output-format=text --force --approve-mcps --model {shlex.quote(model)} "$PROMPT"
+  timeout "$TIMEOUT_SECS" stdbuf -oL -eL "$CB" $PRINT_OPT --output-format=text --force --approve-mcps --model {shlex.quote(model)} "$PROMPT" || \
+  timeout "$TIMEOUT_SECS" stdbuf -oL -eL "$CB" agent $PRINT_OPT --output-format=text --force --approve-mcps --model {shlex.quote(model)} "$PROMPT"
 elif [ "$_has_timeout" -eq 1 ]; then
-  timeout "$TIMEOUT_SECS" "$CB" --print --output-format=text --force --approve-mcps --model {shlex.quote(model)} "$PROMPT" || \
-  timeout "$TIMEOUT_SECS" "$CB" agent --print --output-format=text --force --approve-mcps --model {shlex.quote(model)} "$PROMPT"
+  timeout "$TIMEOUT_SECS" "$CB" $PRINT_OPT --output-format=text --force --approve-mcps --model {shlex.quote(model)} "$PROMPT" || \
+  timeout "$TIMEOUT_SECS" "$CB" agent $PRINT_OPT --output-format=text --force --approve-mcps --model {shlex.quote(model)} "$PROMPT"
 elif [ "$_has_stdbuf" -eq 1 ]; then
-  stdbuf -oL -eL "$CB" --print --output-format=text --force --approve-mcps --model {shlex.quote(model)} "$PROMPT" || \
-  stdbuf -oL -eL "$CB" agent --print --output-format=text --force --approve-mcps --model {shlex.quote(model)} "$PROMPT"
+  stdbuf -oL -eL "$CB" $PRINT_OPT --output-format=text --force --approve-mcps --model {shlex.quote(model)} "$PROMPT" || \
+  stdbuf -oL -eL "$CB" agent $PRINT_OPT --output-format=text --force --approve-mcps --model {shlex.quote(model)} "$PROMPT"
 else
-  "$CB" --print --output-format=text --force --approve-mcps --model {shlex.quote(model)} "$PROMPT" || \
-  "$CB" agent --print --output-format=text --force --approve-mcps --model {shlex.quote(model)} "$PROMPT"
+  "$CB" $PRINT_OPT --output-format=text --force --approve-mcps --model {shlex.quote(model)} "$PROMPT" || \
+  "$CB" agent $PRINT_OPT --output-format=text --force --approve-mcps --model {shlex.quote(model)} "$PROMPT"
 fi
 """
         # Save helper script (LF) and EXECUTE THE FILE
@@ -147,7 +157,9 @@ fi
         import shutil
         agent = shutil.which("cursor-agent")
         if agent:
-            cmd = [agent, "--print", "--output-format", "text", "--force", "--approve-mcps", "--model", model, _sanitize_prompt(prompt)]
+            base_flags = ["--output-format", "text", "--force", "--approve-mcps", "--model", model]
+            print_flag = ["--print"] if safe_on else []
+            cmd = [agent, *print_flag, *base_flags, _sanitize_prompt(prompt)]
         else:
             cmd = [cursor_cli, "agent", "--headless", "--project", repo_abs, "--prompt", _sanitize_prompt(prompt)]
         cmd_for_log = " ".join(shlex.quote(x) for x in cmd)

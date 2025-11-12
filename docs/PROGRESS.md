@@ -7,13 +7,24 @@
 - WBS‑1.3: Added 4‑agent squad autopilot to `orchestrator/app.py` (`/orchestrator squad run` and `/squad` alias), SAFE/Boost gating, queue support, and help text
 - UTF‑8 smoke test added: `tests/test_utf8_smoke.py`
 
-## Phase Breakdown (WBS)
-| Phase | Weight | % Done |
-|------:|-------:|-------:|
-| 0 | 0.05 | 0.0% |
-| 1 | 0.10 | 0.0% |
-| 2 | 0.08 | 0.0% |
-| 3 | 0.04 | 0.0% |
-| 4 | 0.07 | 0.0% |
-| 5 | 0.05 | 0.0% |
-| 8 | 0.07 | 0.0% |
+- CI run 2025-11-12: `make ci` failed — python not found on host (Error 127)
+
+- Squad run 2025-11-12: 4/4 agents succeeded — artifacts saved under
+  `docs/orchestrator/from-agents/AGENT-*`.
+  Run IDs: AGENT-1 `run-1762984934-cff1fd`, AGENT-2 `run-1762985002-a45061`,
+  AGENT-3 `run-1762985071-9e1c6c`, AGENT-4 `run-1762985142-90d410`.
+- Local CI 2025-11-12: `make ci` still failing — host lacks `python` shim;
+  only `python3` is available. Consider updating `Makefile` to use
+  `python3 -m pip` for local runs.
+
+- Squad run 2025-11-12: 4/4 agents succeeded — artifacts saved under
+  `docs/orchestrator/from-agents/AGENT-*`.
+  Run IDs: AGENT-1 `run-1762986042-30534d`, AGENT-2 `run-1762986134-e39e21`,
+  AGENT-3 `run-1762986230-aed935`, AGENT-4 `run-1762986300-9f211c`.
+- Local CI 2025-11-12: `make ci` failed — python not found on host (Error 127)
+
+- Local CI 2025-11-12: `make ci` failed again — `python` not found on host (Error 127)
+
+- WBS‑1.3 LIVE enablement: when `SAFE=OFF` (no `ops/flags/safe-mode.json`),
+  `orchestrator/cursor_runner.py` now omits `--print` in `cursor-agent` calls,
+  enabling LIVE runs. When `SAFE=ON`, `--print` remains enforced (dry‑run).
