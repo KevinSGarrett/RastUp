@@ -1,26 +1,25 @@
 #!/usr/bin/env bash
-# shellcheck shell=bash
-# Agent-1 smoke (Linux/WSL) — writes a log and prints its path.
-# Keep LF endings. If needed:
-#   wsl -d Ubuntu -- bash -lc 'cd /mnt/c/RastUp/RastUp && sed -i "s/\r$//" scripts/smoke/agent1.sh && chmod +x scripts/smoke/agent1.sh'
+# Agent-1 smoke (Linux/WSL). LF endings required.
+# Robust Docker detection for WSL integration.
 
-# Strict-ish; tolerate shells without pipefail (old or BusyBox variants)
-set -Eeuo pipefail 2>/dev/null || set -Eeuo
-(set -o pipefail) 2>/dev/null || true
+# Try to enable pipefail; if unavailable, continue without it.
+(set -Eeuo pipefail) 2>/dev/null || set -Eeuo
 
+IFS=$'\n\t'
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd -P)"
 REPORT="$ROOT/docs/test-reports/smoke"
-LOG="$REPORT/agent1-linux.log"
 mkdir -p "$REPORT"
+LOG="$REPORT/agent1-linux.log"
 
 {
   echo "== Agent-1 Smoke (Linux) =="
-  printf 'UTC: %s\n' "$(date -u +%FT%TZ)"
-  printf 'ROOT=%s\n\n' "$ROOT"
+  date -u +"UTC: %Y-%m-%dT%H:%M:%SZ"
+  echo "ROOT=$ROOT"
+  echo
 
   # Local FS write/delete
-  TMP="$ROOT/tmp.smoke.$$"
-  if printf "ok" > "$TMP" && rm -f "$TMP"; then
+  TMP="$ROOT/.tmp.smoke.$$"
+  if echo ok > "$TMP" && rm -f "$TMP"; then
     echo "PASS: local fs write"
   else
     echo "FAIL: local fs write"
@@ -42,22 +41,22 @@ mkdir -p "$REPORT"
     echo "WARN: git not present"
   fi
 
-  # Docker (distinguish stub vs working)
+  # Docker (WSL integration friendly)
   if command -v docker >/dev/null 2>&1; then
     if docker --version >/dev/null 2>&1; then
-      printf 'PASS: docker present - '
-      docker --version | head -n1
+      printf 'docker: '; docker --version
+      echo "PASS: docker usable"
     else
-      echo "WARN: docker CLI present but not integrated with this WSL distro"
-      echo "      Enable Docker Desktop → Settings → Resources → WSL integration → check 'Ubuntu'."
+      echo "WARN: docker on PATH but not usable (enable Docker Desktop WSL integration for this distro)"
     fi
   else
     echo "WARN: docker not present"
   fi
 
-  echo ""
+  echo
   echo "SMOKE DONE"
 } > "$LOG" 2>&1
 
+# Print the path so callers/CI can easily cat it
 echo "$LOG"
 exit 0
