@@ -1,43 +1,29 @@
-﻿# OS junk
-Thumbs.db
-.DS_Store
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+.venv/
 
-# Office temp files
-~$*.docx
-~$*.xlsx
-~$*.pptx
-
-# IDEs/editors
+# Editors / OS junk
 .vscode/
 .idea/
+.DS_Store
+Thumbs.db
 
-# Node/other common
+# Logs, reports, caches
+*.log
+docs/test-reports/
+scripts/orchestrator/app_live.log
+ops/cache/
+tmp/
+tmp.*
+
+# Node / front-end (if you add FE later)
 node_modules/
 dist/
-build/# Orchestrator runtime artifacts
-docs/orchestrator/from-agents/*/*.log
-docs/orchestrator/from-agents/*/*.zip
-docs/logs/*.jsonl
-orchestrator/__pycache__/
+build/
 
-docs/blueprints/NonTech.md
-docs/blueprints/Tech.md
-
-.venv/
-*.bak
-docs/orchestrator/AUDIT.jsonl
-.env
+# Local environment files (keep secrets out of Git)
 .env
 .env.*
-!.env.example
-
-# Cursor agent runtime artifacts
-docs/orchestrator/from-agents/
-ops/prompts/.cursor_prompt_*.txt
-ops/flags/socket.lock
-ops/cache/
-ops/index/
-
-# misc logs
-scripts/orchestrator/stdout.txt
-scripts/orchestrator/stderr.txt
