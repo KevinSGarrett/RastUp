@@ -1,0 +1,9 @@
+{
+  "slug": "safe-off-for-dev-runs",
+  "title": "SAFE-OFF for dev runs",
+  "status": "approved",
+  "allowed": [
+    "write"
+  ],
+  "ts": "2025-11-12T05:38:57.915788+00:00"
+}

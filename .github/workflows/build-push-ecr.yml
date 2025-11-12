@@ -1,0 +1,40 @@
+name: Build & Push (ECR, OIDC)
+on:
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+    paths:
+      - "docker/**"
+      - ".github/workflows/build-push-ecr.yml"
+
+permissions:
+  id-token: write   # OIDC
+  contents: read
+
+env:
+  AWS_REGION: ${{ vars.AWS_REGION }}
+  ECR_REPO:  ${{ vars.ECR_REPO }}   # e.g., rastup-dev
+  IMAGE_TAG: ${{ github.sha }}
+
+jobs:
+  build-push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure AWS (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_OIDC_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Login to ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Build & Push
+        run: |
+          REPO_URL=$(aws ecr describe-repositories --repository-names "$ECR_REPO" --query 'repositories[0].repositoryUri' --output text)
+          docker build -t "$REPO_URL:$IMAGE_TAG" -f docker/Dockerfile .
+          docker push "$REPO_URL:$IMAGE_TAG"
+          echo "IMAGE=$REPO_URL:$IMAGE_TAG" >> $GITHUB_OUTPUT

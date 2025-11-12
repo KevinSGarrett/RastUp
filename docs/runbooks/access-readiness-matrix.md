@@ -19,8 +19,8 @@
 
 | Resource        | Capability     | Agent(s) | Command / Check (example)                                        | Expected Result           | Status | Notes |
 |----------------|----------------|----------|-------------------------------------------------------------------|---------------------------|--------|-------|
-| Local FS       | read/write     | A‑1..4   | Windows: `scripts/smoke/agent1.ps1`; Linux: `scripts/smoke/agent1.sh` | `PASS: local fs write`    | PASS/TODO/FAIL |  |
-| Docker         | build socket   | A‑1..4   | `docker --version`                                                | version prints            | PASS/TODO/FAIL |  |
+| Local FS       | read/write     | A‑1..4   | Windows: `scripts/smoke/agent1.ps1`; Linux: `scripts/smoke/agent1.sh` | `PASS: local fs write`    | PASS | Linux log: `docs/test-reports/smoke/agent1-linux.log` |
+| Docker         | build socket   | A‑1..4   | `docker --version`                                                | version prints            | PASS | Linux log: `docs/test-reports/smoke/agent1-linux.log` (docker usable) |
 | GitHub         | push / PR      | A‑1      | CI `actions/checkout@v4` + PR draft step                          | PR draft created          | PASS/TODO/FAIL |  |
 | CI             | run workflows  | A‑1..4   | `Orchestrator Smoke` workflow                                     | green                     | PASS/TODO/FAIL |  |
 | Secrets (dev)  | read by name   | A‑1..4   | (name-only) validate ARN/secret name resolves in dev              | success                   | PASS/TODO/FAIL |  |

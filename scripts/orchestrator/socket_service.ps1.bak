@@ -1,0 +1,47 @@
+﻿$ErrorActionPreference = "Stop"
+Set-Location C:\RastUp\RastUp
+
+# ---- single-instance lock ----
+$lock = "ops\flags\socket.lock"
+if (Test-Path $lock) {
+  try {
+    $j = Get-Content $lock -Raw | ConvertFrom-Json
+    if ($j -and (Get-Process -Id $j.pid -ErrorAction SilentlyContinue)) {
+      Write-Host "Orchestrator service already running (PID $($j.pid))." -ForegroundColor Yellow
+      exit 0
+    }
+  } catch {}
+}
+@{ pid = $PID; started = (Get-Date).ToUniversalTime().ToString("s") + "Z" } | ConvertTo-Json | Set-Content $lock -Encoding UTF8
+
+try {
+  . .\.venv\Scripts\Activate.ps1
+  $env:SLACK_LOG = "info"   # was "debug"
+  $env:PYTHONUNBUFFERED = "1"
+  $py  = "C:\RastUp\RastUp\.venv\Scripts\python.exe"
+  $log = "scripts\orchestrator\app_live.log"
+
+  Write-Host "== Orchestrator Socket Service (PID $PID) ==" -ForegroundColor Cyan
+  $suppress = 'getaddrinfo failed|SSLEOFError|DeprecationWarning'
+
+  while ($true) {
+    # kill any stray system-python runner before launch
+    Get-CimInstance Win32_Process |
+      Where-Object { $_.CommandLine -like "*-m orchestrator.socket_main*" -and $_.CommandLine -notlike "*\.venv\Scripts\python.exe*" } |
+      ForEach-Object { Stop-Process -Id $_.ProcessId -Force }
+
+    Write-Host "[restart] launching via venv python ..." -ForegroundColor Yellow
+    try {
+      & $py -X dev -u -m orchestrator.socket_main 2>&1 |
+        Tee-Object -FilePath $log -Append |
+        Where-Object { $_ -notmatch $suppress }   # filter console noise only
+    } catch {
+      $_ | Out-String | Tee-Object -FilePath $log -Append | Out-Null
+    }
+    Write-Host "[exit] socket_main exited — restart in 3s ..." -ForegroundColor Red
+    Start-Sleep -Seconds 3
+  }
+}
+finally {
+  Remove-Item $lock -Force -ErrorAction SilentlyContinue
+}

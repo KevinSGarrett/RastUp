@@ -1,0 +1,1 @@
+UTF‑8 smoke — quotes “ok” — em‑dash — symbols ✓
