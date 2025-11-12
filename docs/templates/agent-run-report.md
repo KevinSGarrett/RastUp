@@ -1,12 +1,13 @@
-﻿# Agent Run Report — AGENT-<N> — <title>
+# Agent Run Report — AGENT-<N> — <title>
 Run ID: <YYYYMMDD-HHMM-<short>>
-Date: <ISO>  Owner: AGENT-<N>
-Model: <name>  MAX: <true/false>
+Date: <YYYY-MM-DD HH:MM TZ>
+Owner: AGENT-<N>
+Model: <model> MAX: <true/false>
 Tools used: <list>
-Lock: /ops/locks/agent-<N>.lock
+Lock file: /ops/locks/agent-<N>.lock
 
-## 0) Pre-Run Ritual (HARD)
-- Prior runs consulted: [links]
+## 0) Pre‑Run Ritual
+- Prior run(s) consulted: [links]
 - Plan vs Done vs Pending (≤10 bullets)
 
 ## 1) Context Snapshot
@@ -17,19 +18,15 @@ Lock: /ops/locks/agent-<N>.lock
 ## 2) Plan of Action
 - Files/paths:
 - Access Smoke Tests:
+- Expected outputs:
+- Rollback:
 
 ## 3) Execution Log
-- Commands/scripts:
-- Commits & PRs:
-
-## 4) Proof-of-Work Dossier
-- Tests: unit/integration/E2E/security
-- Coverage: <numbers>
-- Artifacts: [links]
-
+## 4) Proof‑of‑Work Dossier
 ## 5) Issues & Resolutions
 ## 6) Impact Map
-## 7) Baton Handoff (+ For Orchestrator Review)
+## 7) Baton Handoff
+### 7a) For Orchestrator Review
 ## 8) Checklist
 ## 9) Locations
 ## 10) Appendix

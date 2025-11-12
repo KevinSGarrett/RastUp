@@ -1,3 +1,8 @@
-﻿"ops/**": ["@YourGitHubHandle"]
-"docs/**": ["@YourGitHubHandle"]
-"orchestrator/**": ["@YourGitHubHandle"]
+apps/backend/**: AGENT-2
+apps/frontend/**: AGENT-3
+apps/ui-lib/**: AGENT-3
+infra/**: AGENT-1
+scripts/**: AGENT-1
+docs/security/**: AGENT-4
+tests/**: AGENT-4
+orchestrator/**: PO

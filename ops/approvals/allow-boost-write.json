@@ -1,0 +1,10 @@
+{
+  "slug": "allow-boost-write",
+  "title": "Allow Boost + Write",
+  "status": "approved",
+  "allowed": [
+    "write",
+    "boost_set"
+  ],
+  "ts": "2025-11-12T03:55:55.092607+00:00"
+}

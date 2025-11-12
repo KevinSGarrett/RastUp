@@ -1,5 +1,9 @@
-﻿dev:
-  weekly_usd_cap: 75
+dev:
+  weekly_cap_usd: 75
   soft_alert_pct: 80
-  boost_stop_loss_usd: 5
-  max_boosts_per_week: 3
+staging:
+  weekly_cap_usd: 150
+  soft_alert_pct: 80
+prod:
+  weekly_cap_usd: 500
+  soft_alert_pct: 80

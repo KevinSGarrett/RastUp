@@ -1,17 +1,49 @@
-﻿principals:
-  orchestrator: { type: service, roles: [repo_rw, ci_trigger, secrets_read_dev] }
-  agent-1:      { type: service, roles: [repo_rw, registry_rw, secrets_read_dev] }
-  agent-2:      { type: service, roles: [repo_rw, registry_rw, secrets_read_dev] }
-  agent-3:      { type: service, roles: [repo_rw, registry_rw, secrets_read_dev] }
-  agent-4:      { type: service, roles: [repo_r,  ci_trigger, secrets_read_dev] }
-roles:
-  repo_r:         { github: [contents:read, prs:read] }
-  repo_rw:        { github: [contents:write, prs:write] }
-  ci_trigger:     { ci: [workflows:dispatch] }
-  registry_rw:    { registry: [push, pull] }
-  secrets_read_dev: { secrets: [read:dev] }
+# ops/access/entitlements.yaml
+principals:
+  agent-1:
+    description: DevOps/bootstrap agent
+    capabilities:
+      - local_fs: rw
+      - github: pr,branch,write
+      - ci: run
+      - registry: read
+  agent-2:
+    description: Backend/services agent
+    capabilities:
+      - local_fs: rw
+      - registry: push
+  agent-3:
+    description: Frontend/DX agent
+    capabilities:
+      - local_fs: rw
+      - preview_env: deploy
+  agent-4:
+    description: QA/Security/Release agent
+    capabilities:
+      - local_fs: r
+      - ci: run
+      - security_scan: run
+  ci:
+    description: GitHub Actions automation
+    capabilities:
+      - github: pr,checks
+      - registry: push
+      - secrets: read:dev
 resources:
-  repo: "**[REPO_URL]**"
-  local_root: "**[LOCAL_ROOT_PATH]**"
-  registry: "**[REGISTRY]**"
-  secrets: "**[SECRET_MANAGER]**"
+  local_fs: {}
+  github:
+    repo: "**[REPO_URL]**"
+  registry:
+    name: "**[REGISTRY]**"
+  secrets:
+    manager: "AWS Secrets Manager"
+policies:
+  - principal: ci
+    resource: secrets
+    permission: read:dev
+  - principal: agent-2
+    resource: registry
+    permission: push
+  - principal: agent-3
+    resource: preview_env
+    permission: deploy

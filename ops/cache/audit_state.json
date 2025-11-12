@@ -1,8 +1,0 @@
-{
-  "ledger_pos": 9,
-  "approvals": {
-    "embeddings-refresh": "80c7e41bb18f2109",
-    "gpu-batch-run": "1c986a225c066dfe"
-  },
-  "boost_hash": "0ff82d3e609a8fd9"
-}

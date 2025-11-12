@@ -1,0 +1,7 @@
+﻿{
+  "slug": "allow-write-and-boost",
+  "title": "Permit Boost + writes from Slack",
+  "status": "approved",
+  "allowed": ["write"],
+  "ts": "NOW"
+}

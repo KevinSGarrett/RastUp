@@ -1,26 +1,54 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -Eeuo pipefail
+IFS=$'\n\t'
+
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 REPORT="$ROOT/docs/test-reports/smoke"
 mkdir -p "$REPORT"
 LOG="$REPORT/agent1-linux.log"
 
-echo "== Agent-1 Smoke (Linux) ==" > "$LOG"
-TMP="$ROOT/tmp.smoke.txt"
-( echo ok > "$TMP" && rm -f "$TMP" ) \
-  && echo "PASS: local fs write" >> "$LOG" \
-  || echo "FAIL: local fs write" >> "$LOG"
+{
+  echo "== Agent-1 Smoke (Linux) =="
+  date -u +"UTC: %Y-%m-%dT%H:%M:%SZ"
+  echo "ROOT=$ROOT"
+  echo
 
-if command -v docker >/dev/null 2>&1; then
-  docker --version >> "$LOG" 2>&1 || true
-  if docker info >/dev/null 2>&1; then
-    echo "PASS: docker available" >> "$LOG"
+  # Local FS write/delete
+  TMP="$ROOT/.tmp.smoke.$$"
+  if echo ok >"$TMP" && rm -f "$TMP"; then
+    echo "PASS: local fs write"
   else
-    echo "WARN: docker present but daemon not reachable" >> "$LOG"
+    echo "FAIL: local fs write"
   fi
-else
-  echo "WARN: docker not present" >> "$LOG"
-fi
 
-python3 --version >> "$LOG" 2>&1 || true
+  # Python
+  if command -v python3 >/dev/null 2>&1; then
+    echo -n "python: "
+    python3 --version
+  else
+    echo "WARN: python3 not present"
+  fi
+
+  # Git
+  if command -v git >/dev/null 2>&1; then
+    echo -n "git: "
+    git --version
+  else
+    echo "WARN: git not present"
+  fi
+
+  # Docker
+  if command -v docker >/dev/null 2>&1; then
+    echo -n "docker: "
+    docker --version
+    echo "PASS: docker present"
+  else
+    echo "WARN: docker not present"
+  fi
+
+  echo
+  echo "SMOKE DONE"
+} >"$LOG" 2>&1
+
+# As a convention, print the absolute log path for callers
 echo "$LOG"

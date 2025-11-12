@@ -1,0 +1,10 @@
+﻿== Agent-1 Smoke (Windows) ==
+UTC: 2025-11-12T04:59:54Z
+ROOT=C:\RastUp\RastUp
+
+PASS: local fs write
+python: Python 3.12.4
+git: git version 2.51.1.windows.1
+PASS: docker present - Docker version 28.4.0, build d8eb465
+
+SMOKE DONE

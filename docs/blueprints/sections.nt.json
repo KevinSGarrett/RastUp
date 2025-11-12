@@ -1,0 +1,26 @@
+[
+  {
+    "id": "NT-H1-0001",
+    "kind": "NT",
+    "title": "Part 2 — Non‑Tech Blueprint (Part 2)",
+    "level": 1,
+    "para_start": 9264,
+    "para_end": 10536
+  },
+  {
+    "id": "NT-H1-0002",
+    "kind": "NT",
+    "title": "Part 3 — Non‑Tech Blueprint (Part 3)",
+    "level": 1,
+    "para_start": 10537,
+    "para_end": 12660
+  },
+  {
+    "id": "NT-H1-0003",
+    "kind": "NT",
+    "title": "Appendices A–G",
+    "level": 1,
+    "para_start": 12661,
+    "para_end": 12946
+  }
+]

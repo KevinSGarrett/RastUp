@@ -1,0 +1,27 @@
+name: Knowledge Audit
+
+on:
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install deps (minimal for audit)
+        run: |
+          python -m pip install --upgrade pip
+          pip install pypdf odfpy python-docx
+
+      - name: Run audit (strict)
+        run: |
+          python -m orchestrator.knowledge audit --strict

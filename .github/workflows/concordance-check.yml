@@ -1,0 +1,19 @@
+name: Concordance Check (light)
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+  workflow_dispatch:
+
+jobs:
+  concordance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set PR_BODY
+        run: |
+          echo "PR_BODY<<EOF" >> $GITHUB_ENV
+          echo "${{ github.event.pull_request.body }}" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+      - name: Run check
+        run: python3 scripts/concordance/check_concordance.py

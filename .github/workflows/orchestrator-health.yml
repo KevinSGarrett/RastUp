@@ -1,0 +1,40 @@
+name: Orchestrator Health & Progress
+on:
+  schedule:
+    - cron: "35 2 * * *"
+  workflow_dispatch:
+jobs:
+  health:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install deps
+        shell: pwsh
+        run: |
+          python -m pip install --upgrade pip
+          pip install python-docx odfpy pypdf
+      - name: HEALTH
+        shell: pwsh
+        run: |
+          if (Test-Path "scripts/orchestrator/report_health.py") { python scripts/orchestrator/report_health.py }
+      - name: AUDIT
+        shell: pwsh
+        run: |
+          if (Test-Path "scripts/orchestrator/audit_rollup.py") { python scripts/orchestrator/audit_rollup.py }
+      - name: PROGRESS
+        shell: pwsh
+        run: |
+          python orchestrator/progress.py
+          python orchestrator/render_outline.py
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(orchestrator): nightly health/audit/progress"
+          file_pattern: |
+            docs/orchestrator/HEALTH.md
+            docs/orchestrator/AUDIT.jsonl
+            docs/PROGRESS.md
+            docs/OUTLINE.md
