@@ -244,6 +244,7 @@ def _help_text() -> str:
         "• budget show|set <cap>|soft <pct> — overrides (admin)\n"
         "• heavy \"Reason\" <usd> — guarded ledger entry (SAFE/Boost/queue)\n"
         "• approvals list|propose|sign — manage two‑key files\n"
+        "• squad run [--model m] [--slug pack] [--query q] — run 4 agents sequentially\n"
         "• sections rebuild — rebuild DOCX/ODT indices\n"
         "• tail [AGENT] [--lines N] — recent agent log\n"
         "• run \"Title\" --agent AGENT-1 --model gpt-5 [--slug WBS-x.y] [--query \"...\"]\n"
@@ -318,6 +319,90 @@ def _launch_agent_run(title: str, agent: str, model: str, channel_id: str, respo
         except Exception as e:
             try: _say_ephemeral(respond, None, f":x: *{agent}* failed: `{e}`")
             except Exception: pass
+
+    threading.Thread(target=_bg, daemon=True).start()
+
+# ------------------------------------------------------------------------------
+# Multi‑agent squad (autopilot)
+# ------------------------------------------------------------------------------
+def _squad_agents() -> List[str]:
+    return ["AGENT-1", "AGENT-2", "AGENT-3", "AGENT-4"]
+
+def _launch_squad(title: str, model: str, channel_id: str, respond,
+                  slug: Optional[str]=None, query: Optional[str]=None) -> None:
+    """Run the 4-agent squad sequentially with baton handoff.
+    Respects SAFE/Boost/budget. Queues if blocked.
+    """
+    snap = _budget_snapshot()
+
+    if _safe_mode() and _get_boost() <= 0.0:
+        _queue_append({
+            "type": "squad",
+            "title": title,
+            "model": model,
+            "slug": slug,
+            "query": query,
+            "queued_at": datetime.now(timezone.utc).isoformat(),
+            "by": "slack",
+        })
+        _say_ephemeral(respond, None, ":inbox_tray: SAFE=ON & no Boost — squad run queued.")
+        return
+
+    if snap["cap"] > 0 and snap["spent_week"] >= snap["cap"]:
+        _say_ephemeral(respond, None, ":no_entry: Weekly cap reached — raise cap or use Boost.")
+        return
+
+    _say_ephemeral(respond, None, f":hourglass_flowing_sand: Starting squad (4 agents) — {title}\nModel: `{model}`")
+
+    def _bg():
+        agents = _squad_agents()
+        total_delta = 0.0
+        before_all = _sum_usd_since(7)
+        for idx, agent in enumerate(agents, start=1):
+            try:
+                kwargs = dict(agent_name=agent, model=model)
+                if slug:  kwargs["pack_slug"] = slug
+                if query: kwargs["query"] = query
+                try:
+                    res = run_cursor(str(REPO_ROOT), f"{title}", **kwargs)
+                except TypeError:
+                    res = run_cursor(str(REPO_ROOT), f"{title}", agent_name=agent, model=model)
+
+                log_path = (res.get("attach") or "").replace("\\","/")
+                rc = int(res.get("retcode", 1))
+                head = ":white_check_mark:" if rc==0 else ":x:"
+                app.client.chat_postMessage(channel=channel_id,
+                    text=f"{head} [{idx}/4] {agent} finished — exit_code={rc}\nAttach: `{log_path}`")
+
+                if rc != 0:
+                    app.client.chat_postMessage(channel=channel_id,
+                        text=f":stop_sign: Squad stopped after {agent} due to failure.")
+                    break
+
+                # Stop-loss vs Boost after each leg
+                after_leg = _sum_usd_since(7)
+                delta_leg = max(0.0, after_leg - before_all - total_delta)
+                total_delta += delta_leg
+                stop_loss = float(getattr(SETTINGS, "boost_stop_loss", 5.0))
+                if delta_leg >= stop_loss and _get_boost() > 0.0:
+                    _set_boost(0.0)
+                    app.client.chat_postMessage(channel=channel_id,
+                        text=f":warning: Boost stop‑loss hit on {agent} (Δ=${delta_leg:.2f} ≥ ${stop_loss:.2f}); Boost cleared.")
+            except Exception as e:
+                try:
+                    _say_ephemeral(respond, None, f":x: Squad leg failed: `{e}`")
+                except Exception:
+                    pass
+                break
+
+        # Final summary
+        try:
+            after_all = _sum_usd_since(7)
+            spent = max(0.0, after_all - before_all)
+            app.client.chat_postMessage(channel=channel_id,
+                text=f":checkered_flag: Squad complete — est. Δ=${spent:.2f} in last 7d window")
+        except Exception:
+            pass
 
     threading.Thread(target=_bg, daemon=True).start()
 
@@ -640,7 +725,8 @@ def orchestrator_cmd(ack, body, respond, logger):
         items = _queue_read_all()
         runs = [x for x in items if x.get("type")=="run"]
         heavy= [x for x in items if x.get("type")=="heavy"]
-        _say_ephemeral(respond, logger, f":inbox_tray: Queue size: {len(items)} (runs:{len(runs)}, heavy:{len(heavy)})")
+        squads= [x for x in items if x.get("type")=="squad"]
+        _say_ephemeral(respond, logger, f":inbox_tray: Queue size: {len(items)} (runs:{len(runs)}, squad:{len(squads)}, heavy:{len(heavy)})")
         return
 
     if t.startswith("drain"):
@@ -657,6 +743,9 @@ def orchestrator_cmd(ack, body, respond, logger):
                                   rec.get("model",DEFAULT_MODEL), channel_id, respond)
             elif rec.get("type")=="heavy":
                 _append_ledger("heavy", float(rec.get("usd",0)), rec.get("reason","queued-heavy"))
+            elif rec.get("type")=="squad":
+                _launch_squad(rec.get("title","Untitled squad"), rec.get("model",DEFAULT_MODEL),
+                              channel_id, respond, slug=rec.get("slug"), query=rec.get("query"))
         return
 
     # Tail
@@ -688,6 +777,25 @@ def orchestrator_cmd(ack, body, respond, logger):
     if t.startswith("run"):
         title, agent, model, slug, query = _parse_run(text)
         _launch_agent_run(title, agent, model, channel_id, respond, slug=slug, query=query)
+        return
+
+    # Squad (autopilot)
+    if t.startswith("squad") or t.startswith("autopilot"):
+        # Example: /orchestrator squad run --model gpt-5 --slug wbs-1-3-knowledge --query "..."
+        parts = shlex.split(text)
+        # Default args
+        model = DEFAULT_MODEL
+        slug = None
+        query = None
+        # Parse flags
+        for i, tok in enumerate(parts):
+            if tok == "--model" and i+1 < len(parts): model = parts[i+1]
+            if tok == "--slug"  and i+1 < len(parts): slug  = parts[i+1]
+            if tok == "--query" and i+1 < len(parts): query = parts[i+1]
+        if any(x in {"run","start"} for x in parts[1:2]):
+            _launch_squad("Autopilot Squad", model, channel_id, respond, slug=slug, query=query)
+            return
+        _say_ephemeral(respond, logger, "Usage: `/orchestrator squad run [--model m] [--slug pack] [--query q]`")
         return
 
     # Fallback
@@ -755,6 +863,10 @@ def _alias_ru_tail(ack, body, respond, logger):
 def _alias_ru_agent(ack, body, respond, logger):
     ack()
     agent_cmd(ack=lambda: None, body=body, respond=respond, logger=logger)
+
+@app.command("/squad")
+def _alias_squad(ack, body, respond, logger):
+    _forward("squad", body, ack, respond, logger)
 
 # ------------------------------------------------------------------------------
 # Main (local debug)
