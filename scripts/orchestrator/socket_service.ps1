@@ -1,57 +1,62 @@
-#requires -version 5.1
 # scripts/orchestrator/socket_service.ps1
-# Quiet service runner (no console spam), auto-restart, UTF-8 log.
+# Quiet background service: logs only (blank window by design), auto-restart, UTF-8.
 
+#requires -Version 5.1
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
+
 [Console]::OutputEncoding = New-Object System.Text.UTF8Encoding($false)
-
-$RepoRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\..')).Path
-$Log      = Join-Path $PSScriptRoot 'app_live.log'
-$LockPath = Join-Path $RepoRoot 'ops\flags\socket.lock'
-$VenvPy   = Join-Path $RepoRoot '.venv\Scripts\python.exe'
-$Py       = if (Test-Path $VenvPy) { $VenvPy } else { 'python' }
-
-# UTF-8 everywhere
 $env:PYTHONUTF8       = '1'
 $env:PYTHONIOENCODING = 'utf-8'
-$env:PYTHONPATH       = $RepoRoot
+$env:PYTHONUNBUFFERED = '1'
 
-# Single-instance lock
-New-Item -ItemType Directory -Force -Path (Split-Path $LockPath -Parent) | Out-Null
-if (Test-Path $LockPath) {
-    $existing = Get-Content -Path $LockPath -ErrorAction SilentlyContinue
-    $pid = ($existing -split '\s+') | Select-Object -First 1
-    $alive = $false
-    if ($pid -match '^\d+$') {
-        try { Get-Process -Id ([int]$pid) -ErrorAction Stop | Out-Null; $alive = $true } catch { $alive = $false }
-    }
-    if ($alive) { exit 0 } else { Remove-Item -Force $LockPath -ErrorAction SilentlyContinue }
+$ScriptDir = $PSScriptRoot
+$RepoRoot  = (Resolve-Path (Join-Path $ScriptDir '..\..')).Path
+
+$LogDir = $ScriptDir
+$Log    = Join-Path $LogDir 'app_live.log'
+$Lock   = Join-Path $RepoRoot 'ops\flags\socket.lock'
+
+$VenvPy = Join-Path $RepoRoot '.venv\Scripts\python.exe'
+if (Test-Path $VenvPy) {
+  $py = $VenvPy
+} elseif (Get-Command py -ErrorAction SilentlyContinue) {
+  $py = 'py -3'
+} else {
+  $py = 'python'
 }
-"$PID $(Get-Date -Format s)" | Set-Content -Encoding UTF8 $LockPath
 
-# UTF-8 (no BOM) log writer
-$utf8NoBom = New-Object System.Text.UTF8Encoding($false)
-$logWriter = New-Object System.IO.StreamWriter($Log, $true, $utf8NoBom)
-$logWriter.AutoFlush = $true
-function Write-Log([string]$line) { $logWriter.WriteLine($line) }
+New-Item -ItemType Directory -Path $LogDir -Force | Out-Null
+New-Item -ItemType Directory -Path (Split-Path $Lock) -Force | Out-Null
+'' | Out-File -FilePath $Log -Encoding utf8
 
-Write-Log ("[{0}] SERVICE boot" -f (Get-Date).ToString('s'))
+# Stop any existing main
+Get-CimInstance Win32_Process | Where-Object {
+  $_.CommandLine -match '-m orchestrator\.socket_main'
+} | ForEach-Object { Stop-Process -Id $_.ProcessId -Force }
 
-try {
-    while ($true) {
-        Write-Log ("[{0}] SERVICE starting" -f (Get-Date).ToString('s'))
-        try {
-            & $Py -X utf8 -u -m orchestrator.socket_main 2>&1 | ForEach-Object { Write-Log $_ }
-            $code = $LASTEXITCODE
-        } catch {
-            $code = -1
-            $_ | Out-String | ForEach-Object { Write-Log $_ }
-        }
-        Write-Log ("[{0}] SERVICE exit code={1}" -f (Get-Date).ToString('s'), $code)
-        Start-Sleep -Seconds 3
-    }
-} finally {
-    $logWriter.Dispose()
-    Remove-Item -Force $LockPath -ErrorAction SilentlyContinue
+# This service window is intentionally quiet; tail the log to see activity
+Write-Host ("Service supervising orchestrator - logging to {0}" -f $Log)
+
+while ($true) {
+  try {
+    Set-Content -Path $Lock -Value $PID -Encoding ascii
+    ($([DateTime]::UtcNow.ToString('s')) + ' SERVICE boot') |
+      Out-File -FilePath $Log -Encoding utf8 -Append
+
+    & $py -X utf8 -u -m orchestrator.socket_main 2>&1 |
+      ForEach-Object { $_ | Out-File -FilePath $Log -Encoding utf8 -Append }
+
+    $code = $LASTEXITCODE
+    ($([DateTime]::UtcNow.ToString('s')) + " SERVICE exit code=$code") |
+      Out-File -FilePath $Log -Encoding utf8 -Append
+  }
+  catch {
+    ($([DateTime]::UtcNow.ToString('s')) + " SERVICE exception: " + $_.Exception.Message) |
+      Out-File -FilePath $Log -Encoding utf8 -Append
+  }
+  finally {
+    Remove-Item $Lock -Force -ErrorAction SilentlyContinue
+    Start-Sleep -Seconds 3
+  }
 }
