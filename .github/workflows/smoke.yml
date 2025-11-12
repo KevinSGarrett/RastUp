@@ -1,0 +1,43 @@
+name: Orchestrator Smoke
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/**'
+      - 'orchestrator/**'
+      - 'docs/blueprints/**'
+      - 'ops/**'
+      - '.github/workflows/smoke.yml'
+
+jobs:
+  smoke-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Agent-1 smoke (Linux)
+        run: |
+          bash scripts/smoke/agent1.sh
+          cat docs/test-reports/smoke/agent1-linux.log
+
+  smoke-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Agent-1 smoke (Windows)
+        shell: pwsh
+        run: |
+          .\scripts\smoke\agent1.ps1
+          Get-Content .\docs\test-reports\smoke\agent1-windows.log
+
+  concordance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Concordance NT/TD in queue (if script exists)
+        run: |
+          if [ -f scripts/concordance/check_concordance.py ]; then
+            python3 scripts/concordance/check_concordance.py
+          else
+            echo "No concordance script present; skipping."
+          fi

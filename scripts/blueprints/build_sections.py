@@ -1,115 +1,119 @@
-﻿import re, json, unicodedata
+#!/usr/bin/env python3
+# Rebuild NT (DOCX) sections and merge with TD windows → sections.json
+# Compatible with large docs; stdlib only.
+
+import json
+import re
+import sys
+import zipfile
+import xml.etree.ElementTree as ET
 from pathlib import Path
-from docx import Document
-from odf.opendocument import load as odf_load
-from odf import text as odf_text
 
-ROOT = Path(".")
-NT_SRC = ROOT/"docs/blueprints/Combined_Master_PLAIN_Non_Tech_001.docx"
-TD_SRC = ROOT/"docs/blueprints/TechnicalDevelopmentPlan.odt"
-OUT_SECTIONS = ROOT/"docs/blueprints/sections.json"
+# Repo root → docs/blueprints/*
+ROOT = Path(__file__).resolve().parents[2]
+BP_DIR = ROOT / "docs" / "blueprints"
 
-PAT_SUBSECTION = re.compile(r'^(?:Sub)?Section\s+(\d+(?:\.\d+)*)\b', re.IGNORECASE)
-PAT_NUMBERED   = re.compile(r'^\s*(\d+)\)\s+')
+NT_DOCX = BP_DIR / "Combined_Master_PLAIN_Non_Tech_001.docx"
+TD_JSON = BP_DIR / "sections.td.json"       # written by build_td_windows.py
+NT_JSON = BP_DIR / "sections.nt.json"
+COMBINED_JSON = BP_DIR / "sections.json"
 
-def ascii_title(s:str)->str:
-    if not s: return ""
-    t = unicodedata.normalize("NFKC", s)
-    t = (t.replace("“","\"").replace("”","\"").replace("‘","'").replace("’","'").replace("—","-").replace("–","-"))
-    return " ".join(t.split())
+W_NS = "http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+NS = {"w": W_NS}
 
-def docx_sections(p: Path):
-    if not p.exists(): return []
-    doc = Document(str(p))
-    paras = [("P", (getattr(pr.style,"name","") or ""), pr.text.strip()) for pr in doc.paragraphs]
-    sections=[]; idx=0
-    while idx < len(paras):
-        tag, style, text = paras[idx]
-        lvl=None
-        if style.lower().startswith("heading"):
-            try: lvl=int(style.split()[-1])
-            except: lvl=2
-        if not lvl and text:
-            if PAT_SUBSECTION.match(text): lvl=2
-            elif PAT_NUMBERED.match(text): lvl=2
-        if lvl:
-            # start range
-            start = idx
-            # advance to next header (same or higher)
-            j = idx + 1
-            while j < len(paras):
-                tag2, style2, text2 = paras[j]
-                next_is_header = style2.lower().startswith("heading") or PAT_SUBSECTION.match(text2) or PAT_NUMBERED.match(text2)
-                if next_is_header: break
-                j += 1
-            end = max(start, j-1)
-            sections.append({
-                "kind":"NT","level":lvl,"title":ascii_title(text),
-                "file":str(p).replace("\\","/"),
-                "para_start":start,"para_end":end,
-                "id": None  # fill later
-            })
-            idx = j; continue
-        idx += 1
-    # assign stable IDs
-    counters={1:0,2:0,3:0,4:0,5:0,6:0}
-    for s in sections:
-        lvl=s["level"]; counters[lvl]+=1
-        s["id"]=f"NT-H{lvl}-{counters[lvl]:04d}"
-    return sections
 
-def odt_sections(p: Path):
-    if not p.exists(): return []
-    odt = odf_load(str(p))
-    # flatten as (tag, text)
-    blocks=[]
-    for h in odt.getElementsByType(odf_text.H):
-        txt="".join(n.data for n in h.childNodes if n.nodeType==n.TEXT_NODE).strip()
-        blocks.append(("H", txt))
-    for pr in odt.getElementsByType(odf_text.P):
-        txt="".join(n.data for n in pr.childNodes if n.nodeType==n.TEXT_NODE).strip()
-        blocks.append(("P", txt))
-    # build sections: each H → following Ps until next H
-    sections=[]; i=0; hcounts={}
-    while i < len(blocks):
-        tag, text = blocks[i]
-        if tag=="H" and text:
-            lvl=2  # ODT outline levels are unreliable across editors — normalize to H2 for parity
-            start=i+1
-            j=start
-            while j < len(blocks) and blocks[j][0]!="H":
-                j+=1
-            # map heading range to the paragraph indices among Ps only
-            # rebuild a paragraph-only list
-            para_indices=[k for k,(t,_) in enumerate(blocks) if t=="P"]
-            # find absolute P positions bounding start..j
-            # locate first P at/after start
-            ps=[k for k in para_indices if k>=start and k<j]
-            if ps:
-                pstart = para_indices.index(ps[0])
-                pend   = para_indices.index(ps[-1])
-            else:
-                # empty section: map to zero-length window after heading
-                ponly=[(k,txt) for k,(t,txt) in enumerate(blocks) if t=="P"]
-                pstart=0; pend=min(len(ponly)-1,0)
-            hcounts[lvl]=hcounts.get(lvl,0)+1
-            sid=f"TD-H{lvl}-{hcounts[lvl]:04d}"
-            sections.append({
-                "kind":"TD","level":lvl,"title":ascii_title(text),
-                "file":str(p).replace("\\","/"),
-                "para_start":pstart,"para_end":pend,"id":sid
-            })
-            i=j; continue
-        i+=1
-    return sections
+def _err(msg: str) -> None:
+    print(f"[build_sections] {msg}", file=sys.stderr)
+
+
+def _is_valid_docx(p: Path) -> bool:
+    return p.exists() and zipfile.is_zipfile(p)
+
+
+def _extract_nt_entries(docx_path: Path):
+    """
+    Parse word/document.xml and extract Heading1..Heading6 paragraphs.
+    Produce entries with stable IDs: NT-H{level}-{####} and para ranges.
+    """
+    with zipfile.ZipFile(docx_path) as zf:
+        xml = zf.read("word/document.xml")
+
+    root = ET.fromstring(xml)
+    paras = list(root.findall(".//w:p", NS))
+
+    # Collect (para_index, level, title)
+    provisional = []
+    for idx, p in enumerate(paras):
+        level = None
+        ppr = p.find("w:pPr", NS)
+        if ppr is not None:
+            pstyle = ppr.find("w:pStyle", NS)
+            if pstyle is not None:
+                val = pstyle.get(f"{{{W_NS}}}val")
+                if val:
+                    m = re.match(r"Heading([1-6])$", val, re.I)
+                    if m:
+                        level = int(m.group(1))
+        # Text of the paragraph
+        title = "".join(t.text or "" for t in p.findall(".//w:t", NS)).strip()
+        if level and title:
+            provisional.append({"level": level, "title": title, "para_start": idx})
+
+    # Assign para_end = next start - 1 (or last paragraph)
+    for i, e in enumerate(provisional):
+        end = (len(paras) - 1) if i == len(provisional) - 1 else provisional[i + 1]["para_start"] - 1
+        e["para_end"] = end
+
+    # Assign stable IDs per level
+    counters = {i: 0 for i in range(1, 7)}
+    entries = []
+    for e in provisional:
+        counters[e["level"]] += 1
+        eid = f"NT-H{e['level']}-{counters[e['level']]:04d}"
+        entries.append(
+            {
+                "id": eid,
+                "kind": "NT",
+                "title": e["title"],
+                "level": e["level"],
+                "para_start": e["para_start"],
+                "para_end": e["para_end"],
+            }
+        )
+    return entries
+
 
 def main():
-    out=[]
-    out += docx_sections(NT_SRC)
-    out += odt_sections(TD_SRC)
-    OUT_SECTIONS.parent.mkdir(parents=True, exist_ok=True)
-    OUT_SECTIONS.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"Sections written: {len(out)} → {OUT_SECTIONS}")
+    if not NT_DOCX.exists():
+        _err(f"ERROR: NT DOCX not found at {NT_DOCX}")
+        sys.exit(2)
+    if not _is_valid_docx(NT_DOCX):
+        _err(f"ERROR: '{NT_DOCX.name}' is not a valid .docx (OOXML/zip).")
+        _err("Open the original in Word/LibreOffice and 'Save As' .docx, or run:")
+        _err(f'  soffice --headless --convert-to docx --outdir "{BP_DIR}" "{NT_DOCX}"')
+        sys.exit(2)
+
+    BP_DIR.mkdir(parents=True, exist_ok=True)
+
+    # Build NT entries
+    nt_entries = _extract_nt_entries(NT_DOCX)
+    NT_JSON.write_text(json.dumps(nt_entries, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    # Merge TD windows if present
+    td_entries = []
+    if TD_JSON.exists():
+        try:
+            td_entries = json.loads(TD_JSON.read_text(encoding="utf-8"))
+        except Exception as e:
+            _err(f"WARNING: failed to read TD windows '{TD_JSON.name}': {e}")
+
+    combined = nt_entries + td_entries
+    COMBINED_JSON.write_text(json.dumps(combined, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    print(f"Wrote {len(nt_entries)} NT entries → {NT_JSON}")
+    print(f"TD entries merged: {len(td_entries)}")
+    print(f"Combined sections → {COMBINED_JSON} (total {len(combined)})")
+
 
 if __name__ == "__main__":
     main()
