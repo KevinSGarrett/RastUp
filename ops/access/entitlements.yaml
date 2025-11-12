@@ -1,49 +1,73 @@
-# ops/access/entitlements.yaml
+version: 0
+updated_at: "AUTO"
+description: >
+  Minimal entitlements for Orchestrator + Agents + CI. Replace bold placeholders before enabling “critical access gate”.
+
 principals:
-  agent-1:
-    description: DevOps/bootstrap agent
-    capabilities:
-      - local_fs: rw
-      - github: pr,branch,write
-      - ci: run
-      - registry: read
-  agent-2:
-    description: Backend/services agent
-    capabilities:
-      - local_fs: rw
-      - registry: push
-  agent-3:
-    description: Frontend/DX agent
-    capabilities:
-      - local_fs: rw
-      - preview_env: deploy
-  agent-4:
-    description: QA/Security/Release agent
-    capabilities:
-      - local_fs: r
-      - ci: run
-      - security_scan: run
+  orchestrator:
+    kind: service
+    note: Slack Bolt app (Socket Mode)
+  agent-1: { kind: cursor-agent }
+  agent-2: { kind: cursor-agent }
+  agent-3: { kind: cursor-agent }
+  agent-4: { kind: cursor-agent }
   ci:
-    description: GitHub Actions automation
-    capabilities:
-      - github: pr,checks
-      - registry: push
-      - secrets: read:dev
+    kind: github-actions
+    repo: "**[REPO_URL]**"
+
 resources:
-  local_fs: {}
+  local-fs:
+    target: "**[LOCAL_ROOT_PATH]**"
+    required: [read, write, exec]
+    granted:
+      orchestrator: [read, write]
+      agent-1: [read, write, exec]
+      agent-2: [read, write, exec]
+      agent-3: [read, write, exec]
+      agent-4: [read, write]
+      ci:       [read]
+
   github:
     repo: "**[REPO_URL]**"
+    required: [read, write, pr, checks]
+    granted:
+      orchestrator: [read, pr]
+      agent-1: [read, write, pr]
+      agent-2: [read, write, pr]
+      agent-3: [read, write, pr]
+      agent-4: [read, pr]
+      ci:      [read, checks]
+
+  ci-oidc:
+    provider: "**[CI_PROVIDER]**"
+    account:  "**[AWS_ACCOUNT/ORG]**"
+    required: [assume-role]
+    granted:
+      ci: [assume-role]
+
   registry:
-    name: "**[REGISTRY]**"
+    kind: ecr
+    repo: "**[REGISTRY]**/**[APP]**-dev"
+    required: [push, pull]
+    granted:
+      agent-1: [push, pull]
+      agent-2: [push, pull]
+      ci:      [push, pull]
+
   secrets:
-    manager: "AWS Secrets Manager"
-policies:
-  - principal: ci
-    resource: secrets
-    permission: read:dev
-  - principal: agent-2
-    resource: registry
-    permission: push
-  - principal: agent-3
-    resource: preview_env
-    permission: deploy
+    kind: aws-secrets-manager
+    base_path: "**[APP]/**"
+    required: [read, write, list]
+    granted:
+      agent-1: [write, list]
+      agent-2: [read, list]
+      agent-3: [read, list]
+      agent-4: [read, list]
+      ci:      [read, list]
+
+  dns:
+    provider: "**[DNS_PROVIDER]**"
+    required: [read]
+    granted:
+      agent-1: [read]
+      ci:      [read]

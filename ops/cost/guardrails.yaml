@@ -1,9 +1,13 @@
-dev:
-  weekly_cap_usd: 75
-  soft_alert_pct: 80
-staging:
-  weekly_cap_usd: 150
-  soft_alert_pct: 80
-prod:
-  weekly_cap_usd: 500
-  soft_alert_pct: 80
+version: 0
+updated_at: "AUTO"
+weekly_cap_usd: 100.0         # hard cap for alerts & throttling modes
+soft_alert_pct: 0.80          # show warning when reaching 80% of cap
+models:
+  openai:
+    default: gpt-5
+    max_mode_allowed: true
+  anthropic:
+    default: claude-4.5-haiku
+notes:
+  - "Cursor agent costs are separate from this budget."
+  - "SAFE-MODE forces dry-runs; heavy steps require Boost or approvals."

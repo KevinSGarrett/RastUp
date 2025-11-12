@@ -1,0 +1,48 @@
+name: Access Audit (Nightly)
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '11 4 * * *'  # daily at 04:11 UTC
+
+jobs:
+  windows-smoke:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Windows smoke
+        shell: powershell
+        run: |
+          powershell -ExecutionPolicy Bypass -File scripts\smoke\agent1.ps1
+          Get-Content .\docs\test-reports\smoke\agent1-windows.log
+      - uses: actions/upload-artifact@v4
+        with:
+          name: agent1-windows-log
+          path: docs/test-reports/smoke/agent1-windows.log
+
+  linux-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Normalize LF for *.sh
+        run: |
+          sudo apt-get update -y && sudo apt-get install -y dos2unix
+          dos2unix scripts/smoke/*.sh || true
+      - name: Linux smoke
+        run: |
+          bash scripts/smoke/agent1.sh
+          cat docs/test-reports/smoke/agent1-linux.log
+      - uses: actions/upload-artifact@v4
+        with:
+          name: agent1-linux-log
+          path: docs/test-reports/smoke/agent1-linux.log
+
+  concordance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Concordance check
+        run: python scripts/concordance/check_concordance.py
