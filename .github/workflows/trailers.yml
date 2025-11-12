@@ -1,0 +1,25 @@
+name: PR Trailers Gate
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+    paths:
+      - '.github/workflows/trailers.yml'
+      - '.github/pull_request_template.md'
+      - 'scripts/ci/verify_trailers.py'
+      - '**/*'
+  workflow_dispatch:
+
+jobs:
+  check-trailers:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify NT/TD/WBS trailers in PR description
+        run: python scripts/ci/verify_trailers.py

@@ -1,16 +1,35 @@
 ## Summary
-<!-- What changed and why -->
+What & why in one short paragraph.
 
 ## Access & Traceability
-- Run ID(s) / logs: …
-- Artifacts: …
-- Affected workflows: …
+- Access Smoke Tests executed: [ ] yes (attach logs/artifacts)
+- NT refs: NT-...
+- TD refs: TD-...
+- WBS: WBS-...
 
 ## Blueprint Concordance
-Map changes to blueprint sections:
-- [ ] Non-technical: <IDs or filenames>
-- [ ] Technical: <IDs or filenames>
+- NT IDs satisfied: NT-...
+- TD IDs implemented: TD-...
+- Crosswalk changes: (paste diff for /docs/blueprints/crosswalk.json)
+- Evidence: [PR artifacts/logs/previews]
 
-## Checklist
-- [ ] CI checks pass (lint, tests, security, deps/license, smoke, knowledge)
-- [ ] SAFE-MODE respected (where applicable)
+## Tests & Quality
+- Unit: [%]  Integration: [links]  E2E: [links]
+- Security: SAST + secrets scan: PASS/FAIL (links)
+- SBOM/signing: [links]
+
+## Deployment & Rollback
+- Affects env(s): dev|staging|prod
+- Rollback plan: [summary or link]
+- Requires Two‑Key? [ ] yes [ ] no
+
+## Risks & Notes
+- Known risks:
+- Out of scope:
+
+---
+**Required trailers (gate enforces presence):**
+
+NT: NT-x.y  
+TD: TD-a.b  
+WBS: WBS-p.q
