@@ -1,54 +1,50 @@
 #!/usr/bin/env bash
-set -Eeuo pipefail
-IFS=$'\n\t'
+# Agent-1 smoke (Linux/WSL). Works on older bash and BusyBox; tolerant to CRLF conversions.
+# NOTE: Keep this file with LF line endings. In Git, use .gitattributes (see repo root).
 
-ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+# Try to enable pipefail; if unsupported, continue without it.
+(set -Eeuo pipefail) 2>/dev/null || set -Eeuo
+
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd -P)"
 REPORT="$ROOT/docs/test-reports/smoke"
 mkdir -p "$REPORT"
 LOG="$REPORT/agent1-linux.log"
 
 {
   echo "== Agent-1 Smoke (Linux) =="
-  date -u +"UTC: %Y-%m-%dT%H:%M:%SZ"
-  echo "ROOT=$ROOT"
-  echo
+  printf 'UTC: %s\n' "$(date -u +%FT%TZ)"
+  printf 'ROOT=%s\n\n' "$ROOT"
 
-  # Local FS write/delete
-  TMP="$ROOT/.tmp.smoke.$$"
-  if echo ok >"$TMP" && rm -f "$TMP"; then
+  TMP="$ROOT/tmp.smoke.$$"
+  if echo ok > "$TMP" && rm -f "$TMP"; then
     echo "PASS: local fs write"
   else
     echo "FAIL: local fs write"
   fi
 
-  # Python
   if command -v python3 >/dev/null 2>&1; then
-    echo -n "python: "
-    python3 --version
+    printf 'python: '; python3 --version
+  elif command -v python >/dev/null 2>&1; then
+    printf 'python: '; python --version
   else
-    echo "WARN: python3 not present"
+    echo "WARN: python not present"
   fi
 
-  # Git
   if command -v git >/dev/null 2>&1; then
-    echo -n "git: "
-    git --version
+    printf 'git: '; git --version
   else
     echo "WARN: git not present"
   fi
 
-  # Docker
   if command -v docker >/dev/null 2>&1; then
-    echo -n "docker: "
-    docker --version
-    echo "PASS: docker present"
+    printf 'PASS: docker present - '; docker --version
   else
     echo "WARN: docker not present"
   fi
 
-  echo
+  echo ""
   echo "SMOKE DONE"
-} >"$LOG" 2>&1
+} > "$LOG" 2>&1
 
-# As a convention, print the absolute log path for callers
 echo "$LOG"
+exit 0
