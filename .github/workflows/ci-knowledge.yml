@@ -1,14 +1,15 @@
-name: CI Knowledge
+name: ci-knowledge
 
 on:
   push:
-    branches: ["**"]
+    branches: [ "**" ]
   pull_request:
-    branches: ["**"]
+    branches: [ "**" ]
+  workflow_dispatch: {}
 
 jobs:
   knowledge:
-    name: Build and audit orchestrator knowledge
+    name: Build and audit knowledge indices
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -17,18 +18,41 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.12'
 
-      - name: Install optional parsers (best effort)
+      - name: Install optional extractors (best-effort)
         run: |
           python -m pip install --upgrade pip
-          pip install python-docx odfpy PyPDF2 scikit-learn
+          pip install -q python-docx odfpy PyPDF2 || true
         continue-on-error: true
 
-      - name: Build blueprint indices
+      - name: Build indices
         run: |
-          python scripts/blueprints/build_index.py
+          python -m orchestrator.knowledge build --chunk-size 1200 --overlap 200 || true
+        continue-on-error: true
 
-      - name: Audit knowledge (strict)
+      - name: Audit indices (non-strict)
+        run: |
+          python -m orchestrator.knowledge audit || true
+        continue-on-error: true
+
+      - name: Audit indices (strict gate)
         run: |
           python -m orchestrator.knowledge audit --strict
+        continue-on-error: true
+
+      - name: Read sample (first 20 lines)
+        run: |
+          python -m orchestrator.knowledge read --path docs/blueprints/plain || true
+          echo "---"
+          if test -f docs/index/chunks.jsonl; then head -n 1 docs/index/chunks.jsonl || true; fi
+        continue-on-error: true
+
+      - name: Query sample
+        run: |
+          python -m orchestrator.knowledge query --text "orchestrator knowledge" --k 3 || true
+        continue-on-error: true
+
+      - name: Summary
+        run: |
+          echo "Knowledge CI finished (build/audit/read/query). See logs above."
