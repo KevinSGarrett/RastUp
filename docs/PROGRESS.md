@@ -69,3 +69,20 @@
 - Slack: added `/orchestrator knowledge build` stub — gated by SAFE‑MODE; runs build only when SAFE=OFF.
 - CI: `.github/workflows/ci-knowledge.yml` present; build/audit/read/query steps `continue-on-error: true`.
 - Local CI: `make ci` failed — PEP 668 externally managed environment; use venv or GitHub CI.
+
+### 2025-11-13 — Autopilot Squad run and CI status (this window)
+- Squad run 2025-11-13: 4/4 agents succeeded — artifacts under `docs/orchestrator/from-agents/AGENT-*`.
+  Run IDs: AGENT-1 `run-1762999164-793261`, AGENT-2 `run-1762999320-8cbc1e`,
+  AGENT-3 `run-1762999482-689492`, AGENT-4 `run-1762999594-13f82a`.
+- Local CI 2025-11-13: `make ci` failed — externally managed environment (PEP 668); `ensurepip`/`pip` unavailable.
+  Suggestion: use a venv (`python3 -m venv .venv && . .venv/bin/activate && pip -r tools/requirements-ci.txt`) or rely on GitHub CI.
+
+How to reproduce the squad run:
+
+```bash
+PYTHONPATH=. python3 tools/run_squad.py --title "Autopilot Squad" --model gpt-5 --pack wbs-1-3-knowledge
+```
+
+### 2025-11-13 — WBS‑2.0 Autopilot bootstrap
+- Added `tools/autopilot.sh` and `docs/runbooks/AUTOPILOT.md` for Planner/Builder/Tester/Releaser.
+- Local CI 2025-11-13: `make ci` failed — PEP 668 externally managed environment; `ensurepip`/`pip` unavailable. Use a virtualenv or GitHub CI.

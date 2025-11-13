@@ -27,3 +27,25 @@ build/
 # Local environment files (keep secrets out of Git)
 .env
 .env.*
+
+# Runtime logs
+docs/logs/
+scripts/orchestrator/*.log
+scripts/orchestrator/stderr.txt
+scripts/orchestrator/stdout.txt
+
+# Agent run artifacts
+docs/orchestrator/from-agents/
+docs/orchestrator/plans/
+docs/orchestrator/wbs-snapshot.json
+
+# Generated indexes & queues
+ops/index/
+ops/flags/
+ops/queue.jsonl
+
+# Transient prompt dumps
+ops/prompts/.cursor_prompt_*.txt
+
+# Secrets (DO NOT COMMIT)
+ops/secrets/
