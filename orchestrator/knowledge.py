@@ -121,6 +121,16 @@ def read_path(path: str, first: int) -> Tuple[int, str]:
     p = _resolve_read_path(path)
     if not p.exists():
         return 1, f"not found: {path}"
+
+    # Support directory inputs by selecting a representative file
+    if p.is_dir():
+        # Prefer normalized markdown in the directory
+        md_files = sorted([x for x in p.glob("*.md") if x.is_file()])
+        candidates = md_files or sorted([x for x in p.iterdir() if x.is_file()])
+        if not candidates:
+            return 1, f"no files under directory: {path}"
+        p = candidates[0]
+
     try:
         txt = p.read_text(encoding="utf-8", errors="ignore")
     except Exception as e:

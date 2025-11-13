@@ -534,9 +534,24 @@ def orchestrator_cmd(ack, body, respond, logger):
             _say_ephemeral(respond, logger, f":x: health failed: {e}")
         return
 
-    # Knowledge audit
+    # Knowledge audit/build (non-destructive stubs; build gated by SAFE)
     if t.startswith("knowledge"):
-        # `/orchestrator knowledge audit`
+        parts = shlex.split(text)
+        # `/orchestrator knowledge build`
+        if len(parts) >= 2 and parts[1].lower() == "build":
+            if _safe_mode():
+                _say_ephemeral(respond, logger, ":shield: SAFE=ON — build is gated. Run locally or disable SAFE with approval.")
+                return
+            try:
+                py = sys.executable
+                subprocess.run([py, "-m", "orchestrator.knowledge", "build", "--chunk-size", "1200", "--overlap", "200"],
+                               cwd=str(REPO_ROOT), check=False, capture_output=True, text=True)
+                _say_ephemeral(respond, logger, ":white_check_mark: Knowledge build triggered — see docs/index and docs/blueprints/plain.")
+            except Exception as e:
+                _say_ephemeral(respond, logger, f":x: knowledge build failed: {e}")
+            return
+
+        # Default: `/orchestrator knowledge audit`
         nt = DOCS_DIR / "blueprints" / "Combined_Master_PLAIN_Non_Tech_001.docx"
         td = DOCS_DIR / "blueprints" / "TechnicalDevelopmentPlan.odt"
         sec = DOCS_DIR / "blueprints" / "sections.json"
