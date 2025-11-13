@@ -57,3 +57,15 @@
 - Knowledge build: `python3 scripts/blueprints/build_index.py` → Normalized=2, Skipped=2, Chunks=3402
 - Knowledge audit (strict): OK — all required indices present
 - Local CI: `make ci` failed — externally managed Python; `ensurepip`/`pip` unavailable (PEP 668). Use venv or GitHub CI.
+
+### 2025-11-13 — Autopilot Squad run and CI status (follow-up)
+- Squad run 2025-11-13: 4/4 agents succeeded — artifacts under `docs/orchestrator/from-agents/AGENT-*`.
+  Run IDs: AGENT-1 `run-1762998631-4340ed`, AGENT-2 `run-1762998794-30a051`, AGENT-3 `run-1762998876-b50c6d`, AGENT-4 `run-1762998981-a75af7`.
+- Local CI: `make ci` failed — externally managed environment (PEP 668); recommends using a virtualenv or GitHub CI.
+
+### 2025-11-13 — WBS‑1.3 CLI and Slack stubs
+- Orchestrator CLI: `python -m orchestrator.knowledge` supports `build`, `audit --strict`, `read --path --first`, `query --text --k`.
+- Read command: now accepts directory paths (auto-selects a normalized `.md`).
+- Slack: added `/orchestrator knowledge build` stub — gated by SAFE‑MODE; runs build only when SAFE=OFF.
+- CI: `.github/workflows/ci-knowledge.yml` present; build/audit/read/query steps `continue-on-error: true`.
+- Local CI: `make ci` failed — PEP 668 externally managed environment; use venv or GitHub CI.
