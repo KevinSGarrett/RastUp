@@ -15,9 +15,12 @@ Thumbs.db
 *.log
 docs/test-reports/
 scripts/orchestrator/app_live.log
+scripts/orchestrator/*.log
 ops/cache/
 tmp/
 tmp.*
+*.jsonl
+docs/logs/
 
 # Node / front-end (if you add FE later)
 node_modules/
@@ -49,3 +52,4 @@ ops/prompts/.cursor_prompt_*.txt
 
 # Secrets (DO NOT COMMIT)
 ops/secrets/
+
