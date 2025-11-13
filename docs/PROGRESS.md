@@ -39,3 +39,21 @@
 - Knowledge audit (strict): OK — all required indices present
 - Makefile: added python3/ensurepip fallback for local CI
 - Local CI: still blocked on host (no pip/ensurepip available); upstream GitHub CI unaffected
+
+### 2025-11-13 — Autopilot Squad run and CI status
+- Squad run 2025-11-13: 4/4 agents succeeded — artifacts saved under `docs/orchestrator/from-agents/AGENT-*`.
+  Run IDs: AGENT-1 `run-1762997045-d290d9`, AGENT-2 `run-1762997188-afb579`, AGENT-3 `run-1762997350-d9da1f`, AGENT-4 `run-1762997436-2467b2`.
+- Local CI 2025-11-13: `make ci` failed — host Python lacks `ensurepip`/`pip` (errors: "No module named ensurepip", "No module named pip").
+
+### 2025-11-13 — Autopilot Squad tooling fix
+- Updated `tools/run_squad.py` to compile the prompt per `agent_name` (fixes missing `agent_name` in `orchestrator.prompt_pack.compile_pack`).
+- How to run locally:
+  - `PYTHONPATH=. python3 tools/run_squad.py --title "Autopilot Squad" --model gpt-5 --pack wbs-1-3-knowledge`
+  - Optional focus: `--query "<focus text>"`
+  - Dry-run: create `ops/flags/safe-mode.json` before running.
+- Local CI remains blocked on this host (no `pip`); see earlier notes.
+
+### 2025-11-13 — Knowledge plumbing check + CI summary
+- Knowledge build: `python3 scripts/blueprints/build_index.py` → Normalized=2, Skipped=2, Chunks=3402
+- Knowledge audit (strict): OK — all required indices present
+- Local CI: `make ci` failed — externally managed Python; `ensurepip`/`pip` unavailable (PEP 668). Use venv or GitHub CI.
