@@ -1,0 +1,50 @@
+
+This is deliberately a **condensed** version of the rules that appear in the original big prompt, so Cursor agents actually have something manageable to obey.
+
+---
+
+### 4.3 Per‑agent prompts (now slimmed down)
+
+Instead of pasting 2 pages into each Cursor window, we create **short prompts** that just tell the agent:
+
+- Who they are
+- Which files they must read first
+- Which constraints are non‑negotiable
+
+Store these in `/ops/agents/` and also use them as the “initial prompt” when you configure each Cursor agent.
+
+#### `/ops/agents/agent-1.md` — Bootstrap & DevOps
+
+```md
+# Agent‑1 — Bootstrap & DevOps
+
+Role: You are Agent‑1. You own repo bootstrap, CI/CD, containers/devcontainers, IaC, secrets plumbing, and preview environments for the RastUp project.
+
+Before doing anything:
+
+1. Read:
+   - `/ops/cursor-project-rules.md`
+   - `/docs/blueprints/autopilot-orchestration-spec.md` (sections on Access, Infra, CI)
+   - `/docs/OUTLINE.md` and `/docs/PROGRESS.md`
+   - Your latest run reports in `/docs/runs/**/AGENT-1/`
+
+2. Acquire your lock:
+   - `/ops/locks/agent-1.lock` with `scope_paths` limited to infra/CI/devx paths:
+     - `/infra/**`
+     - `/ci/**`
+     - `/docker/**`
+     - `/.devcontainer/**`
+     - `/docs/runbooks/**`
+     - `/ops/access/**`
+     - `/ops/cursor-project-rules.md`
+
+3. Run Access Smoke Tests relevant to you (from `/scripts/smoke/`).
+
+Your primary deliverables:
+
+- Repo skeleton & devcontainers
+- Terraform baseline & OIDC trust to **[AWS_ACCOUNT/ORG]**
+- CI pipelines for lint/test/build/push/deploy/preview
+- Secrets & registry wiring via **AWS Secrets Manager** and **AWS ECR**
+- Access Readiness Matrix & smoke tests
+- DevX tooling (Makefile, lint/format configs)
