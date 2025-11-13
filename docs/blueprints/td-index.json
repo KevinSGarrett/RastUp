@@ -8,15 +8,5 @@
     "sha1": "491222f0e34ded8a960c8139b07f208f8241ea1b",
     "mtime": "2025-11-11T07:21:50.933071+00:00",
     "num_chunks": 1251
-  },
-  {
-    "source_rel": "TechnicalDevelopmentPlan.odt",
-    "plain_rel": "plain/TechnicalDevelopmentPlan.md",
-    "title": "TechnicalDevelopmentPlan",
-    "domain": "tech",
-    "words": 127948,
-    "sha1": "551da79f91318f0f57f1b49eb08d6d1ba76daaee",
-    "mtime": "2025-11-11T07:21:50.942189+00:00",
-    "num_chunks": 1142
   }
 ]

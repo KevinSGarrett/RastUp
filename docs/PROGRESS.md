@@ -28,3 +28,14 @@
 - WBS‑1.3 LIVE enablement: when `SAFE=OFF` (no `ops/flags/safe-mode.json`),
   `orchestrator/cursor_runner.py` now omits `--print` in `cursor-agent` calls,
   enabling LIVE runs. When `SAFE=ON`, `--print` remains enforced (dry‑run).
+
+- 2025-11-13 Autopilot Squad: Updated `tools/run_squad.py` to compile and pass prompt packs via `orchestrator.prompt_pack`.
+  - Built prompt pack to `docs/prompts/wbs-1-3-knowledge.txt`.
+  - Help: `python3 tools/run_squad.py --help` shows `--pack` and `--query` options.
+- 2025-11-13 Local CI: `make ci` failed — `python` not found on host (Error 127). Recommend installing `python-is-python3` or using `python3` in `Makefile` for local environments.
+
+### 2025-11-13 — WBS‑1.3 knowledge plumbing & control plane
+- Knowledge build: succeeded via `python3 -m orchestrator.knowledge build` (Normalized=2, Skipped=2, Chunks=3402)
+- Knowledge audit (strict): OK — all required indices present
+- Makefile: added python3/ensurepip fallback for local CI
+- Local CI: still blocked on host (no pip/ensurepip available); upstream GitHub CI unaffected

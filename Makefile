@@ -6,8 +6,14 @@ ci: ci-setup lint type security test
 	@echo "CI completed."
 
 ci-setup:
-	python -m pip install --upgrade pip
-	pip install -r tools/requirements-ci.txt
+	# Prefer python3 if available; fall back to python
+	(command -v python3 >/dev/null 2>&1 && python3 -m ensurepip --upgrade) || true
+	(command -v python  >/dev/null 2>&1 && python  -m ensurepip --upgrade) || true
+	(command -v python3 >/dev/null 2>&1 && python3 -m pip install --upgrade pip) \
+		|| (command -v python >/dev/null 2>&1 && python -m pip install --upgrade pip) \
+		|| true
+	(command -v python3 >/dev/null 2>&1 && python3 -m pip install -r tools/requirements-ci.txt) \
+		|| (command -v python >/dev/null 2>&1 && python -m pip install -r tools/requirements-ci.txt)
 
 lint:
 	ruff check $(PY_DIRS)
