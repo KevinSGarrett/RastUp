@@ -1,0 +1,46 @@
+# /ops/agent-registry.yaml
+# Canonical registry of Cursor agents that the Orchestrator controls.
+
+agents:
+  - name: AGENT-1
+    role: Bootstrap & DevOps
+    prompt_path: docs/orchestrator/agent-prompts/agent-1-bootstrap-devops.md
+    default_model: gpt-5-codex
+    max_mode: true
+    scopes:
+      - "**/infra/**"
+      - "**/ci/**"
+      - "**/docker/**"
+      - "**/docs/runbooks/**"
+      - "**/ops/**"
+
+  - name: AGENT-2
+    role: Backend & Services
+    prompt_path: docs/orchestrator/agent-prompts/agent-2-backend-services.md
+    default_model: gpt-5-codex
+    max_mode: true
+    scopes:
+      - "**/apps/backend/**"
+      - "**/schemas/**"
+      - "**/tests/**"
+
+  - name: AGENT-3
+    role: Frontend & Developer Experience
+    prompt_path: docs/orchestrator/agent-prompts/agent-3-frontend-dx.md
+    default_model: gpt-5-codex
+    max_mode: true
+    scopes:
+      - "**/apps/frontend/**"
+      - "**/apps/ui-lib/**"
+      - "**/tests/e2e/**"
+
+  - name: AGENT-4
+    role: QA, Security, Compliance & Release
+    prompt_path: docs/orchestrator/agent-prompts/agent-4-qa-security-release.md
+    default_model: claude-4.5-sonnet
+    max_mode: true
+    scopes:
+      - "**/docs/**"
+      - "**/tests/**"
+      - "**/ci/**"
+      - "**/ops/**"

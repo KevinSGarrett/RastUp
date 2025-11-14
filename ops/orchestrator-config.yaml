@@ -1,0 +1,160 @@
+version: 1
+
+project:
+  name: "RastUp"
+  # Absolute path on your machine so the orchestrator can always find the repo,
+  # even if you run it from somewhere else.
+  local_root: "C:\\RastUp\\RastUp"
+  # Repo-relative root (for paths below)
+  repo_root: "."
+  envs: ["dev", "staging", "prod"]
+  default_env: "dev"
+
+orchestrator:
+  id: "RastUp-Orchestrator"
+  # Where the orchestrator writes its own internal state (so it can resume).
+  state_dir: "docs/orchestrator/state"
+  # Where “rotation bundles” go when you move to a new window / restart the process.
+  rotations_dir: "docs/orchestrator/rotations"
+  # Where agents drop their Orchestrator Attach Packs (zips referenced in run reports).
+  attach_packs_dir: "docs/orchestrator/from-agents"
+  # Canonical runs dir (agents + orchestrator use this)
+  runs_dir: "docs/runs"
+
+  # Core control files
+  approvals_dir: "ops/approvals"
+  locks_dir: "ops/locks"
+  queue_file: "ops/queue.jsonl"
+  progress_file: "docs/PROGRESS.md"
+  agent_registry_file: "ops/agent-registry.yaml"
+
+  # How long before a lock is considered orphaned (Agent‑4 Recovery SOP kicks in)
+  orphan_timeout_minutes: 60
+
+  # How often the orchestrator “ticks” to look for new work / check queue
+  poll_interval_seconds: 60
+
+  # Autopilot default: one worker at a time. You can bump this later once locks are solid.
+  max_concurrent_agents: 1
+
+  # Basic logging settings for your orchestrator implementation
+  log_level: "info"
+
+blueprints:
+  # Source “giant files” (the ones you already have on disk)
+  non_tech_source: "ProjectBlueprint/Combined_Master_PLAIN_Non_Tech_001.docx"
+  tech_source: "ProjectBlueprint/TechnicalDevelopmentPlan.odt"
+
+  # Target artifacts that the blueprint-conversion window will eventually generate.
+  # The orchestrator + agents will use these for anchors/IDs, not the raw .docx/.odt.
+  nt_index: "docs/blueprints/nt-index.json"
+  td_index: "docs/blueprints/td-index.json"
+  toc_cache: "docs/blueprints/toc-cache.json"
+  crosswalk: "docs/blueprints/crosswalk.json"
+  acceptance_dir: "docs/blueprints/acceptance"
+
+  # Optional: where to put split markdown versions of the massive docs
+  nt_markdown_root: "docs/blueprints/non-tech"
+  td_markdown_root: "docs/blueprints/tech"
+
+templates:
+  run_report: "docs/templates/agent-run-report.md"
+  approval_proposal: "docs/templates/approval-proposal.md"
+
+apis:
+  # Orchestrator uses these; Cursor itself uses its own key/token.
+  openai:
+    enabled: true
+    api_key_env: "OPENAI_API_KEY"
+    # Default planning/coordination model; per-agent overrides live in agent-registry.yaml.
+    default_model: "gpt-5"
+  anthropic:
+    enabled: true
+    api_key_env: "ANTHROPIC_API_KEY"
+    default_model: "claude-4.5-sonnet"
+
+cursor:
+  enabled: true
+  # How to invoke Cursor from the orchestrator.
+  # If cursor.exe is not on PATH, change this to the full path to the binary.
+  cli_path: "cursor"
+  # Root workspace Cursor should operate in (your repo root).
+  workspace_root: "C:\\RastUp\\RastUp"
+  # Environment variable that holds your Cursor API key / token.
+  api_key_env: "CURSOR_API_KEY"
+  # If you use named profiles/configs inside Cursor, put the default here.
+  default_profile: "default"
+
+models:
+  # Global allow-list for the orchestrator when it chooses models dynamically.
+  allowed:
+    - "gpt-5"
+    - "gpt-5-codex"
+    - "claude-4.5-sonnet"
+    - "claude-4.5-haiku"
+    - "claude-4-sonnet"
+    - "composer-1"
+  # Whether MAX mode is allowed at all (per-agent choice still lives in agent-registry).
+  allow_max_mode: true
+
+access:
+  # Where Access Smoke Test scripts live.
+  smoke_scripts_dir: "scripts/smoke"
+  access_matrix_file: "docs/runbooks/access-readiness-matrix.md"
+
+  # These names should match rows in your Access Readiness Matrix.
+  critical_resources:
+    - "local_fs"
+    - "docker"
+    - "git"
+    - "ci"
+    - "secrets"
+    - "registry"
+    - "cloud"
+
+safety:
+  safe_mode_flag: "ops/flags/safe-mode.json"
+  cost_guardrails_file: "ops/cost/guardrails.yaml"
+
+  # Categories of actions that ALWAYS require Two-Key approval.
+  high_risk_actions:
+    - "terraform_apply"
+    - "prod_deploy"
+    - "dns_change"
+    - "destructive_migration"
+    - "iam_policy_change"
+
+  # Any path under here is considered part of the approval system.
+  required_two_key_dirs:
+    - "ops/approvals"
+
+queue:
+  # Legal status values in /ops/queue.jsonl
+  allowed_status:
+    - "todo"
+    - "doing"
+    - "review"
+    - "done"
+
+  # How the orchestrator picks the “next” task in autopilot mode.
+  # Your implementation will:
+  #   1) filter status == "todo",
+  #   2) respect dependencies,
+  #   3) prefer higher-weight / earlier-phase tasks.
+  selection_strategy: "phase_weight_then_fifo"
+
+  # Default agent order when multiple owners are possible.
+  default_owner_order:
+    - "AGENT-1"
+    - "AGENT-2"
+    - "AGENT-3"
+    - "AGENT-4"
+
+run_reports:
+  # Base directory for all run reports.
+  base_dir: "docs/runs"
+  # Where agents put their attach packs (zips) so the orchestrator can ingest them.
+  attach_packs_dir: "docs/orchestrator/from-agents"
+
+  # Optional: orchestrator’s own run-report template (you can reuse agent template if you want).
+  orchestrator_template: "docs/templates/orchestrator-run-report.md"
