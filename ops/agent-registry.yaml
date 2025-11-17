@@ -1,46 +1,100 @@
-# /ops/agent-registry.yaml
-# Canonical registry of Cursor agents that the Orchestrator controls.
+﻿version: 1
 
 agents:
-  - name: AGENT-1
-    role: Bootstrap & DevOps
-    prompt_path: docs/orchestrator/agent-prompts/agent-1-bootstrap-devops.md
-    default_model: gpt-5-codex
-    max_mode: true
-    scopes:
-      - "**/infra/**"
-      - "**/ci/**"
-      - "**/docker/**"
-      - "**/docs/runbooks/**"
-      - "**/ops/**"
+  AGENT-1:
+    id: "AGENT-1"
+    name: "Blueprint Architect"
+    description: >
+      Ingest, segment, and index the Non-Technical and Technical blueprints
+      into structured JSON + Markdown anchors for downstream agents.
+    models:
+      planning: "gpt-5"
+      coding: "gpt-5-codex"
+      fallback: "claude-4.5-sonnet"
+      allow_max_mode: true
+    capabilities:
+      - "blueprint_ingest"
+      - "blueprint_split"
+      - "blueprint_index"
+      - "crosswalk_seed"
+    working_dir: "."
+    logs_dir: "docs/runs/AGENT-1"
+    safe_mode_default: true
+    max_cost_usd_per_run: 2.00
+    max_tokens_per_call: 64000
+    notes:
+      - "Reads from ProjectBlueprint/*"
+      - "Writes JSON indices to docs/blueprints/*"
 
-  - name: AGENT-2
-    role: Backend & Services
-    prompt_path: docs/orchestrator/agent-prompts/agent-2-backend-services.md
-    default_model: gpt-5-codex
-    max_mode: true
-    scopes:
-      - "**/apps/backend/**"
-      - "**/schemas/**"
-      - "**/tests/**"
+  AGENT-2:
+    id: "AGENT-2"
+    name: "Delivery Engineer"
+    description: >
+      Turns blueprint sections into concrete implementation tasks, code stubs,
+      and architecture files for the RastUp product.
+    models:
+      planning: "gpt-5"
+      coding: "gpt-5-codex"
+      fallback: "claude-4.5-haiku"
+      allow_max_mode: true
+    capabilities:
+      - "task_breakdown"
+      - "codegen"
+      - "architecture_docs"
+      - "implementation_plan"
+    working_dir: "."
+    logs_dir: "docs/runs/AGENT-2"
+    safe_mode_default: true
+    max_cost_usd_per_run: 3.00
+    max_tokens_per_call: 64000
+    notes:
+      - "Consumes nt-index.json / td-index.json / crosswalk.json"
+      - "Emits implementation plans + code under src/"
 
-  - name: AGENT-3
-    role: Frontend & Developer Experience
-    prompt_path: docs/orchestrator/agent-prompts/agent-3-frontend-dx.md
-    default_model: gpt-5-codex
-    max_mode: true
-    scopes:
-      - "**/apps/frontend/**"
-      - "**/apps/ui-lib/**"
-      - "**/tests/e2e/**"
+  AGENT-3:
+    id: "AGENT-3"
+    name: "DevOps & Access Engineer"
+    description: >
+      Owns CI/CD, docker, secrets wiring, access smoke tests, and environment
+      readiness across dev/staging/prod.
+    models:
+      planning: "gpt-5"
+      coding: "gpt-5-codex"
+      fallback: "claude-4.5-sonnet"
+      allow_max_mode: true
+    capabilities:
+      - "access_checks"
+      - "infra_docs"
+      - "ci_cd_config"
+      - "docker_setup"
+    working_dir: "."
+    logs_dir: "docs/runs/AGENT-3"
+    safe_mode_default: true
+    max_cost_usd_per_run: 2.50
+    max_tokens_per_call: 64000
+    notes:
+      - "Maintains scripts/smoke/*"
+      - "Keeps docs/runbooks/access-readiness-matrix.md fresh"
 
-  - name: AGENT-4
-    role: QA, Security, Compliance & Release
-    prompt_path: docs/orchestrator/agent-prompts/agent-4-qa-security-release.md
-    default_model: claude-4.5-sonnet
-    max_mode: true
-    scopes:
-      - "**/docs/**"
-      - "**/tests/**"
-      - "**/ci/**"
-      - "**/ops/**"
+  AGENT-4:
+    id: "AGENT-4"
+    name: "Recovery & Reliability Guard"
+    description: >
+      Monitors locks, detects orphaned work, enforces safety guardrails,
+      and coordinates cleanup / recovery runs.
+    models:
+      planning: "gpt-5"
+      fallback: "claude-4-sonnet"
+      allow_max_mode: false
+    capabilities:
+      - "lock_recovery"
+      - "queue_triage"
+      - "safety_audit"
+    working_dir: "."
+    logs_dir: "docs/runs/AGENT-4"
+    safe_mode_default: true
+    max_cost_usd_per_run: 1.00
+    max_tokens_per_call: 32000
+    notes:
+      - "Watches ops/locks/* and orphan_timeout_minutes from orchestrator-config"
+      - "Can move tasks from 'doing' -> 'todo' when a worker dies"

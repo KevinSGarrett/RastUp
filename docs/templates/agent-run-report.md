@@ -1,32 +1,25 @@
-# Agent Run Report — AGENT-<N> — <title>
-Run ID: <YYYYMMDD-HHMM-<short>>
-Date: <YYYY-MM-DD HH:MM TZ>
-Owner: AGENT-<N>
-Model: <model> MAX: <true/false>
-Tools used: <list>
-Lock file: /ops/locks/agent-<N>.lock
+﻿# Agent Run Report – {{ agent_id }}
 
-## 0) Pre‑Run Ritual
-- Prior run(s) consulted: [links]
-- Plan vs Done vs Pending (≤10 bullets)
+- **Run ID:** {{ run_id }}
+- **Agent:** {{ agent_id }} – {{ agent_name }}
+- **Started:** {{ started_at }}
+- **Finished:** {{ finished_at }}
+- **Environment:** {{ env }}
+- **Tasks handled:** {{ task_ids | join:", " }}
+- **Status:** {{ status }}  <!-- success | partial | failed -->
 
-## 1) Context Snapshot
-- NT anchors: [...]
-- TD anchors: [...]
-- Interpretation: [...]
+## 1. Objectives
 
-## 2) Plan of Action
-- Files/paths:
-- Access Smoke Tests:
-- Expected outputs:
-- Rollback:
+{{ objectives }}
 
-## 3) Execution Log
-## 4) Proof‑of‑Work Dossier
-## 5) Issues & Resolutions
-## 6) Impact Map
-## 7) Baton Handoff
-### 7a) For Orchestrator Review
-## 8) Checklist
-## 9) Locations
-## 10) Appendix
+## 2. Actions Taken
+
+{{ actions }}
+
+## 3. Artifacts Produced
+
+{{ artifacts }}
+
+## 4. Notes & Follow-ups
+
+{{ follow_ups }}

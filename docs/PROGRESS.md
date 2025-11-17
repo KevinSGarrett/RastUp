@@ -1,26 +1,15 @@
-# Orchestrator Progress
+# RastUp – Orchestrator Progress
 
-- Total WBS items: 50
-- Done: 0
-- Overall completion: 0%
-- Last updated (UTC): 2025-11-16T21:24:48Z
+## Phase 1 – Blueprint Ingestion & Indexing
 
-## Status by root
+- [x] TASK-NT-INGEST – Non-Technical blueprint ingested and indexed
+- [ ] TASK-TD-INGEST – Technical blueprint ingested and indexed
+- [ ] TASK-CROSSWALK – Crosswalk between NT/TD blueprints created
 
-### WBS-1
-- Items: 41
-- Done: 0
-- Completion: 0%
-- Breakdown: todo=41, in_progress=0, review=0, done=0, blocked=0
+## Phase 2 – Implementation Planning
 
-### WBS-2
-- Items: 5
-- Done: 0
-- Completion: 0%
-- Breakdown: todo=5, in_progress=0, review=0, done=0, blocked=0
+- [ ] TASK-IMPLEMENTATION-PLAN – Initial implementation plan drafted
 
-### WBS-4
-- Items: 4
-- Done: 0
-- Completion: 0%
-- Breakdown: todo=4, in_progress=0, review=0, done=0, blocked=0
+## Phase 3 – Access & Infra Readiness
+
+- [x] TASK-ACCESS-SMOKE – Smoke tests run and matrix updated

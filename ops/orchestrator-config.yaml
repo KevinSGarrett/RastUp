@@ -1,4 +1,4 @@
-version: 1
+﻿version: 1
 
 project:
   name: "RastUp"
@@ -75,9 +75,8 @@ apis:
 
 cursor:
   enabled: true
-  # How to invoke Cursor from the orchestrator.
-  # If cursor.exe is not on PATH, change this to the full path to the binary.
-  cli_path: "cursor"
+  # IMPORTANT: use the actual .cmd path that `where.exe cursor` reported
+  cli_path: "C:\\Users\\Windows 11\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin\\cursor.cmd"
   # Root workspace Cursor should operate in (your repo root).
   workspace_root: "C:\\RastUp\\RastUp"
   # Environment variable that holds your Cursor API key / token.
